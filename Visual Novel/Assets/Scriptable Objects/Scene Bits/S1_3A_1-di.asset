@@ -10,19 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 444bfc5197e5edb429d2b3bfcb51a370, type: 3}
-  m_Name: S1_2-de
+  m_Name: S1_3A_1-di
   m_EditorClassIdentifier: 
-  type: 1
+  type: 0
   dialogueData:
-    character: {fileID: 0}
-    nextBit: {fileID: 0}
-    sentences: []
+    character: {fileID: 11400000, guid: a0efbfb1559bbbf44826706033e33d45, type: 2}
+    nextBit: {fileID: 11400000, guid: 2c302fab4c8cb9c458942a27404953b8, type: 2}
+    sentences:
+    - Dialogue 2
   decisionData:
-    options:
-    - text: Minigame
-      nextBit: {fileID: 11400000, guid: 4899765e28e2c1c4897f3377c041e423, type: 2}
-    - text: Location change
-      nextBit: {fileID: 11400000, guid: 3a00bff1e9442e748b4d52d5a0abca10, type: 2}
+    options: []
   locationChangeData:
     background: {fileID: 0}
     nextBit: {fileID: 0}

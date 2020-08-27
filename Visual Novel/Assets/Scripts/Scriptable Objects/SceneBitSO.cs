@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Scene Bit", menuName = "Scene Bit")]
@@ -8,13 +9,14 @@ public class SceneBitSO : ScriptableObject
     {
         Dialogue,
         Decision,
-        LocationChange
+        LocationChange,
+        Minigame
     }
 
     [Serializable]
     public struct DialogueData
     {
-        public string characterName;
+        public CharacterSO character;
 
         public SceneBitSO nextBit;
 
@@ -33,8 +35,7 @@ public class SceneBitSO : ScriptableObject
             public SceneBitSO nextBit;
         }
 
-        public Option optionA;
-        public Option optionB;
+        public List<Option> options;
     }
 
     [Serializable]
@@ -45,15 +46,23 @@ public class SceneBitSO : ScriptableObject
         public SceneBitSO nextBit;
     }
 
+    [Serializable]
+    public struct MinigameData
+    {
+        public SceneBitSO nextBit;
+    }
+
     public SceneBitTypes type;
 
     public DialogueData dialogueData;
     public DecisionData decisionData;
     public LocationChangeData locationChangeData;
+    public MinigameData minigameData;
 
     public static event Action<DialogueData> OnDialogue;
     public static event Action<DecisionData> OnDecision;
     public static event Action<LocationChangeData> OnLocationChange;
+    public static event Action<MinigameData> OnMinigame;
 
     public void Execute()
     {
@@ -67,6 +76,9 @@ public class SceneBitSO : ScriptableObject
                 break;
             case SceneBitTypes.LocationChange:
                 if (OnLocationChange != null) OnLocationChange(locationChangeData);
+                break;
+            case SceneBitTypes.Minigame:
+                if (OnMinigame != null) OnMinigame(minigameData);
                 break;
             default:
                 break;

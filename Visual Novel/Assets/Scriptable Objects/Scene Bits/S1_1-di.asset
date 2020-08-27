@@ -14,17 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   dialogueData:
-    characterName: Hoshi
+    character: {fileID: 11400000, guid: a0efbfb1559bbbf44826706033e33d45, type: 2}
     nextBit: {fileID: 11400000, guid: 0d5608ee3b1c3444aa7cdb482c627576, type: 2}
     sentences:
-    - Bit 1
+    - Dialogue 1
   decisionData:
-    optionA:
-      text: 
-      nextBit: {fileID: 0}
-    optionB:
-      text: 
-      nextBit: {fileID: 0}
+    options: []
   locationChangeData:
     background: {fileID: 0}
+    nextBit: {fileID: 0}
+  minigameData:
     nextBit: {fileID: 0}
