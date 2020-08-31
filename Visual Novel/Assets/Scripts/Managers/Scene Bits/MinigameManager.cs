@@ -2,7 +2,7 @@
 
 public class MinigameManager : MonoBehaviour
 {
-    public Puzzle puzzle;
+    public GameObject puzzle;
     public GameObject minigameUI;
     SceneBitSO nextBit;
 
@@ -20,12 +20,16 @@ public class MinigameManager : MonoBehaviour
     {
         nextBit = data.nextBit;
 
+        puzzle.SetActive(true);
         minigameUI.SetActive(true);
+
+        puzzle.GetComponent<Puzzle>().GeneratePieces();
     }
 
     void End()
     {
         minigameUI.SetActive(false);
+        puzzle.SetActive(false);
 
         nextBit.Execute();
     }

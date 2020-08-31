@@ -1,18 +1,21 @@
 ﻿using System;
 using UnityEngine;
 
-public class PuzzlePiece : Puzzle
+public class PuzzlePiece : MonoBehaviour
 {
-    public bool onBoard = false;
-    public bool fixedToBoard = false;
+    public Vector2Int ID { get; set; }
+
+    [HideInInspector] public bool onBoard = false;
+    [HideInInspector] public bool fixedToBoard = false;
     bool grabbed = false;
 
+    public Vector2 grabPosition;
     Vector2 mouseOffset;
 
-    public Tile currentTile;
+    public Puzzle.Tile currentTile;
     SpriteRenderer spriteRenderer;
 
-    public static event Action<PuzzlePiece> OnPieceReleased;
+    public static event Action<PuzzlePiece, Vector2> OnPieceReleased;
 
     void Start()
     {
@@ -21,13 +24,16 @@ public class PuzzlePiece : Puzzle
 
     void Update()
     {
+        //if (fixedToBoard) return;
+
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (!grabbed)
         {
             if (spriteRenderer.bounds.Contains(mousePosition) && Input.GetMouseButtonDown(0))
             {
-                mouseOffset = (Vector2)transform.position - mousePosition;
+                grabPosition = transform.position;
+                mouseOffset = grabPosition - mousePosition;
                 grabbed = true;
 
                 currentTile.empty = true;
@@ -39,7 +45,7 @@ public class PuzzlePiece : Puzzle
 
             if (Input.GetMouseButtonUp(0))
             {
-                if (OnPieceReleased != null) OnPieceReleased(this);
+                if (OnPieceReleased != null) OnPieceReleased(this, mousePosition);
                 grabbed = false;
             }
         }
