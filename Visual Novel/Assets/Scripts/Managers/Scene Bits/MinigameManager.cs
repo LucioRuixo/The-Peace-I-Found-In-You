@@ -2,13 +2,19 @@
 
 public class MinigameManager : MonoBehaviour
 {
-    public GameObject puzzle;
+    public GameObject puzzleGO;
     public GameObject minigameUI;
+    PuzzleController puzzle;
     SceneBitSO nextBit;
 
     void OnEnable()
     {
         SceneBitSO.OnMinigame += Begin;
+    }
+
+    void Awake()
+    {
+        puzzle = puzzleGO.GetComponent<PuzzleController>();
     }
 
     void OnDisable()
@@ -20,21 +26,23 @@ public class MinigameManager : MonoBehaviour
     {
         nextBit = data.nextBit;
 
-        puzzle.SetActive(true);
+        puzzleGO.SetActive(true);
         minigameUI.SetActive(true);
 
-        puzzle.GetComponent<Puzzle>().GeneratePieces();
+        puzzle.GeneratePieces();
     }
 
     void End()
     {
+        puzzle.ClearPieces();
+
         minigameUI.SetActive(false);
-        puzzle.SetActive(false);
+        puzzleGO.SetActive(false);
 
         nextBit.Execute();
     }
 
-    public void PlayMinigame()
+    public void Continue()
     {
         End();
     }
