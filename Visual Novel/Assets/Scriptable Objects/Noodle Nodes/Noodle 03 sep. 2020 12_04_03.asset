@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cbd2643b65e0f4480e4201a5f9b5f1, type: 3}
+  m_Name: Noodle 03 sep. 2020 12_04_03
+  m_EditorClassIdentifier: 
+  nodes:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  references:
+    version: 1
+    00000000:
+      type: {class: NoodlesNodeBorder, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Start
+        GUID: f4a6a2af-f42e-443c-bb84-28eea0743bc7
+        rect:
+          serializedVersion: 2
+          x: 293
+          y: 139
+          width: 76
+          height: 71
+        width: 100
+        height: 100
+        inputPorts: []
+        outputPorts:
+        - GUID: 0896f9a5-5e55-4640-97e3-6e7387b6573f
+          parentNodeGUID: f4a6a2af-f42e-443c-bb84-28eea0743bc7
+          targetNodeGUID: []
+          targetPortGUID: []
+          text: Start
+          isEditable: 0
+        classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        isStartNode: 1
+    00000001:
+      type: {class: NoodlesNodeBorder, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: End
+        GUID: 4eb006b3-e1a9-425f-bb11-ce4afd7f032f
+        rect:
+          serializedVersion: 2
+          x: 829
+          y: 205
+          width: 69
+          height: 71
+        width: 100
+        height: 100
+        inputPorts:
+        - GUID: 5607b6df-ff2c-4f6e-a3c6-74b62e1d03b7
+          parentNodeGUID: 4eb006b3-e1a9-425f-bb11-ce4afd7f032f
+          targetNodeGUID: []
+          targetPortGUID: []
+          text: End
+          isEditable: 0
+        outputPorts: []
+        classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        isStartNode: 0
+    00000002:
+      type: {class: CustomDialogueNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Dialogue
+        GUID: 6e4e2435-5424-454a-8707-06929335c221
+        rect:
+          serializedVersion: 2
+          x: 415
+          y: -44
+          width: 216
+          height: 172
+        width: 500
+        height: 500
+        inputPorts:
+        - GUID: 3421f5b3-45a5-4573-9938-147c7200cfa2
+          parentNodeGUID: 6e4e2435-5424-454a-8707-06929335c221
+          targetNodeGUID: []
+          targetPortGUID: []
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 856f5a09-d629-4e0f-aa2b-ee4dabda0451
+          parentNodeGUID: 6e4e2435-5424-454a-8707-06929335c221
+          targetNodeGUID: []
+          targetPortGUID: []
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomDialogueNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        dialogueText: Hello World!
+        character: 0
+    00000003:
+      type: {class: CustomDecisionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Decision
+        GUID: bb4a4174-acd8-4b36-933e-6999a83e0eeb
+        rect:
+          serializedVersion: 2
+          x: 694
+          y: -50
+          width: 199
+          height: 77
+        width: 500
+        height: 500
+        inputPorts:
+        - GUID: f18775f0-71d8-4311-8ecc-9615af2dbcf6
+          parentNodeGUID: bb4a4174-acd8-4b36-933e-6999a83e0eeb
+          targetNodeGUID: []
+          targetPortGUID: []
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 17b121a2-8b1c-4910-9d87-131a26cc3a0e
+          parentNodeGUID: bb4a4174-acd8-4b36-933e-6999a83e0eeb
+          targetNodeGUID: []
+          targetPortGUID: []
+          text: Option 2
+          isEditable: 1
+        classNameString: nullbloq.Noodles.CustomDecisionNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

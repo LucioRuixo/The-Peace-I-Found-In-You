@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PuzzlePiece : MonoBehaviour
 {
@@ -14,40 +15,42 @@ public class PuzzlePiece : MonoBehaviour
 
     Vector2 mouseOffset;
 
-    SpriteRenderer spriteRenderer;
+    Image image;
+    RectTransform rect;
 
     public static event Action<PuzzlePiece, Vector2> OnPieceReleased;
 
     void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        image = GetComponent<Image>();
+        rect = GetComponent<RectTransform>();
     }
 
     void Update()
     {
         if (FixedToBoard) return;
 
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        if (!grabbed)
-        {
-            if (spriteRenderer.bounds.Contains(mousePosition) && Input.GetMouseButtonDown(0))
-            {
-                GrabPosition = transform.position;
-                mouseOffset = GrabPosition - mousePosition;
-                grabbed = true;
-            }
-        }
-        else
-        {
-            transform.position = mousePosition + mouseOffset;
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                if (OnPieceReleased != null) OnPieceReleased(this, mousePosition);
-                grabbed = false;
-            }
-        }
+        //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //
+        //if (!grabbed)
+        //{
+        //    if (rect.rect.Contains(mousePosition) && Input.GetMouseButtonDown(0))
+        //    {
+        //        GrabPosition = transform.position;
+        //        mouseOffset = GrabPosition - mousePosition;
+        //        grabbed = true;
+        //    }
+        //}
+        //else
+        //{
+        //    transform.position = mousePosition + mouseOffset;
+        //
+        //    if (Input.GetMouseButtonUp(0))
+        //    {
+        //        //if (OnPieceReleased != null) OnPieceReleased(this, mousePosition);
+        //        grabbed = false;
+        //    }
+        //}
     }
 
     public IEnumerator Highlight()
@@ -62,9 +65,9 @@ public class PuzzlePiece : MonoBehaviour
             float subtractedValue = totalDistance / (fadeDuration / Time.deltaTime);
             currentColorValue -= subtractedValue;
 
-            Color newColor = spriteRenderer.color;
+            Color newColor = image.color;
             newColor.r = newColor.g = newColor.b = currentColorValue;
-            spriteRenderer.color = newColor;
+            image.color = newColor;
 
             yield return null;
         }
@@ -74,9 +77,9 @@ public class PuzzlePiece : MonoBehaviour
             float addedValue = totalDistance / (fadeDuration / Time.deltaTime);
             currentColorValue += addedValue;
 
-            Color newColor = spriteRenderer.color;
+            Color newColor = image.color;
             newColor.r = newColor.g = newColor.b = currentColorValue;
-            spriteRenderer.color = newColor;
+            image.color = newColor;
 
             yield return null;
         }
