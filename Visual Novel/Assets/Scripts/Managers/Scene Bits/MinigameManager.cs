@@ -3,16 +3,19 @@
 public class MinigameManager : MonoBehaviour
 {
     public GameObject minigame;
+    public GameObject continueButton;
     SceneBitSO nextBit;
 
     void OnEnable()
     {
         SceneBitSO.OnMinigame += Begin;
+        PuzzleController.OnPuzzleCompletion += EnableContinueButton;
     }
 
     void OnDisable()
     {
         SceneBitSO.OnMinigame -= Begin;
+        PuzzleController.OnPuzzleCompletion -= EnableContinueButton;
     }
 
     void Begin(SceneBitSO.MinigameData data)
@@ -20,6 +23,11 @@ public class MinigameManager : MonoBehaviour
         nextBit = data.nextBit;
 
         minigame.SetActive(true);
+    }
+
+    void EnableContinueButton()
+    {
+        continueButton.SetActive(true);
     }
 
     void End()
@@ -31,6 +39,8 @@ public class MinigameManager : MonoBehaviour
 
     public void Continue()
     {
+        continueButton.SetActive(false);
+
         End();
     }
 }

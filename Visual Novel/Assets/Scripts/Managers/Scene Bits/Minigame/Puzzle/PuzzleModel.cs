@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PuzzleModel : MonoBehaviour
 {
-    public int PieceAmount { private set; get; }
+    public int TotalPieces { private set; get; }
 
     public int width;
     public int height;
@@ -12,6 +12,6 @@ public class PuzzleModel : MonoBehaviour
 
     void Awake()
     {
-        PieceAmount = width * height;
+        TotalPieces = width * height;
     }
 }

@@ -29,17 +29,4 @@ public class PuzzleView : MonoBehaviour
         float boardSizeHeight = PieceSize.y * model.height;
         boardRect.sizeDelta = new Vector2(boardSizeWidth, boardSizeHeight);
     }
-
-    //public void ArrangePiecePool(ref List<PuzzlePiece> pool)
-    //{
-    //    float pieceX = -((PieceSize.x * pool.Count + piecePoolSpacing * (pool.Count - 1)) / 2f) + PieceHalfSize.x;
-    //    Vector2 piecePosition = new Vector2(pieceX, piecePoolY);
-    //
-    //    for (int i = 0; i < pool.Count; i++)
-    //    {
-    //        pool[i].transform.position = piecePosition;
-    //
-    //        piecePosition.x += PieceSize.x + piecePoolSpacing;
-    //    }
-    //}
 }

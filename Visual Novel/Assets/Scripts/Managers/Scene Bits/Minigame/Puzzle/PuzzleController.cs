@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,13 +24,21 @@ public class PuzzleController : MonoBehaviour
         }
     }
 
+    int fixedPieces = 0;
+
     Tile[,] grid;
     List<PuzzlePiece> piecePool;
+    List<PuzzlePiece> holdSpace;
 
     public GameObject piecePrefab;
+    public RectTransform canvas;
     public RectTransform boardRect;
     public RectTransform piecePoolRect;
     public RectTransform piecePoolContent;
+    public RectTransform holdSpaceRect;
+    public RectTransform holdSpaceContent;
+
+    public static event Action OnPuzzleCompletion;
 
     void Awake()
     {
@@ -38,6 +47,7 @@ public class PuzzleController : MonoBehaviour
 
         grid = new Tile[model.width, model.height];
         piecePool = new List<PuzzlePiece>();
+        holdSpace = new List<PuzzlePiece>();
 
         float initialPositionX = view.PieceHalfSize.x;
         float initialPositionY = -view.PieceHalfSize.y;
@@ -83,7 +93,7 @@ public class PuzzleController : MonoBehaviour
         {
             for (int x = 0; x < model.width; x++)
             {
-                PuzzlePiece newPiece = Instantiate(piecePrefab, piecePoolContent).GetComponent<PuzzlePiece>();
+                PuzzlePiece newPiece = Instantiate(piecePrefab, canvas).GetComponent<PuzzlePiece>();
                 newPiece.ID = new Vector2Int(x, y);
                 newPiece.GetComponent<Image>().sprite = model.pieceSprites[pieceNumber];
 
@@ -95,6 +105,11 @@ public class PuzzleController : MonoBehaviour
         }
 
         SufflePiecePool();
+
+        foreach (PuzzlePiece piece in piecePool)
+        {
+            piece.transform.SetParent(piecePoolContent);
+        }
     }
 
     void ClearPieces()
@@ -116,6 +131,12 @@ public class PuzzleController : MonoBehaviour
             Destroy(piece.gameObject);
         }
         piecePool.Clear();
+
+        foreach (PuzzlePiece piece in holdSpace)
+        {
+            Destroy(piece.gameObject);
+        }
+        holdSpace.Clear();
     }
 
     void SufflePiecePool()
@@ -157,6 +178,10 @@ public class PuzzleController : MonoBehaviour
                         if (grid[x, y].correctPieceID == piece.ID)
                         {
                             piece.FixedToBoard = true;
+                            fixedPieces++;
+                            if (fixedPieces == model.TotalPieces && OnPuzzleCompletion != null)
+                                OnPuzzleCompletion();
+
                             StartCoroutine(piece.Highlight());
                         }
 
@@ -177,6 +202,16 @@ public class PuzzleController : MonoBehaviour
             grid[piece.CurrentTile.x, piece.CurrentTile.y].empty = true;
 
             piecePool.Add(piece);
+
+            return;
+        }
+        else if (RectTransformUtility.RectangleContainsScreenPoint(holdSpaceRect, piece.rect.position))
+        {
+            piece.transform.SetParent(holdSpaceContent);
+            piece.OnBoard = false;
+            grid[piece.CurrentTile.x, piece.CurrentTile.y].empty = true;
+
+            holdSpace.Add(piece);
 
             return;
         }
