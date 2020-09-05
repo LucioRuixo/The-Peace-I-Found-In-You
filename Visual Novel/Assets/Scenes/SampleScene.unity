@@ -416,7 +416,7 @@ RectTransform:
   m_Children:
   - {fileID: 517564585}
   m_Father: {fileID: 2075796763}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -633,8 +633,8 @@ MonoBehaviour:
   m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
 --- !u!1 &497235320
@@ -1562,7 +1562,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2075796763}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1963,7 +1963,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 20}
+  m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1474363037
 MonoBehaviour:
@@ -2120,7 +2120,7 @@ PrefabInstance:
     - target: {fileID: 3613766469059844170, guid: 4d7bafb0d9705bf47b19c37f56c727ee,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3613766469059844170, guid: 4d7bafb0d9705bf47b19c37f56c727ee,
         type: 3}
@@ -2329,9 +2329,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piecePrefab: {fileID: 1844278142946942783, guid: 4fee67631123958458ea89a1ae6158a6,
     type: 3}
-  piecePoolRect: {fileID: 0}
+  boardRect: {fileID: 1233498377}
+  piecePoolRect: {fileID: 263919204}
   piecePoolContent: {fileID: 442995572}
-  boardContent: {fileID: 1233498377}
 --- !u!224 &2075796763
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2343,8 +2343,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1233498377}
   - {fileID: 263919204}
+  - {fileID: 1233498377}
   - {fileID: 1573890010}
   m_Father: {fileID: 1248964329}
   m_RootOrder: 0

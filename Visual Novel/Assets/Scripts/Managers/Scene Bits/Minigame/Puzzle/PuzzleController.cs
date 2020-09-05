@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,9 +27,9 @@ public class PuzzleController : MonoBehaviour
     List<PuzzlePiece> piecePool;
 
     public GameObject piecePrefab;
+    public RectTransform boardRect;
     public RectTransform piecePoolRect;
     public RectTransform piecePoolContent;
-    public RectTransform boardContent;
 
     void Awake()
     {
@@ -39,17 +38,9 @@ public class PuzzleController : MonoBehaviour
 
         grid = new Tile[model.width, model.height];
         piecePool = new List<PuzzlePiece>();
-    }
 
-    void OnEnable()
-    {
-        PuzzlePiece.OnPieceReleased += CheckReleasedPiece;
-    }
-
-    void Start()
-    {
-        float initialPositionX = -view.BoardHalfSize.x + view.PieceHalfSize.x;
-        float initialPositionY = view.boardRect.position.y + view.BoardHalfSize.y - view.PieceHalfSize.y;
+        float initialPositionX = view.PieceHalfSize.x;
+        float initialPositionY = -view.PieceHalfSize.y;
 
         for (int y = 0; y < model.height; y++)
         {
@@ -66,6 +57,12 @@ public class PuzzleController : MonoBehaviour
                 grid[x, y].currentPiece = null;
             }
         }
+    }
+
+    void OnEnable()
+    {
+        PuzzlePiece.OnDragBeginning += SetBoardAsPieceParent;
+        PuzzlePiece.OnDragEnd += CheckReleasedPiece;
 
         GeneratePieces();
     }
@@ -74,18 +71,8 @@ public class PuzzleController : MonoBehaviour
     {
         ClearPieces();
 
-        PuzzlePiece.OnPieceReleased -= CheckReleasedPiece;
-    }
-
-    void SufflePiecePool()
-    {
-        for (int i = 0; i < piecePool.Count; i++)
-        {
-            PuzzlePiece auxiliar = piecePool[i];
-            int randomIndex = UnityEngine.Random.Range(i, piecePool.Count);
-            piecePool[i] = piecePool[randomIndex];
-            piecePool[randomIndex] = auxiliar;
-        }
+        PuzzlePiece.OnDragBeginning -= SetBoardAsPieceParent;
+        PuzzlePiece.OnDragEnd -= CheckReleasedPiece;
     }
 
     void GeneratePieces()
@@ -108,7 +95,6 @@ public class PuzzleController : MonoBehaviour
         }
 
         SufflePiecePool();
-        //view.ArrangePiecePool(ref piecePool);
     }
 
     void ClearPieces()
@@ -132,11 +118,28 @@ public class PuzzleController : MonoBehaviour
         piecePool.Clear();
     }
 
-    void CheckReleasedPiece(PuzzlePiece piece, Vector2 mousePosition)
+    void SufflePiecePool()
     {
-        bool insideBoard = ((mousePosition.x > -view.BoardHalfSize.x) && (mousePosition.x < view.BoardHalfSize.x))
+        for (int i = 0; i < piecePool.Count; i++)
+        {
+            PuzzlePiece auxiliar = piecePool[i];
+            int randomIndex = UnityEngine.Random.Range(i, piecePool.Count);
+            piecePool[i] = piecePool[randomIndex];
+            piecePool[randomIndex] = auxiliar;
+        }
+    }
+
+    void SetBoardAsPieceParent(Transform piece)
+    {
+        piece.SetParent(boardRect);
+    }
+
+    void CheckReleasedPiece(PuzzlePiece piece, Vector2 pointerPosition)
+    {
+        Vector2 piecePosition = piece.rect.anchoredPosition;
+        bool insideBoard = ((piecePosition.x > 0f) && (piecePosition.x < view.BoardSize.x))
                            &&
-                           ((mousePosition.y > view.boardRect.position.y - view.BoardHalfSize.y) && (mousePosition.y < view.boardRect.position.y + view.BoardHalfSize.y));
+                           ((piecePosition.y < 0f) && (piecePosition.y > -view.BoardSize.y));
         
         if (insideBoard)
         {
@@ -144,13 +147,13 @@ public class PuzzleController : MonoBehaviour
             {
                 for (int x = 0; x < model.width; x++)
                 {
-                    if (grid[x, y].Contains(mousePosition) && grid[x, y].empty)
+                    if (grid[x, y].Contains(piecePosition) && grid[x, y].empty)
                     {
-                        piece.transform.SetParent(view.boardRect);
-                        piece.transform.position = grid[x, y].position;
+                        piece.GetComponent<RectTransform>().anchoredPosition = grid[x, y].position;
                         piece.OnBoard = true;
                         grid[piece.CurrentTile.x, piece.CurrentTile.y].empty = true;
                         piece.CurrentTile = new Vector2Int(x, y);
+
                         if (grid[x, y].correctPieceID == piece.ID)
                         {
                             piece.FixedToBoard = true;
@@ -161,26 +164,27 @@ public class PuzzleController : MonoBehaviour
                         grid[x, y].empty = false;
 
                         piecePool.Remove(piece);
-                        //view.ArrangePiecePool(ref piecePool);
 
                         return;
                     }
                 }
             }
         }
-        else if (piecePoolRect.rect.Contains(mousePosition) && !piecePool.Contains(piece))
+        else if (RectTransformUtility.RectangleContainsScreenPoint(piecePoolRect, piece.rect.position))
         {
             piece.transform.SetParent(piecePoolContent);
             piece.OnBoard = false;
             grid[piece.CurrentTile.x, piece.CurrentTile.y].empty = true;
 
             piecePool.Add(piece);
-            //view.ArrangePiecePool(ref piecePool);
 
             return;
         }
 
-        piece.transform.position = piece.GrabPosition;
+        if (piece.OnBoard)
+            piece.rect.anchoredPosition = grid[piece.CurrentTile.x, piece.CurrentTile.y].position;
+        else
+            piece.transform.SetParent(piecePoolContent);
     }
 
     public List<PuzzlePiece> GetPiecePool()

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PuzzleView : MonoBehaviour
 {
@@ -10,6 +9,7 @@ public class PuzzleView : MonoBehaviour
 
     public Vector2 PieceSize { private set; get; }
     public Vector2 PieceHalfSize { private set; get; }
+    public Vector2 BoardSize { private set; get; }
     public Vector2 BoardHalfSize { private set; get; }
 
     public GameObject piecePool;
@@ -20,9 +20,10 @@ public class PuzzleView : MonoBehaviour
         model = GetComponent<PuzzleModel>();
         controller = GetComponent<PuzzleController>();
 
-        PieceSize = controller.piecePrefab.GetComponent<RectTransform>().sizeDelta;
+        PieceSize = controller.piecePrefab.GetComponent<RectTransform>().rect.size;
         PieceHalfSize = new Vector2(PieceSize.x / 2f, PieceSize.y / 2f);
-        BoardHalfSize = new Vector2(PieceHalfSize.x * model.width, PieceHalfSize.y * model.height);
+        BoardSize = new Vector2(PieceSize.x * model.width, PieceSize.y * model.height);
+        BoardHalfSize = new Vector2(BoardSize.x / 2f, BoardSize.y / 2f);
 
         float boardSizeWidth = PieceSize.x * model.width;
         float boardSizeHeight = PieceSize.y * model.height;

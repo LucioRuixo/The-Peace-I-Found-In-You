@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PuzzlePiece : MonoBehaviour
+public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public bool OnBoard { set; get; } = false;
     public bool FixedToBoard { get; set; } = false;
@@ -11,14 +12,13 @@ public class PuzzlePiece : MonoBehaviour
     public Vector2Int CurrentTile { get; set; }
     public Vector2 GrabPosition { get; set; }
 
-    bool grabbed = false;
-
-    Vector2 mouseOffset;
+    Vector2 pointerOffset;
 
     Image image;
-    RectTransform rect;
+    public RectTransform rect;
 
-    public static event Action<PuzzlePiece, Vector2> OnPieceReleased;
+    public static event Action<Transform> OnDragBeginning;
+    public static event Action<PuzzlePiece, Vector2> OnDragEnd;
 
     void Awake()
     {
@@ -26,31 +26,26 @@ public class PuzzlePiece : MonoBehaviour
         rect = GetComponent<RectTransform>();
     }
 
-    void Update()
+    public void OnBeginDrag(PointerEventData eventData)
     {
         if (FixedToBoard) return;
 
-        //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //
-        //if (!grabbed)
-        //{
-        //    if (rect.rect.Contains(mousePosition) && Input.GetMouseButtonDown(0))
-        //    {
-        //        GrabPosition = transform.position;
-        //        mouseOffset = GrabPosition - mousePosition;
-        //        grabbed = true;
-        //    }
-        //}
-        //else
-        //{
-        //    transform.position = mousePosition + mouseOffset;
-        //
-        //    if (Input.GetMouseButtonUp(0))
-        //    {
-        //        //if (OnPieceReleased != null) OnPieceReleased(this, mousePosition);
-        //        grabbed = false;
-        //    }
-        //}
+        pointerOffset = (Vector2)transform.position - eventData.position;
+        if (OnDragBeginning != null) OnDragBeginning(transform);
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (FixedToBoard) return;
+
+        transform.position = eventData.position + pointerOffset;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (FixedToBoard) return;
+
+        if (OnDragEnd != null) OnDragEnd(this, eventData.position);
     }
 
     public IEnumerator Highlight()
