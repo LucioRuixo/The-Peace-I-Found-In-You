@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc43126eb542cc04f8d7fcd7113487a4, type: 3}
-  m_Name: Hoshi
+  m_Name: Protagonist
   m_EditorClassIdentifier: 
-  characterName: Hoshi
-  sprite: {fileID: 21300000, guid: 19dd3223d4e271e4d8a0e3d75d23d26b, type: 3}
+  characterName: Protagonist
+  sprite: {fileID: 8031055882519214423, guid: 83488d701d99df64784e4df478f0ff4d, type: 3}

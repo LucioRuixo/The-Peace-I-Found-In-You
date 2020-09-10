@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cbd2643b65e0f4480e4201a5f9b5f1, type: 3}
+  m_Name: Noodle Multiple DialogueNode
+  m_EditorClassIdentifier: 
+  nodes:
+  - id: 0
+  - id: 1
+  - id: 2
+  references:
+    version: 1
+    00000000:
+      type: {class: NoodlesNodeBorder, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Start
+        GUID: 8158b786-e6e3-41e4-941a-e64c9908f7fd
+        rect:
+          serializedVersion: 2
+          x: 214
+          y: 200
+          width: 76
+          height: 71
+        width: 100
+        height: 100
+        inputPorts: []
+        outputPorts:
+        - GUID: 20817e1a-f1d7-40ac-ab6c-b17a760432fa
+          parentNodeGUID: 8158b786-e6e3-41e4-941a-e64c9908f7fd
+          targetNodeGUID:
+          - d4246464-61d8-4f10-9a9b-2714cb096989
+          targetPortGUID:
+          - 304b60c5-983a-481c-9f75-280d119dbf0f
+          text: Start
+          isEditable: 0
+        classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        isStartNode: 1
+    00000001:
+      type: {class: NoodlesNodeBorder, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: End
+        GUID: af718e6d-3fb0-4d4b-b4ba-935d977f7b68
+        rect:
+          serializedVersion: 2
+          x: 716
+          y: 200
+          width: 69
+          height: 71
+        width: 100
+        height: 100
+        inputPorts:
+        - GUID: b41433fa-0550-441e-803d-f9a398048d8f
+          parentNodeGUID: af718e6d-3fb0-4d4b-b4ba-935d977f7b68
+          targetNodeGUID:
+          - d4246464-61d8-4f10-9a9b-2714cb096989
+          targetPortGUID:
+          - 32260d22-c752-4dd4-9adc-75a87e6b3274
+          text: End
+          isEditable: 0
+        outputPorts: []
+        classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        isStartNode: 0
+    00000002:
+      type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        title: Multiple Dialogue
+        GUID: d4246464-61d8-4f10-9a9b-2714cb096989
+        rect:
+          serializedVersion: 2
+          x: 320
+          y: 184
+          width: 328
+          height: 577
+        width: 1000
+        height: 500
+        inputPorts:
+        - GUID: 304b60c5-983a-481c-9f75-280d119dbf0f
+          parentNodeGUID: d4246464-61d8-4f10-9a9b-2714cb096989
+          targetNodeGUID:
+          - 8158b786-e6e3-41e4-941a-e64c9908f7fd
+          targetPortGUID:
+          - 20817e1a-f1d7-40ac-ab6c-b17a760432fa
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 32260d22-c752-4dd4-9adc-75a87e6b3274
+          parentNodeGUID: d4246464-61d8-4f10-9a9b-2714cb096989
+          targetNodeGUID:
+          - af718e6d-3fb0-4d4b-b4ba-935d977f7b68
+          targetPortGUID:
+          - b41433fa-0550-441e-803d-f9a398048d8f
+          text: Out
+          isEditable: 0
+        classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        dialogueStrips:
+        - charName: 2
+          dialogueText: asd
+          response: 2
+        - charName: 2
+          dialogueText: zxc
+          response: gggg
+        - charName: 2
+          dialogueText: fghfgh
+          response: hgggggh
+        - charName: 2
+          dialogueText: Dialogue
+          response: Response 6

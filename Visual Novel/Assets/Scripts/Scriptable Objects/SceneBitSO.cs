@@ -59,29 +59,24 @@ public class SceneBitSO : ScriptableObject
     public LocationChangeData locationChangeData;
     public MinigameData minigameData;
 
-    public static event Action<DialogueData> OnDialogue;
-    public static event Action<DecisionData> OnDecision;
-    public static event Action<LocationChangeData> OnLocationChange;
-    public static event Action<MinigameData> OnMinigame;
-
     public void Execute()
     {
-        switch (type)
-        {
-            case SceneBitTypes.Dialogue:
-                if (OnDialogue != null) OnDialogue(dialogueData);
-                break;
-            case SceneBitTypes.Decision:
-                if (OnDecision != null) OnDecision(decisionData);
-                break;
-            case SceneBitTypes.LocationChange:
-                if (OnLocationChange != null) OnLocationChange(locationChangeData);
-                break;
-            case SceneBitTypes.Minigame:
-                if (OnMinigame != null) OnMinigame(minigameData);
-                break;
-            default:
-                break;
-        }
+        //switch (type)
+        //{
+        //    case SceneBitTypes.Dialogue:
+        //        if (OnDialogue != null) OnDialogue(dialogueData);
+        //        break;
+        //    case SceneBitTypes.Decision:
+        //        if (OnDecision != null) OnDecision(decisionData);
+        //        break;
+        //    case SceneBitTypes.LocationChange:
+        //        if (OnLocationChange != null) OnLocationChange(locationChangeData);
+        //        break;
+        //    case SceneBitTypes.Minigame:
+        //        if (OnMinigame != null) OnMinigame(minigameData);
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
 }

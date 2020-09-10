@@ -255,9 +255,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 590469008}
   dialogueBox: {fileID: 644522511}
-  character: {fileID: 2102662727}
+  characterSR: {fileID: 2102662729}
   nameText: {fileID: 982045083}
   dialogueText: {fileID: 1123153518}
+  characterPool:
+  - {fileID: 11400000, guid: 15eb3008dd2d34649a6afdd4339c7652, type: 2}
+  - {fileID: 11400000, guid: a0efbfb1559bbbf44826706033e33d45, type: 2}
+  - {fileID: 11400000, guid: 0f20109a5016c2d4383ac2b9df1fef5a, type: 2}
 --- !u!1 &138360882
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,8 +882,10 @@ GameObject:
   m_Component:
   - component: {fileID: 505166548}
   - component: {fileID: 505166549}
+  - component: {fileID: 505166551}
+  - component: {fileID: 505166550}
   m_Layer: 0
-  m_Name: Scene Bit Manager
+  m_Name: Noodle Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -915,9 +921,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdac0ff4b4acada4aa0d8ba28354ce48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 11400000, guid: b231ca78dab1f8b418763165e1a6626d, type: 2}
+  controller: {fileID: 11400000, guid: 2cad1a068260a7647b2db82bbdbbbd23, type: 2}
   startOnAwake: 0
   playing: 0
+--- !u!114 &505166550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505166547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672aecaf1ee36ab42be626e5555c975d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &505166551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505166547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357726171f19a2a4a8936deb3933e761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noodles:
+  - {fileID: 11400000, guid: 2cad1a068260a7647b2db82bbdbbbd23, type: 2}
 --- !u!1 &517564584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,7 +1221,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 121330168}
-        m_MethodName: DisplayNextSentence
+        m_MethodName: ExecuteNextDialogueStrip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
