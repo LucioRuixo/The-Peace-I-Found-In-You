@@ -47,3 +47,6 @@ TagManager:
   - name: Minigame Element
     uniqueID: 1870160753
     locked: 0
+  - name: Cover
+    uniqueID: 679189177
+    locked: 0

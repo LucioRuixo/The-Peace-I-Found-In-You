@@ -5,28 +5,68 @@ using nullbloq.Noodles;
 
 public class NoodleManager : MonoBehaviour
 {
-    int currentNoodleIndex = 0;
+    public Noodler noodler;
 
     public List<Noodle> noodles;
 
-    public static event Action<List<NoodlesNode>, NoodlesNode> OnNoodleExecution;
+    public static event Action<NoodlesNodeMultipleDialogue> OnDialogue;
+    public static event Action<CustomDecisionNode> OnDecision;
+    public static event Action<CustomMinigameNode> OnMinigame;
+    public static event Action<CustomBackgroundChangeNode> OnBackgroundChange;
+    public static event Action<CustomAnimationNode> OnAnimation;
+    public static event Action<CustomIlustrationNode> OnIlutration;
+
+    void OnEnable()
+    {
+        DialogueManager.OnNodeExecutionCompleted += CallNextNode;
+        DecisionManager.OnNodeExecutionCompleted += CallNextNode;
+        MinigameManager.OnNodeExecutionCompleted += CallNextNode;
+        BackgroundManager.OnNodeExecutionCompleted += CallNextNode;
+        AnimationManager.OnNodeExecutionCompleted += CallNextNode;
+        IlustrationManager.OnNodeExecutionCompleted += CallNextNode;
+    }
 
     void Start()
     {
-        CheckRemainingNoodles();
+        ExecuteNextNode(noodler.CurrentNode);
     }
 
-    void CheckRemainingNoodles()
+    void OnDisable()
     {
-        if (noodles.Count > 0)
-        {
-            List<NoodlesNode> nodeList = noodles[currentNoodleIndex].nodes;
-            NoodlesNode starNode = noodles[currentNoodleIndex].GetStartNode();
-            OnNoodleExecution?.Invoke(nodeList, starNode);
+        DialogueManager.OnNodeExecutionCompleted -= CallNextNode;
+        DecisionManager.OnNodeExecutionCompleted -= CallNextNode;
+        MinigameManager.OnNodeExecutionCompleted -= CallNextNode;
+        BackgroundManager.OnNodeExecutionCompleted -= CallNextNode;
+        AnimationManager.OnNodeExecutionCompleted -= CallNextNode;
+        IlustrationManager.OnNodeExecutionCompleted -= CallNextNode;
+    }
 
-            currentNoodleIndex++;
+    void CallNextNode(int portIndex)
+    {
+        if (noodler.HasNextNode())
+        {
+            NoodlesNode node = noodler.Next(portIndex);
+
+            if (node != null) ExecuteNextNode(node);
+            else Debug.LogError("Node not found");
         }
         else
             Debug.Log("No noodles remaining");
+    }
+
+    void ExecuteNextNode(NoodlesNode node)
+    {
+        if (node is NoodlesNodeMultipleDialogue dialogueNode)
+            OnDialogue?.Invoke(dialogueNode);
+        else if (node is CustomDecisionNode decisionNode)
+            OnDecision?.Invoke(decisionNode);
+        else if (node is CustomMinigameNode minigameNode)
+            OnMinigame?.Invoke(minigameNode);
+        else if (node is CustomBackgroundChangeNode backgroundChangeNode)
+            OnBackgroundChange?.Invoke(backgroundChangeNode);
+        else if (node is CustomAnimationNode animationNode)
+            OnAnimation?.Invoke(animationNode);
+        else if (node is CustomIlustrationNode ilustrationNode)
+            OnIlutration?.Invoke(ilustrationNode);
     }
 }

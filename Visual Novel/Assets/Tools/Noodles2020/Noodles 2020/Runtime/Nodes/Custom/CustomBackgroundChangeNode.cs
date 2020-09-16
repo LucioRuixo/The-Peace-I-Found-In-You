@@ -1,7 +1,6 @@
 ﻿using System;
-using UnityEditor.UIElements;
-using UnityEngine;
 #if UNITY_EDITOR
+using UnityEditor.UIElements;
 using UnityEditor.Experimental.GraphView;
 #endif
 using UnityEngine.UIElements;
@@ -10,15 +9,16 @@ namespace nullbloq.Noodles
 {
 	public class CustomBackgroundChangeNode : NoodlesNode
 	{
-		public Sprite newBackground;
+		public BackgroundManager.Background background;
 
-		public CustomBackgroundChangeNode()
+		protected override void PreInit()
 		{
+			base.PreInit();
 			title = "Background Change";
 #if UNITY_EDITOR
 			classNameString = typeof(CustomBackgroundChangeNodeVisual).AssemblyQualifiedName;
 #endif
-			width = 500;
+			width = 600;
 			height = 500;
 		}
 
@@ -41,6 +41,10 @@ namespace nullbloq.Noodles
 			CustomBackgroundChangeNode backgroundChangeNode = nodeData as CustomBackgroundChangeNode;
 
 			title = backgroundChangeNode.title;
+		
+			var combo = new EnumField("Background", backgroundChangeNode.background);
+			combo.RegisterValueChangedCallback(evt => { backgroundChangeNode.background = (BackgroundManager.Background)evt.newValue; });
+			mainContainer.Add(combo);
 		}
 	}
 #endif

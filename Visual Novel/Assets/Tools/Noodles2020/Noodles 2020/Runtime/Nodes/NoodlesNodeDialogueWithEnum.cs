@@ -1,4 +1,6 @@
-﻿using UnityEditor.UIElements;
+﻿#if UNITY_EDITOR
+using UnityEditor.UIElements;
+#endif
 
 namespace nullbloq.Noodles
 {
@@ -25,6 +27,7 @@ namespace nullbloq.Noodles
 		}
 	}
 
+#if UNITY_EDITOR
 	public class NoodlesNodeDialogueWithEnumVisual : NoodlesNodeDialogueVisual
 	{
 		protected override void CreateVisualsBody()
@@ -36,4 +39,5 @@ namespace nullbloq.Noodles
 			base.CreateVisualsBody();
 		}
 	}
+#endif
 }

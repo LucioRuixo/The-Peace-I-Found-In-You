@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace nullbloq.Noodles
 {
@@ -30,15 +28,15 @@ namespace nullbloq.Noodles
 			currentNode = controller.GetStartNode();
 		}
 
+		public bool HasNextNode()
+		{
+			return CurrentNode.HasAnyOutput();
+		}
+
 		public NoodlesNode Next(int index)
 		{
 			currentNode = controller.GetNode(currentNode.GetNextNodeID(index));
 			return currentNode;
-		}
-
-		public bool HasNextNode()
-		{
-			return CurrentNode.HasAnyOutput();
 		}
 	}
 }

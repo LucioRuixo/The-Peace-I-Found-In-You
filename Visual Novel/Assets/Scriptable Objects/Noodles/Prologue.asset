@@ -38,6 +38,7 @@ MonoBehaviour:
   - id: 22
   - id: 23
   - id: 24
+  - id: 25
   references:
     version: 1
     00000000:
@@ -83,9 +84,9 @@ MonoBehaviour:
         - GUID: c070a201-999d-4b93-adb1-2f1980dd802f
           parentNodeGUID: 13c39c25-8326-46af-b32b-fdf2416253fc
           targetNodeGUID:
-          - 7259f9ed-615b-4e53-aaf3-f577f4e240be
+          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
           targetPortGUID:
-          - 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
+          - 931157e9-baee-4385-a32d-e969da75dcbf
           text: Input
           isEditable: 0
         outputPorts:
@@ -1316,9 +1317,9 @@ MonoBehaviour:
         GUID: 7259f9ed-615b-4e53-aaf3-f577f4e240be
         rect:
           serializedVersion: 2
-          x: 42
-          y: 109
-          width: 227
+          x: 4
+          y: 105
+          width: 288
           height: 96
         width: 600
         height: 500
@@ -1335,14 +1336,14 @@ MonoBehaviour:
         - GUID: 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
           parentNodeGUID: 7259f9ed-615b-4e53-aaf3-f577f4e240be
           targetNodeGUID:
-          - 13c39c25-8326-46af-b32b-fdf2416253fc
+          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
           targetPortGUID:
-          - c070a201-999d-4b93-adb1-2f1980dd802f
+          - a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        animation: 0
+        animation: 1
     00000017:
       type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -1411,3 +1412,37 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         animation: 2
+    00000019:
+      type: {class: CustomMinigameNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Minigame
+        GUID: fbb67aa2-c49e-44e8-b834-eb0daa31d031
+        rect:
+          serializedVersion: 2
+          x: 32
+          y: 211
+          width: 230
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
+          parentNodeGUID: fbb67aa2-c49e-44e8-b834-eb0daa31d031
+          targetNodeGUID:
+          - 7259f9ed-615b-4e53-aaf3-f577f4e240be
+          targetPortGUID:
+          - 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 931157e9-baee-4385-a32d-e969da75dcbf
+          parentNodeGUID: fbb67aa2-c49e-44e8-b834-eb0daa31d031
+          targetNodeGUID:
+          - 13c39c25-8326-46af-b32b-fdf2416253fc
+          targetPortGUID:
+          - c070a201-999d-4b93-adb1-2f1980dd802f
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomMinigameNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        minigame: 1

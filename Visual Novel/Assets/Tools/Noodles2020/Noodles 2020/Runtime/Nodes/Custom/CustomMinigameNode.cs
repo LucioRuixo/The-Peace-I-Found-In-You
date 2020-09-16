@@ -1,30 +1,24 @@
 ﻿using System;
-using UnityEditor.UIElements;
 #if UNITY_EDITOR
+using UnityEditor.UIElements;
 using UnityEditor.Experimental.GraphView;
 #endif
 using UnityEngine.UIElements;
 
 namespace nullbloq.Noodles
 {
-	public enum Minigames
-	{
-		Puzzle,
-		CookingMinigame,
-		FightingMinigame
-	}
-
 	public class CustomMinigameNode : NoodlesNode
 	{
-		public Minigames minigame;
+		public MinigameManager.Minigame minigame;
 
-		public CustomMinigameNode()
+		protected override void PreInit()
 		{
+			base.PreInit();
 			title = "Minigame";
 #if UNITY_EDITOR
 			classNameString = typeof(CustomMinigameNodeVisual).AssemblyQualifiedName;
 #endif
-			width = 500;
+			width = 600;
 			height = 500;
 		}
 
@@ -49,6 +43,7 @@ namespace nullbloq.Noodles
 			title = minigameNode.title;
 
 			var combo = new EnumField("Minigame", minigameNode.minigame);
+			combo.RegisterValueChangedCallback(evt => { minigameNode.minigame = (MinigameManager.Minigame)evt.newValue; });
 			mainContainer.Add(combo);
 		}
 	}

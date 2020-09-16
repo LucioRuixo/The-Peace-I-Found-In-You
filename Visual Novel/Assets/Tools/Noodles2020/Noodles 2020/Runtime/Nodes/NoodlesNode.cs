@@ -75,7 +75,7 @@ namespace nullbloq.Noodles
 			if (index < outputPorts.Count)
 				return outputPorts[index].targetNodeGUID[0]; //TODO mmmmmm?
 
-			Debug.LogError("Asking for data in unavailable Port");
+			Debug.LogError("Asking for data in unavailable port");
 
 			return null;
 		}
