@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FoodGenerator : MonoBehaviour
 {
-    bool generationActive = true;
+    public bool generationActive = true;
 
     public float initialWaitTime;
     public float generationWaitTime;

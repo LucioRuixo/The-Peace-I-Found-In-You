@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Food : MonoBehaviour
 {
     bool active = false;
     bool colliding = false;
+    bool cut = false;
 
     public float speed;
     float height;
@@ -17,11 +19,12 @@ public class Food : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+    static public event Action OnFoodCut;
+
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        //height = transform.GetComponent<SpriteRenderer>().bounds.size.y / 2f;
         height = spriteRenderer.bounds.size.y / 2f;
 
         Vector3 position = new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z);
@@ -55,7 +58,13 @@ public class Food : MonoBehaviour
         }
         else if (!OffScreen()) active = true;
 
-        if (colliding && Input.GetButtonDown("Left Click")) spriteRenderer.color = Color.red;
+        if (!cut && colliding && Input.GetButtonDown("Left Click"))
+        {
+            spriteRenderer.color = Color.red;
+            cut = true;
+
+            OnFoodCut?.Invoke();
+        }
     }
 
     bool OffScreen()
