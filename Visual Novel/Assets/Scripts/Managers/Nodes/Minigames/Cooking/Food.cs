@@ -7,7 +7,7 @@ public class Food : MonoBehaviour
     bool colliding = false;
     bool cut = false;
 
-    public float speed;
+    float speed;
     float height;
     float leftScreenLimit;
     float rightScreenLimit;
@@ -35,6 +35,10 @@ public class Food : MonoBehaviour
         upperScreenLimit = screenBounds.y;
 
         movement = Vector3.zero;
+    }
+
+    void Start()
+    {
         movement.y = speed;
     }
 
@@ -75,5 +79,10 @@ public class Food : MonoBehaviour
         return x < leftScreenLimit - height || x > rightScreenLimit + height
                ||
                y > upperScreenLimit + height|| y < lowerScreenLimit - height;
+    }
+
+    public void SetSpeed(float _speed)
+    {
+        speed = _speed;
     }
 }
