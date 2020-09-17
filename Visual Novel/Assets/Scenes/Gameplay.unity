@@ -2264,7 +2264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1165898071
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2665,6 +2665,7 @@ RectTransform:
   m_Children:
   - {fileID: 1165898071}
   - {fileID: 2075796763}
+  - {fileID: 1573890010}
   m_Father: {fileID: 414413656}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3337,7 +3338,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2075796763}
+    m_TransformParent: {fileID: 1248964329}
     m_Modifications:
     - target: {fileID: 1908020125959088847, guid: 4d7bafb0d9705bf47b19c37f56c727ee,
         type: 3}
@@ -3402,7 +3403,7 @@ PrefabInstance:
     - target: {fileID: 3613766469059844170, guid: 4d7bafb0d9705bf47b19c37f56c727ee,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3613766469059844170, guid: 4d7bafb0d9705bf47b19c37f56c727ee,
         type: 3}
@@ -3665,7 +3666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1836916889
 Transform:
   m_ObjectHideFlags: 0
@@ -3695,7 +3696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33b4a83749ba12448b455a02b2c8092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cuttingTarget: 50
+  cuttingTarget: 1
   timer: 60
   progressBar: {fileID: 1888648583}
   timerText: {fileID: 264289048}
@@ -3733,7 +3734,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4210,7 +4211,6 @@ RectTransform:
   - {fileID: 263919204}
   - {fileID: 748507530}
   - {fileID: 1233498377}
-  - {fileID: 1573890010}
   m_Father: {fileID: 1248964329}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

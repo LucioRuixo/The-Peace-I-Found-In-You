@@ -20,13 +20,17 @@ public class MinigameManager : MonoBehaviour
     void OnEnable()
     {
         NoodleManager.OnMinigame += Begin;
-        PuzzleController.OnPuzzleCompletion += EnableContinueButton;
+
+        CookingMinigameManager.OnGameEnd += EnableContinueButton;
+        PuzzleController.OnGameEnd += EnableContinueButton;
     }
 
     void OnDisable()
     {
         NoodleManager.OnMinigame -= Begin;
-        PuzzleController.OnPuzzleCompletion -= EnableContinueButton;
+
+        CookingMinigameManager.OnGameEnd -= EnableContinueButton;
+        PuzzleController.OnGameEnd -= EnableContinueButton;
     }
 
     void Begin(CustomMinigameNode node)

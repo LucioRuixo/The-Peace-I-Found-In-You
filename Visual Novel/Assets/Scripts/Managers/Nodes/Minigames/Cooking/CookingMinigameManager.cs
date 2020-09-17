@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,10 +11,14 @@ public class CookingMinigameManager : MonoBehaviour
 
     float currentlyCut = 0f;
 
+    IEnumerator timerCorroutine;
+
     public Slider progressBar;
     public TextMeshProUGUI timerText;
 
     public FoodGenerator foodGenerator;
+
+    static public event Action OnGameEnd;
 
     void OnEnable()
     {
@@ -27,7 +32,8 @@ public class CookingMinigameManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Timer());
+        timerCorroutine = Timer();
+        StartCoroutine(timerCorroutine);
     }
 
     void IncreaseCurrentlyCut()
@@ -35,24 +41,18 @@ public class CookingMinigameManager : MonoBehaviour
         currentlyCut++;
         progressBar.value = currentlyCut / cuttingTarget;
 
-        CheckCutAmount();
+        if (currentlyCut >= cuttingTarget) EndGame(true);
     }
 
-    void CheckCutAmount()
-    {
-        if (currentlyCut >= cuttingTarget)
-        {
-            GameFinished(true);
-        }
-    }
-
-    void GameFinished(bool playerWon)
+    void EndGame(bool playerWon)
     {
         string endText = playerWon ? "ganastes" : "perdistes";
         Debug.Log(endText);
 
         foodGenerator.generationActive = false;
-        StopCoroutine(Timer());
+        StopCoroutine(timerCorroutine);
+
+        OnGameEnd?.Invoke();
     }
 
     IEnumerator Timer()
@@ -66,6 +66,6 @@ public class CookingMinigameManager : MonoBehaviour
         }
 
         timerText.text = timer.ToString();
-        GameFinished(false);
+        EndGame(false);
     }
 }
