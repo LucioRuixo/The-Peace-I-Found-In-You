@@ -3557,13 +3557,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680951447}
-  m_LocalRotation: {x: 0, y: 0, z: 0.92050487, w: 0.39073122}
-  m_LocalPosition: {x: 7.9, y: 6.1, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1836916889}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 134}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &1680951449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3578,8 +3578,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generationActive: 1
   initialWaitTime: 2
-  generationWaitTime: 0.33
-  foodSpeed: 15
+  waitTime: 0.5
+  impulse: 2
+  angleRange: 100
+  minX: -6
+  maxX: 6
   foodPrefab: {fileID: 459020593487243624, guid: 09b693953a7473d4fbcee380e26e5c18,
     type: 3}
 --- !u!1 &1683644301
@@ -3696,7 +3699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33b4a83749ba12448b455a02b2c8092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cuttingTarget: 1
+  cuttingTarget: 10
   timer: 60
   progressBar: {fileID: 1888648583}
   timerText: {fileID: 264289048}
@@ -4335,8 +4338,9 @@ GameObject:
   - component: {fileID: 2136894215}
   - component: {fileID: 2136894216}
   - component: {fileID: 2136894217}
+  - component: {fileID: 2136894218}
   m_Layer: 0
-  m_Name: Knife Collider
+  m_Name: Knife
   m_TagString: Knife
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4350,7 +4354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136894214}
   m_LocalRotation: {x: 0, y: 0, z: 0.37460655, w: 0.9271839}
-  m_LocalPosition: {x: 0.9, y: -1.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 1836916889}
@@ -4432,3 +4436,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2136894218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136894214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa4d1acdc09cf94ab203743f71552c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

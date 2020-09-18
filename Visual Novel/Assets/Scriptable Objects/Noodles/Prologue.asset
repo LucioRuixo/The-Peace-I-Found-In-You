@@ -145,9 +145,9 @@ MonoBehaviour:
         - GUID: c91cf78f-a10c-4bc5-923b-ccac4e14bcaf
           parentNodeGUID: 6a02c903-aef2-4dc7-b88c-a7bd2e346e50
           targetNodeGUID:
-          - 7259f9ed-615b-4e53-aaf3-f577f4e240be
+          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
           targetPortGUID:
-          - 72e26569-5a82-4c01-8899-af3c47454ecb
+          - a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
@@ -1326,19 +1326,15 @@ MonoBehaviour:
         inputPorts:
         - GUID: 72e26569-5a82-4c01-8899-af3c47454ecb
           parentNodeGUID: 7259f9ed-615b-4e53-aaf3-f577f4e240be
-          targetNodeGUID:
-          - 6a02c903-aef2-4dc7-b88c-a7bd2e346e50
-          targetPortGUID:
-          - c91cf78f-a10c-4bc5-923b-ccac4e14bcaf
+          targetNodeGUID: []
+          targetPortGUID: []
           text: Input
           isEditable: 0
         outputPorts:
         - GUID: 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
           parentNodeGUID: 7259f9ed-615b-4e53-aaf3-f577f4e240be
-          targetNodeGUID:
-          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
-          targetPortGUID:
-          - a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
+          targetNodeGUID: []
+          targetPortGUID: []
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
@@ -1429,9 +1425,9 @@ MonoBehaviour:
         - GUID: a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
           parentNodeGUID: fbb67aa2-c49e-44e8-b834-eb0daa31d031
           targetNodeGUID:
-          - 7259f9ed-615b-4e53-aaf3-f577f4e240be
+          - 6a02c903-aef2-4dc7-b88c-a7bd2e346e50
           targetPortGUID:
-          - 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
+          - c91cf78f-a10c-4bc5-923b-ccac4e14bcaf
           text: Input
           isEditable: 0
         outputPorts:
