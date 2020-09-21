@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FoodGenerator : MonoBehaviour
@@ -11,24 +12,8 @@ public class FoodGenerator : MonoBehaviour
     public float angleRange;
     public float minX;
     public float maxX;
-    float leftScreenLimit;
-    float rightScreenLimit;
-    float lowerScreenLimit;
-    float upperScreenLimit;
 
-    Vector2 screenBounds;
-
-    public GameObject foodPrefab;
-
-    void Awake()
-    {
-        Vector3 position = new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z);
-        screenBounds = Camera.main.ScreenToWorldPoint(position);
-        leftScreenLimit = screenBounds.x * -1;
-        rightScreenLimit = screenBounds.x;
-        lowerScreenLimit = screenBounds.y * -1;
-        upperScreenLimit = screenBounds.y;
-    }
+    public List<GameObject> foodPrefabs = new List<GameObject>();
 
     void Start()
     {
@@ -48,8 +33,9 @@ public class FoodGenerator : MonoBehaviour
             Quaternion addedRotation = Quaternion.Euler(0f, 0f, addedAngle);
             Quaternion rotation = transform.rotation * addedRotation;
 
-            Food newFood = Instantiate(foodPrefab, position, rotation, transform).GetComponent<Food>();
-            newFood.SetMovement(impulse, position, rotation);
+            GameObject prefab = foodPrefabs[Random.Range(0, foodPrefabs.Count)];
+            Food newFood = Instantiate(prefab, position, rotation, transform).GetComponent<Food>();
+            newFood.SetFall(impulse, position, rotation);
 
             yield return new WaitForSeconds(waitTime);
         }

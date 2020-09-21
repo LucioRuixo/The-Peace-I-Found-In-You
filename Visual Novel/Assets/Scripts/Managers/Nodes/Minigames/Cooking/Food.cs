@@ -3,16 +3,11 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    bool active = false;
     bool colliding = false;
     bool cut = false;
 
-    public float minY;
     float height;
-    //float leftScreenLimit;
-    //float rightScreenLimit;
-    //float lowerScreenLimit;
-    //float upperScreenLimit;
+    float minY;
 
     Rigidbody2D rigidBody;
     SpriteRenderer spriteRenderer;
@@ -24,7 +19,8 @@ public class Food : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidBody = GetComponent<Rigidbody2D>();
 
-        height = spriteRenderer.bounds.size.y / 2f;
+        height = spriteRenderer.bounds.size.y;
+        minY = Camera.main.ScreenToWorldPoint(Vector2.zero).y - height;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -51,17 +47,7 @@ public class Food : MonoBehaviour
         }
     }
 
-    //bool OffScreen()
-    //{
-    //    float x = transform.position.x;
-    //    float y = transform.position.y;
-    //
-    //    return x < leftScreenLimit - height || x > rightScreenLimit + height
-    //           ||
-    //           y > upperScreenLimit + height|| y < lowerScreenLimit - height;
-    //}
-
-    public void SetMovement(float force, Vector2 position, Quaternion rotation)
+    public void SetFall(float force, Vector2 position, Quaternion rotation)
     {
         transform.position = position;
         transform.rotation = rotation;

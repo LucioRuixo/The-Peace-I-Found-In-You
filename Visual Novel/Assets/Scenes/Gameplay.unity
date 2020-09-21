@@ -3583,8 +3583,9 @@ MonoBehaviour:
   angleRange: 100
   minX: -6
   maxX: 6
-  foodPrefab: {fileID: 459020593487243624, guid: 09b693953a7473d4fbcee380e26e5c18,
-    type: 3}
+  foodPrefabs:
+  - {fileID: 459020593487243624, guid: 09b693953a7473d4fbcee380e26e5c18, type: 3}
+  - {fileID: 2979326474588691025, guid: a837d24df9316d14297fdbb809e2e152, type: 3}
 --- !u!1 &1683644301
 GameObject:
   m_ObjectHideFlags: 0
@@ -3669,7 +3670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1836916889
 Transform:
   m_ObjectHideFlags: 0
@@ -3699,7 +3700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33b4a83749ba12448b455a02b2c8092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cuttingTarget: 10
+  cuttingTarget: 50
   timer: 60
   progressBar: {fileID: 1888648583}
   timerText: {fileID: 264289048}
