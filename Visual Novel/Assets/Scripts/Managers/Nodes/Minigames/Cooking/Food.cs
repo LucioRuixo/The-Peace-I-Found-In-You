@@ -6,6 +6,9 @@ public class Food : MonoBehaviour
     bool colliding = false;
     bool cut = false;
 
+    public int necessaryCuts;
+    int cuts = 0;
+
     float height;
     float minY;
 
@@ -40,11 +43,17 @@ public class Food : MonoBehaviour
 
         if (!cut && colliding && Input.GetButtonDown("Left Click"))
         {
-            spriteRenderer.color = Color.red;
-            cut = true;
-
-            OnFoodCut?.Invoke();
+            cuts++;
+            if (cuts >= necessaryCuts) Cut();
         }
+    }
+
+    void Cut()
+    {
+        spriteRenderer.color = Color.red;
+        cut = true;
+
+        OnFoodCut?.Invoke();
     }
 
     public void SetFall(float force, Vector2 position, Quaternion rotation)
