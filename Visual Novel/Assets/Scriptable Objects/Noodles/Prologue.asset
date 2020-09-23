@@ -51,8 +51,8 @@ MonoBehaviour:
         GUID: 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
         rect:
           serializedVersion: 2
-          x: -1023
-          y: 10
+          x: -742
+          y: 6
           width: 76
           height: 71
         width: 100
@@ -62,9 +62,9 @@ MonoBehaviour:
         - GUID: 9774d646-fcde-41f7-8916-bc4b295c8e80
           parentNodeGUID: 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
           targetNodeGUID:
-          - 6a02c903-aef2-4dc7-b88c-a7bd2e346e50
+          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
           targetPortGUID:
-          - aa2d5550-36a3-4588-af9e-5294d4599eda
+          - a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
           text: Start
           isEditable: 0
         classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
@@ -96,9 +96,9 @@ MonoBehaviour:
         - GUID: 3dda3001-03e6-4b95-9b23-62eb3cd22679
           parentNodeGUID: 13c39c25-8326-46af-b32b-fdf2416253fc
           targetNodeGUID:
-          - b66eb2c8-0965-4b50-b7ba-4f76612b3cc4
+          - f1626eea-7316-4db5-8232-1513a724d5d0
           targetPortGUID:
-          - 96193730-3022-41ec-b7cc-f61bfdc53f5e
+          - 2cdaf082-c31b-430d-a4ad-0cd9b32e1efa
           text: Out
           isEditable: 0
         classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
@@ -120,45 +120,11 @@ MonoBehaviour:
       type: {class: CustomBackgroundChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Background Change
-        GUID: 6a02c903-aef2-4dc7-b88c-a7bd2e346e50
-        rect:
-          serializedVersion: 2
-          x: -923
-          y: 4
-          width: 241
-          height: 96
-        width: 600
-        height: 500
-        inputPorts:
-        - GUID: aa2d5550-36a3-4588-af9e-5294d4599eda
-          parentNodeGUID: 6a02c903-aef2-4dc7-b88c-a7bd2e346e50
-          targetNodeGUID:
-          - 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
-          targetPortGUID:
-          - 9774d646-fcde-41f7-8916-bc4b295c8e80
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: c91cf78f-a10c-4bc5-923b-ccac4e14bcaf
-          parentNodeGUID: 6a02c903-aef2-4dc7-b88c-a7bd2e346e50
-          targetNodeGUID:
-          - 69b5d113-2361-43d3-9df6-68b7e4c90c91
-          targetPortGUID:
-          - 163362ad-5a15-42aa-8ca2-d19305014149
-          text: Output
-          isEditable: 0
-        classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        background: 2
-    00000003:
-      type: {class: CustomBackgroundChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
-      data:
-        title: Background Change
         GUID: 60e6bd60-d35d-47c3-8484-8ef8a7534b4d
         rect:
           serializedVersion: 2
-          x: 634
-          y: 102
+          x: 635
+          y: 246
           width: 285
           height: 96
         width: 600
@@ -184,7 +150,7 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         background: 3
-    00000004:
+    00000003:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -237,7 +203,7 @@ MonoBehaviour:
         - character: 0
           sentence: Aunque me da demasiada pereza ir. *Bostezo*
           response: Response 5
-    00000005:
+    00000004:
       type: {class: CustomBackgroundChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Background Change
@@ -271,7 +237,7 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         background: 1
-    00000006:
+    00000005:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -331,7 +297,7 @@ MonoBehaviour:
         - character: 0
           sentence: "[Todav\xEDa resuenan en mi alma]"
           response: Response 6
-    00000007:
+    00000006:
       type: {class: NoodlesNodeBorder, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: 
@@ -357,7 +323,7 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         isStartNode: 0
-    00000008:
+    00000007:
       type: {class: CustomBackgroundChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Background Change
@@ -391,7 +357,7 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         background: 0
-    00000009:
+    00000008:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -446,7 +412,7 @@ MonoBehaviour:
         - character: 0
           sentence: '[Ese sonido lo conozco...]'
           response: Response 6
-    0000000A:
+    00000009:
       type: {class: CustomDecisionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Decision
@@ -479,7 +445,7 @@ MonoBehaviour:
           isEditable: 1
         classNameString: nullbloq.Noodles.CustomDecisionNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    0000000B:
+    0000000A:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -544,7 +510,7 @@ MonoBehaviour:
         - character: 0
           sentence: '[Es la misma a la de alguien a punto de morir]'
           response: Response 9
-    0000000C:
+    0000000B:
       type: {class: CustomDecisionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Decision
@@ -585,7 +551,7 @@ MonoBehaviour:
           isEditable: 1
         classNameString: nullbloq.Noodles.CustomDecisionNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    0000000D:
+    0000000C:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -766,7 +732,7 @@ MonoBehaviour:
         - character: 0
           sentence: Cuidense en el camino.
           response: Response 46
-    0000000E:
+    0000000D:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -820,7 +786,7 @@ MonoBehaviour:
           sentence: "[Pero ese d\xEDa todo cambi\xF3, y la dulce mirada de Hoshi
             cambi\xF3...]"
           response: Response 4
-    0000000F:
+    0000000E:
       type: {class: CustomBackgroundChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Background Change
@@ -856,7 +822,7 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         background: 2
-    00000010:
+    0000000F:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -944,7 +910,7 @@ MonoBehaviour:
           sentence: "[Despu\xE9s de ese d\xEDa sus ojos perdieron su brillo y esa
             brillante estrella se apag\xF3...]"
           response: Response 13
-    00000011:
+    00000010:
       type: {class: CustomBackgroundChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Background Change
@@ -978,7 +944,7 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         background: 0
-    00000012:
+    00000011:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -1018,7 +984,7 @@ MonoBehaviour:
         - character: 0
           sentence: '[Mejor vuelvo al pueblo, no voy a poder ver nada si oscurece]'
           response: Response 1
-    00000013:
+    00000012:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -1215,7 +1181,7 @@ MonoBehaviour:
         - character: 0
           sentence: "[\xBFEso no est\xE1 mal, verdad? ...]"
           response: Response 51
-    00000014:
+    00000013:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -1270,7 +1236,7 @@ MonoBehaviour:
           sentence: "[Para m\xED, ese ataque fue uno de muchos que viv\xED, pero,
             para ella, fue algo que nunca olvidar\xE1\u2026]"
           response: Response 5
-    00000015:
+    00000014:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -1307,15 +1273,15 @@ MonoBehaviour:
         - character: 3
           sentence: bueno hasta aca llega, escape pa salir del juego
           response: Response 0
-    00000016:
+    00000015:
       type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Animation
         GUID: 7259f9ed-615b-4e53-aaf3-f577f4e240be
         rect:
           serializedVersion: 2
-          x: -657
-          y: 4
+          x: -649
+          y: -196
           width: 288
           height: 96
         width: 600
@@ -1330,24 +1296,22 @@ MonoBehaviour:
         outputPorts:
         - GUID: 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
           parentNodeGUID: 7259f9ed-615b-4e53-aaf3-f577f4e240be
-          targetNodeGUID:
-          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
-          targetPortGUID:
-          - a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
+          targetNodeGUID: []
+          targetPortGUID: []
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         animation: 1
-    00000017:
+    00000016:
       type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Animation
         GUID: 75a2b35f-2f4c-4815-b5fd-b7b794241747
         rect:
           serializedVersion: 2
-          x: 665
-          y: 204
+          x: 663
+          y: 355
           width: 227
           height: 96
         width: 600
@@ -1373,15 +1337,15 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         animation: 0
-    00000018:
+    00000017:
       type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Animation
         GUID: b66eb2c8-0965-4b50-b7ba-4f76612b3cc4
         rect:
           serializedVersion: 2
-          x: 646
-          y: 0
+          x: 642
+          y: 131
           width: 264
           height: 96
         width: 600
@@ -1390,9 +1354,9 @@ MonoBehaviour:
         - GUID: 96193730-3022-41ec-b7cc-f61bfdc53f5e
           parentNodeGUID: b66eb2c8-0965-4b50-b7ba-4f76612b3cc4
           targetNodeGUID:
-          - 13c39c25-8326-46af-b32b-fdf2416253fc
+          - f1626eea-7316-4db5-8232-1513a724d5d0
           targetPortGUID:
-          - 3dda3001-03e6-4b95-9b23-62eb3cd22679
+          - b4527e0e-b8f2-4f19-950a-3517bacfb4e7
           text: Input
           isEditable: 0
         outputPorts:
@@ -1407,7 +1371,7 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         animation: 2
-    00000019:
+    00000018:
       type: {class: CustomMinigameNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Minigame
@@ -1424,24 +1388,24 @@ MonoBehaviour:
         - GUID: a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
           parentNodeGUID: fbb67aa2-c49e-44e8-b834-eb0daa31d031
           targetNodeGUID:
-          - 7259f9ed-615b-4e53-aaf3-f577f4e240be
+          - 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
           targetPortGUID:
-          - 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
+          - 9774d646-fcde-41f7-8916-bc4b295c8e80
           text: Input
           isEditable: 0
         outputPorts:
         - GUID: 931157e9-baee-4385-a32d-e969da75dcbf
           parentNodeGUID: fbb67aa2-c49e-44e8-b834-eb0daa31d031
           targetNodeGUID:
-          - 6485c0ba-a382-4ad5-8017-819b4fe73d2a
+          - 69b5d113-2361-43d3-9df6-68b7e4c90c91
           targetPortGUID:
-          - b6d45a6e-25a2-48f6-aa83-ec5118e1e15d
+          - 163362ad-5a15-42aa-8ca2-d19305014149
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMinigameNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         minigame: 1
-    0000001A:
+    00000019:
       type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Character Action
@@ -1476,7 +1440,7 @@ MonoBehaviour:
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         action: 0
         character: 3
-    0000001B:
+    0000001A:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -1493,9 +1457,9 @@ MonoBehaviour:
         - GUID: 163362ad-5a15-42aa-8ca2-d19305014149
           parentNodeGUID: 69b5d113-2361-43d3-9df6-68b7e4c90c91
           targetNodeGUID:
-          - 6a02c903-aef2-4dc7-b88c-a7bd2e346e50
+          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
           targetPortGUID:
-          - c91cf78f-a10c-4bc5-923b-ccac4e14bcaf
+          - 931157e9-baee-4385-a32d-e969da75dcbf
           text: Input
           isEditable: 0
         outputPorts:
@@ -1516,7 +1480,7 @@ MonoBehaviour:
         - character: 0
           sentence: "\xBFQui\xE9nes son ustedes?"
           response: Response 1
-    0000001C:
+    0000001B:
       type: {class: CustomMinigameNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Minigame
@@ -1532,10 +1496,8 @@ MonoBehaviour:
         inputPorts:
         - GUID: b6d45a6e-25a2-48f6-aa83-ec5118e1e15d
           parentNodeGUID: 6485c0ba-a382-4ad5-8017-819b4fe73d2a
-          targetNodeGUID:
-          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
-          targetPortGUID:
-          - 931157e9-baee-4385-a32d-e969da75dcbf
+          targetNodeGUID: []
+          targetPortGUID: []
           text: Input
           isEditable: 0
         outputPorts:
@@ -1548,3 +1510,38 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomMinigameNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         minigame: 0
+    0000001C:
+      type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Character Action
+        GUID: f1626eea-7316-4db5-8232-1513a724d5d0
+        rect:
+          serializedVersion: 2
+          x: 654
+          y: 3
+          width: 244
+          height: 115
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 2cdaf082-c31b-430d-a4ad-0cd9b32e1efa
+          parentNodeGUID: f1626eea-7316-4db5-8232-1513a724d5d0
+          targetNodeGUID:
+          - 13c39c25-8326-46af-b32b-fdf2416253fc
+          targetPortGUID:
+          - 3dda3001-03e6-4b95-9b23-62eb3cd22679
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: b4527e0e-b8f2-4f19-950a-3517bacfb4e7
+          parentNodeGUID: f1626eea-7316-4db5-8232-1513a724d5d0
+          targetNodeGUID:
+          - b66eb2c8-0965-4b50-b7ba-4f76612b3cc4
+          targetPortGUID:
+          - 96193730-3022-41ec-b7cc-f61bfdc53f5e
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomCharacterActionNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        action: 1
+        character: 3

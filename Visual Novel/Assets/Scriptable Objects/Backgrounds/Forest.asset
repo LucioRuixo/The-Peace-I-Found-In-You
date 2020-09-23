@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b329c1489a05a44b03f2c24869823b, type: 3}
   m_Name: Forest
   m_EditorClassIdentifier: 
-  backgroundName: 0
-  sprite: {fileID: 21300000, guid: 28dbc0a0c9d527644a2a5f7f1960740e, type: 3}
+  background: 0
+  sprite: {fileID: 21300000, guid: 28035ebc0f76ebd4981104c3e6484ace, type: 3}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Protagonist Home
   m_EditorClassIdentifier: 
   background: 3
-  sprite: {fileID: 21300000, guid: 1d335f4fe8e056b44aed3c2cd43d69c1, type: 3}
+  sprite: {fileID: 21300000, guid: bc3a490e68001e14ebaddfd7450d5716, type: 3}

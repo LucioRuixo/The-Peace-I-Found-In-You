@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Battlefield
   m_EditorClassIdentifier: 
   background: 2
-  sprite: {fileID: 21300000, guid: 570640ac824f1cf4abde3f7014ef77b5, type: 3}
+  sprite: {fileID: 21300000, guid: 189d174988465fd4cb88b7202f1783bd, type: 3}

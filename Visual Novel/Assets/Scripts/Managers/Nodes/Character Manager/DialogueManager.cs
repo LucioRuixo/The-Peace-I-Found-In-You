@@ -34,6 +34,13 @@ public class DialogueManager : MonoBehaviour
         NoodleManager.OnDialogue += Begin;
     }
 
+    void Update()
+    {
+        if (!dialogue.activeInHierarchy) return;
+
+        if (Input.GetButtonDown("Continue")) ExecuteNextDialogueStrip();
+    }
+
     void OnDisable()
     {
         NoodleManager.OnDialogue -= Begin;

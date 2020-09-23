@@ -52,6 +52,12 @@ TagManager:
   - name: Minigame Element
     uniqueID: 1870160753
     locked: 0
+  - name: CMG - Food
+    uniqueID: 846028855
+    locked: 0
+  - name: CMG - Knife
+    uniqueID: 3650206933
+    locked: 0
   - name: Cover
     uniqueID: 679189177
     locked: 0

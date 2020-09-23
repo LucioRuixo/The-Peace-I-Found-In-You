@@ -13,7 +13,6 @@ public class NoodlesNodeMultipleDialogue : NoodlesNode
 	{
 		public CharacterManager.Character character;
 		public string sentence;
-		public string response;
 	}
 
 	public List<DialogueStrip> dialogueStrips = new List<DialogueStrip>();
@@ -44,7 +43,6 @@ public class NoodlesNodeMultipleDialogue : NoodlesNode
 		DialogueStrip ds = new DialogueStrip();
 		ds.character = 0;
 		ds.sentence = "Dialogue";
-		ds.response = "Response " + dialogueStrips.Count;
 
 		dialogueStrips.Add(ds);
 		return ds;
@@ -124,16 +122,6 @@ public class NoodlesNodeMultipleDialogueVisual : NoodlesNodeVisual
 			ds.sentence = evt.newValue;
 		});
 		container.Add(textField);
-
-		var textFieldResponse = new TextField("Response");
-		textFieldResponse.style.width = StripWidth;
-		textFieldResponse.style.height = 20;
-		textFieldResponse.SetValueWithoutNotify(ds.response);
-		textFieldResponse.RegisterValueChangedCallback(evt =>
-		{
-			ds.response = evt.newValue;
-		});
-		container.Add(textFieldResponse);
 
 
 		var deleteButton = new Button(() => RemoveDialogueStrip(container, index))
