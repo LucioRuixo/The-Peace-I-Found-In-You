@@ -39,6 +39,9 @@ MonoBehaviour:
   - id: 23
   - id: 24
   - id: 25
+  - id: 26
+  - id: 27
+  - id: 28
   references:
     version: 1
     00000000:
@@ -48,8 +51,8 @@ MonoBehaviour:
         GUID: 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
         rect:
           serializedVersion: 2
-          x: -62
-          y: 9
+          x: -1023
+          y: 10
           width: 76
           height: 71
         width: 100
@@ -84,9 +87,9 @@ MonoBehaviour:
         - GUID: c070a201-999d-4b93-adb1-2f1980dd802f
           parentNodeGUID: 13c39c25-8326-46af-b32b-fdf2416253fc
           targetNodeGUID:
-          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
+          - 2a501501-bb85-46ce-a022-3323db50a30a
           targetPortGUID:
-          - 931157e9-baee-4385-a32d-e969da75dcbf
+          - c8c38211-f8fe-4076-9601-3ddd28e3812a
           text: Input
           isEditable: 0
         outputPorts:
@@ -101,15 +104,9 @@ MonoBehaviour:
         classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         dialogueStrips:
-        - character: 0
-          sentence: "\xBFQ-qu\xE9 est\xE1 pasando?"
-          response: Response 0
-        - character: 0
-          sentence: "\xBFQui\xE9nes son ustedes?"
-          response: Response 1
         - character: 3
           sentence: No mereces la paz...
-          response: Response 2
+          response: Response 1
         - character: 3
           sentence: Tampoco la felicidad...
           response: Response 3
@@ -126,8 +123,8 @@ MonoBehaviour:
         GUID: 6a02c903-aef2-4dc7-b88c-a7bd2e346e50
         rect:
           serializedVersion: 2
-          x: 35
-          y: 3
+          x: -923
+          y: 4
           width: 241
           height: 96
         width: 600
@@ -145,9 +142,9 @@ MonoBehaviour:
         - GUID: c91cf78f-a10c-4bc5-923b-ccac4e14bcaf
           parentNodeGUID: 6a02c903-aef2-4dc7-b88c-a7bd2e346e50
           targetNodeGUID:
-          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
+          - 69b5d113-2361-43d3-9df6-68b7e4c90c91
           targetPortGUID:
-          - a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
+          - 163362ad-5a15-42aa-8ca2-d19305014149
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
@@ -1317,8 +1314,8 @@ MonoBehaviour:
         GUID: 7259f9ed-615b-4e53-aaf3-f577f4e240be
         rect:
           serializedVersion: 2
-          x: 4
-          y: 105
+          x: -657
+          y: 4
           width: 288
           height: 96
         width: 600
@@ -1333,8 +1330,10 @@ MonoBehaviour:
         outputPorts:
         - GUID: 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
           parentNodeGUID: 7259f9ed-615b-4e53-aaf3-f577f4e240be
-          targetNodeGUID: []
-          targetPortGUID: []
+          targetNodeGUID:
+          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
+          targetPortGUID:
+          - a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
@@ -1415,8 +1414,8 @@ MonoBehaviour:
         GUID: fbb67aa2-c49e-44e8-b834-eb0daa31d031
         rect:
           serializedVersion: 2
-          x: 32
-          y: 211
+          x: -625
+          y: 112
           width: 230
           height: 96
         width: 600
@@ -1425,20 +1424,127 @@ MonoBehaviour:
         - GUID: a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
           parentNodeGUID: fbb67aa2-c49e-44e8-b834-eb0daa31d031
           targetNodeGUID:
-          - 6a02c903-aef2-4dc7-b88c-a7bd2e346e50
+          - 7259f9ed-615b-4e53-aaf3-f577f4e240be
           targetPortGUID:
-          - c91cf78f-a10c-4bc5-923b-ccac4e14bcaf
+          - 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
           text: Input
           isEditable: 0
         outputPorts:
         - GUID: 931157e9-baee-4385-a32d-e969da75dcbf
           parentNodeGUID: fbb67aa2-c49e-44e8-b834-eb0daa31d031
           targetNodeGUID:
-          - 13c39c25-8326-46af-b32b-fdf2416253fc
+          - 6485c0ba-a382-4ad5-8017-819b4fe73d2a
           targetPortGUID:
-          - c070a201-999d-4b93-adb1-2f1980dd802f
+          - b6d45a6e-25a2-48f6-aa83-ec5118e1e15d
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMinigameNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         minigame: 1
+    0000001A:
+      type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Character Action
+        GUID: 2a501501-bb85-46ce-a022-3323db50a30a
+        rect:
+          serializedVersion: 2
+          x: 20
+          y: 2
+          width: 253
+          height: 115
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: dd4adcfe-3e95-4d0f-92ce-ca6abf2f0c39
+          parentNodeGUID: 2a501501-bb85-46ce-a022-3323db50a30a
+          targetNodeGUID:
+          - 69b5d113-2361-43d3-9df6-68b7e4c90c91
+          targetPortGUID:
+          - fde647f4-53d1-47f8-b8a8-e8b347a9206a
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: c8c38211-f8fe-4076-9601-3ddd28e3812a
+          parentNodeGUID: 2a501501-bb85-46ce-a022-3323db50a30a
+          targetNodeGUID:
+          - 13c39c25-8326-46af-b32b-fdf2416253fc
+          targetPortGUID:
+          - c070a201-999d-4b93-adb1-2f1980dd802f
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomCharacterActionNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        action: 0
+        character: 3
+    0000001B:
+      type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        title: Multiple Dialogue
+        GUID: 69b5d113-2361-43d3-9df6-68b7e4c90c91
+        rect:
+          serializedVersion: 2
+          x: -338
+          y: 2
+          width: 328
+          height: 577
+        width: 1500
+        height: 500
+        inputPorts:
+        - GUID: 163362ad-5a15-42aa-8ca2-d19305014149
+          parentNodeGUID: 69b5d113-2361-43d3-9df6-68b7e4c90c91
+          targetNodeGUID:
+          - 6a02c903-aef2-4dc7-b88c-a7bd2e346e50
+          targetPortGUID:
+          - c91cf78f-a10c-4bc5-923b-ccac4e14bcaf
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: fde647f4-53d1-47f8-b8a8-e8b347a9206a
+          parentNodeGUID: 69b5d113-2361-43d3-9df6-68b7e4c90c91
+          targetNodeGUID:
+          - 2a501501-bb85-46ce-a022-3323db50a30a
+          targetPortGUID:
+          - dd4adcfe-3e95-4d0f-92ce-ca6abf2f0c39
+          text: Out
+          isEditable: 0
+        classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        dialogueStrips:
+        - character: 0
+          sentence: "\xBFQ-qu\xE9 est\xE1 pasando?"
+          response: Response 0
+        - character: 0
+          sentence: "\xBFQui\xE9nes son ustedes?"
+          response: Response 1
+    0000001C:
+      type: {class: CustomMinigameNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Minigame
+        GUID: 6485c0ba-a382-4ad5-8017-819b4fe73d2a
+        rect:
+          serializedVersion: 2
+          x: -618
+          y: 221
+          width: 220
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: b6d45a6e-25a2-48f6-aa83-ec5118e1e15d
+          parentNodeGUID: 6485c0ba-a382-4ad5-8017-819b4fe73d2a
+          targetNodeGUID:
+          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
+          targetPortGUID:
+          - 931157e9-baee-4385-a32d-e969da75dcbf
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 815a69ee-60a3-48ea-af1d-72c53358ca4d
+          parentNodeGUID: 6485c0ba-a382-4ad5-8017-819b4fe73d2a
+          targetNodeGUID: []
+          targetPortGUID: []
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomMinigameNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        minigame: 0

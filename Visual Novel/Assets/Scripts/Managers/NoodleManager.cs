@@ -9,6 +9,7 @@ public class NoodleManager : MonoBehaviour
 
     public List<Noodle> noodles;
 
+    public static event Action<CustomCharacterActionNode> OnCharacterAction;
     public static event Action<NoodlesNodeMultipleDialogue> OnDialogue;
     public static event Action<CustomDecisionNode> OnDecision;
     public static event Action<CustomMinigameNode> OnMinigame;
@@ -18,6 +19,7 @@ public class NoodleManager : MonoBehaviour
 
     void OnEnable()
     {
+        ActionManager.OnNodeExecutionCompleted += CallNextNode;
         DialogueManager.OnNodeExecutionCompleted += CallNextNode;
         DecisionManager.OnNodeExecutionCompleted += CallNextNode;
         MinigameManager.OnNodeExecutionCompleted += CallNextNode;
@@ -33,6 +35,7 @@ public class NoodleManager : MonoBehaviour
 
     void OnDisable()
     {
+        ActionManager.OnNodeExecutionCompleted -= CallNextNode;
         DialogueManager.OnNodeExecutionCompleted -= CallNextNode;
         DecisionManager.OnNodeExecutionCompleted -= CallNextNode;
         MinigameManager.OnNodeExecutionCompleted -= CallNextNode;
@@ -56,7 +59,9 @@ public class NoodleManager : MonoBehaviour
 
     void ExecuteNextNode(NoodlesNode node)
     {
-        if (node is NoodlesNodeMultipleDialogue dialogueNode)
+        if (node is CustomCharacterActionNode characterNode)
+            OnCharacterAction?.Invoke(characterNode);
+        else if (node is NoodlesNodeMultipleDialogue dialogueNode)
             OnDialogue?.Invoke(dialogueNode);
         else if (node is CustomDecisionNode decisionNode)
             OnDecision?.Invoke(decisionNode);

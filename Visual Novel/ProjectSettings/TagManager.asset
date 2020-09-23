@@ -46,6 +46,9 @@ TagManager:
   - name: Background
     uniqueID: 327090223
     locked: 0
+  - name: Character
+    uniqueID: 3112342849
+    locked: 0
   - name: Minigame Element
     uniqueID: 1870160753
     locked: 0
