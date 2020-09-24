@@ -11,6 +11,11 @@ public class DialogueManager : MonoBehaviour
 
     int currentDialogueStripIndex = 0;
 
+    public float letterDisplayWaitTime;
+    public float pauseWaitTime;
+    public float whisperFontSizeFactor = 0.5f;
+    float fontSize;
+
     IEnumerator typingCoroutine;
 
     public GameObject dialogue;
@@ -27,6 +32,7 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         characterManager = transform.parent.GetComponent<CharacterManager>();
+        fontSize = dialogueText.fontSize;
     }
 
     void OnEnable()
@@ -64,13 +70,20 @@ public class DialogueManager : MonoBehaviour
 
             //DisplayNextSentence();
             if (typing) StopCoroutine(typingCoroutine);
-            typingCoroutine = TypeSentence(node.dialogueStrips[currentDialogueStripIndex].sentence);
+
+            string sentence = node.dialogueStrips[currentDialogueStripIndex].sentence;
+            typingCoroutine = TypeSentence(sentence, CheckForWhisper(sentence));
             StartCoroutine(typingCoroutine);
             typing = true;
+
             currentDialogueStripIndex++;
         }
-        else
-            End();
+        else End();
+    }
+
+    bool CheckForWhisper(string sentence)
+    {
+        return sentence.ToCharArray()[0] == '[';
     }
 
     void End()
@@ -92,14 +105,21 @@ public class DialogueManager : MonoBehaviour
     //    StartCoroutine(TypeSentence(sentenceQueue.Dequeue()));
     //}
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence(string sentence, bool whispering)
     {
+        dialogueText.fontSize = fontSize;
+        if (whispering) dialogueText.fontSize *= whisperFontSizeFactor;
+
         dialogueText.text = "";
 
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return null;
+
+            if (letter == '.' || letter == ',' || letter == '-')
+                yield return new WaitForSeconds(pauseWaitTime);
+
+            yield return new WaitForSeconds(letterDisplayWaitTime);
         }
 
         typing = false;
