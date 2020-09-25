@@ -7,33 +7,32 @@ using UnityEngine.UI;
 public class CookingMinigameManager : MonoBehaviour
 {
     public int cuttingTarget;
-    public int timer;
 
+    public float timer = 60f;
     float currentlyCut = 0f;
 
-    IEnumerator timerCorroutine;
-
-    public Slider progressBar;
-    public TextMeshProUGUI timerText;
 
     public FoodGenerator foodGenerator;
+    public Slider progressBar;
+    public Clock clock;
 
     static public event Action OnGameEnd;
 
     void OnEnable()
     {
         Food.OnFoodCut += IncreaseCurrentlyCut;
+        Clock.OnTimeUp += EndGame;
     }
 
     void OnDisable()
     {
         Food.OnFoodCut -= IncreaseCurrentlyCut;
+        Clock.OnTimeUp -= EndGame;
     }
 
     void Start()
     {
-        timerCorroutine = Timer();
-        StartCoroutine(timerCorroutine);
+        clock.StartTimer(timer);
     }
 
     void IncreaseCurrentlyCut()
@@ -50,22 +49,7 @@ public class CookingMinigameManager : MonoBehaviour
         Debug.Log(endText);
 
         foodGenerator.generationActive = false;
-        StopCoroutine(timerCorroutine);
 
         OnGameEnd?.Invoke();
-    }
-
-    IEnumerator Timer()
-    {
-        while (timer > 0)
-        {
-            timerText.text = timer.ToString();
-            timer--;
-
-            yield return new WaitForSeconds(1f);
-        }
-
-        timerText.text = timer.ToString();
-        EndGame(false);
     }
 }

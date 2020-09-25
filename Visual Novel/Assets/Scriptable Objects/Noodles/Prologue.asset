@@ -70,9 +70,9 @@ MonoBehaviour:
         - GUID: 9774d646-fcde-41f7-8916-bc4b295c8e80
           parentNodeGUID: 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
           targetNodeGUID:
-          - 69b5d113-2361-43d3-9df6-68b7e4c90c91
+          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
           targetPortGUID:
-          - 163362ad-5a15-42aa-8ca2-d19305014149
+          - a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
           text: Start
           isEditable: 0
         classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
@@ -1223,8 +1223,8 @@ MonoBehaviour:
         GUID: fbb67aa2-c49e-44e8-b834-eb0daa31d031
         rect:
           serializedVersion: 2
-          x: -625
-          y: 112
+          x: -623
+          y: 16
           width: 230
           height: 96
         width: 600
@@ -1232,15 +1232,19 @@ MonoBehaviour:
         inputPorts:
         - GUID: a68d52a8-b0d5-4af7-83cd-5e9c3f4500ae
           parentNodeGUID: fbb67aa2-c49e-44e8-b834-eb0daa31d031
-          targetNodeGUID: []
-          targetPortGUID: []
+          targetNodeGUID:
+          - 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
+          targetPortGUID:
+          - 9774d646-fcde-41f7-8916-bc4b295c8e80
           text: Input
           isEditable: 0
         outputPorts:
         - GUID: 931157e9-baee-4385-a32d-e969da75dcbf
           parentNodeGUID: fbb67aa2-c49e-44e8-b834-eb0daa31d031
-          targetNodeGUID: []
-          targetPortGUID: []
+          targetNodeGUID:
+          - 69b5d113-2361-43d3-9df6-68b7e4c90c91
+          targetPortGUID:
+          - 163362ad-5a15-42aa-8ca2-d19305014149
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMinigameNodeVisual, Assembly-CSharp,
@@ -1298,9 +1302,9 @@ MonoBehaviour:
         - GUID: 163362ad-5a15-42aa-8ca2-d19305014149
           parentNodeGUID: 69b5d113-2361-43d3-9df6-68b7e4c90c91
           targetNodeGUID:
-          - 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
+          - fbb67aa2-c49e-44e8-b834-eb0daa31d031
           targetPortGUID:
-          - 9774d646-fcde-41f7-8916-bc4b295c8e80
+          - 931157e9-baee-4385-a32d-e969da75dcbf
           text: Input
           isEditable: 0
         outputPorts:

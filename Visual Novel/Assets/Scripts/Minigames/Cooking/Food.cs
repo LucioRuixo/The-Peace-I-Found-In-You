@@ -50,7 +50,7 @@ public class Food : MonoBehaviour
 
     void Cut()
     {
-        spriteRenderer.color = Color.red;
+        spriteRenderer.color = Color.black;
         cut = true;
 
         OnFoodCut?.Invoke();
