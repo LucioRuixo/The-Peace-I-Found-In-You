@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0cbd2643b65e0f4480e4201a5f9b5f1, type: 3}
-  m_Name: Prologue
+  m_Name: Act 1
   m_EditorClassIdentifier: 
   nodes:
   - id: 0
@@ -1224,7 +1224,7 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: -623
-          y: 16
+          y: 0
           width: 230
           height: 96
         width: 600
