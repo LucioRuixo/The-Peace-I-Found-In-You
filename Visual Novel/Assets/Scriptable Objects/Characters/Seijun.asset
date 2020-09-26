@@ -14,4 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 2
   characterName: Seijun
-  sprite: {fileID: 21300000, guid: fd0919e235f435f479ba49189d3661df, type: 3}
+  bodySprites:
+  - {fileID: 21300000, guid: eecff7bfdc3c93c48b18bb550d76bde5, type: 3}
+  - {fileID: 21300000, guid: 3bd4db641e9a1f34fa274a60e9587f87, type: 3}
+  headSprites:
+  - {fileID: 21300000, guid: 8bf2f01dfdf214f41b0247bf50911e00, type: 3}
+  - {fileID: 21300000, guid: 458c040f727305145bd71790ca6e377e, type: 3}
+  - {fileID: 21300000, guid: 1d3d8ae698b4ed7429bef99c0c78ae34, type: 3}
+  - {fileID: 21300000, guid: b0ace9b49a5a28543ab548363a011d45, type: 3}
+  - {fileID: 21300000, guid: 2363e730246d12249a91543563fbf53a, type: 3}
+  - {fileID: 21300000, guid: 0db96fabb975bc34cb0eb4e8b57150cb, type: 3}
+  armSprites:
+  - {fileID: 21300000, guid: 3cc25745681d9224d9f0edaca1de427f, type: 3}
+  - {fileID: 21300000, guid: 1cc81eea2d2f668478745a6b09b31b46, type: 3}

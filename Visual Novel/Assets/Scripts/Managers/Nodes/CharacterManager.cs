@@ -8,8 +8,11 @@ public class CharacterManager : MonoBehaviour
         Protagonist,
         Hoshi,
         Seijun,
-        Shadow,
-        Tadao
+        Shadow1,
+        Shadow2,
+        Shadow3,
+        Tadao,
+        Sachi
     }
 
     public List<CharacterSO> characters;

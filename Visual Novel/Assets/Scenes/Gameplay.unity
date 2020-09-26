@@ -3543,10 +3543,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 11400000, guid: 15eb3008dd2d34649a6afdd4339c7652, type: 2}
-  - {fileID: 11400000, guid: c4bf674070dec4149a491a5e593ec7c8, type: 2}
   - {fileID: 11400000, guid: a0efbfb1559bbbf44826706033e33d45, type: 2}
   - {fileID: 11400000, guid: 0f20109a5016c2d4383ac2b9df1fef5a, type: 2}
   - {fileID: 11400000, guid: 9f385469ed4200f41a32feef25a8c233, type: 2}
+  - {fileID: 11400000, guid: 820a2af36f7579241bfbc9e9b9cb4f27, type: 2}
+  - {fileID: 11400000, guid: 24ca70d8a5ebbd14ab99eaa15b6f6956, type: 2}
+  - {fileID: 11400000, guid: c4bf674070dec4149a491a5e593ec7c8, type: 2}
+  - {fileID: 11400000, guid: faf935d56a95c9748bf986874e03b581, type: 2}
 --- !u!1 &1680951447
 GameObject:
   m_ObjectHideFlags: 0

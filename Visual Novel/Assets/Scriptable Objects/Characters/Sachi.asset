@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc43126eb542cc04f8d7fcd7113487a4, type: 3}
-  m_Name: Tadao
+  m_Name: Sachi
   m_EditorClassIdentifier: 
-  character: 6
-  characterName: Tadao
+  character: 7
+  characterName: Sachi
   bodySprites:
-  - {fileID: 21300000, guid: b71988aba10674b40a17ea16b90b26ed, type: 3}
+  - {fileID: 21300000, guid: e1055e40082d78f42ab9c7e267b9f2ff, type: 3}
   headSprites:
-  - {fileID: 21300000, guid: 67f21767d15946c4f9215d80d55c3d49, type: 3}
-  - {fileID: 21300000, guid: 91b7be8dcf8bfd9438f696346b96b347, type: 3}
-  - {fileID: 21300000, guid: 5dbc0ae73699b714e8d9fe7fefea83a4, type: 3}
-  - {fileID: 21300000, guid: c2e92463b758dbb4d9094b0e791a12de, type: 3}
+  - {fileID: 21300000, guid: ee17611ff672e47408a6f1f96a4d8340, type: 3}
+  - {fileID: 21300000, guid: ffc94f8ab5b9546429d0cf13691e88f5, type: 3}
+  - {fileID: 21300000, guid: b4f6d10cf1e688446b4fdde42d240ff8, type: 3}
+  - {fileID: 21300000, guid: 966861915afd81849a09611962e3b3dd, type: 3}
   armSprites: []

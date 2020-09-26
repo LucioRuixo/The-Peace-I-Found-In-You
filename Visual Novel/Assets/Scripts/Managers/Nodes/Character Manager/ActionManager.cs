@@ -4,6 +4,7 @@ using UnityEngine;
 using nullbloq.Noodles;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEditor.Experimental.GraphView;
 
 /*
 DUDAS:
@@ -19,7 +20,17 @@ public class ActionManager : MonoBehaviour
     public enum Action
     {
         EnterScene,
-        ExitScene
+        ExitScene,
+        ChangeBody,
+        ChangeHead,
+        ChangeArm
+    }
+
+    enum BodyPart
+    {
+        Body,
+        Arm,
+        Head
     }
 
     int pendingCorroutines;
@@ -54,14 +65,32 @@ public class ActionManager : MonoBehaviour
 
     void Begin(CustomCharacterActionNode node)
     {
-        if (node.action == Action.EnterScene) EnterCharacter(node.character);
-        else ExitCharacter(node.character);
+        switch (node.action)
+        {
+            case Action.EnterScene:
+                EnterCharacter(node);
+                break;
+            case Action.ExitScene:
+                ExitCharacter(node.character);
+                break;
+            case Action.ChangeBody:
+                ChangeBodyPart(BodyPart.Body, node);
+                break;
+            case Action.ChangeArm:
+                ChangeBodyPart(BodyPart.Arm, node);
+                break;
+            case Action.ChangeHead:
+                ChangeBodyPart(BodyPart.Head, node);
+                break;
+            default:
+                break;
+        }
     }
 
-    void EnterCharacter(CharacterManager.Character character)
+    void EnterCharacter(CustomCharacterActionNode node)
     {
-        GameObject newCharacter = GenerateNewCharacter(character);
-        charactersInScene.Add(new KeyValuePair<CharacterManager.Character, GameObject>(character, newCharacter));
+        GameObject newCharacter = GenerateNewCharacter(node);
+        charactersInScene.Add(new KeyValuePair<CharacterManager.Character, GameObject>(node.character, newCharacter));
 
         float spacing = Screen.width / (charactersInScene.Count + 1);
         for (int i = 0; i < charactersInScene.Count; i++)
@@ -72,15 +101,42 @@ public class ActionManager : MonoBehaviour
         }
     }
 
-    GameObject GenerateNewCharacter(CharacterManager.Character character)
+    GameObject GenerateNewCharacter(CustomCharacterActionNode node)
     {
         CharacterSO newCharacter;
-        characterManager.characterDictionary.TryGetValue(character, out newCharacter);
+        characterManager.characterDictionary.TryGetValue(node.character, out newCharacter);
 
         Vector2 position = new Vector2(initialX, 0f);
         GameObject go = Instantiate(characterPrefab, position, Quaternion.identity, characterContainer);
         go.name = newCharacter.characterName;
-        go.GetComponent<Image>().sprite = newCharacter.sprite;
+
+        Image image = go.GetComponent<Image>();
+        image.sprite = newCharacter.bodySprites[node.bodyIndex];
+        image.SetNativeSize();
+        position = new Vector2(image.rectTransform.anchoredPosition.x, 0f);
+        image.rectTransform.anchoredPosition = position;
+
+        if (newCharacter.armSprites.Count > 0)
+        {
+            image = go.transform.GetChild(0).GetComponent<Image>();
+            image.sprite = newCharacter.armSprites[node.armIndex];
+            //image.SetNativeSize();
+            //position = new Vector2(image.rectTransform.anchoredPosition.x, 0f);
+            //image.rectTransform.anchoredPosition = position;
+        }
+        else
+            go.transform.GetChild(0).gameObject.SetActive(false);
+
+        if (newCharacter.headSprites.Count > 0)
+        {
+            image = go.transform.GetChild(1).GetComponent<Image>();
+            image.sprite = newCharacter.headSprites[node.headIndex];
+            //image.SetNativeSize();
+            //position = new Vector2(image.rectTransform.anchoredPosition.x, 0f);
+            //image.rectTransform.anchoredPosition = position;
+        }
+        else
+            go.transform.GetChild(1).gameObject.SetActive(false);
 
         return go;
     }
@@ -117,6 +173,73 @@ public class ActionManager : MonoBehaviour
     {
         pendingCorroutines--;
         if (pendingCorroutines == 0) End();
+    }
+
+    void ChangeBodyPart(BodyPart bodyPart, CustomCharacterActionNode node)
+    {
+        bool characterFound = false;
+        foreach (KeyValuePair<CharacterManager.Character, GameObject> characterInScene in charactersInScene)
+        {
+            if (characterInScene.Key == node.character)
+            {
+                CharacterSO character;
+                characterManager.characterDictionary.TryGetValue(node.character, out character);
+
+                Image image = null;
+                bool imageChanged = false;
+
+                switch (bodyPart)
+                {
+                    case BodyPart.Body:
+                        if (node.bodyIndex >= 0 && node.bodyIndex < character.bodySprites.Count)
+                        {
+                            image = characterInScene.Value.GetComponent<Image>();
+                            image.sprite = character.bodySprites[node.bodyIndex];
+
+                            imageChanged = true;
+                        }
+                        break;
+                    case BodyPart.Arm:
+                        if (node.armIndex >= 0 && node.armIndex < character.armSprites.Count
+                            &&
+                            character.armSprites.Count > 0)
+                        {
+                            image = characterInScene.Value.transform.GetChild(0).GetComponent<Image>();
+                            image.sprite = character.armSprites[node.armIndex];
+
+                            imageChanged = true;
+                        }
+                        else Debug.LogError("Sprite index out of range");
+                        break;
+                    case BodyPart.Head:
+                        if (node.headIndex >= 0 && node.headIndex < character.headSprites.Count
+                            &&
+                            character.headSprites.Count > 0)
+                        {
+                            image = characterInScene.Value.transform.GetChild(1).GetComponent<Image>();
+                            image.sprite = character.headSprites[node.headIndex];
+
+                            imageChanged = true;
+                        }
+                        else Debug.LogError("Sprite index out of range");
+                        break;
+                    default:
+                        break;
+                }
+
+                if (image && imageChanged)
+                {
+                    image.SetNativeSize();
+
+                    Vector2 position = new Vector2(image.rectTransform.anchoredPosition.x, 0f);
+                    image.rectTransform.anchoredPosition = position;
+                }
+
+                characterFound = true;
+                break;
+            }
+        }
+        if (!characterFound) Debug.LogError("Character not found");
     }
 
     void End()
