@@ -6,12 +6,40 @@ using System.Collections.Generic;
 [Serializable]
 public class BackgroundManager : MonoBehaviour
 {
-    public enum Background
+    public enum BackgroundType
     {
+        Location,
+        Ilustration
+    }
+
+    public enum Location
+    {
+        Empty,
         Forest,
         Village,
         Battlefield,
-        ProtagonistHome
+        ProtagonistHome,
+        Sanctuary,
+        SeijunHome,
+        BlackBackground
+    }
+
+    public enum Ilustration
+    {
+        Empty,
+        HoshiG_A11,
+        HoshiG_A12,
+        HoshiG_A131,
+        HoshiG_A132,
+        HoshiB_A11,
+        HoshiB_A12,
+        HoshiB_A13,
+        SeijunG_A11,
+        SeijunG_A12,
+        SeijunG_A13,
+        SeijunB_A11,
+        SeijunB_A12,
+        SeijunB_A13
     }
 
     float cameraHeight;
@@ -22,8 +50,10 @@ public class BackgroundManager : MonoBehaviour
     public GameObject bgContainer;
     SpriteRenderer bgSpriteRenderer;
 
-    public List<BackgroundSO> backgroundPool;
-    Dictionary<Background, BackgroundSO> backgrounds = new Dictionary<Background, BackgroundSO>();
+    public List<BackgroundSO> locations;
+    public List<BackgroundSO> ilustrations;
+    Dictionary<Location, BackgroundSO> locationDictionary = new Dictionary<Location, BackgroundSO>();
+    Dictionary<Ilustration, BackgroundSO> ilustrationDictionary = new Dictionary<Ilustration, BackgroundSO>();
 
     public static event Action<int> OnNodeExecutionCompleted;
 
@@ -33,9 +63,14 @@ public class BackgroundManager : MonoBehaviour
         cameraSize = new Vector2(Camera.main.aspect * cameraHeight, cameraHeight);
         bgSpriteRenderer = bgContainer.GetComponent<SpriteRenderer>();
 
-        foreach (BackgroundSO background in backgroundPool)
+        foreach (BackgroundSO location in locations)
         {
-            backgrounds.Add(background.background, background);
+            locationDictionary.Add(location.location, location);
+        }
+
+        foreach (BackgroundSO ilustration in ilustrations)
+        {
+            ilustrationDictionary.Add(ilustration.ilustration, ilustration);
         }
     }
 
@@ -65,9 +100,18 @@ public class BackgroundManager : MonoBehaviour
 
     void ChangeBackground(CustomBackgroundChangeNode node)
     {
-        Background key = node.background;
-        if (backgrounds.TryGetValue(key, out BackgroundSO newBG))
-            SetBackground(newBG.sprite);
+        if (node.backgroundType == BackgroundType.Location)
+        {
+            Location key = node.location;
+            if (locationDictionary.TryGetValue(key, out BackgroundSO newBG))
+                SetBackground(newBG.sprite);
+        }
+        else
+        {
+            Ilustration key = node.ilustration;
+            if (ilustrationDictionary.TryGetValue(key, out BackgroundSO newBG))
+                SetBackground(newBG.sprite);
+        }
 
         OnNodeExecutionCompleted(0);
     }

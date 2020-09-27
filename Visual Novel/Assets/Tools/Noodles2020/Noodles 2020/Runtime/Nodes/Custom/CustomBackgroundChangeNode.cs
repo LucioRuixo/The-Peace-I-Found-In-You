@@ -8,7 +8,9 @@ namespace nullbloq.Noodles
 {
 	public class CustomBackgroundChangeNode : NoodlesNode
 	{
-		public BackgroundManager.Background background;
+		public BackgroundManager.BackgroundType backgroundType;
+		public BackgroundManager.Location location;
+		public BackgroundManager.Ilustration ilustration;
 
 		protected override void PreInit()
 		{
@@ -41,8 +43,16 @@ namespace nullbloq.Noodles
 
 			title = backgroundChangeNode.title;
 		
-			var combo = new EnumField("Background", backgroundChangeNode.background);
-			combo.RegisterValueChangedCallback(evt => { backgroundChangeNode.background = (BackgroundManager.Background)evt.newValue; });
+			var combo = new EnumField("Background Type", backgroundChangeNode.backgroundType);
+			combo.RegisterValueChangedCallback(evt => { backgroundChangeNode.backgroundType = (BackgroundManager.BackgroundType)evt.newValue; });
+			mainContainer.Add(combo);
+
+			combo = new EnumField("Location", backgroundChangeNode.location);
+			combo.RegisterValueChangedCallback(evt => { backgroundChangeNode.location = (BackgroundManager.Location)evt.newValue; });
+			mainContainer.Add(combo);
+
+			combo = new EnumField("Ilustration", backgroundChangeNode.ilustration);
+			combo.RegisterValueChangedCallback(evt => { backgroundChangeNode.ilustration = (BackgroundManager.Ilustration)evt.newValue; });
 			mainContainer.Add(combo);
 		}
 	}

@@ -2,16 +2,18 @@
 using System.Collections;
 using UnityEngine;
 using nullbloq.Noodles;
+using UnityEngine.UI;
 
 public class AnimationManager : MonoBehaviour
 {
     public enum Animation
     {
-        FadeIn,
-        FadeInWithBlink,
         FadeToBlack,
-        FadeToBlackWithBlink,
+        FadeFromBlack,
         FadeToWhite,
+        FadeFromWhite,
+        BlinkOpen,
+        BlinkClosed,
         EnterFromLeft,
         LeaveOnRight,
         TopToBottom,
@@ -22,8 +24,8 @@ public class AnimationManager : MonoBehaviour
         ScreenShake
     }
 
-    public SpriteRenderer blackSR;
-    public SpriteRenderer whiteSR;
+    public Image blackCover;
+    public Image whiteCover;
     public Animator fadeInBlinkTop, fadeInBlinkBottom;
 
     public static event Action<int> OnNodeExecutionCompleted;
@@ -44,18 +46,22 @@ public class AnimationManager : MonoBehaviour
     {
         switch (node.animation)
         {
-            case Animation.FadeIn:
-                StartFadeIn();
-                break;
-            case Animation.FadeInWithBlink:
-                StartFadeInWithBlink();
-                break;
             case Animation.FadeToBlack:
-                StartFadeToBlack();
+                StartCoroutine(IncreaseAlpha(blackCover));
                 break;
-            case Animation.FadeToBlackWithBlink:
+            case Animation.FadeFromBlack:
+                StartCoroutine(DecreaseAlpha(blackCover));
                 break;
             case Animation.FadeToWhite:
+                StartCoroutine(IncreaseAlpha(whiteCover));
+                break;
+            case Animation.FadeFromWhite:
+                StartCoroutine(DecreaseAlpha(whiteCover));
+                break;
+            case Animation.BlinkOpen:
+                StartBlinkOpen();
+                break;
+            case Animation.BlinkClosed:
                 break;
             case Animation.EnterFromLeft:
                 break;
@@ -79,20 +85,10 @@ public class AnimationManager : MonoBehaviour
         }
     }
 
-    void StartFadeIn()
-    {
-        StartCoroutine(FadeIn());
-    }
-
-    void StartFadeInWithBlink()
+    void StartBlinkOpen()
     {
         fadeInBlinkTop.SetTrigger("Blink Open");
         fadeInBlinkBottom.SetTrigger("Blink Open");
-    }
-
-    void StartFadeToBlack()
-    {
-        StartCoroutine(FadeToBlack());
     }
 
     void End()
@@ -100,27 +96,7 @@ public class AnimationManager : MonoBehaviour
         OnNodeExecutionCompleted(0);
     }
 
-    IEnumerator FadeIn()
-    {
-        float fadeDuration = 1f;
-        float currentAlphaValue = 1f;
-
-        while (currentAlphaValue > 0f)
-        {
-            float subtractedValue = 1f / (fadeDuration / Time.deltaTime);
-            currentAlphaValue -= subtractedValue;
-
-            Color newColor = blackSR.color;
-            newColor.a = currentAlphaValue;
-            blackSR.color = newColor;
-
-            yield return null;
-        }
-
-        End();
-    }
-
-    IEnumerator FadeToBlack()
+    IEnumerator IncreaseAlpha(Image image)
     {
         float fadeDuration = 1f;
         float currentAlphaValue = 0f;
@@ -130,9 +106,29 @@ public class AnimationManager : MonoBehaviour
             float addedValue = 1f / (fadeDuration / Time.deltaTime);
             currentAlphaValue += addedValue;
 
-            Color newColor = blackSR.color;
+            Color newColor = image.color;
             newColor.a = currentAlphaValue;
-            blackSR.color = newColor;
+            image.color = newColor;
+
+            yield return null;
+        }
+
+        End();
+    }
+
+    IEnumerator DecreaseAlpha(Image image)
+    {
+        float fadeDuration = 1f;
+        float currentAlphaValue = 1f;
+
+        while (currentAlphaValue > 0f)
+        {
+            float subtractedValue = 1f / (fadeDuration / Time.deltaTime);
+            currentAlphaValue -= subtractedValue;
+
+            Color newColor = image.color;
+            newColor.a = currentAlphaValue;
+            image.color = newColor;
 
             yield return null;
         }

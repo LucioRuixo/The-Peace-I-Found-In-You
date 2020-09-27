@@ -21,6 +21,8 @@ public class ActionManager : MonoBehaviour
     {
         EnterScene,
         ExitScene,
+        PopIntoScene,
+        PopOffScene,
         ChangeBody,
         ChangeHead,
         ChangeArm
@@ -71,7 +73,13 @@ public class ActionManager : MonoBehaviour
                 EnterCharacter(node);
                 break;
             case Action.ExitScene:
-                ExitCharacter(node.character);
+                ExitCharacter(node);
+                break;
+            case Action.PopIntoScene:
+                EnterCharacter(node);
+                break;
+            case Action.PopOffScene:
+                ExitCharacter(node);
                 break;
             case Action.ChangeBody:
                 ChangeBodyPart(BodyPart.Body, node);
@@ -96,9 +104,21 @@ public class ActionManager : MonoBehaviour
         for (int i = 0; i < charactersInScene.Count; i++)
         {
             float targetX = Screen.width - spacing * (i + 1);
-            StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false));
-            pendingCorroutines++;
+
+            if (node.action == Action.EnterScene)
+            {
+                StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false));
+                pendingCorroutines++;
+            }
+            else
+            {
+                Vector2 position = charactersInScene[i].Value.transform.position;
+                position.x = targetX;
+                charactersInScene[i].Value.transform.position = position;
+            }
         }
+
+        if (node.action == Action.PopIntoScene) End();
     }
 
     GameObject GenerateNewCharacter(CustomCharacterActionNode node)
@@ -120,9 +140,6 @@ public class ActionManager : MonoBehaviour
         {
             image = go.transform.GetChild(0).GetComponent<Image>();
             image.sprite = newCharacter.armSprites[node.armIndex];
-            //image.SetNativeSize();
-            //position = new Vector2(image.rectTransform.anchoredPosition.x, 0f);
-            //image.rectTransform.anchoredPosition = position;
         }
         else
             go.transform.GetChild(0).gameObject.SetActive(false);
@@ -131,9 +148,6 @@ public class ActionManager : MonoBehaviour
         {
             image = go.transform.GetChild(1).GetComponent<Image>();
             image.sprite = newCharacter.headSprites[node.headIndex];
-            //image.SetNativeSize();
-            //position = new Vector2(image.rectTransform.anchoredPosition.x, 0f);
-            //image.rectTransform.anchoredPosition = position;
         }
         else
             go.transform.GetChild(1).gameObject.SetActive(false);
@@ -141,16 +155,26 @@ public class ActionManager : MonoBehaviour
         return go;
     }
     
-    void ExitCharacter(CharacterManager.Character character)
+    void ExitCharacter(CustomCharacterActionNode node)
     {
         bool characterFound = false;
         foreach (KeyValuePair<CharacterManager.Character, GameObject> characterInScene in charactersInScene)
         {
-            if (characterInScene.Key == character)
+            if (characterInScene.Key == node.character)
             {
                 float targetX = Screen.width - initialX;
-                StartCoroutine(MoveCharacter(characterInScene.Value.transform, targetX, true));
-                pendingCorroutines++;
+
+                if (node.action == Action.ExitScene)
+                {
+                    StartCoroutine(MoveCharacter(characterInScene.Value.transform, targetX, true));
+                    pendingCorroutines++;
+                }
+                else
+                {
+                    Vector2 position = characterInScene.Value.transform.position;
+                    position.x = targetX;
+                    characterInScene.Value.transform.position = position;
+                }
 
                 charactersInScene.Remove(characterInScene);
 
@@ -164,9 +188,21 @@ public class ActionManager : MonoBehaviour
         for (int i = 0; i < charactersInScene.Count; i++)
         {
             float targetX = Screen.width - spacing * (i + 1);
-            StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false));
-            pendingCorroutines++;
+
+            if (node.action == Action.ExitScene)
+            {
+                StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false));
+                pendingCorroutines++;
+            }
+            else
+            {
+                Vector2 position = charactersInScene[i].Value.transform.position;
+                position.x = targetX;
+                charactersInScene[i].Value.transform.position = position;
+            }
         }
+
+        if (node.action == Action.PopOffScene) End();
     }
 
     void FinishCorroutine()
