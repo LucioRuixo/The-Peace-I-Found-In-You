@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc43126eb542cc04f8d7fcd7113487a4, type: 3}
+  m_Name: Shadow 3
+  m_EditorClassIdentifier: 
+  character: 5
+  characterName: Sombras
+  dialogueBoxSprite: {fileID: 21300000, guid: cc4c3a5c40407584cba68ab0fc7b518f, type: 3}
+  bodySprites:
+  - {fileID: 21300000, guid: 4bd6f2b49b07b0d43a71abfc6f9e0fb0, type: 3}
+  headSprites: []
+  armSprites: []
