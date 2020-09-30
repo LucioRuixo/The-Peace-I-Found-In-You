@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +14,7 @@ public class CookingMinigameManager : MonoBehaviour
     public Slider progressBar;
     public Clock clock;
 
-    static public event Action OnGameEnd;
+    static public event Action<bool> OnGameEnd;
 
     void OnEnable()
     {
@@ -43,13 +41,11 @@ public class CookingMinigameManager : MonoBehaviour
         if (currentlyCut >= cuttingTarget) EndGame(true);
     }
 
-    void EndGame(bool playerWon)
+    void EndGame(bool win)
     {
-        string endText = playerWon ? "ganastes" : "perdistes";
-        Debug.Log(endText);
-
         foodGenerator.generationActive = false;
+        clock.timerActive = false;
 
-        OnGameEnd?.Invoke();
+        OnGameEnd?.Invoke(win);
     }
 }

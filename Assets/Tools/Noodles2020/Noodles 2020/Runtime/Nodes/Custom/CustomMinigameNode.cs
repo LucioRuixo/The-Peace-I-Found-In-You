@@ -27,7 +27,10 @@ namespace nullbloq.Noodles
 			base.PostInit();
 			NoodlesPort inputPort = new NoodlesPort(Guid.NewGuid().ToString(), GUID, "Input");
 			inputPorts.Add(inputPort);
-			NoodlesPort outputPort = new NoodlesPort(Guid.NewGuid().ToString(), GUID, "Output");
+
+			NoodlesPort outputPort = new NoodlesPort(Guid.NewGuid().ToString(), GUID, "Win");
+			outputPorts.Add(outputPort);
+			outputPort = new NoodlesPort(Guid.NewGuid().ToString(), GUID, "Lose");
 			outputPorts.Add(outputPort);
 		}
 	}

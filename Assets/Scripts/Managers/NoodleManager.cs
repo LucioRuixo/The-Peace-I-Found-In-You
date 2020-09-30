@@ -15,7 +15,7 @@ public class NoodleManager : MonoBehaviour
     public static event Action<CustomMinigameNode> OnMinigame;
     public static event Action<CustomBackgroundChangeNode> OnBackgroundChange;
     public static event Action<CustomAnimationNode> OnAnimation;
-    public static event Action<CustomIlustrationNode> OnIlutration;
+    public static event Action<CustomDecisionCheckNode> OnDecisionCheck;
     public static event Action OnGameFinished;
 
     void OnEnable()
@@ -26,7 +26,7 @@ public class NoodleManager : MonoBehaviour
         MinigameManager.OnNodeExecutionCompleted += CallNextNode;
         BackgroundManager.OnNodeExecutionCompleted += CallNextNode;
         AnimationManager.OnNodeExecutionCompleted += CallNextNode;
-        IlustrationManager.OnNodeExecutionCompleted += CallNextNode;
+        DecisionCheckManager.OnNodeExecutionCompleted += CallNextNode;
     }
 
     void Start()
@@ -42,7 +42,7 @@ public class NoodleManager : MonoBehaviour
         MinigameManager.OnNodeExecutionCompleted -= CallNextNode;
         BackgroundManager.OnNodeExecutionCompleted -= CallNextNode;
         AnimationManager.OnNodeExecutionCompleted -= CallNextNode;
-        IlustrationManager.OnNodeExecutionCompleted -= CallNextNode;
+        DecisionCheckManager.OnNodeExecutionCompleted -= CallNextNode;
     }
 
     void CallNextNode(int portIndex)
@@ -72,8 +72,8 @@ public class NoodleManager : MonoBehaviour
             OnBackgroundChange?.Invoke(backgroundChangeNode);
         else if (node is CustomAnimationNode animationNode)
             OnAnimation?.Invoke(animationNode);
-        else if (node is CustomIlustrationNode ilustrationNode)
-            OnIlutration?.Invoke(ilustrationNode);
+        else if (node is CustomDecisionCheckNode decisionCheckNode)
+            OnDecisionCheck?.Invoke(decisionCheckNode);
         else if (node is NoodlesNodeBorder borderNode)
             if (!borderNode.isStartNode) OnGameFinished?.Invoke();
     }

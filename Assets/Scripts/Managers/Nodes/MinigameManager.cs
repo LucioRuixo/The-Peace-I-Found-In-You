@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using nullbloq.Noodles;
+using TMPro;
 
 public class MinigameManager : MonoBehaviour
 {
@@ -11,9 +12,12 @@ public class MinigameManager : MonoBehaviour
         Fight
     }
 
+    bool minigameWon;
+
     public GameObject cooking;
     public GameObject cookingUI,puzzleUI;
-    public GameObject continueButton;
+    public GameObject gameEndMenu;
+    public TextMeshProUGUI gameEndText;
 
     public static event Action<int> OnNodeExecutionCompleted;
 
@@ -21,16 +25,16 @@ public class MinigameManager : MonoBehaviour
     {
         NoodleManager.OnMinigame += Begin;
 
-        CookingMinigameManager.OnGameEnd += EnableContinueButton;
-        PuzzleController.OnGameEnd += EnableContinueButton;
+        CookingMinigameManager.OnGameEnd += EnableGameEndMenu;
+        PuzzleController.OnGameEnd += EnableGameEndMenu;
     }
 
     void OnDisable()
     {
         NoodleManager.OnMinigame -= Begin;
 
-        CookingMinigameManager.OnGameEnd -= EnableContinueButton;
-        PuzzleController.OnGameEnd -= EnableContinueButton;
+        CookingMinigameManager.OnGameEnd -= EnableGameEndMenu;
+        PuzzleController.OnGameEnd -= EnableGameEndMenu;
     }
 
     void Begin(CustomMinigameNode node)
@@ -49,26 +53,24 @@ public class MinigameManager : MonoBehaviour
             default:
                 break;
         }
-
     }
 
-    void EnableContinueButton()
+    void EnableGameEndMenu(bool win)
     {
-        continueButton.SetActive(true);
+        minigameWon = win;
+
+        gameEndText.text = win ? "You won!" : "You lost!";
+        gameEndMenu.SetActive(true);
     }
 
-    void End()
+    public void End()
     {
         cooking.SetActive(false);
         cookingUI.SetActive(false);
         puzzleUI.SetActive(false);
+        gameEndMenu.SetActive(false);
 
-        OnNodeExecutionCompleted(0);
-    }
-
-    public void Continue()
-    {
-        continueButton.SetActive(false);
-        End();
+        int index = minigameWon ? 0 : 1;
+        OnNodeExecutionCompleted(index);
     }
 }

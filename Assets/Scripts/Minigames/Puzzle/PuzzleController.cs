@@ -38,7 +38,7 @@ public class PuzzleController : MonoBehaviour
     public RectTransform holdSpaceRect;
     public RectTransform holdSpaceContent;
 
-    public static event Action OnGameEnd;
+    public static event Action<bool> OnGameEnd;
 
     void Awake()
     {
@@ -180,7 +180,7 @@ public class PuzzleController : MonoBehaviour
                             piece.FixedToBoard = true;
                             fixedPieces++;
                             if (fixedPieces == model.TotalPieces)
-                                OnGameEnd?.Invoke();
+                                OnGameEnd?.Invoke(true);
 
                             StartCoroutine(piece.Highlight());
                         }

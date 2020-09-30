@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
-    bool timerActive = false;
+    public bool timerActive = false;
 
     float time;
 
