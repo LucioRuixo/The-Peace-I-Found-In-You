@@ -16,12 +16,24 @@ public class SelectableButton : Button
         text = transform.GetChild(0);
     }
 
+    void DisplayIcon()
+    {
+        selectionIcon.SetParent(text);
+        Vector2 position = new Vector2(selectedIconSpacing, 0f);
+        selectionIcon.anchoredPosition = position;
+    }
+
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        base.OnPointerEnter(eventData);
+
+        DisplayIcon();
+    }
+
     public override void OnSelect(BaseEventData eventData)
     {
         base.OnSelect(eventData);
 
-        selectionIcon.SetParent(text);
-        Vector2 position = new Vector2(selectedIconSpacing, 0f);
-        selectionIcon.anchoredPosition = position;
+        DisplayIcon();
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 2
   characterName: Seijun
-  dialogueBoxSprite: {fileID: 21300000, guid: cc4c3a5c40407584cba68ab0fc7b518f, type: 3}
+  dialogueBoxSprite: {fileID: 21300000, guid: 3168d8abab3b13842947d408f46e157f, type: 3}
   bodySprites:
   - {fileID: 21300000, guid: eecff7bfdc3c93c48b18bb550d76bde5, type: 3}
   - {fileID: 21300000, guid: 3bd4db641e9a1f34fa274a60e9587f87, type: 3}

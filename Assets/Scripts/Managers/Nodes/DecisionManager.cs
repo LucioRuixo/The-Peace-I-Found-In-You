@@ -9,7 +9,8 @@ using nullbloq.Noodles;
 public class DecisionManager : MonoBehaviour
 {
     public GameObject buttonPrefab;
-    public GameObject buttonContainer;
+    public GameObject decision;
+    public Transform buttonContainer;
 
     List<GameObject> buttons;
 
@@ -34,14 +35,14 @@ public class DecisionManager : MonoBehaviour
 
     void Begin(CustomDecisionNode node)
     {
-        buttonContainer.SetActive(true);
+        decision.SetActive(true);
 
         int currentPortIndex = 0;
         foreach (NoodlesPort port in node.outputPorts)
         {
             int portIndex = currentPortIndex;
 
-            GameObject newButton = Instantiate(buttonPrefab, buttonContainer.transform);
+            GameObject newButton = Instantiate(buttonPrefab, buttonContainer);
 
             newButton.GetComponentInChildren<TextMeshProUGUI>().text = node.outputPorts[portIndex].text;
             newButton.GetComponent<DecisionButton>().SetPortIndex(portIndex);
@@ -59,7 +60,7 @@ public class DecisionManager : MonoBehaviour
             Destroy(button);
         }
         buttons.Clear();
-        buttonContainer.SetActive(false);
+        decision.SetActive(false);
 
         OnNodeExecutionCompleted?.Invoke(portIndex); // Adaptar en NodeManager para que funcione al conectar el puerto con varios nodos en vez de uno solo
     }
