@@ -15,7 +15,8 @@ public class Food : MonoBehaviour
     Rigidbody2D rigidBody;
     SpriteRenderer spriteRenderer;
 
-    static public event Action OnFoodCut;
+    static public event Action OnCut;
+    static public event Action OnFallenUnCut;
 
     void Awake()
     {
@@ -39,7 +40,10 @@ public class Food : MonoBehaviour
     void Update()
     {
         if (transform.position.y < minY)
-            Destroy(gameObject);
+        {
+            Fall();
+            return;
+        }
 
         if (!cut && colliding && Input.GetButtonDown("Left Click"))
         {
@@ -48,12 +52,19 @@ public class Food : MonoBehaviour
         }
     }
 
+    void Fall()
+    {
+        if (!cut) OnFallenUnCut?.Invoke();
+
+        Destroy(gameObject);
+    }
+
     void Cut()
     {
         spriteRenderer.color = Color.black;
         cut = true;
 
-        OnFoodCut?.Invoke();
+        OnCut?.Invoke();
     }
 
     public void SetFall(float force, Vector2 position, Quaternion rotation)

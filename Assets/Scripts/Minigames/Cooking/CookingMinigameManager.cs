@@ -18,13 +18,15 @@ public class CookingMinigameManager : MonoBehaviour
 
     void OnEnable()
     {
-        Food.OnFoodCut += IncreaseCurrentlyCut;
+        Food.OnCut += IncreaseCurrentlyCut;
+        Food.OnFallenUnCut += DecreaseCurrentlyCut;
         Clock.OnTimeUp += EndGame;
     }
 
     void OnDisable()
     {
-        Food.OnFoodCut -= IncreaseCurrentlyCut;
+        Food.OnCut -= IncreaseCurrentlyCut;
+        Food.OnFallenUnCut -= DecreaseCurrentlyCut;
         Clock.OnTimeUp -= EndGame;
     }
 
@@ -39,6 +41,15 @@ public class CookingMinigameManager : MonoBehaviour
         progressBar.value = currentlyCut / cuttingTarget;
 
         if (currentlyCut >= cuttingTarget) EndGame(true);
+    }
+
+    void DecreaseCurrentlyCut()
+    {
+        if (currentlyCut > 0)
+        {
+            currentlyCut--;
+            progressBar.value = currentlyCut / cuttingTarget;
+        }
     }
 
     void EndGame(bool win)
