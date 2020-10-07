@@ -1,21 +1,21 @@
 ﻿using System;
 #if UNITY_EDITOR
 using UnityEditor.UIElements;
-#endif
 using UnityEngine.UIElements;
+#endif
 
 namespace nullbloq.Noodles
 {
-	public class CustomRouteChoiceNode : NoodlesNode
+	public class CustomMusicChangeNode : NoodlesNode
 	{
-		public RouteManager.Route route;
+		public MusicManager.SongTitle songTitle;
 
 		protected override void PreInit()
 		{
 			base.PreInit();
-			title = "Route Choice";
+			title = "Music Change";
 #if UNITY_EDITOR
-			classNameString = typeof(CustomRouteChoiceNodeVisual).AssemblyQualifiedName;
+			classNameString = typeof(CustomMusicChangeNodeVisual).AssemblyQualifiedName;
 #endif
 			width = 600;
 			height = 500;
@@ -32,17 +32,17 @@ namespace nullbloq.Noodles
 	}
 
 #if UNITY_EDITOR
-	public class CustomRouteChoiceNodeVisual : NoodlesNodeVisual
+	public class CustomMusicChangeNodeVisual : NoodlesNodeVisual
 	{
 		protected override void CreateVisualsBody()
 		{
 			base.CreateVisualsBody();
-			CustomRouteChoiceNode animationNode = nodeData as CustomRouteChoiceNode;
+			CustomMusicChangeNode musicChangeNode = nodeData as CustomMusicChangeNode;
 
-			title = animationNode.title;
+			title = musicChangeNode.title;
 
-			var combo = new EnumField("Route", animationNode.route);
-			combo.RegisterValueChangedCallback(evt => { animationNode.route = (RouteManager.Route)evt.newValue; });
+			var combo = new EnumField("Song Title", musicChangeNode.songTitle);
+			combo.RegisterValueChangedCallback(evt => { musicChangeNode.songTitle = (MusicManager.SongTitle)evt.newValue; });
 			mainContainer.Add(combo);
 		}
 	}

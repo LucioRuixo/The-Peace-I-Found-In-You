@@ -13,6 +13,7 @@ public class NodeManager : MonoBehaviour
     public static event Action<CustomBackgroundChangeNode> OnBackgroundChange;
     public static event Action<CustomAnimationNode> OnAnimation;
     public static event Action<CustomDecisionCheckNode> OnDecisionCheck;
+    public static event Action<CustomMusicChangeNode> OnMusicChange;
     public static event Action<CustomRouteChoiceNode> OnRouteChoice;
     public static event Action OnNoodleFinished;
 
@@ -30,6 +31,7 @@ public class NodeManager : MonoBehaviour
         BackgroundManager.OnNodeExecutionCompleted += CallNextNode;
         AnimationManager.OnNodeExecutionCompleted += CallNextNode;
         DecisionCheckManager.OnNodeExecutionCompleted += CallNextNode;
+        MusicManager.OnNodeExecutionCompleted += CallNextNode;
         RouteManager.OnNodeExecutionCompleted += CallNextNode;
     }
 
@@ -42,6 +44,7 @@ public class NodeManager : MonoBehaviour
         BackgroundManager.OnNodeExecutionCompleted -= CallNextNode;
         AnimationManager.OnNodeExecutionCompleted -= CallNextNode;
         DecisionCheckManager.OnNodeExecutionCompleted -= CallNextNode;
+        MusicManager.OnNodeExecutionCompleted -= CallNextNode;
         RouteManager.OnNodeExecutionCompleted -= CallNextNode;
     }
 
@@ -73,6 +76,8 @@ public class NodeManager : MonoBehaviour
             OnAnimation?.Invoke(animationNode);
         else if (node is CustomDecisionCheckNode decisionCheckNode)
             OnDecisionCheck?.Invoke(decisionCheckNode);
+        else if (node is CustomMusicChangeNode musicChangeNode)
+            OnMusicChange?.Invoke(musicChangeNode);
         else if (node is CustomRouteChoiceNode routeDecisionNode)
             OnRouteChoice?.Invoke(routeDecisionNode);
         else if (node is NoodlesNodeBorder borderNode)
