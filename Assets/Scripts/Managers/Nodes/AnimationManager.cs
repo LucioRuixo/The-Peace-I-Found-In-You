@@ -32,13 +32,13 @@ public class AnimationManager : MonoBehaviour
 
     void OnEnable()
     {
-        NoodleManager.OnAnimation += Begin;
+        NodeManager.OnAnimation += Begin;
         Blink.OnBlinkOpenCompleted += End;
     }
 
     void OnDisable()
     {
-        NoodleManager.OnAnimation -= Begin;
+        NodeManager.OnAnimation -= Begin;
         Blink.OnBlinkOpenCompleted -= End;
     }
 

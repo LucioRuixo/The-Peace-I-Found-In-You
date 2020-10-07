@@ -40,7 +40,7 @@ public class DialogueManager : MonoBehaviour
 
     void OnEnable()
     {
-        NoodleManager.OnDialogue += Begin;
+        NodeManager.OnDialogue += Begin;
     }
 
     void Update()
@@ -62,7 +62,7 @@ public class DialogueManager : MonoBehaviour
 
     void OnDisable()
     {
-        NoodleManager.OnDialogue -= Begin;
+        NodeManager.OnDialogue -= Begin;
     }
 
     void Begin(NoodlesNodeMultipleDialogue _node)

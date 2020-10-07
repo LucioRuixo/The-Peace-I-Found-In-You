@@ -57,12 +57,12 @@ public class ActionManager : MonoBehaviour
 
     void OnEnable()
     {
-        NoodleManager.OnCharacterAction += Begin;
+        NodeManager.OnCharacterAction += Begin;
     }
 
     void OnDisable()
     {
-        NoodleManager.OnCharacterAction -= Begin;
+        NodeManager.OnCharacterAction -= Begin;
     }
 
     void Begin(CustomCharacterActionNode node)

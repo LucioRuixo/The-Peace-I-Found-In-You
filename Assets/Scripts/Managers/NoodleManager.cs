@@ -1,80 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 using nullbloq.Noodles;
 
 public class NoodleManager : MonoBehaviour
 {
-    public Noodler noodler;
+    int currentNoodleIndex = 0;
 
-    public List<Noodle> noodles;
+    RouteManager.Route currentRoute;
 
-    public static event Action<CustomCharacterActionNode> OnCharacterAction;
-    public static event Action<NoodlesNodeMultipleDialogue> OnDialogue;
-    public static event Action<CustomDecisionNode> OnDecision;
-    public static event Action<CustomMinigameNode> OnMinigame;
-    public static event Action<CustomBackgroundChangeNode> OnBackgroundChange;
-    public static event Action<CustomAnimationNode> OnAnimation;
-    public static event Action<CustomDecisionCheckNode> OnDecisionCheck;
-    public static event Action OnGameFinished;
+    [SerializeField] NodeManager nodeManager = null;
+    [SerializeField] Noodler noodler = null;
+
+    [SerializeField] Noodle[] hoshiRoute = null;
+    [SerializeField] Noodle[] seijunRoute = null;
+
+    public static event Action OnNoNoodlesRemaining;
 
     void OnEnable()
     {
-        ActionManager.OnNodeExecutionCompleted += CallNextNode;
-        DialogueManager.OnNodeExecutionCompleted += CallNextNode;
-        DecisionManager.OnNodeExecutionCompleted += CallNextNode;
-        MinigameManager.OnNodeExecutionCompleted += CallNextNode;
-        BackgroundManager.OnNodeExecutionCompleted += CallNextNode;
-        AnimationManager.OnNodeExecutionCompleted += CallNextNode;
-        DecisionCheckManager.OnNodeExecutionCompleted += CallNextNode;
+        RouteManager.OnRouteChosen += SelectRoute;
+        NodeManager.OnNoodleFinished += PlayNextScene;
     }
 
     void Start()
     {
-        ExecuteNextNode(noodler.CurrentNode);
+        nodeManager.ExecuteNextNode(noodler.CurrentNode);
     }
 
     void OnDisable()
     {
-        ActionManager.OnNodeExecutionCompleted -= CallNextNode;
-        DialogueManager.OnNodeExecutionCompleted -= CallNextNode;
-        DecisionManager.OnNodeExecutionCompleted -= CallNextNode;
-        MinigameManager.OnNodeExecutionCompleted -= CallNextNode;
-        BackgroundManager.OnNodeExecutionCompleted -= CallNextNode;
-        AnimationManager.OnNodeExecutionCompleted -= CallNextNode;
-        DecisionCheckManager.OnNodeExecutionCompleted -= CallNextNode;
+        RouteManager.OnRouteChosen -= SelectRoute;
+        NodeManager.OnNoodleFinished -= PlayNextScene;
     }
 
-    void CallNextNode(int portIndex)
+    void SelectRoute(RouteManager.Route selectedRoute)
     {
-        if (noodler.HasNextNode())
-        {
-            NoodlesNode node = noodler.Next(portIndex);
+        currentRoute = selectedRoute;
+    }
 
-            if (node != null) ExecuteNextNode(node);
-            else Debug.LogError("Node not found");
-        }
+    void PlayNextScene()
+    {
+        if (currentRoute == RouteManager.Route.Hoshi)
+            CheckForNextNoodle(hoshiRoute);
         else
-            Debug.Log("No noodles remaining");
+            CheckForNextNoodle(seijunRoute);
     }
 
-    void ExecuteNextNode(NoodlesNode node)
+    void CheckForNextNoodle(Noodle[] noodles)
     {
-        if (node is CustomCharacterActionNode characterNode)
-            OnCharacterAction?.Invoke(characterNode);
-        else if (node is NoodlesNodeMultipleDialogue dialogueNode)
-            OnDialogue?.Invoke(dialogueNode);
-        else if (node is CustomDecisionNode decisionNode)
-            OnDecision?.Invoke(decisionNode);
-        else if (node is CustomMinigameNode minigameNode)
-            OnMinigame?.Invoke(minigameNode);
-        else if (node is CustomBackgroundChangeNode backgroundChangeNode)
-            OnBackgroundChange?.Invoke(backgroundChangeNode);
-        else if (node is CustomAnimationNode animationNode)
-            OnAnimation?.Invoke(animationNode);
-        else if (node is CustomDecisionCheckNode decisionCheckNode)
-            OnDecisionCheck?.Invoke(decisionCheckNode);
-        else if (node is NoodlesNodeBorder borderNode)
-            if (!borderNode.isStartNode) OnGameFinished?.Invoke();
+        if (currentNoodleIndex < noodles.Length)
+        {
+            noodler.controller = noodles[currentNoodleIndex];
+            noodler.ResetNoodle();
+            nodeManager.ExecuteNextNode(noodler.CurrentNode);
+
+            currentNoodleIndex++;
+        }
+        else OnNoNoodlesRemaining?.Invoke();
     }
 }

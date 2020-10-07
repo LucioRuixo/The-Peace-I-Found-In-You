@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     void OnEnable()
     {
-        NoodleManager.OnGameFinished += GoToMainMenu;
+        NoodleManager.OnNoNoodlesRemaining += GoToMainMenu;
     }
 
     void Update()
@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     void OnDisable()
     {
-        NoodleManager.OnGameFinished -= GoToMainMenu;
+        NoodleManager.OnNoNoodlesRemaining -= GoToMainMenu;
     }
 
     void GoToMainMenu()

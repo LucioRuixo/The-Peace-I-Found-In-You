@@ -77,7 +77,7 @@ public class BackgroundManager : MonoBehaviour
 
     void OnEnable()
     {
-        NoodleManager.OnBackgroundChange += ChangeBackground;
+        NodeManager.OnBackgroundChange += ChangeBackground;
     }
 
     void Start()
@@ -87,7 +87,7 @@ public class BackgroundManager : MonoBehaviour
 
     void OnDisable()
     {
-        NoodleManager.OnBackgroundChange -= ChangeBackground;
+        NodeManager.OnBackgroundChange -= ChangeBackground;
     }
 
     void SetBackground(Sprite newBG)

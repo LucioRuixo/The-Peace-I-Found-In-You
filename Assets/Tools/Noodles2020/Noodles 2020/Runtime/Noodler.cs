@@ -38,5 +38,10 @@ namespace nullbloq.Noodles
 			currentNode = controller.GetNode(currentNode.GetNextNodeID(index));
 			return currentNode;
 		}
+
+		public void ResetNoodle()
+        {
+			currentNode = controller.GetStartNode();
+		}
 	}
 }

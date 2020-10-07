@@ -18,7 +18,7 @@ public class DecisionManager : MonoBehaviour
 
     void OnEnable()
     {
-        NoodleManager.OnDecision += Begin;
+        NodeManager.OnDecision += Begin;
         DecisionButton.OnDecisionButtonPressed += End;
     }
 
@@ -29,7 +29,7 @@ public class DecisionManager : MonoBehaviour
 
     void OnDisable()
     {
-        NoodleManager.OnDecision -= Begin;
+        NodeManager.OnDecision -= Begin;
         DecisionButton.OnDecisionButtonPressed -= End;
     }
 

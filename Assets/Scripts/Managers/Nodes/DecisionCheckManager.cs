@@ -9,13 +9,13 @@ public class DecisionCheckManager : MonoBehaviour
 
     void OnEnable()
     {
-        NoodleManager.OnDecisionCheck += CheckLastDecision;
+        NodeManager.OnDecisionCheck += CheckLastDecision;
         DecisionButton.OnDecisionButtonPressed += SetLastDecision;
     }
 
     void OnDisable()
     {
-        NoodleManager.OnDecisionCheck -= CheckLastDecision;
+        NodeManager.OnDecisionCheck -= CheckLastDecision;
         DecisionButton.OnDecisionButtonPressed -= SetLastDecision;
     }
 

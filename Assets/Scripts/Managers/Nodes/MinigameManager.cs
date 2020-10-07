@@ -23,7 +23,7 @@ public class MinigameManager : MonoBehaviour
 
     void OnEnable()
     {
-        NoodleManager.OnMinigame += Begin;
+        NodeManager.OnMinigame += Begin;
 
         CookingMinigameManager.OnGameEnd += EnableGameEndMenu;
         PuzzleController.OnGameEnd += EnableGameEndMenu;
@@ -31,7 +31,7 @@ public class MinigameManager : MonoBehaviour
 
     void OnDisable()
     {
-        NoodleManager.OnMinigame -= Begin;
+        NodeManager.OnMinigame -= Begin;
 
         CookingMinigameManager.OnGameEnd -= EnableGameEndMenu;
         PuzzleController.OnGameEnd -= EnableGameEndMenu;

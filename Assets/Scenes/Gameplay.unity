@@ -460,7 +460,7 @@ Transform:
   m_Children:
   - {fileID: 254615191}
   m_Father: {fileID: 505166548}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &143043582
 MonoBehaviour:
@@ -696,7 +696,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 505166548}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &239322527
 MonoBehaviour:
@@ -1399,10 +1399,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 505166548}
-  - component: {fileID: 505166549}
   - component: {fileID: 505166551}
+  - component: {fileID: 505166549}
   m_Layer: 0
-  m_Name: Noodle Manager
+  m_Name: Node Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1419,14 +1419,15 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1916708732}
   - {fileID: 1662388383}
   - {fileID: 1243667191}
   - {fileID: 143043581}
   - {fileID: 1077869659}
   - {fileID: 239322526}
   - {fileID: 1677762214}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1270931763}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &505166549
 MonoBehaviour:
@@ -1440,7 +1441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdac0ff4b4acada4aa0d8ba28354ce48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 11400000, guid: 2cad1a068260a7647b2db82bbdbbbd23, type: 2}
+  controller: {fileID: 11400000, guid: 13e33f54d8b9ee444a41559b6f207016, type: 2}
   startOnAwake: 0
   playing: 0
 --- !u!114 &505166551
@@ -1452,12 +1453,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 505166547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 357726171f19a2a4a8936deb3933e761, type: 3}
+  m_Script: {fileID: 11500000, guid: f129e4b906837ed4d85061b7c5cfccfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noodler: {fileID: 505166549}
-  noodles:
-  - {fileID: 11400000, guid: 2cad1a068260a7647b2db82bbdbbbd23, type: 2}
 --- !u!1 &517564584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,7 +2358,7 @@ Transform:
   m_Children:
   - {fileID: 1836916889}
   m_Father: {fileID: 505166548}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1123153517
 GameObject:
@@ -2820,7 +2818,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 505166548}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1243667192
 MonoBehaviour:
@@ -2913,6 +2911,61 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1270931762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1270931763}
+  - component: {fileID: 1270931764}
+  m_Layer: 0
+  m_Name: Noodle Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1270931763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270931762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 505166548}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1270931764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270931762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357726171f19a2a4a8936deb3933e761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeManager: {fileID: 505166551}
+  noodler: {fileID: 505166549}
+  hoshiRoute:
+  - {fileID: 11400000, guid: 8686aae361cafea4688b34d35a47527f, type: 2}
+  - {fileID: 11400000, guid: 58578d8c90f4a4f44973c8dcd09c2d46, type: 2}
+  - {fileID: 11400000, guid: 42c684278402c274fa06b89e9534f7cf, type: 2}
+  - {fileID: 11400000, guid: 103743fcae099f4458befbaf31beb237, type: 2}
+  seijunRoute:
+  - {fileID: 11400000, guid: 40f5a0d3e2e12824abcf4f8a21add142, type: 2}
+  - {fileID: 11400000, guid: 6a0e355cee186fd40bb4ab97f5c4700c, type: 2}
+  - {fileID: 11400000, guid: 116d3622d84116149bb4847fa793ca07, type: 2}
 --- !u!1 &1295869449
 GameObject:
   m_ObjectHideFlags: 0
@@ -3691,7 +3744,7 @@ Transform:
   - {fileID: 121330167}
   - {fileID: 595585449}
   m_Father: {fileID: 505166548}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1662388384
 MonoBehaviour:
@@ -3743,7 +3796,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 505166548}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1677762215
 MonoBehaviour:
@@ -3895,7 +3948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cuttingTarget: 15
-  timer: 60
+  timer: 30
   foodGenerator: {fileID: 1680951449}
   progressBar: {fileID: 1888648583}
   clock: {fileID: 264289050}
@@ -4337,6 +4390,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1916708731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1916708732}
+  - component: {fileID: 1916708733}
+  m_Layer: 0
+  m_Name: Route Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1916708732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916708731}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 505166548}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1916708733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916708731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b152db59b1999b479abd30315b8aa1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1924763214
 GameObject:
   m_ObjectHideFlags: 0
