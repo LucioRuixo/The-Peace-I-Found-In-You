@@ -1,35 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using nullbloq.Noodles;
 
 [Serializable]
-public class DecisionManager : MonoBehaviour
+public class DecisionController : NodeController
 {
+    public override Type NodeType { protected set; get; }
+
     public GameObject buttonPrefab;
     public GameObject decision;
     public Transform buttonContainer;
 
     List<GameObject> buttons;
 
-    public static event Action<int> OnNodeExecutionCompleted;
-
-    void OnEnable()
-    {
-        NodeManager.OnDecision += Begin;
-        DecisionButton.OnDecisionButtonPressed += End;
-    }
+    //public static event Action<int> OnNodeExecutionCompleted;
 
     void Awake()
     {
+        NodeType = typeof(CustomDecisionNode);
+
         buttons = new List<GameObject>();
+    }
+
+    void OnEnable()
+    {
+        //NodeManager.OnDecision += Begin;
+        DecisionButton.OnDecisionButtonPressed += End;
     }
 
     void OnDisable()
     {
-        NodeManager.OnDecision -= Begin;
+        //NodeManager.OnDecision -= Begin;
         DecisionButton.OnDecisionButtonPressed -= End;
     }
 
@@ -62,6 +65,13 @@ public class DecisionManager : MonoBehaviour
         buttons.Clear();
         decision.SetActive(false);
 
-        OnNodeExecutionCompleted?.Invoke(portIndex); // Adaptar en NodeManager para que funcione al conectar el puerto con varios nodos en vez de uno solo
+        CallNodeExecutionCompletion(portIndex); // Adaptar en NodeManager para que funcione al conectar el puerto con varios nodos en vez de uno solo
+    }
+
+    public override void Execute(NoodlesNode genericNode)
+    {
+        var node = genericNode as CustomDecisionNode;
+
+        Begin(node);
     }
 }

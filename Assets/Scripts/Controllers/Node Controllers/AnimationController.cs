@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using nullbloq.Noodles;
 using UnityEngine.UI;
+using nullbloq.Noodles;
 
-public class AnimationManager : MonoBehaviour
+public class AnimationController : NodeController
 {
     public enum Animation
     {
@@ -24,21 +24,28 @@ public class AnimationManager : MonoBehaviour
         ScreenShake
     }
 
+    public override Type NodeType { protected set; get; }
+
     public Image blackCover;
     public Image whiteCover;
     public Animator fadeInBlinkTop, fadeInBlinkBottom;
 
-    public static event Action<int> OnNodeExecutionCompleted;
+    //public static event Action<int> OnNodeExecutionCompleted;
+
+    void Awake()
+    {
+        NodeType = typeof(CustomAnimationNode);
+    }
 
     void OnEnable()
     {
-        NodeManager.OnAnimation += Begin;
+        //NodeManager.OnAnimation += Begin;
         Blink.OnBlinkOpenCompleted += End;
     }
 
     void OnDisable()
     {
-        NodeManager.OnAnimation -= Begin;
+        //NodeManager.OnAnimation -= Begin;
         Blink.OnBlinkOpenCompleted -= End;
     }
 
@@ -93,7 +100,14 @@ public class AnimationManager : MonoBehaviour
 
     void End()
     {
-        OnNodeExecutionCompleted(0);
+        CallNodeExecutionCompletion(0);
+    }
+
+    public override void Execute(NoodlesNode genericNode)
+    {
+        var node = genericNode as CustomAnimationNode;
+
+        Begin(node);
     }
 
     IEnumerator IncreaseAlpha(Image image)

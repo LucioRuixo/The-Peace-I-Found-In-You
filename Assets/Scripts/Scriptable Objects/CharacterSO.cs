@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character")]
 public class CharacterSO : ScriptableObject
 {
-    public CharacterManager.Character character;
+    public CharacterController.Character character;
 
     public string characterName;
 

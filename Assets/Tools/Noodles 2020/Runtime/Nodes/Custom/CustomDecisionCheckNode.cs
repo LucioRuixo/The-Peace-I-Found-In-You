@@ -7,8 +7,8 @@ public class CustomDecisionCheckNode : NoodlesNode
 	[Serializable]
 	public class DialogueStrip
 	{
-		public CharacterManager.Character character;
-		public CharacterManager.Status status;
+		public CharacterController.Character character;
+		public CharacterController.Status status;
 		public string sentence;
 	}
 

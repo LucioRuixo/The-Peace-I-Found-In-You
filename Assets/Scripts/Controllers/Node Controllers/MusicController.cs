@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using nullbloq.Noodles;
-using System.Collections;
 
-public class MusicManager : MonoBehaviour
+public class MusicController : NodeController
 {
     public enum SongTitle
     {
@@ -20,6 +20,8 @@ public class MusicManager : MonoBehaviour
         Town
     }
 
+    public override Type NodeType { protected set; get; }
+
     [SerializeField] float fadeDuration = 3f;
 
     [SerializeField] AudioSource channel1 = null;
@@ -28,10 +30,12 @@ public class MusicManager : MonoBehaviour
     [SerializeField] List<SongSO> songs = null;
     Dictionary<SongTitle, AudioClip> songDictionary = new Dictionary<SongTitle, AudioClip>();
 
-    public static event Action<int> OnNodeExecutionCompleted;
+    //public static event Action<int> OnNodeExecutionCompleted;
 
     void Awake()
     {
+        NodeType = typeof(CustomMusicChangeNode);
+
         foreach (SongSO song in songs)
         {
             songDictionary.Add(song.title, song.clip);
@@ -40,12 +44,12 @@ public class MusicManager : MonoBehaviour
 
     void OnEnable()
     {
-        NodeManager.OnMusicChange += PlaySong;
+        //NodeManager.OnMusicChange += PlaySong;
     }
 
     void OnDisable()
     {
-        NodeManager.OnMusicChange -= PlaySong;
+        //NodeManager.OnMusicChange -= PlaySong;
     }
 
     void PlaySong(CustomMusicChangeNode node)
@@ -68,7 +72,14 @@ public class MusicManager : MonoBehaviour
             StartCoroutine(FadeIn(channel2, clip));
         }
 
-        OnNodeExecutionCompleted?.Invoke(0);
+        CallNodeExecutionCompletion(0);
+    }
+
+    public override void Execute(NoodlesNode genericNode)
+    {
+        var node = genericNode as CustomMusicChangeNode;
+
+        PlaySong(node);
     }
 
     IEnumerator FadeIn(AudioSource source, AudioClip clip)

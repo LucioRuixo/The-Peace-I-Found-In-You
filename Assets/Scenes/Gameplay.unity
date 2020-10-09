@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 121330167}
   - component: {fileID: 121330168}
   m_Layer: 0
-  m_Name: Dialogue Manager
+  m_Name: Dialogue Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -471,7 +471,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 121330166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0b0a82191c58da4b8c7c348d79d6b3d, type: 3}
+  m_Script: {fileID: 11500000, guid: 77f80aae76ea81c4ba55f11f812fe1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   letterDisplayWaitTime: 0.06
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 143043581}
   - component: {fileID: 143043582}
   m_Layer: 0
-  m_Name: Background Manager
+  m_Name: Background Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 239322526}
   - component: {fileID: 239322527}
   m_Layer: 0
-  m_Name: Animation Manager
+  m_Name: Animation Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1584,6 +1584,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f129e4b906837ed4d85061b7c5cfccfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeControllers:
+  - {fileID: 121330168}
+  - {fileID: 595585450}
+  - {fileID: 1243667192}
+  - {fileID: 143043582}
+  - {fileID: 1077869658}
+  - {fileID: 239322527}
+  - {fileID: 1677762215}
+  - {fileID: 1364809731}
+  - {fileID: 1916708733}
 --- !u!1 &517564584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1782,7 +1792,7 @@ GameObject:
   - component: {fileID: 595585449}
   - component: {fileID: 595585450}
   m_Layer: 0
-  m_Name: Action Manager
+  m_Name: Action Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2577,7 +2587,7 @@ GameObject:
   - component: {fileID: 1077869659}
   - component: {fileID: 1077869658}
   m_Layer: 0
-  m_Name: Minigame Manager
+  m_Name: Minigame Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3055,7 +3065,7 @@ GameObject:
   - component: {fileID: 1243667191}
   - component: {fileID: 1243667192}
   m_Layer: 0
-  m_Name: Decision Manager
+  m_Name: Decision Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3084,7 +3094,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1243667190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c4d713924d62ca43853e3925ff453a7, type: 3}
+  m_Script: {fileID: 11500000, guid: ba2f44e023cd9014f9ae52b4c4d23ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 5721117842320679057, guid: 4d7bafb0d9705bf47b19c37f56c727ee,
@@ -3216,9 +3226,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8686aae361cafea4688b34d35a47527f, type: 2}
   - {fileID: 11400000, guid: 58578d8c90f4a4f44973c8dcd09c2d46, type: 2}
   - {fileID: 11400000, guid: 42c684278402c274fa06b89e9534f7cf, type: 2}
+  - {fileID: 11400000, guid: f37f67860c2204f4b98b7544f07be4e2, type: 2}
   - {fileID: 11400000, guid: 103743fcae099f4458befbaf31beb237, type: 2}
   seijunRoute:
   - {fileID: 11400000, guid: 40f5a0d3e2e12824abcf4f8a21add142, type: 2}
+  - {fileID: 11400000, guid: 0a95cd3be73b3fd4cb81118028d54cb9, type: 2}
   - {fileID: 11400000, guid: 6a0e355cee186fd40bb4ab97f5c4700c, type: 2}
   - {fileID: 11400000, guid: 116d3622d84116149bb4847fa793ca07, type: 2}
 --- !u!1 &1295869449
@@ -3380,7 +3392,7 @@ GameObject:
   - component: {fileID: 1364809730}
   - component: {fileID: 1364809731}
   m_Layer: 0
-  m_Name: Music Manager
+  m_Name: Music Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3411,7 +3423,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1364809729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68babe8a8156368489b0f0ecd0d04341, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cdc3699c3a46aa4abd8c8e19f0ad9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadeDuration: 3
@@ -4038,7 +4050,7 @@ GameObject:
   - component: {fileID: 1662388383}
   - component: {fileID: 1662388384}
   m_Layer: 0
-  m_Name: Character Manager
+  m_Name: Character Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4219,7 +4231,7 @@ GameObject:
   - component: {fileID: 1677762214}
   - component: {fileID: 1677762215}
   m_Layer: 0
-  m_Name: Decision Check Manager
+  m_Name: Decision Check Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4842,7 +4854,7 @@ GameObject:
   - component: {fileID: 1916708732}
   - component: {fileID: 1916708733}
   m_Layer: 0
-  m_Name: Route Manager
+  m_Name: Route Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

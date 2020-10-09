@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using nullbloq.Noodles;
-using System.Collections.Generic;
 
 [Serializable]
-public class BackgroundManager : MonoBehaviour
+public class BackgroundController : NodeController
 {
     public enum BackgroundType
     {
@@ -43,6 +43,8 @@ public class BackgroundManager : MonoBehaviour
         SeijunB_A13
     }
 
+    public override Type NodeType { protected set; get; }
+
     float cameraHeight;
 
     Vector2 cameraSize;
@@ -56,10 +58,12 @@ public class BackgroundManager : MonoBehaviour
     Dictionary<Location, BackgroundSO> locationDictionary = new Dictionary<Location, BackgroundSO>();
     Dictionary<Ilustration, BackgroundSO> ilustrationDictionary = new Dictionary<Ilustration, BackgroundSO>();
 
-    public static event Action<int> OnNodeExecutionCompleted;
+    //public static event Action<int> OnNodeExecutionCompleted;
 
     void Awake()
     {
+        NodeType = typeof(CustomBackgroundChangeNode);
+
         cameraHeight = Camera.main.orthographicSize * 2f;
         cameraSize = new Vector2(Camera.main.aspect * cameraHeight, cameraHeight);
         bgSpriteRenderer = bgContainer.GetComponent<SpriteRenderer>();
@@ -77,7 +81,7 @@ public class BackgroundManager : MonoBehaviour
 
     void OnEnable()
     {
-        NodeManager.OnBackgroundChange += ChangeBackground;
+        //NodeManager.OnBackgroundChange += ChangeBackground;
     }
 
     void Start()
@@ -87,7 +91,7 @@ public class BackgroundManager : MonoBehaviour
 
     void OnDisable()
     {
-        NodeManager.OnBackgroundChange -= ChangeBackground;
+        //NodeManager.OnBackgroundChange -= ChangeBackground;
     }
 
     void SetBackground(Sprite newBG)
@@ -114,6 +118,13 @@ public class BackgroundManager : MonoBehaviour
                 SetBackground(newBG.sprite);
         }
 
-        OnNodeExecutionCompleted(0);
+        CallNodeExecutionCompletion(0);
+    }
+
+    public override void Execute(NoodlesNode genericNode)
+    {
+        var node = genericNode as CustomBackgroundChangeNode;
+
+        ChangeBackground(node);
     }
 }

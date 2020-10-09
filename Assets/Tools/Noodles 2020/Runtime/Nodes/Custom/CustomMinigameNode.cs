@@ -9,7 +9,7 @@ namespace nullbloq.Noodles
 {
 	public class CustomMinigameNode : NoodlesNode
 	{
-		public MinigameManager.Minigame minigame;
+		public MinigameController.Minigame minigame;
 
 		protected override void PreInit()
 		{
@@ -46,7 +46,7 @@ namespace nullbloq.Noodles
 			title = minigameNode.title;
 
 			var combo = new EnumField("Minigame", minigameNode.minigame);
-			combo.RegisterValueChangedCallback(evt => { minigameNode.minigame = (MinigameManager.Minigame)evt.newValue; });
+			combo.RegisterValueChangedCallback(evt => { minigameNode.minigame = (MinigameController.Minigame)evt.newValue; });
 			mainContainer.Add(combo);
 		}
 	}

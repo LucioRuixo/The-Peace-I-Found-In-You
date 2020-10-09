@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
-using nullbloq.Noodles;
 using TMPro;
+using nullbloq.Noodles;
 
-public class MinigameManager : MonoBehaviour
+public class MinigameController : NodeController
 {
     public enum Minigame
     {
@@ -12,6 +12,8 @@ public class MinigameManager : MonoBehaviour
         Fight
     }
 
+    public override Type NodeType { protected set; get; }
+
     bool minigameWon;
 
     public GameObject cooking;
@@ -19,11 +21,16 @@ public class MinigameManager : MonoBehaviour
     public GameObject gameEndMenu;
     public TextMeshProUGUI gameEndText;
 
-    public static event Action<int> OnNodeExecutionCompleted;
+    //public static event Action<int> OnNodeExecutionCompleted;
+
+    void Awake()
+    {
+        NodeType = typeof(CustomMinigameNode);
+    }
 
     void OnEnable()
     {
-        NodeManager.OnMinigame += Begin;
+        //NodeManager.OnMinigame += Begin;
 
         CookingMinigameManager.OnGameEnd += EnableGameEndMenu;
         PuzzleController.OnGameEnd += EnableGameEndMenu;
@@ -31,7 +38,7 @@ public class MinigameManager : MonoBehaviour
 
     void OnDisable()
     {
-        NodeManager.OnMinigame -= Begin;
+        //NodeManager.OnMinigame -= Begin;
 
         CookingMinigameManager.OnGameEnd -= EnableGameEndMenu;
         PuzzleController.OnGameEnd -= EnableGameEndMenu;
@@ -71,6 +78,13 @@ public class MinigameManager : MonoBehaviour
         gameEndMenu.SetActive(false);
 
         int index = minigameWon ? 0 : 1;
-        OnNodeExecutionCompleted(index);
+        CallNodeExecutionCompletion(index);
+    }
+
+    public override void Execute(NoodlesNode genericNode)
+    {
+        var node = genericNode as CustomMinigameNode;
+
+        Begin(node);
     }
 }

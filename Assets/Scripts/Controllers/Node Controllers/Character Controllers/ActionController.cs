@@ -1,9 +1,8 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using nullbloq.Noodles;
-using System.Collections;
 using UnityEngine.UI;
+using nullbloq.Noodles;
 
 /*
 DUDAS:
@@ -14,7 +13,7 @@ DUDAS:
 - Pueden cambiar de posición? (POR AHORA: no)
 - Hay márgenes a los costados de la pantalla a tener en cuenta al posicionar a los pjs? (POR AHORA: no)
 */
-public class ActionManager : MonoBehaviour
+public class ActionController : NodeController
 {
     public enum Action
     {
@@ -34,6 +33,8 @@ public class ActionManager : MonoBehaviour
         Head
     }
 
+    public override System.Type NodeType { protected set; get; }
+
     int pendingCorroutines;
 
     public float movementDuration;
@@ -42,27 +43,27 @@ public class ActionManager : MonoBehaviour
 
     public GameObject characterPrefab;
     public Transform characterContainer;
-    CharacterManager characterManager;
+    CharacterController characterManager;
 
-    List<KeyValuePair<CharacterManager.Character, GameObject>> charactersInScene = new List<KeyValuePair<CharacterManager.Character, GameObject>>();
-
-    public static event Action<int> OnNodeExecutionCompleted;
+    List<KeyValuePair<CharacterController.Character, GameObject>> charactersInScene = new List<KeyValuePair<CharacterController.Character, GameObject>>();
 
     void Awake()
     {
+        NodeType = typeof(CustomCharacterActionNode);
+
         initialX = -(characterPrefab.GetComponent<RectTransform>().rect.width / 2f);
 
-        characterManager = transform.parent.GetComponent<CharacterManager>();
+        characterManager = transform.parent.GetComponent<CharacterController>();
     }
 
     void OnEnable()
     {
-        NodeManager.OnCharacterAction += Begin;
+        //NodeManager.OnCharacterAction += Begin;
     }
 
     void OnDisable()
     {
-        NodeManager.OnCharacterAction -= Begin;
+        //NodeManager.OnCharacterAction -= Begin;
     }
 
     void Begin(CustomCharacterActionNode node)
@@ -98,7 +99,7 @@ public class ActionManager : MonoBehaviour
     void EnterCharacter(CustomCharacterActionNode node)
     {
         GameObject newCharacter = GenerateNewCharacter(node);
-        charactersInScene.Add(new KeyValuePair<CharacterManager.Character, GameObject>(node.character, newCharacter));
+        charactersInScene.Add(new KeyValuePair<CharacterController.Character, GameObject>(node.character, newCharacter));
 
         float spacing = Screen.width / (charactersInScene.Count + 1);
         for (int i = 0; i < charactersInScene.Count; i++)
@@ -158,7 +159,7 @@ public class ActionManager : MonoBehaviour
     void ExitCharacter(CustomCharacterActionNode node)
     {
         bool characterFound = false;
-        foreach (KeyValuePair<CharacterManager.Character, GameObject> characterInScene in charactersInScene)
+        foreach (KeyValuePair<CharacterController.Character, GameObject> characterInScene in charactersInScene)
         {
             if (characterInScene.Key == node.character)
             {
@@ -209,7 +210,7 @@ public class ActionManager : MonoBehaviour
     void ChangeBodyPart(BodyPart bodyPart, CustomCharacterActionNode node)
     {
         bool characterFound = false;
-        foreach (KeyValuePair<CharacterManager.Character, GameObject> characterInScene in charactersInScene)
+        foreach (KeyValuePair<CharacterController.Character, GameObject> characterInScene in charactersInScene)
         {
             if (characterInScene.Key == node.character)
             {
@@ -262,7 +263,14 @@ public class ActionManager : MonoBehaviour
 
     void End()
     {
-        OnNodeExecutionCompleted?.Invoke(0);
+        CallNodeExecutionCompletion(0);
+    }
+
+    public override void Execute(NoodlesNode genericNode)
+    {
+        var node = genericNode as CustomCharacterActionNode;
+
+        Begin(node);
     }
 
     IEnumerator MoveCharacter(Transform character, float targetX, bool destroyOnFinish)

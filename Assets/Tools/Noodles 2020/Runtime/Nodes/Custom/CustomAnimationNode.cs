@@ -8,7 +8,7 @@ namespace nullbloq.Noodles
 {
 	public class CustomAnimationNode : NoodlesNode
 	{
-		public AnimationManager.Animation animation;
+		public AnimationController.Animation animation;
 
 		protected override void PreInit()
 		{
@@ -42,7 +42,7 @@ namespace nullbloq.Noodles
 			title = animationNode.title;
 
 			var combo = new EnumField("Animation", animationNode.animation);
-			combo.RegisterValueChangedCallback(evt => { animationNode.animation = (AnimationManager.Animation)evt.newValue; });
+			combo.RegisterValueChangedCallback(evt => { animationNode.animation = (AnimationController.Animation)evt.newValue; });
 			mainContainer.Add(combo);
 		}
 	}

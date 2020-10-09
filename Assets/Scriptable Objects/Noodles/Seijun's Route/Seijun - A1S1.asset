@@ -29,12 +29,6 @@ MonoBehaviour:
   - id: 13
   - id: 14
   - id: 15
-  - id: 16
-  - id: 17
-  - id: 18
-  - id: 19
-  - id: 20
-  - id: 21
   references:
     version: 1
     00000000:
@@ -44,8 +38,8 @@ MonoBehaviour:
         GUID: 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
         rect:
           serializedVersion: 2
-          x: 2648
-          y: 148
+          x: 2385
+          y: 151
           width: 76
           height: 71
         width: 100
@@ -55,9 +49,9 @@ MonoBehaviour:
         - GUID: 9774d646-fcde-41f7-8916-bc4b295c8e80
           parentNodeGUID: 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
           targetNodeGUID:
-          - 994a0a30-ae62-4254-bed3-d272c73e2c5a
+          - 903ab6da-b11f-43bd-88ec-9f8bfc5a2dba
           targetPortGUID:
-          - ad3c8f4a-0f61-4053-b168-efa93d07a2f8
+          - 4f805639-288c-4e14-a08e-624c510bf7c8
           text: Start
           isEditable: 0
         classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
@@ -80,9 +74,9 @@ MonoBehaviour:
         - GUID: ad3c8f4a-0f61-4053-b168-efa93d07a2f8
           parentNodeGUID: 994a0a30-ae62-4254-bed3-d272c73e2c5a
           targetNodeGUID:
-          - 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
+          - 903ab6da-b11f-43bd-88ec-9f8bfc5a2dba
           targetPortGUID:
-          - 9774d646-fcde-41f7-8916-bc4b295c8e80
+          - 088718c3-eae6-4d23-9793-ca8b0db2d46c
           text: Input
           isEditable: 0
         outputPorts:
@@ -651,172 +645,6 @@ MonoBehaviour:
         - GUID: 32f9b2c7-e5d2-4eb8-895b-ba76157527de
           parentNodeGUID: 2ceaa0b5-7b5f-4c25-b5fe-2450858d6b54
           targetNodeGUID:
-          - f5dc1074-d1a2-4c77-b2e2-1a1a06f58696
-          targetPortGUID:
-          - 903920d2-93d0-4fbf-b128-bf8115fc0a7d
-          text: Output
-          isEditable: 0
-        classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        animation: 0
-    0000000E:
-      type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
-      data:
-        title: Animation
-        GUID: 57b45369-bcd1-4756-bba7-fc75f529a683
-        rect:
-          serializedVersion: 2
-          x: 5620
-          y: 951
-          width: 279
-          height: 96
-        width: 600
-        height: 500
-        inputPorts:
-        - GUID: adda3acc-a58c-46a7-99db-389e03067168
-          parentNodeGUID: 57b45369-bcd1-4756-bba7-fc75f529a683
-          targetNodeGUID:
-          - 615f012c-048c-4244-9f91-073c95f1e88d
-          targetPortGUID:
-          - 8326e4be-d693-45e2-929b-0d9c7d17ebf4
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: 505d51a0-37a5-4598-871a-f53eceed7972
-          parentNodeGUID: 57b45369-bcd1-4756-bba7-fc75f529a683
-          targetNodeGUID:
-          - 4ca0f14f-e348-408a-924f-441fc9805e93
-          targetPortGUID:
-          - cd3fe7e5-a32b-44b1-9a54-ea7ec90613b4
-          text: Output
-          isEditable: 0
-        classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        animation: 1
-    0000000F:
-      type: {class: CustomBackgroundChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
-      data:
-        title: Background Change
-        GUID: 615f012c-048c-4244-9f91-073c95f1e88d
-        rect:
-          serializedVersion: 2
-          x: 5623
-          y: 804
-          width: 262
-          height: 134
-        width: 600
-        height: 500
-        inputPorts:
-        - GUID: 9f1ac309-d034-467d-b022-ca50da676c2c
-          parentNodeGUID: 615f012c-048c-4244-9f91-073c95f1e88d
-          targetNodeGUID:
-          - b7e0a1ee-9b95-43bc-a8c8-2dbbdb42c6e0
-          targetPortGUID:
-          - 5c3d7945-4985-4cdd-ae00-5f753f8ab49a
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: 8326e4be-d693-45e2-929b-0d9c7d17ebf4
-          parentNodeGUID: 615f012c-048c-4244-9f91-073c95f1e88d
-          targetNodeGUID:
-          - 57b45369-bcd1-4756-bba7-fc75f529a683
-          targetPortGUID:
-          - adda3acc-a58c-46a7-99db-389e03067168
-          text: Output
-          isEditable: 0
-        classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        backgroundType: 1
-        location: 0
-        ilustration: 8
-    00000010:
-      type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        title: Multiple Dialogue
-        GUID: 4ca0f14f-e348-408a-924f-441fc9805e93
-        rect:
-          serializedVersion: 2
-          x: 5920
-          y: 161
-          width: 328
-          height: 577
-        width: 1500
-        height: 500
-        inputPorts:
-        - GUID: cd3fe7e5-a32b-44b1-9a54-ea7ec90613b4
-          parentNodeGUID: 4ca0f14f-e348-408a-924f-441fc9805e93
-          targetNodeGUID:
-          - 57b45369-bcd1-4756-bba7-fc75f529a683
-          targetPortGUID:
-          - 505d51a0-37a5-4598-871a-f53eceed7972
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: b69e78fe-ffba-4162-a45a-d84d5bb4a9f6
-          parentNodeGUID: 4ca0f14f-e348-408a-924f-441fc9805e93
-          targetNodeGUID:
-          - afa9201e-0bf3-4a52-ad44-d270180e7baf
-          targetPortGUID:
-          - d1d4a9c1-b0ff-4fb2-9bc9-495dd778aab8
-          text: Out
-          isEditable: 0
-        classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        dialogueStrips:
-        - character: 0
-          status: 0
-          sentence: 7...
-        - character: 0
-          status: 0
-          sentence: 7 colas.
-        - character: 2
-          status: 1
-          sentence: Una total sorpresa, por lo que veo.
-        - character: 2
-          status: 1
-          sentence: La mirada de los mortales al ver algo que desconocen no tiene
-            precio.
-        - character: 2
-          status: 1
-          sentence: "No s\xE9 que pasa por tu mente alma perdida..."
-        - character: 2
-          status: 1
-          sentence: "Pero tengo una idea de qu\xE9 puede ser."
-        - character: 2
-          status: 1
-          sentence: Aunque por ahora es mejor que descanses.
-        - character: 2
-          status: 1
-          sentence: Pobre alma perdida entre pesadillas y oscuridad...
-        - character: 0
-          status: 0
-          sentence: Una kitsune, ja ja...
-    00000011:
-      type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
-      data:
-        title: Animation
-        GUID: afa9201e-0bf3-4a52-ad44-d270180e7baf
-        rect:
-          serializedVersion: 2
-          x: 6267
-          y: 161
-          width: 264
-          height: 96
-        width: 600
-        height: 500
-        inputPorts:
-        - GUID: d1d4a9c1-b0ff-4fb2-9bc9-495dd778aab8
-          parentNodeGUID: afa9201e-0bf3-4a52-ad44-d270180e7baf
-          targetNodeGUID:
-          - 4ca0f14f-e348-408a-924f-441fc9805e93
-          targetPortGUID:
-          - b69e78fe-ffba-4162-a45a-d84d5bb4a9f6
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: dc8c4b8c-2bd9-4285-8c01-25320b3fd816
-          parentNodeGUID: afa9201e-0bf3-4a52-ad44-d270180e7baf
-          targetNodeGUID:
           - 000fb582-dbb5-4a3e-b42e-b461e41379a7
           targetPortGUID:
           - 49812396-a9fa-4b84-8d88-e8d566561c31
@@ -825,129 +653,15 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         animation: 0
-    00000012:
-      type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
-      data:
-        title: Character Action
-        GUID: 6d7f588e-4591-48c6-a3a3-775a6b49be85
-        rect:
-          serializedVersion: 2
-          x: 5629
-          y: 438
-          width: 265
-          height: 175
-        width: 600
-        height: 500
-        inputPorts:
-        - GUID: 3ed97bd5-38d3-404d-a589-59b4de4c0260
-          parentNodeGUID: 6d7f588e-4591-48c6-a3a3-775a6b49be85
-          targetNodeGUID:
-          - f5dc1074-d1a2-4c77-b2e2-1a1a06f58696
-          targetPortGUID:
-          - 9f7b3a90-1ae1-458b-b0e9-1dee04da408f
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: 0240d42c-3a69-4856-9e9a-98f98f39069f
-          parentNodeGUID: 6d7f588e-4591-48c6-a3a3-775a6b49be85
-          targetNodeGUID:
-          - b7e0a1ee-9b95-43bc-a8c8-2dbbdb42c6e0
-          targetPortGUID:
-          - 771f54f0-9dde-461c-9d6e-5927a1164a1e
-          text: Output
-          isEditable: 0
-        classNameString: nullbloq.Noodles.CustomCharacterActionNodeVisual, Assembly-CSharp,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        action: 3
-        character: 4
-        bodyIndex: 0
-        armIndex: 0
-        headIndex: 0
-    00000013:
-      type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
-      data:
-        title: Character Action
-        GUID: f5dc1074-d1a2-4c77-b2e2-1a1a06f58696
-        rect:
-          serializedVersion: 2
-          x: 5640
-          y: 261
-          width: 265
-          height: 175
-        width: 600
-        height: 500
-        inputPorts:
-        - GUID: 903920d2-93d0-4fbf-b128-bf8115fc0a7d
-          parentNodeGUID: f5dc1074-d1a2-4c77-b2e2-1a1a06f58696
-          targetNodeGUID:
-          - 2ceaa0b5-7b5f-4c25-b5fe-2450858d6b54
-          targetPortGUID:
-          - 32f9b2c7-e5d2-4eb8-895b-ba76157527de
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: 9f7b3a90-1ae1-458b-b0e9-1dee04da408f
-          parentNodeGUID: f5dc1074-d1a2-4c77-b2e2-1a1a06f58696
-          targetNodeGUID:
-          - 6d7f588e-4591-48c6-a3a3-775a6b49be85
-          targetPortGUID:
-          - 3ed97bd5-38d3-404d-a589-59b4de4c0260
-          text: Output
-          isEditable: 0
-        classNameString: nullbloq.Noodles.CustomCharacterActionNodeVisual, Assembly-CSharp,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        action: 3
-        character: 3
-        bodyIndex: 0
-        armIndex: 0
-        headIndex: 0
-    00000014:
-      type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
-      data:
-        title: Character Action
-        GUID: b7e0a1ee-9b95-43bc-a8c8-2dbbdb42c6e0
-        rect:
-          serializedVersion: 2
-          x: 5632
-          y: 627
-          width: 265
-          height: 173
-        width: 600
-        height: 500
-        inputPorts:
-        - GUID: 771f54f0-9dde-461c-9d6e-5927a1164a1e
-          parentNodeGUID: b7e0a1ee-9b95-43bc-a8c8-2dbbdb42c6e0
-          targetNodeGUID:
-          - 6d7f588e-4591-48c6-a3a3-775a6b49be85
-          targetPortGUID:
-          - 0240d42c-3a69-4856-9e9a-98f98f39069f
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: 5c3d7945-4985-4cdd-ae00-5f753f8ab49a
-          parentNodeGUID: b7e0a1ee-9b95-43bc-a8c8-2dbbdb42c6e0
-          targetNodeGUID:
-          - 615f012c-048c-4244-9f91-073c95f1e88d
-          targetPortGUID:
-          - 9f1ac309-d034-467d-b022-ca50da676c2c
-          text: Output
-          isEditable: 0
-        classNameString: nullbloq.Noodles.CustomCharacterActionNodeVisual, Assembly-CSharp,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        action: 3
-        character: 5
-        bodyIndex: 0
-        armIndex: 0
-        headIndex: 0
-    00000015:
+    0000000E:
       type: {class: NoodlesNodeBorder, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: 
         GUID: 000fb582-dbb5-4a3e-b42e-b461e41379a7
         rect:
           serializedVersion: 2
-          x: 6552
-          y: 165
+          x: 5928
+          y: 163
           width: 46
           height: 71
         width: 100
@@ -956,12 +670,46 @@ MonoBehaviour:
         - GUID: 49812396-a9fa-4b84-8d88-e8d566561c31
           parentNodeGUID: 000fb582-dbb5-4a3e-b42e-b461e41379a7
           targetNodeGUID:
-          - afa9201e-0bf3-4a52-ad44-d270180e7baf
+          - 2ceaa0b5-7b5f-4c25-b5fe-2450858d6b54
           targetPortGUID:
-          - dc8c4b8c-2bd9-4285-8c01-25320b3fd816
+          - 32f9b2c7-e5d2-4eb8-895b-ba76157527de
           text: 
           isEditable: 0
         outputPorts: []
         classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         isStartNode: 0
+    0000000F:
+      type: {class: CustomMusicChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Music Change
+        GUID: 903ab6da-b11f-43bd-88ec-9f8bfc5a2dba
+        rect:
+          serializedVersion: 2
+          x: 2488
+          y: 148
+          width: 234
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 4f805639-288c-4e14-a08e-624c510bf7c8
+          parentNodeGUID: 903ab6da-b11f-43bd-88ec-9f8bfc5a2dba
+          targetNodeGUID:
+          - 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
+          targetPortGUID:
+          - 9774d646-fcde-41f7-8916-bc4b295c8e80
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 088718c3-eae6-4d23-9793-ca8b0db2d46c
+          parentNodeGUID: 903ab6da-b11f-43bd-88ec-9f8bfc5a2dba
+          targetNodeGUID:
+          - 994a0a30-ae62-4254-bed3-d272c73e2c5a
+          targetPortGUID:
+          - ad3c8f4a-0f61-4053-b168-efa93d07a2f8
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        songTitle: 6

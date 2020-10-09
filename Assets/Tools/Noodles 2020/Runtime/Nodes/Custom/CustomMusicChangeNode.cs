@@ -8,7 +8,7 @@ namespace nullbloq.Noodles
 {
 	public class CustomMusicChangeNode : NoodlesNode
 	{
-		public MusicManager.SongTitle songTitle;
+		public MusicController.SongTitle songTitle;
 
 		protected override void PreInit()
 		{
@@ -42,7 +42,7 @@ namespace nullbloq.Noodles
 			title = musicChangeNode.title;
 
 			var combo = new EnumField("Song Title", musicChangeNode.songTitle);
-			combo.RegisterValueChangedCallback(evt => { musicChangeNode.songTitle = (MusicManager.SongTitle)evt.newValue; });
+			combo.RegisterValueChangedCallback(evt => { musicChangeNode.songTitle = (MusicController.SongTitle)evt.newValue; });
 			mainContainer.Add(combo);
 		}
 	}

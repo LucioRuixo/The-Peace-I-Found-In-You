@@ -8,7 +8,7 @@ namespace nullbloq.Noodles
 {
 	public class CustomRouteChoiceNode : NoodlesNode
 	{
-		public RouteManager.Route route;
+		public RouteController.Route route;
 
 		protected override void PreInit()
 		{
@@ -42,7 +42,7 @@ namespace nullbloq.Noodles
 			title = routeChoiceNode.title;
 
 			var combo = new EnumField("Route", routeChoiceNode.route);
-			combo.RegisterValueChangedCallback(evt => { routeChoiceNode.route = (RouteManager.Route)evt.newValue; });
+			combo.RegisterValueChangedCallback(evt => { routeChoiceNode.route = (RouteController.Route)evt.newValue; });
 			mainContainer.Add(combo);
 		}
 	}

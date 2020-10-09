@@ -6,7 +6,7 @@ public class NoodleManager : MonoBehaviour
 {
     int currentNoodleIndex = 0;
 
-    RouteManager.Route currentRoute;
+    RouteController.Route currentRoute;
 
     [SerializeField] NodeManager nodeManager = null;
     [SerializeField] Noodler noodler = null;
@@ -18,29 +18,29 @@ public class NoodleManager : MonoBehaviour
 
     void OnEnable()
     {
-        RouteManager.OnRouteChosen += SelectRoute;
+        RouteController.OnRouteChosen += SelectRoute;
         NodeManager.OnNoodleFinished += PlayNextScene;
     }
 
     void Start()
     {
-        nodeManager.ExecuteNextNode(noodler.CurrentNode);
+        nodeManager.ExecuteNode(noodler.CurrentNode);
     }
 
     void OnDisable()
     {
-        RouteManager.OnRouteChosen -= SelectRoute;
+        RouteController.OnRouteChosen -= SelectRoute;
         NodeManager.OnNoodleFinished -= PlayNextScene;
     }
 
-    void SelectRoute(RouteManager.Route selectedRoute)
+    void SelectRoute(RouteController.Route selectedRoute)
     {
         currentRoute = selectedRoute;
     }
 
     void PlayNextScene()
     {
-        if (currentRoute == RouteManager.Route.Hoshi)
+        if (currentRoute == RouteController.Route.Hoshi)
             CheckForNextNoodle(hoshiRoute);
         else
             CheckForNextNoodle(seijunRoute);
@@ -52,7 +52,7 @@ public class NoodleManager : MonoBehaviour
         {
             noodler.controller = noodles[currentNoodleIndex];
             noodler.ResetNoodle();
-            nodeManager.ExecuteNextNode(noodler.CurrentNode);
+            nodeManager.ExecuteNode(noodler.CurrentNode);
 
             currentNoodleIndex++;
         }

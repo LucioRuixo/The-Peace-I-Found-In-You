@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using nullbloq.Noodles;
 
 [Serializable]
-public class DialogueManager : MonoBehaviour
+public class DialogueController : NodeController
 {
+    public override Type NodeType { protected set; get; }
+
     bool typing = false;
 
     string sentence;
@@ -25,22 +28,22 @@ public class DialogueManager : MonoBehaviour
     public Image dialogueBox;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
-    CharacterManager characterManager;
+    CharacterController characterManager;
     NoodlesNodeMultipleDialogue node;
 
     Queue<string> sentenceQueue = new Queue<string>();
 
-    public static event Action<int> OnNodeExecutionCompleted;
-
     void Awake()
     {
-        characterManager = transform.parent.GetComponent<CharacterManager>();
+        NodeType = typeof(NoodlesNodeMultipleDialogue);
+
+        characterManager = transform.parent.GetComponent<CharacterController>();
         fontSize = dialogueText.fontSize;
     }
 
     void OnEnable()
     {
-        NodeManager.OnDialogue += Begin;
+        //NodeManager.OnDialogue += Begin;
     }
 
     void Update()
@@ -62,7 +65,7 @@ public class DialogueManager : MonoBehaviour
 
     void OnDisable()
     {
-        NodeManager.OnDialogue -= Begin;
+        //NodeManager.OnDialogue -= Begin;
     }
 
     void Begin(NoodlesNodeMultipleDialogue _node)
@@ -77,12 +80,12 @@ public class DialogueManager : MonoBehaviour
     {
         if (node.dialogueStrips.Count > currentDialogueStripIndex)
         {
-            CharacterManager.Character key = node.dialogueStrips[currentDialogueStripIndex].character;
+            CharacterController.Character key = node.dialogueStrips[currentDialogueStripIndex].character;
             if (characterManager.characterDictionary.TryGetValue(key, out CharacterSO character))
             {
                 dialogueBox.sprite = character.dialogueBoxSprite;
 
-                if (node.dialogueStrips[currentDialogueStripIndex].status == CharacterManager.Status.Known)
+                if (node.dialogueStrips[currentDialogueStripIndex].status == CharacterController.Status.Known)
                     nameText.text = character.characterName;
                 else
                     nameText.text = "???";
@@ -111,7 +114,7 @@ public class DialogueManager : MonoBehaviour
         currentDialogueStripIndex = 0;
         dialogue.SetActive(false);
 
-        OnNodeExecutionCompleted?.Invoke(0); // Adaptar en NodeManager para que funcione al conectar el puerto con varios nodos en vez de uno solo
+        CallNodeExecutionCompletion(0); // Adaptar en NodeManager para que funcione al conectar el puerto con varios nodos en vez de uno solo
     }
 
     //public void DisplayNextSentence()
@@ -124,6 +127,13 @@ public class DialogueManager : MonoBehaviour
     //
     //    StartCoroutine(TypeSentence(sentenceQueue.Dequeue()));
     //}
+
+    public override void Execute(NoodlesNode genericNode)
+    {
+        var node = genericNode as NoodlesNodeMultipleDialogue;
+
+        Begin(node);
+    }
 
     IEnumerator TypeSentence(bool whispering)
     {

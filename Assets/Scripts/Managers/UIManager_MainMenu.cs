@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIManager_MainMenu : MonoBehaviour
 {
-    public GameObject mainMenuFirstSelected, creditsScreenFirstSelected;
-    public GameObject mainMenu, creditsScreen;
+    [SerializeField] GameObject mainMenuFirstSelected = null, creditsScreenFirstSelected = null;
+    [SerializeField] GameObject mainMenu = null, creditsScreen = null;
+    [SerializeField] TextMeshProUGUI versionText = null;
+
+    void Start()
+    {
+        versionText.text = "v" + Application.version;
+    }
 
     public void Play()
     {
