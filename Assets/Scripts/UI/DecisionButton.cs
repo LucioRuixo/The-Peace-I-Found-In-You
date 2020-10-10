@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class DecisionButton : MonoBehaviour
 {
-    int portIndex;
+    public int PortIndex { set; get; }
 
     public static event Action<int> OnDecisionButtonPressed;
 
@@ -15,11 +15,6 @@ public class DecisionButton : MonoBehaviour
 
     void MakeDecision()
     {
-        OnDecisionButtonPressed?.Invoke(portIndex);
-    }
-
-    public void SetPortIndex(int index)
-    {
-        portIndex = index;
+        OnDecisionButtonPressed?.Invoke(PortIndex);
     }
 }

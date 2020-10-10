@@ -2,38 +2,36 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SelectableButton : Button
+public class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public float selectedIconSpacing;
+    [SerializeField] float selectedIconSpacing = 20f;
 
-    public RectTransform selectionIcon;
+    [SerializeField] RectTransform selectionIcon = null;
+    Button button;
     Transform text;
 
-    protected override void Awake()
+    void Awake()
     {
-        base.Awake();
-
+        button = GetComponent<Button>();
         text = transform.GetChild(0);
     }
 
     void DisplayIcon()
     {
+        selectionIcon.gameObject.SetActive(true);
         selectionIcon.SetParent(text);
+
         Vector2 position = new Vector2(selectedIconSpacing, 0f);
         selectionIcon.anchoredPosition = position;
     }
 
-    public override void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        base.OnPointerEnter(eventData);
-
         DisplayIcon();
     }
 
-    public override void OnSelect(BaseEventData eventData)
+    public void OnPointerExit(PointerEventData eventData)
     {
-        base.OnSelect(eventData);
-
-        DisplayIcon();
+        selectionIcon.gameObject.SetActive(false);
     }
 }
