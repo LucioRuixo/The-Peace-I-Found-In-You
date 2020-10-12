@@ -20,10 +20,12 @@ public class ActionController : NodeController
         EnterScene,
         ExitScene,
         PopIntoScene,
-        PopOffScene,
+        PopOutOfScene,
         ChangeBody,
         ChangeHead,
-        ChangeArm
+        ChangeArm,
+        FadeIntoScene,
+        FadeOutOfScene
     }
 
     enum BodyPart
@@ -37,13 +39,20 @@ public class ActionController : NodeController
 
     int pendingCorroutines;
 
-    public float movementDuration;
-    public float movementAccuracyRange = 1f;
     float initialX;
 
-    public GameObject characterPrefab;
-    public Transform characterContainer;
+    [SerializeField] GameObject characterPrefab = null;
+    [SerializeField] Transform characterContainer = null;
     CharacterController characterManager;
+
+    [Header("Enter/Exit Scene: ")]
+    [SerializeField] float movementDuration = 1f;
+    [SerializeField] float movementAccuracyRange = 1f;
+
+    [Header("Fade Into/Off Scene: ")]
+    [SerializeField] float fadeDuration = 1f;
+
+    bool fadingOutOfScene = false;
 
     List<KeyValuePair<CharacterController.Character, GameObject>> charactersInScene = new List<KeyValuePair<CharacterController.Character, GameObject>>();
 
@@ -79,7 +88,7 @@ public class ActionController : NodeController
             case Action.PopIntoScene:
                 EnterCharacter(node);
                 break;
-            case Action.PopOffScene:
+            case Action.PopOutOfScene:
                 ExitCharacter(node);
                 break;
             case Action.ChangeBody:
@@ -90,6 +99,12 @@ public class ActionController : NodeController
                 break;
             case Action.ChangeHead:
                 ChangeBodyPart(BodyPart.Head, node);
+                break;
+            case Action.FadeIntoScene:
+                EnterCharacter(node);
+                break;
+            case Action.FadeOutOfScene:
+                ExitCharacter(node);
                 break;
             default:
                 break;
@@ -106,17 +121,56 @@ public class ActionController : NodeController
         {
             float targetX = Screen.width - spacing * (i + 1);
 
-            if (node.action == Action.EnterScene)
+            switch (node.action)
             {
-                StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false));
-                pendingCorroutines++;
+                case Action.EnterScene:
+                    StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, node));
+                    pendingCorroutines++;
+
+                    break;
+
+                case Action.PopIntoScene:
+                    Vector2 position = charactersInScene[i].Value.transform.position;
+                    position.x = targetX;
+                    charactersInScene[i].Value.transform.position = position;
+
+                    break;
+
+                case Action.FadeIntoScene:
+                    if (i < charactersInScene.Count - 1)
+                    {
+                        StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, node));
+                        pendingCorroutines++;
+                    }
+                    else
+                    {
+                        position = charactersInScene[i].Value.transform.position;
+                        position.x = targetX;
+                        charactersInScene[i].Value.transform.position = position;
+
+                        Image image = charactersInScene[i].Value.GetComponent<Image>();
+                        StartCoroutine(IncreaseAlpha(image));
+                        pendingCorroutines++;
+                    }
+
+                    break;
+
+                default:
+                    Debug.LogError("Cannot enter scene using selected action");
+                    break;
             }
-            else
-            {
-                Vector2 position = charactersInScene[i].Value.transform.position;
-                position.x = targetX;
-                charactersInScene[i].Value.transform.position = position;
-            }
+
+            //if (node.action == Action.EnterScene)
+            //{
+            //    StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false));
+            //    pendingCorroutines++;
+            //}
+            //else
+            //{
+            //    Vector2 position = charactersInScene[i].Value.transform.position;
+            //    position.x = targetX;
+            //    charactersInScene[i].Value.transform.position = position;
+            //}
         }
 
         if (node.action == Action.PopIntoScene) End();
@@ -159,20 +213,49 @@ public class ActionController : NodeController
     void ExitCharacter(CustomCharacterActionNode node)
     {
         bool characterFound = false;
-        foreach (KeyValuePair<CharacterController.Character, GameObject> characterInScene in charactersInScene)
+        foreach (KeyValuePair<CharacterController.Character, GameObject> character in charactersInScene)
         {
-            if (characterInScene.Key == node.character)
+            if (character.Key == node.character)
             {
                 float targetX = Screen.width - initialX;
 
-                if (node.action == Action.ExitScene)
+                switch (node.action)
                 {
-                    StartCoroutine(MoveCharacter(characterInScene.Value.transform, targetX, true));
-                    pendingCorroutines++;
-                }
-                else Destroy(characterInScene.Value);
+                    case Action.ExitScene:
+                        StartCoroutine(MoveCharacter(character.Value.transform, targetX, false, node));
+                        pendingCorroutines++;
 
-                charactersInScene.Remove(characterInScene);
+                        break;
+
+                    case Action.PopOutOfScene:
+                        Destroy(character.Value);
+                        break;
+
+                    case Action.FadeOutOfScene:
+                        //Vector2 position = character.Value.transform.position;
+                        //position.x = targetX;
+                        //character.Value.transform.position = position;
+
+                        Image image = character.Value.GetComponent<Image>();
+                        StartCoroutine(DecreaseAlpha(image, node));
+                        pendingCorroutines++;
+                        fadingOutOfScene = true;
+
+                        break;
+
+                    default:
+                        Debug.LogError("Cannot exit scene using selected action");
+                        break;
+                }
+
+                //if (node.action == Action.ExitScene)
+                //{
+                //    StartCoroutine(MoveCharacter(characterInScene.Value.transform, targetX, true));
+                //    pendingCorroutines++;
+                //}
+                //else Destroy(characterInScene.Value);
+
+                charactersInScene.Remove(character);
 
                 characterFound = true;
                 break;
@@ -185,20 +268,41 @@ public class ActionController : NodeController
         {
             float targetX = Screen.width - spacing * (i + 1);
 
-            if (node.action == Action.ExitScene)
+            switch (node.action)
             {
-                StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false));
-                pendingCorroutines++;
+                case Action.ExitScene:
+                case Action.FadeOutOfScene:
+                    StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, node));
+                    pendingCorroutines++;
+
+                    break;
+
+                case Action.PopOutOfScene:
+                    Vector2 position = charactersInScene[i].Value.transform.position;
+                    position.x = targetX;
+                    charactersInScene[i].Value.transform.position = position;
+
+                    break;
+
+                default:
+                    Debug.LogError("Cannot exit scene using selected action");
+                    break;
             }
-            else
-            {
-                Vector2 position = charactersInScene[i].Value.transform.position;
-                position.x = targetX;
-                charactersInScene[i].Value.transform.position = position;
-            }
+
+            //if (node.action == Action.ExitScene)
+            //{
+            //    StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false));
+            //    pendingCorroutines++;
+            //}
+            //else
+            //{
+            //    Vector2 position = charactersInScene[i].Value.transform.position;
+            //    position.x = targetX;
+            //    charactersInScene[i].Value.transform.position = position;
+            //}
         }
 
-        if (node.action == Action.PopOffScene) End();
+        if (node.action == Action.PopOutOfScene) End();
     }
 
     void FinishCorroutine()
@@ -227,7 +331,9 @@ public class ActionController : NodeController
                             image = characterInScene.Value.GetComponent<Image>();
                             image.sprite = character.bodySprites[node.bodyIndex];
                         }
+
                         break;
+
                     case BodyPart.Arm:
                         if (node.armIndex >= 0 && node.armIndex < character.armSprites.Count
                             &&
@@ -237,7 +343,9 @@ public class ActionController : NodeController
                             image.sprite = character.armSprites[node.armIndex];
                         }
                         else Debug.LogError("Sprite index out of range");
+
                         break;
+
                     case BodyPart.Head:
                         if (node.headIndex >= 0 && node.headIndex < character.headSprites.Count
                             &&
@@ -247,7 +355,9 @@ public class ActionController : NodeController
                             image.sprite = character.headSprites[node.headIndex];
                         }
                         else Debug.LogError("Sprite index out of range");
+
                         break;
+
                     default:
                         break;
                 }
@@ -273,13 +383,17 @@ public class ActionController : NodeController
         Begin(node);
     }
 
-    IEnumerator MoveCharacter(Transform character, float targetX, bool destroyOnFinish)
+    IEnumerator MoveCharacter(Transform character, float targetX, bool destroyOnFinish, CustomCharacterActionNode node)
     {
         float a = character.position.x;
         float b = targetX;
 
         float movementLength = Mathf.Abs(a - b);
         float fractionMoved = 0f;
+
+        if (node.action == Action.FadeOutOfScene)
+            yield return new WaitWhile(() => fadingOutOfScene == true);
+
         while (character.position.x < b - movementAccuracyRange / 2f || character.position.x > b + movementAccuracyRange / 2f)
         {
             float fractionToMove = (movementLength * Time.deltaTime / movementDuration) / movementLength;
@@ -295,5 +409,49 @@ public class ActionController : NodeController
 
         if (destroyOnFinish) Destroy(character.gameObject);
         FinishCorroutine();
+    }
+
+    IEnumerator IncreaseAlpha(Image image)
+    {
+        float currentAlphaValue = 0f;
+
+        while (currentAlphaValue < 1f)
+        {
+            float addedValue = Time.deltaTime / fadeDuration;
+            //float addedValue = 1f / (fadeDuration / Time.deltaTime);
+            currentAlphaValue += addedValue;
+
+            Color newColor = image.color;
+            newColor.a = currentAlphaValue;
+            image.color = newColor;
+
+            yield return null;
+        }
+
+        End();
+    }
+
+    IEnumerator DecreaseAlpha(Image image, CustomCharacterActionNode node)
+    {
+        float currentAlphaValue = 1f;
+
+        while (currentAlphaValue > 0f)
+        {
+            float subtractedValue = Time.deltaTime / fadeDuration;
+            currentAlphaValue -= subtractedValue;
+
+            Color newColor = image.color;
+            newColor.a = currentAlphaValue;
+            image.color = newColor;
+
+            yield return null;
+        }
+
+        if (node.action == Action.FadeOutOfScene)
+        {
+            fadingOutOfScene = false;
+        }
+
+        End();
     }
 }

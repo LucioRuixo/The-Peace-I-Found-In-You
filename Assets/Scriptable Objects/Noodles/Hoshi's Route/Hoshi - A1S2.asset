@@ -84,6 +84,7 @@ MonoBehaviour:
   - id: 68
   - id: 69
   - id: 70
+  - id: 71
   references:
     version: 1
     00000000:
@@ -2308,9 +2309,9 @@ MonoBehaviour:
         - GUID: fea5cda1-f500-4c6f-929d-f20ccc756978
           parentNodeGUID: 468cf63d-e107-4d6f-ac17-95cf936a23b0
           targetNodeGUID:
-          - a3811851-4c31-4fef-8578-301d04d27241
+          - 2b8bd026-320d-4674-a76b-696b4f028219
           targetPortGUID:
-          - acfc83d6-8e89-41b8-94f3-d2f94c2e7cc5
+          - 66c8be0d-8813-44d4-b82f-8bf02148a44f
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomCharacterActionNodeVisual, Assembly-CSharp,
@@ -2337,9 +2338,9 @@ MonoBehaviour:
         - GUID: acfc83d6-8e89-41b8-94f3-d2f94c2e7cc5
           parentNodeGUID: a3811851-4c31-4fef-8578-301d04d27241
           targetNodeGUID:
-          - 468cf63d-e107-4d6f-ac17-95cf936a23b0
+          - 2b8bd026-320d-4674-a76b-696b4f028219
           targetPortGUID:
-          - fea5cda1-f500-4c6f-929d-f20ccc756978
+          - 8c8feb40-51ff-476b-b307-1ec029523fb4
           text: Input
           isEditable: 0
         outputPorts:
@@ -2942,3 +2943,37 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         songTitle: 8
+    00000047:
+      type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Animation
+        GUID: 2b8bd026-320d-4674-a76b-696b4f028219
+        rect:
+          serializedVersion: 2
+          x: 7873
+          y: -130
+          width: 269
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 66c8be0d-8813-44d4-b82f-8bf02148a44f
+          parentNodeGUID: 2b8bd026-320d-4674-a76b-696b4f028219
+          targetNodeGUID:
+          - 468cf63d-e107-4d6f-ac17-95cf936a23b0
+          targetPortGUID:
+          - fea5cda1-f500-4c6f-929d-f20ccc756978
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 8c8feb40-51ff-476b-b307-1ec029523fb4
+          parentNodeGUID: 2b8bd026-320d-4674-a76b-696b4f028219
+          targetNodeGUID:
+          - a3811851-4c31-4fef-8578-301d04d27241
+          targetPortGUID:
+          - acfc83d6-8e89-41b8-94f3-d2f94c2e7cc5
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        animation: 13

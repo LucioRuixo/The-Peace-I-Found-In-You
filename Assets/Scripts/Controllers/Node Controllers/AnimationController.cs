@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using nullbloq.Noodles;
@@ -21,7 +22,7 @@ public class AnimationController : NodeController
         Blinking,
         Rain,
         Jump,
-        ScreenShake
+        CameraShake
     }
 
     public override Type NodeType { protected set; get; }
@@ -29,6 +30,11 @@ public class AnimationController : NodeController
     public Image blackCover;
     public Image whiteCover;
     public Animator fadeInBlinkTop, fadeInBlinkBottom;
+
+    [Header("Camera Shake: ")]
+    [SerializeField] int shakePointsAmount = 1;
+    [SerializeField] float shakeMagnitude = 1f;
+    [SerializeField] float shakeSpeed = 1f;
 
     //public static event Action<int> OnNodeExecutionCompleted;
 
@@ -84,7 +90,8 @@ public class AnimationController : NodeController
                 break;
             case Animation.Jump:
                 break;
-            case Animation.ScreenShake:
+            case Animation.CameraShake:
+                StartCoroutine(ShakeCamera());
                 break;
             default:
                 Debug.LogError("Animation in node not found");
@@ -145,6 +152,50 @@ public class AnimationController : NodeController
             image.color = newColor;
 
             yield return null;
+        }
+
+        End();
+    }
+
+    IEnumerator ShakeCamera()
+    {
+        Transform camera = Camera.main.transform;
+        float positionZ = camera.position.z;
+
+        List<Vector2> points = new List<Vector2>();
+
+        Vector2 newPoint = new Vector2(UnityEngine.Random.Range(-shakeMagnitude, shakeMagnitude), UnityEngine.Random.Range(-shakeMagnitude, shakeMagnitude));
+        points.Add(newPoint);
+        for (int i = 0; i < shakePointsAmount - 1; i++)
+        {
+            newPoint.x = newPoint.x > 0f ? UnityEngine.Random.Range(-shakeMagnitude, 0f) : UnityEngine.Random.Range(0f, shakeMagnitude);
+            newPoint.y = newPoint.y > 0f ? UnityEngine.Random.Range(-shakeMagnitude, 0f) : UnityEngine.Random.Range(0f, shakeMagnitude);
+            points.Add(newPoint);
+        }
+
+        Vector3 position;
+        Vector2 a;
+        Vector2 b;
+        for (int i = 0; i < shakePointsAmount + 1; i++)
+        {
+            a = camera.position;
+            b = i < shakePointsAmount ? points[i] : Vector2.zero;
+
+            float journeyLength = Vector2.Distance(a, b);
+            //float fractionToMove = (journeyLength * Time.deltaTime) / journeyDuration;
+            float fractionToMove = shakeSpeed * Time.deltaTime;
+            while ((Vector2)camera.position != b)
+            {
+                float distanceCovered = Vector2.Distance(a, camera.position);
+                float fractionMoved = distanceCovered / journeyLength;
+
+                position = camera.position;
+                position = Vector2.Lerp(a, b, fractionMoved + fractionToMove);
+                position.z = positionZ;
+                camera.position = position;
+
+                yield return new WaitForSeconds(Time.deltaTime);
+            }
         }
 
         End();

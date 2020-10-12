@@ -841,6 +841,9 @@ MonoBehaviour:
   whiteCover: {fileID: 1322977988}
   fadeInBlinkTop: {fileID: 1468766616}
   fadeInBlinkBottom: {fileID: 8638643}
+  shakePointsAmount: 8
+  shakeMagnitude: 0.25
+  shakeSpeed: 15
 --- !u!1 &254615190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +1701,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1824,11 +1827,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fae20cb7770e314eb2ebd8ca2c1bf0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDuration: 0.5
-  movementAccuracyRange: 1
   characterPrefab: {fileID: 2210280816483008521, guid: 26d8d091ff73b124a806d7b76c6faf51,
     type: 3}
   characterContainer: {fileID: 1191916006}
+  movementDuration: 0.5
+  movementAccuracyRange: 1
+  fadeDuration: 2
 --- !u!1 &644522511
 GameObject:
   m_ObjectHideFlags: 0
