@@ -156,10 +156,10 @@ MonoBehaviour:
         dialogueStrips:
         - character: 0
           status: 0
-          sentence: 7...
+          sentence: Siete...
         - character: 0
           status: 0
-          sentence: 7 colas.
+          sentence: Siete colas.
         - character: 2
           status: 1
           sentence: Una total sorpresa, por lo que veo.
@@ -226,7 +226,7 @@ MonoBehaviour:
           x: -1389
           y: 751
           width: 265
-          height: 172
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -263,8 +263,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: -1388
           y: 569
-          width: 265
-          height: 172
+          width: 261
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -302,7 +302,7 @@ MonoBehaviour:
           x: -1391
           y: 935
           width: 265
-          height: 173
+          height: 175
         width: 600
         height: 500
         inputPorts:

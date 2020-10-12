@@ -290,7 +290,7 @@ MonoBehaviour:
           sentence: "Creo que le pas\xF3 algo en el bosque."
         - character: 0
           status: 0
-          sentence: "(No me sorprende despu\xE9s de lo que paso hoy...)"
+          sentence: "(No me sorprende, despu\xE9s de lo que paso hoy...)"
         - character: 0
           status: 0
           sentence: "Por cierto, \xBFc\xF3mo se conocieron?"
@@ -1641,7 +1641,7 @@ MonoBehaviour:
             encontrado una amiga)"
         - character: 0
           status: 0
-          sentence: "(Aunque, mir\xE1ndolo bien, parecen madre e hijo...)"
+          sentence: "(Aunque, mir\xE1ndolos bien, parecen madre e hijo...)"
         - character: 0
           status: 0
           sentence: (Por lo menos ambos se tienen para olvidar por un rato lo que

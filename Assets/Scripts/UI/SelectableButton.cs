@@ -2,17 +2,15 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler, IPointerExitHandler
 {
     [SerializeField] float selectedIconSpacing = 20f;
 
     [SerializeField] RectTransform selectionIcon = null;
-    Button button;
     Transform text;
 
     void Awake()
     {
-        button = GetComponent<Button>();
         text = transform.GetChild(0);
     }
 
@@ -28,6 +26,11 @@ public class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnPointerEnter(PointerEventData eventData)
     {
         DisplayIcon();
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        selectionIcon.gameObject.SetActive(false);
     }
 
     public void OnPointerExit(PointerEventData eventData)

@@ -50,7 +50,6 @@ MonoBehaviour:
   - id: 34
   - id: 35
   - id: 36
-  - id: 37
   references:
     version: 1
     00000000:
@@ -62,7 +61,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: -769
           y: 20
-          width: 76
+          width: 75
           height: 71
         width: 100
         height: 100
@@ -198,8 +197,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: -63
           y: 14
-          width: 253
-          height: 175
+          width: 252
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -307,8 +306,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 554
           y: 13
-          width: 255
-          height: 175
+          width: 253
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -402,18 +401,19 @@ MonoBehaviour:
             un poco."
         - character: 2
           status: 0
-          sentence: "Como no pod\xEDa dejarte solo por ah\xED te traje hasta el santuario."
+          sentence: "Como no pod\xEDa dejarte solo por ah\xED, te traje hasta el
+            santuario."
         - character: 2
           status: 0
-          sentence: "Despu\xE9s de todo hay osos ah\xED fuera, muchacho."
+          sentence: "Despu\xE9s de todo, hay osos ah\xED fuera, muchacho."
         - character: 2
           status: 0
-          sentence: "No quer\xEDa tener en mi conciencia que un pobre joven fue el
-            almuerzo de un animal por mi culpa."
+          sentence: "No quer\xEDa tener en mi conciencia que un pobre joven haya
+            sido el almuerzo de un animal por mi culpa."
         - character: 0
           status: 0
-          sentence: "Perd\xF3n por ser tan grosero entonces. Muchas gracias por ayudarme,
-            Seijun."
+          sentence: "Perd\xF3n por ser tan grosero, entonces. Muchas gracias por
+            ayudarme, Seijun."
         - character: 0
           status: 0
           sentence: "Por cierto, \xBFqui\xE9n es ella?"
@@ -425,7 +425,7 @@ MonoBehaviour:
           sentence: "Solo estamos nosotros dos aqu\xED."
         - character: 0
           status: 0
-          sentence: "Entonces debo estar alucinando porque estoy viendo a alguien
+          sentence: "Entonces debo estar alucinando, porque estoy viendo a alguien
             detr\xE1s de t\xED."
         - character: 2
           status: 0
@@ -442,8 +442,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 1167
           y: 13
-          width: 253
-          height: 175
+          width: 252
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -517,8 +517,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 1777
           y: 16
-          width: 260
-          height: 175
+          width: 259
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -616,8 +616,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 2395
           y: 16
-          width: 260
-          height: 175
+          width: 259
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -703,8 +703,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 3021
           y: 17
-          width: 260
-          height: 175
+          width: 259
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -784,8 +784,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 3641
           y: 18
-          width: 260
-          height: 175
+          width: 259
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -855,14 +855,14 @@ MonoBehaviour:
           sentence: Demasiadas para contar, de hecho.
         - character: 0
           status: 0
-          sentence: "Como viajo desde mis 12 a\xF1os de edad recorr\xED bastante."
+          sentence: "Como viajo desde mis doce a\xF1os de edad, recorr\xED bastante."
         - character: 7
           status: 0
           sentence: "\xBFY cuantos a\xF1os tienes ahora?"
         - character: 0
           status: 0
-          sentence: "Tengo 24 a\xF1os, as\xED que llevo 12 a\xF1os recorriendo el
-            pa\xEDs."
+          sentence: "Tengo veinticuatro a\xF1os, as\xED que llevo doce a\xF1os recorriendo
+            el pa\xEDs."
     00000012:
       type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -872,8 +872,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 4260
           y: 20
-          width: 260
-          height: 175
+          width: 259
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -937,8 +937,8 @@ MonoBehaviour:
         dialogueStrips:
         - character: 7
           status: 0
-          sentence: "En mis 20 a\xF1os de vida nunca dej\xE9 la isla. De hecho, nunca
-            la recorr\xED toda..."
+          sentence: "En mis veinte a\xF1os de vida nunca dej\xE9 la isla. De hecho,
+            nunca la recorr\xED toda..."
         - character: 7
           status: 0
           sentence: "Debes tener much\xEDsimas historias, \xA1tengo que escucharlas!"
@@ -955,8 +955,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 4874
           y: 25
-          width: 260
-          height: 175
+          width: 259
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -1035,8 +1035,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 5499
           y: 26
-          width: 260
-          height: 175
+          width: 259
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -1110,8 +1110,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 6130
           y: 29
-          width: 260
-          height: 175
+          width: 259
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -1185,8 +1185,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 6759
           y: 31
-          width: 255
-          height: 175
+          width: 253
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -1260,8 +1260,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 7387
           y: 33
-          width: 260
-          height: 175
+          width: 259
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -1328,7 +1328,7 @@ MonoBehaviour:
           sentence: "Perd\xF3n, Seiju, sabes que me emociono mucho, je je."
         - character: 2
           status: 0
-          sentence: "Adem\xE1s, no soy idiota se lo que pasa por tu cabe-"
+          sentence: "Adem\xE1s, no soy idiota, s\xE9 lo que pasa por tu cabe-"
         - character: 2
           status: 0
           sentence: Hmph, hmph.
@@ -1341,10 +1341,10 @@ MonoBehaviour:
             alma, ja ja ja ja!"
         - character: 0
           status: 0
-          sentence: (Se llevan muy bien por lo que veo)
+          sentence: (Se llevan muy bien, por lo que veo)
         - character: 0
           status: 0
-          sentence: "(Sachi usa el apodo de Seiju, aunque no se si son \u201Camigas
+          sentence: "(Sachi usa el apodo de \"Seiju\". Aunque no s\xE9 si son \u201Camigas
             del alma\u201D, se ve que son amigas)"
     0000001E:
       type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
@@ -1355,8 +1355,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 8010
           y: 34
-          width: 260
-          height: 175
+          width: 259
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -1423,8 +1423,8 @@ MonoBehaviour:
           sentence: "Por cierto, Seiju, \xBFc\xF3mo conociste a P?"
         - character: 2
           status: 0
-          sentence: "\xC9l se desmay\xF3 en el bosque as\xED que lo arrastr\xE9 hasta
-            aqu\xED."
+          sentence: "\xC9l se desmay\xF3 en el bosque, as\xED que lo arrastr\xE9
+            hasta aqu\xED."
         - character: 2
           status: 0
           sentence: Ya sabes lo peligroso que puede ser el bosque, Sachi.
@@ -1457,7 +1457,7 @@ MonoBehaviour:
             del mont\xF3n."
         - character: 7
           status: 0
-          sentence: "\xBFEntonces vas a quitarte la m\xE1scara?"
+          sentence: "\xBFEntonces, vas a quitarte la m\xE1scara?"
         - character: 2
           status: 0
           sentence: "S\xF3lo lo hago por t\xED, pero..."
@@ -1479,8 +1479,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 8638
           y: 35
-          width: 255
-          height: 175
+          width: 253
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -1576,7 +1576,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 9259
           y: 35
-          width: 268
+          width: 270
           height: 101
         width: 600
         height: 500
@@ -1593,66 +1593,30 @@ MonoBehaviour:
         - GUID: ef750b3a-8f13-4c1d-a9c1-e907a1019c05
           parentNodeGUID: 09294f65-1def-40cc-8ada-781882777957
           targetNodeGUID:
-          - 0f849044-4fce-45d2-b08e-c556f3157329
+          - fb139fef-27aa-456d-8f0d-d7035d90abdf
           targetPortGUID:
-          - 59d56a5d-7a40-41d5-999d-2731e97c5a7d
+          - c5e86a96-eda0-402f-bd4d-d5a5786752c2
           text: Aceptar la promesa
           isEditable: 1
         - GUID: 8ff9fb6b-c0c5-42a4-a5d1-b62babcbc44f
           parentNodeGUID: 09294f65-1def-40cc-8ada-781882777957
           targetNodeGUID:
-          - 0f849044-4fce-45d2-b08e-c556f3157329
+          - fb139fef-27aa-456d-8f0d-d7035d90abdf
           targetPortGUID:
-          - 59d56a5d-7a40-41d5-999d-2731e97c5a7d
+          - c5e86a96-eda0-402f-bd4d-d5a5786752c2
           text: Rechazar la promesa
           isEditable: 1
         classNameString: nullbloq.Noodles.CustomDecisionNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     00000023:
-      type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
-      data:
-        title: Animation
-        GUID: 0f849044-4fce-45d2-b08e-c556f3157329
-        rect:
-          serializedVersion: 2
-          x: 9561
-          y: 36
-          width: 264
-          height: 96
-        width: 600
-        height: 500
-        inputPorts:
-        - GUID: 59d56a5d-7a40-41d5-999d-2731e97c5a7d
-          parentNodeGUID: 0f849044-4fce-45d2-b08e-c556f3157329
-          targetNodeGUID:
-          - 09294f65-1def-40cc-8ada-781882777957
-          - 09294f65-1def-40cc-8ada-781882777957
-          targetPortGUID:
-          - ef750b3a-8f13-4c1d-a9c1-e907a1019c05
-          - 8ff9fb6b-c0c5-42a4-a5d1-b62babcbc44f
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: 90abdb11-0501-495e-bda0-f75ce6b1b7a0
-          parentNodeGUID: 0f849044-4fce-45d2-b08e-c556f3157329
-          targetNodeGUID:
-          - fb139fef-27aa-456d-8f0d-d7035d90abdf
-          targetPortGUID:
-          - c5e86a96-eda0-402f-bd4d-d5a5786752c2
-          text: Output
-          isEditable: 0
-        classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        animation: 0
-    00000024:
       type: {class: NoodlesNodeBorder, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: 
         GUID: fb139fef-27aa-456d-8f0d-d7035d90abdf
         rect:
           serializedVersion: 2
-          x: 9854
-          y: 39
+          x: 9547
+          y: 40
           width: 46
           height: 71
         width: 100
@@ -1661,16 +1625,18 @@ MonoBehaviour:
         - GUID: c5e86a96-eda0-402f-bd4d-d5a5786752c2
           parentNodeGUID: fb139fef-27aa-456d-8f0d-d7035d90abdf
           targetNodeGUID:
-          - 0f849044-4fce-45d2-b08e-c556f3157329
+          - 09294f65-1def-40cc-8ada-781882777957
+          - 09294f65-1def-40cc-8ada-781882777957
           targetPortGUID:
-          - 90abdb11-0501-495e-bda0-f75ce6b1b7a0
+          - ef750b3a-8f13-4c1d-a9c1-e907a1019c05
+          - 8ff9fb6b-c0c5-42a4-a5d1-b62babcbc44f
           text: 
           isEditable: 0
         outputPorts: []
         classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         isStartNode: 0
-    00000025:
+    00000024:
       type: {class: CustomMusicChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Music Change
@@ -1679,7 +1645,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: -665
           y: 18
-          width: 219
+          width: 220
           height: 96
         width: 600
         height: 500

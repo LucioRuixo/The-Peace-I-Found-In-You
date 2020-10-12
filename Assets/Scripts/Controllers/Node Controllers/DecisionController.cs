@@ -13,7 +13,7 @@ public class DecisionController : NodeController
     [SerializeField] DecisionButton option1Button = null, option2Button = null;
     [SerializeField] TextMeshProUGUI option1Text = null, option2Text = null;
     [SerializeField] GameObject decision = null;
-    [SerializeField] Transform buttonContainer = null;
+    //[SerializeField] Transform buttonContainer = null;
 
     //List<GameObject> buttons = new List<GameObject>();;
 

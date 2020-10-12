@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class CookingMinigameManager : MonoBehaviour
 {
+    bool playing = false;
+
     public int cuttingTarget;
 
     public float timer = 60f;
@@ -18,6 +20,8 @@ public class CookingMinigameManager : MonoBehaviour
 
     void OnEnable()
     {
+        playing = true;
+
         Food.OnCut += IncreaseCurrentlyCut;
         Food.OnFallenUnCut += DecreaseCurrentlyCut;
         Clock.OnTimeUp += EndGame;
@@ -37,6 +41,8 @@ public class CookingMinigameManager : MonoBehaviour
 
     void IncreaseCurrentlyCut()
     {
+        if (!playing) return;
+
         currentlyCut++;
         progressBar.value = currentlyCut / cuttingTarget;
 
@@ -45,6 +51,8 @@ public class CookingMinigameManager : MonoBehaviour
 
     void DecreaseCurrentlyCut()
     {
+        if (!playing) return;
+
         if (currentlyCut > 0)
         {
             currentlyCut--;
@@ -54,6 +62,8 @@ public class CookingMinigameManager : MonoBehaviour
 
     void EndGame(bool win)
     {
+        playing = false;
+
         foodGenerator.generationActive = false;
         clock.timerActive = false;
 

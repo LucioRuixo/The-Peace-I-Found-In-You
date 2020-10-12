@@ -3344,7 +3344,6 @@ MonoBehaviour:
   option1Text: {fileID: 1174837672}
   option2Text: {fileID: 1403294439}
   decision: {fileID: 1265499879}
-  buttonContainer: {fileID: 1888144205}
 --- !u!1 &1248964328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,11 +3472,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 42c684278402c274fa06b89e9534f7cf, type: 2}
   - {fileID: 11400000, guid: f37f67860c2204f4b98b7544f07be4e2, type: 2}
   - {fileID: 11400000, guid: 103743fcae099f4458befbaf31beb237, type: 2}
+  - {fileID: 11400000, guid: 06d57249446e73741953d9559f580ccc, type: 2}
   seijunRoute:
   - {fileID: 11400000, guid: 40f5a0d3e2e12824abcf4f8a21add142, type: 2}
   - {fileID: 11400000, guid: 0a95cd3be73b3fd4cb81118028d54cb9, type: 2}
   - {fileID: 11400000, guid: 6a0e355cee186fd40bb4ab97f5c4700c, type: 2}
   - {fileID: 11400000, guid: 116d3622d84116149bb4847fa793ca07, type: 2}
+  - {fileID: 11400000, guid: a35cb521a8794364c9bd358d97c384d6, type: 2}
+  - {fileID: 11400000, guid: a4c8985390a0d3a4b9688be2c29891df, type: 2}
 --- !u!1 &1295869449
 GameObject:
   m_ObjectHideFlags: 0
