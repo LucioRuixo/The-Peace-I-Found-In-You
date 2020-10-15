@@ -108,6 +108,8 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         binaryFormatter.Serialize(file, initialGameData);
 
         file.Close();
+
+        Debug.Log("file created");
     }
 
     public void SaveFile()
@@ -120,6 +122,8 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         binaryFormatter.Serialize(file, loadedData);
 
         file.Close();
+
+        Debug.Log("file saved");
     }
 
     public void LoadFile(int index)
@@ -138,5 +142,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
             file.Close();
         }
         else Debug.LogError("The file you were trying to load could not be found");
+
+        Debug.Log("file loaded");
     }
 }

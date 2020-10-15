@@ -25,26 +25,26 @@ namespace nullbloq.Noodles
 
 		void Awake()
 		{
-			currentNode = controller.GetStartNode();
+			//currentNode = controller.GetStartNode();
 		}
 
         void OnEnable()
         {
-			SaveManager.OnGameDataLoaded += SetLoadedData;
+			NoodleManager.OnNoodlerControllerSet += SetLoadedNode;
 		}
 
         void OnDisable()
         {
-			SaveManager.OnGameDataLoaded -= SetLoadedData;
+			NoodleManager.OnNoodlerControllerSet -= SetLoadedNode;
         }
 
-        void SetLoadedData(SaveManager.SaveData loadedData)
+        void SetLoadedNode(string nodeGUID)
         {
 			currentNode = null;
-			currentNode = controller.GetNode(loadedData.currentNodeGUID);
+			currentNode = controller.GetNode(nodeGUID);
 
 			if (currentNode == null)
-				Debug.LogError("Requested node was not found in current controller");
+				currentNode = controller.GetStartNode();
         }
 
         public bool HasNextNode()

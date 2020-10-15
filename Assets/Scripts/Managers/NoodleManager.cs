@@ -10,9 +10,11 @@ public class NoodleManager : MonoBehaviour
     [SerializeField] NodeManager nodeManager = null;
     [SerializeField] Noodler noodler = null;
 
+    [SerializeField] Noodle initialNoodle = null;
     [SerializeField] Noodle[] hoshiRoute = null;
     [SerializeField] Noodle[] seijunRoute = null;
 
+    public static event Action<string> OnNoodlerControllerSet;
     public static event Action OnNoNoodlesRemaining;
 
     void OnEnable()
@@ -38,6 +40,13 @@ public class NoodleManager : MonoBehaviour
     {
         RouteNoodleIndex = loadedData.routeNoodleIndex;
         CurrentRoute = loadedData.currentRoute;
+
+        if (CurrentRoute != RouteController.Route.None)
+            noodler.controller = CurrentRoute == RouteController.Route.Hoshi ? hoshiRoute[RouteNoodleIndex] : seijunRoute[RouteNoodleIndex];
+        else
+            noodler.controller = initialNoodle;
+
+        OnNoodlerControllerSet?.Invoke(loadedData.currentNodeGUID);
     }
 
     void SelectRoute(RouteController.Route selectedRoute)
