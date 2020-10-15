@@ -40,7 +40,11 @@ namespace nullbloq.Noodles
 
         void SetLoadedData(SaveManager.SaveData loadedData)
         {
-			currentNode = loadedData.currentNode;
+			currentNode = null;
+			currentNode = controller.GetNode(loadedData.currentNodeGUID);
+
+			if (currentNode == null)
+				Debug.LogError("Requested node was not found in current controller");
         }
 
         public bool HasNextNode()

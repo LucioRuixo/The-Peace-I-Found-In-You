@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -21,7 +20,7 @@ public class SaveSlotButton : MonoBehaviour
     void CreateNewGame()
     {
         SaveManager.Get().CreateFile(slotIndex);
-        SceneManager.LoadScene("Gameplay");
+        LoadGame();
     }
 
     void LoadGame()

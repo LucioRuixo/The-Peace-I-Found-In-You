@@ -10,29 +10,32 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
     [Serializable]
     public struct SaveData
     {
-        public bool lastDecisionGood;
         public int routeNoodleIndex;
         public RouteController.Route currentRoute;
-        public NoodlesNode currentNode;
+        [HideInInspector] public bool lastDecisionGood;
+        [HideInInspector] public string currentNodeGUID;
     }
-
-    string savesFolderPath;
 
     public int SaveSlotsAmount { private set; get; } = 3;
 
+    string savesFolderPath;
+
     int loadedFileIndex = -1;
 
+    [SerializeField] SaveData initialGameData;
     SaveData loadedData;
 
-    [SerializeField] Noodler noodler;
-    [SerializeField] NoodleManager noodleManager;
-    [SerializeField] DecisionCheckController decisionCheckController;
+    Noodler noodler = null;
+    NoodleManager noodleManager = null;
+    DecisionCheckController decisionCheckController = null;
 
     public static event Action<SaveData> OnGameDataLoaded;
 
     new void Awake()
     {
         base.Awake();
+
+        initialGameData.currentNodeGUID = null;
 
         savesFolderPath = Application.persistentDataPath + "\\Saves";
         Directory.CreateDirectory(savesFolderPath);
@@ -53,21 +56,48 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
     void CheckLoadedScene(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "Gameplay" && loadedFileIndex > -1)
+        {
+            ReferenceDataComponents();
             OnGameDataLoaded?.Invoke(loadedData);
+        }
     }
 
     void CheckUnloadedScene(Scene scene)
     {
         if (scene.name == "Gameplay")
+        {
             loadedFileIndex = -1;
+            DereferenceDataComponents();
+        }
+    }
+
+    void ReferenceDataComponents()
+    {
+        noodler = GameObject.Find("Node Manager").GetComponent<Noodler>();
+        noodleManager = GameObject.Find("Noodle Manager").GetComponent<NoodleManager>();
+        decisionCheckController = GameObject.Find("Decision Check Controller").GetComponent<DecisionCheckController>();
+    }
+
+    void DereferenceDataComponents()
+    {
+        noodler = null;
+        noodleManager = null;
+        decisionCheckController = null;
     }
 
     void UpdateFileData()
     {
-        loadedData.lastDecisionGood = decisionCheckController.LastDecisionGood;
-        loadedData.routeNoodleIndex = noodleManager.RouteNoodleIndex;
-        loadedData.currentRoute = noodleManager.CurrentRoute;
-        loadedData.currentNode = noodler.CurrentNode;
+        try
+        {
+            loadedData.lastDecisionGood = decisionCheckController.LastDecisionGood;
+            loadedData.routeNoodleIndex = noodleManager.RouteNoodleIndex;
+            loadedData.currentRoute = noodleManager.CurrentRoute;
+            loadedData.currentNodeGUID = noodler.CurrentNode.GUID;
+        }
+        catch(NullReferenceException e)
+        {
+            Debug.LogError(e.Message + "File data could not be fully updated because one of the needed components is null");
+        }
     }
 
     public void CreateFile(int index)
@@ -75,10 +105,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         FileStream file = File.Create(savesFolderPath + "\\save" + index + ".dat");
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
-        loadedData.lastDecisionGood = false;
-        loadedData.currentNode = null;
-
-        binaryFormatter.Serialize(file, loadedData);
+        binaryFormatter.Serialize(file, initialGameData);
 
         file.Close();
     }
@@ -90,7 +117,6 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
         UpdateFileData();
-
         binaryFormatter.Serialize(file, loadedData);
 
         file.Close();
@@ -111,6 +137,6 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
 
             file.Close();
         }
-        else CreateFile(index);
+        else Debug.LogError("The file you were trying to load could not be found");
     }
 }

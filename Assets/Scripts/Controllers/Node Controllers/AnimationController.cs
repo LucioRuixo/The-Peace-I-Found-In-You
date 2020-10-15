@@ -27,10 +27,10 @@ public class AnimationController : NodeController
 
     public override Type NodeType { protected set; get; }
 
-    [SerializeField] GameObject animationContainer;
-    [SerializeField] Image blackCover;
-    [SerializeField] Image whiteCover;
-    [SerializeField] Animator fadeInBlinkTop, fadeInBlinkBottom;
+    [SerializeField] GameObject animationContainer = null;
+    [SerializeField] Image blackCover = null;
+    [SerializeField] Image whiteCover = null;
+    [SerializeField] Animator fadeInBlinkTop = null, fadeInBlinkBottom = null;
 
     [Header("Camera Shake: ")]
     [SerializeField] int shakePointsAmount = 1;

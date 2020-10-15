@@ -810,6 +810,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbc03f1d71d3844ebcf7b7b00102db5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialGameData:
+    routeNoodleIndex: 0
+    currentRoute: 2
+    lastDecisionGood: 0
+    currentNodeGUID: 
   noodler: {fileID: 0}
   noodleManager: {fileID: 0}
   decisionCheckController: {fileID: 0}
