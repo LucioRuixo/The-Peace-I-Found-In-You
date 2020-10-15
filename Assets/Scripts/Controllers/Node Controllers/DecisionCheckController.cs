@@ -5,7 +5,7 @@ public class DecisionCheckController : NodeController
 {
     public override Type NodeType { protected set; get; }
 
-    bool lastDecisionGood;
+    public bool LastDecisionGood { private set; get; }
 
     //public static event Action<int> OnNodeExecutionCompleted;
 
@@ -16,24 +16,31 @@ public class DecisionCheckController : NodeController
 
     void OnEnable()
     {
-        //NodeManager.OnDecisionCheck += CheckLastDecision;
+        SaveManager.OnGameDataLoaded += SetLoadedData;
         DecisionButton.OnDecisionButtonPressed += SetLastDecision;
+        //NodeManager.OnDecisionCheck += CheckLastDecision;
     }
 
     void OnDisable()
     {
-        //NodeManager.OnDecisionCheck -= CheckLastDecision;
+        SaveManager.OnGameDataLoaded -= SetLoadedData;
         DecisionButton.OnDecisionButtonPressed -= SetLastDecision;
+        //NodeManager.OnDecisionCheck -= CheckLastDecision;
+    }
+
+    void SetLoadedData(SaveManager.SaveData loadedData)
+    {
+        LastDecisionGood = loadedData.lastDecisionGood;
     }
 
     void SetLastDecision(int portIndex)
     {
-        lastDecisionGood = portIndex == 0 ? true : false;
+        LastDecisionGood = portIndex == 0 ? true : false;
     }
 
     void CheckLastDecision(CustomDecisionCheckNode node)
     {
-        int index = lastDecisionGood ? 0 : 1;
+        int index = LastDecisionGood ? 0 : 1;
 
         CallNodeExecutionCompletion(index);
     }

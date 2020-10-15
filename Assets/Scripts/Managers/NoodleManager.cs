@@ -4,9 +4,8 @@ using nullbloq.Noodles;
 
 public class NoodleManager : MonoBehaviour
 {
-    int currentNoodleIndex = 0;
-
-    RouteController.Route currentRoute;
+    public int RouteNoodleIndex { private set; get; } = 0;
+    public RouteController.Route CurrentRoute { private set; get; } = RouteController.Route.None;
 
     [SerializeField] NodeManager nodeManager = null;
     [SerializeField] Noodler noodler = null;
@@ -18,6 +17,7 @@ public class NoodleManager : MonoBehaviour
 
     void OnEnable()
     {
+        SaveManager.OnGameDataLoaded += SetLoadedData;
         RouteController.OnRouteChosen += SelectRoute;
         NodeManager.OnNoodleFinished += PlayNextScene;
     }
@@ -29,18 +29,25 @@ public class NoodleManager : MonoBehaviour
 
     void OnDisable()
     {
+        SaveManager.OnGameDataLoaded -= SetLoadedData;
         RouteController.OnRouteChosen -= SelectRoute;
         NodeManager.OnNoodleFinished -= PlayNextScene;
     }
 
+    void SetLoadedData(SaveManager.SaveData loadedData)
+    {
+        RouteNoodleIndex = loadedData.routeNoodleIndex;
+        CurrentRoute = loadedData.currentRoute;
+    }
+
     void SelectRoute(RouteController.Route selectedRoute)
     {
-        currentRoute = selectedRoute;
+        CurrentRoute = selectedRoute;
     }
 
     void PlayNextScene()
     {
-        if (currentRoute == RouteController.Route.Hoshi)
+        if (CurrentRoute == RouteController.Route.Hoshi)
             CheckForNextNoodle(hoshiRoute);
         else
             CheckForNextNoodle(seijunRoute);
@@ -48,13 +55,13 @@ public class NoodleManager : MonoBehaviour
 
     void CheckForNextNoodle(Noodle[] noodles)
     {
-        if (currentNoodleIndex < noodles.Length)
+        if (RouteNoodleIndex < noodles.Length)
         {
-            noodler.controller = noodles[currentNoodleIndex];
+            noodler.controller = noodles[RouteNoodleIndex];
             noodler.ResetNoodle();
             nodeManager.ExecuteNode(noodler.CurrentNode);
 
-            currentNoodleIndex++;
+            RouteNoodleIndex++;
         }
         else OnNoNoodlesRemaining?.Invoke();
     }

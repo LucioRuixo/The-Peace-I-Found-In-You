@@ -6,7 +6,8 @@ public class RouteController : NodeController
     public enum Route
     {
         Hoshi,
-        Seijun
+        Seijun,
+        None
     }
 
     public override Type NodeType { protected set; get; }

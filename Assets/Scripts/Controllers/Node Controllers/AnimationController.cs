@@ -27,9 +27,10 @@ public class AnimationController : NodeController
 
     public override Type NodeType { protected set; get; }
 
-    public Image blackCover;
-    public Image whiteCover;
-    public Animator fadeInBlinkTop, fadeInBlinkBottom;
+    [SerializeField] GameObject animationContainer;
+    [SerializeField] Image blackCover;
+    [SerializeField] Image whiteCover;
+    [SerializeField] Animator fadeInBlinkTop, fadeInBlinkBottom;
 
     [Header("Camera Shake: ")]
     [SerializeField] int shakePointsAmount = 1;
@@ -57,6 +58,8 @@ public class AnimationController : NodeController
 
     void Begin(CustomAnimationNode node)
     {
+        animationContainer.SetActive(true);
+
         switch (node.animation)
         {
             case Animation.FadeToBlack:
@@ -107,6 +110,8 @@ public class AnimationController : NodeController
 
     void End()
     {
+        animationContainer.SetActive(false);
+
         CallNodeExecutionCompletion(0);
     }
 

@@ -11,7 +11,7 @@ public class MonoBehaviourSingleton<T> : MonoBehaviour where T : Component
 
 	public virtual void Awake()
 	{
-	    if (instance == null)
+		if (instance == null)
 	    {
 	        instance = this as T;
 	        DontDestroyOnLoad(this);

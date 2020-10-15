@@ -28,7 +28,22 @@ namespace nullbloq.Noodles
 			currentNode = controller.GetStartNode();
 		}
 
-		public bool HasNextNode()
+        void OnEnable()
+        {
+			SaveManager.OnGameDataLoaded += SetLoadedData;
+		}
+
+        void OnDisable()
+        {
+			SaveManager.OnGameDataLoaded -= SetLoadedData;
+        }
+
+        void SetLoadedData(SaveManager.SaveData loadedData)
+        {
+			currentNode = loadedData.currentNode;
+        }
+
+        public bool HasNextNode()
 		{
 			return CurrentNode.HasAnyOutput();
 		}
