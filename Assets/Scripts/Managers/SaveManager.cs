@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -10,10 +11,33 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
     [Serializable]
     public struct SaveData
     {
-        public int routeNoodleIndex;
-        public RouteController.Route currentRoute;
         [HideInInspector] public bool lastDecisionGood;
+
+        public int routeNoodleIndex;
+
+        public RouteController.Route currentRoute;
+
         [HideInInspector] public string currentNodeGUID;
+
+        [HideInInspector] public List<CharacterData> charactersInScene;
+    }
+
+    [Serializable]
+    public struct CharacterData
+    {
+        public int BodyIndex { get; }
+        public int ArmIndex { get; }
+        public int HeadIndex { get; }
+
+        public CharacterController.Character Character { get; }
+
+        public CharacterData(int _bodyIndex, int _armIndex, int _headIndex, CharacterController.Character _character)
+        {
+            BodyIndex = _bodyIndex;
+            ArmIndex = _armIndex;
+            HeadIndex = _headIndex;
+            Character = _character;
+        }
     }
 
     public int SaveSlotsAmount { private set; get; } = 3;
@@ -28,6 +52,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
     Noodler noodler = null;
     NoodleManager noodleManager = null;
     DecisionCheckController decisionCheckController = null;
+    ActionController actionController = null;
 
     public static event Action<SaveData> OnGameDataLoaded;
 
@@ -73,9 +98,19 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
 
     void ReferenceDataComponents()
     {
+        Debug.Log("referencing data components");
+
         noodler = GameObject.Find("Node Manager").GetComponent<Noodler>();
+        if (!noodler) Debug.Log("noodler null");
+
         noodleManager = GameObject.Find("Noodle Manager").GetComponent<NoodleManager>();
+        if (!noodleManager) Debug.Log("noodleManager null");
+
         decisionCheckController = GameObject.Find("Decision Check Controller").GetComponent<DecisionCheckController>();
+        if (!decisionCheckController) Debug.Log("decisionCheckController null");
+
+        actionController = GameObject.Find("Action Controller").GetComponent<ActionController>();
+        if (!actionController) Debug.Log("actionController null");
     }
 
     void DereferenceDataComponents()
@@ -83,6 +118,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         noodler = null;
         noodleManager = null;
         decisionCheckController = null;
+        actionController = null;
     }
 
     void UpdateFileData()
@@ -93,10 +129,17 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
             loadedData.routeNoodleIndex = noodleManager.RouteNoodleIndex;
             loadedData.currentRoute = noodleManager.CurrentRoute;
             loadedData.currentNodeGUID = noodler.CurrentNode.GUID;
+
+            loadedData.charactersInScene = new List<CharacterData>();
+            foreach (ActionController.ActiveCharacter character in actionController.charactersInScene)
+            {
+                loadedData.charactersInScene.Add(character);
+                Debug.Log("hasta aca llega");
+            }
         }
-        catch(NullReferenceException e)
+        catch (NullReferenceException e)
         {
-            Debug.LogError(e.Message + "File data could not be fully updated because one of the needed components is null");
+            Debug.LogError(e.Message + ": File data could not be fully updated due to one of the required components being null");
         }
     }
 

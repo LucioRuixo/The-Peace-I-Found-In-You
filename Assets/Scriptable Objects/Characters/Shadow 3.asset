@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 5
   characterName: Sombras
-  dialogueBoxSprite: {fileID: 21300000, guid: 3287c5eb2c841844e9f7df716690f50b, type: 3}
+  dialogueBoxSprite: {fileID: 21300000, guid: c13884d8dce9b5842a9dc362fcb24b6a, type: 3}
   bodySprites:
   - {fileID: 21300000, guid: 4bd6f2b49b07b0d43a71abfc6f9e0fb0, type: 3}
   headSprites: []

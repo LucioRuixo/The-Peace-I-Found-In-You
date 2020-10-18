@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using nullbloq.Noodles;
+using System;
 
 /*
 DUDAS:
@@ -15,6 +16,31 @@ DUDAS:
 */
 public class ActionController : NodeController
 {
+    public struct ActiveCharacter
+    {
+        public int BodyIndex { get; }
+        public int ArmIndex { get; }
+        public int HeadIndex { get; }
+
+        public CharacterController.Character Character { get; }
+
+        public GameObject Object { get; }
+
+        public ActiveCharacter(int _bodyIndex, int _armIndex, int _headIndex, CharacterController.Character _character, GameObject _characterObject)
+        {
+            BodyIndex = _bodyIndex;
+            ArmIndex = _armIndex;
+            HeadIndex = _headIndex;
+            Character = _character;
+            Object = _characterObject;
+        }
+
+        public static implicit operator SaveManager.CharacterData(ActiveCharacter activeCharacter)
+        {
+            return new SaveManager.CharacterData(activeCharacter.BodyIndex, activeCharacter.ArmIndex, activeCharacter.HeadIndex, activeCharacter.Character);
+        }
+    }
+
     public enum Action
     {
         EnterScene,
@@ -41,9 +67,16 @@ public class ActionController : NodeController
 
     float initialX;
 
+    ActiveCharacter activeCharacter;
+
     [SerializeField] GameObject characterPrefab = null;
     [SerializeField] Transform characterContainer = null;
     CharacterController characterManager;
+
+    bool fadingOutOfScene = false;
+
+    //public List<KeyValuePair<CharacterController.Character, GameObject>> charactersInScene = new List<KeyValuePair<CharacterController.Character, GameObject>>();
+    public List<ActiveCharacter> charactersInScene = new List<ActiveCharacter>();
 
     [Header("Enter/Exit Scene: ")]
     [SerializeField] float movementDuration = 1f;
@@ -51,10 +84,6 @@ public class ActionController : NodeController
 
     [Header("Fade Into/Off Scene: ")]
     [SerializeField] float fadeDuration = 1f;
-
-    bool fadingOutOfScene = false;
-
-    List<KeyValuePair<CharacterController.Character, GameObject>> charactersInScene = new List<KeyValuePair<CharacterController.Character, GameObject>>();
 
     void Awake()
     {
@@ -67,12 +96,39 @@ public class ActionController : NodeController
 
     void OnEnable()
     {
+        SaveManager.OnGameDataLoaded += SetLoadedData;
         //NodeManager.OnCharacterAction += Begin;
     }
 
     void OnDisable()
     {
+        SaveManager.OnGameDataLoaded -= SetLoadedData;
         //NodeManager.OnCharacterAction -= Begin;
+    }
+
+    void SetLoadedData(SaveManager.SaveData loadedData)
+    {
+        Debug.Log("loading character into scene");
+        if (loadedData.charactersInScene != null && loadedData.charactersInScene.Count > 0)
+        {
+            float spacing = Screen.width / (loadedData.charactersInScene.Count + 1);
+            for (int i = 0; i < loadedData.charactersInScene.Count; i++)
+            {
+                int bodyIndex = loadedData.charactersInScene[i].BodyIndex;
+                int armIndex = loadedData.charactersInScene[i].ArmIndex;
+                int headIndex = loadedData.charactersInScene[i].HeadIndex;
+                CharacterController.Character character = loadedData.charactersInScene[i].Character;
+
+                GameObject characterObject = GenerateCharacterObject(character, bodyIndex, armIndex, headIndex);
+
+                charactersInScene.Add(new ActiveCharacter(bodyIndex, armIndex, headIndex, character, characterObject));
+
+                float targetX = Screen.width - spacing * (i + 1);
+                Vector2 position = characterObject.transform.position;
+                position.x = targetX;
+                characterObject.transform.position = position;
+            }
+        }
     }
 
     void Begin(CustomCharacterActionNode node)
@@ -113,8 +169,8 @@ public class ActionController : NodeController
 
     void EnterCharacter(CustomCharacterActionNode node)
     {
-        GameObject newCharacter = GenerateNewCharacter(node);
-        charactersInScene.Add(new KeyValuePair<CharacterController.Character, GameObject>(node.character, newCharacter));
+        GameObject characterObject = GenerateCharacterObject(node.character, node.bodyIndex, node.armIndex, node.headIndex);
+        charactersInScene.Add(new ActiveCharacter(node.bodyIndex, node.armIndex, node.headIndex, node.character, characterObject));
 
         float spacing = Screen.width / (charactersInScene.Count + 1);
         for (int i = 0; i < charactersInScene.Count; i++)
@@ -124,31 +180,31 @@ public class ActionController : NodeController
             switch (node.action)
             {
                 case Action.EnterScene:
-                    StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, node));
+                    StartCoroutine(MoveCharacter(charactersInScene[i].Object.transform, targetX, false, node.action));
                     pendingCorroutines++;
 
                     break;
 
                 case Action.PopIntoScene:
-                    Vector2 position = charactersInScene[i].Value.transform.position;
+                    Vector2 position = charactersInScene[i].Object.transform.position;
                     position.x = targetX;
-                    charactersInScene[i].Value.transform.position = position;
+                    charactersInScene[i].Object.transform.position = position;
 
                     break;
 
                 case Action.FadeIntoScene:
                     if (i < charactersInScene.Count - 1)
                     {
-                        StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, node));
+                        StartCoroutine(MoveCharacter(charactersInScene[i].Object.transform, targetX, false, node.action));
                         pendingCorroutines++;
                     }
                     else
                     {
-                        position = charactersInScene[i].Value.transform.position;
+                        position = charactersInScene[i].Object.transform.position;
                         position.x = targetX;
-                        charactersInScene[i].Value.transform.position = position;
+                        charactersInScene[i].Object.transform.position = position;
 
-                        Image image = charactersInScene[i].Value.GetComponent<Image>();
+                        Image image = charactersInScene[i].Object.GetComponent<Image>();
                         StartCoroutine(IncreaseAlpha(image));
                         pendingCorroutines++;
                     }
@@ -176,17 +232,81 @@ public class ActionController : NodeController
         if (node.action == Action.PopIntoScene) End();
     }
 
-    GameObject GenerateNewCharacter(CustomCharacterActionNode node)
+    void EnterCharacter(SaveManager.CharacterData characterData, GameObject characterObject, Action action)
+    {
+        charactersInScene.Add(new ActiveCharacter(characterData.BodyIndex, characterData.ArmIndex, characterData.HeadIndex, characterData.Character, characterObject));
+
+        float spacing = Screen.width / (charactersInScene.Count + 1);
+        for (int i = 0; i < charactersInScene.Count; i++)
+        {
+            float targetX = Screen.width - spacing * (i + 1);
+
+            switch (action)
+            {
+                case Action.EnterScene:
+                    StartCoroutine(MoveCharacter(charactersInScene[i].Object.transform, targetX, false, action));
+                    pendingCorroutines++;
+
+                    break;
+
+                case Action.PopIntoScene:
+                    Vector2 position = charactersInScene[i].Object.transform.position;
+                    position.x = targetX;
+                    charactersInScene[i].Object.transform.position = position;
+
+                    break;
+
+                case Action.FadeIntoScene:
+                    if (i < charactersInScene.Count - 1)
+                    {
+                        StartCoroutine(MoveCharacter(charactersInScene[i].Object.transform, targetX, false, action));
+                        pendingCorroutines++;
+                    }
+                    else
+                    {
+                        position = charactersInScene[i].Object.transform.position;
+                        position.x = targetX;
+                        charactersInScene[i].Object.transform.position = position;
+
+                        Image image = charactersInScene[i].Object.GetComponent<Image>();
+                        StartCoroutine(IncreaseAlpha(image));
+                        pendingCorroutines++;
+                    }
+
+                    break;
+
+                default:
+                    Debug.LogError("Cannot enter scene using selected action");
+                    break;
+            }
+
+            //if (node.action == Action.EnterScene)
+            //{
+            //    StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false));
+            //    pendingCorroutines++;
+            //}
+            //else
+            //{
+            //    Vector2 position = charactersInScene[i].Value.transform.position;
+            //    position.x = targetX;
+            //    charactersInScene[i].Value.transform.position = position;
+            //}
+        }
+
+        if (action == Action.PopIntoScene) End();
+    }
+
+    GameObject GenerateCharacterObject(CharacterController.Character character, int bodyIndex, int armIndex, int headIndex)
     {
         CharacterSO newCharacter;
-        characterManager.characterDictionary.TryGetValue(node.character, out newCharacter);
+        characterManager.characterDictionary.TryGetValue(character, out newCharacter);
 
         Vector2 position = new Vector2(initialX, 0f);
         GameObject go = Instantiate(characterPrefab, position, Quaternion.identity, characterContainer);
         go.name = newCharacter.characterName;
 
         Image image = go.GetComponent<Image>();
-        image.sprite = newCharacter.bodySprites[node.bodyIndex];
+        image.sprite = newCharacter.bodySprites[bodyIndex];
         image.SetNativeSize();
         position = new Vector2(image.rectTransform.anchoredPosition.x, 0f);
         image.rectTransform.anchoredPosition = position;
@@ -194,7 +314,7 @@ public class ActionController : NodeController
         if (newCharacter.armSprites.Count > 0)
         {
             image = go.transform.GetChild(0).GetComponent<Image>();
-            image.sprite = newCharacter.armSprites[node.armIndex];
+            image.sprite = newCharacter.armSprites[armIndex];
         }
         else
             go.transform.GetChild(0).gameObject.SetActive(false);
@@ -202,7 +322,7 @@ public class ActionController : NodeController
         if (newCharacter.headSprites.Count > 0)
         {
             image = go.transform.GetChild(1).GetComponent<Image>();
-            image.sprite = newCharacter.headSprites[node.headIndex];
+            image.sprite = newCharacter.headSprites[headIndex];
         }
         else
             go.transform.GetChild(1).gameObject.SetActive(false);
@@ -213,22 +333,22 @@ public class ActionController : NodeController
     void ExitCharacter(CustomCharacterActionNode node)
     {
         bool characterFound = false;
-        foreach (KeyValuePair<CharacterController.Character, GameObject> character in charactersInScene)
+        foreach (ActiveCharacter character in charactersInScene)
         {
-            if (character.Key == node.character)
+            if (character.Character == node.character)
             {
                 float targetX = Screen.width - initialX;
 
                 switch (node.action)
                 {
                     case Action.ExitScene:
-                        StartCoroutine(MoveCharacter(character.Value.transform, targetX, false, node));
+                        StartCoroutine(MoveCharacter(character.Object.transform, targetX, false, node.action));
                         pendingCorroutines++;
 
                         break;
 
                     case Action.PopOutOfScene:
-                        Destroy(character.Value);
+                        Destroy(character.Object);
                         break;
 
                     case Action.FadeOutOfScene:
@@ -236,8 +356,8 @@ public class ActionController : NodeController
                         //position.x = targetX;
                         //character.Value.transform.position = position;
 
-                        Image image = character.Value.GetComponent<Image>();
-                        StartCoroutine(DecreaseAlpha(image, node));
+                        Image image = character.Object.GetComponent<Image>();
+                        StartCoroutine(DecreaseAlpha(image, node.action));
                         pendingCorroutines++;
                         fadingOutOfScene = true;
 
@@ -272,15 +392,15 @@ public class ActionController : NodeController
             {
                 case Action.ExitScene:
                 case Action.FadeOutOfScene:
-                    StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, node));
+                    StartCoroutine(MoveCharacter(charactersInScene[i].Object.transform, targetX, false, node.action));
                     pendingCorroutines++;
 
                     break;
 
                 case Action.PopOutOfScene:
-                    Vector2 position = charactersInScene[i].Value.transform.position;
+                    Vector2 position = charactersInScene[i].Object.transform.position;
                     position.x = targetX;
-                    charactersInScene[i].Value.transform.position = position;
+                    charactersInScene[i].Object.transform.position = position;
 
                     break;
 
@@ -314,9 +434,9 @@ public class ActionController : NodeController
     void ChangeBodyPart(BodyPart bodyPart, CustomCharacterActionNode node)
     {
         bool characterFound = false;
-        foreach (KeyValuePair<CharacterController.Character, GameObject> characterInScene in charactersInScene)
+        foreach (ActiveCharacter characterInScene in charactersInScene)
         {
-            if (characterInScene.Key == node.character)
+            if (characterInScene.Character == node.character)
             {
                 CharacterSO character;
                 characterManager.characterDictionary.TryGetValue(node.character, out character);
@@ -328,7 +448,7 @@ public class ActionController : NodeController
                     case BodyPart.Body:
                         if (node.bodyIndex >= 0 && node.bodyIndex < character.bodySprites.Count)
                         {
-                            image = characterInScene.Value.GetComponent<Image>();
+                            image = characterInScene.Object.GetComponent<Image>();
                             image.sprite = character.bodySprites[node.bodyIndex];
                         }
 
@@ -339,7 +459,7 @@ public class ActionController : NodeController
                             &&
                             character.armSprites.Count > 0)
                         {
-                            image = characterInScene.Value.transform.GetChild(0).GetComponent<Image>();
+                            image = characterInScene.Object.transform.GetChild(0).GetComponent<Image>();
                             image.sprite = character.armSprites[node.armIndex];
                         }
                         else Debug.LogError("Sprite index out of range");
@@ -351,7 +471,7 @@ public class ActionController : NodeController
                             &&
                             character.headSprites.Count > 0)
                         {
-                            image = characterInScene.Value.transform.GetChild(1).GetComponent<Image>();
+                            image = characterInScene.Object.transform.GetChild(1).GetComponent<Image>();
                             image.sprite = character.headSprites[node.headIndex];
                         }
                         else Debug.LogError("Sprite index out of range");
@@ -383,7 +503,7 @@ public class ActionController : NodeController
         Begin(node);
     }
 
-    IEnumerator MoveCharacter(Transform character, float targetX, bool destroyOnFinish, CustomCharacterActionNode node)
+    IEnumerator MoveCharacter(Transform character, float targetX, bool destroyOnFinish, Action action)
     {
         float a = character.position.x;
         float b = targetX;
@@ -391,7 +511,7 @@ public class ActionController : NodeController
         float movementLength = Mathf.Abs(a - b);
         float fractionMoved = 0f;
 
-        if (node.action == Action.FadeOutOfScene)
+        if (action == Action.FadeOutOfScene)
             yield return new WaitWhile(() => fadingOutOfScene == true);
 
         while (character.position.x < b - movementAccuracyRange / 2f || character.position.x > b + movementAccuracyRange / 2f)
@@ -431,7 +551,7 @@ public class ActionController : NodeController
         End();
     }
 
-    IEnumerator DecreaseAlpha(Image image, CustomCharacterActionNode node)
+    IEnumerator DecreaseAlpha(Image image, Action action)
     {
         float currentAlphaValue = 1f;
 
@@ -447,7 +567,7 @@ public class ActionController : NodeController
             yield return null;
         }
 
-        if (node.action == Action.FadeOutOfScene)
+        if (action == Action.FadeOutOfScene)
         {
             fadingOutOfScene = false;
         }
