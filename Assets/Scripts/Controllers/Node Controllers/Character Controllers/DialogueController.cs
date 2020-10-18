@@ -13,6 +13,7 @@ public class DialogueController : NodeController
 
     bool typing = false;
 
+    string characterName;
     string sentence;
 
     int currentDialogueStripIndex = 0;
@@ -24,10 +25,11 @@ public class DialogueController : NodeController
 
     IEnumerator typingCoroutine;
 
-    public GameObject dialogue;
-    public Image dialogueBox;
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
+    [SerializeField] GameObject dialogue = null;
+    [SerializeField] Image dialogueBox = null;
+    [SerializeField] TextMeshProUGUI nameText = null;
+    [SerializeField] TextMeshProUGUI dialogueText = null;
+    [SerializeField] Log log = null;
     CharacterController characterManager;
     NoodlesNodeMultipleDialogue node;
 
@@ -58,6 +60,7 @@ public class DialogueController : NodeController
                 dialogueText.text = sentence;
 
                 typing = false;
+                log.AddSentence(characterName, sentence);
             }
             else ExecuteNextDialogueStrip();
         }
@@ -86,9 +89,11 @@ public class DialogueController : NodeController
                 dialogueBox.sprite = character.dialogueBoxSprite;
 
                 if (node.dialogueStrips[currentDialogueStripIndex].status == CharacterController.Status.Known)
-                    nameText.text = character.characterName;
+                    characterName = character.characterName;
                 else
-                    nameText.text = "???";
+                    characterName = "???";
+
+                nameText.text = characterName;
             }
 
             //DisplayNextSentence();
@@ -153,5 +158,6 @@ public class DialogueController : NodeController
         }
 
         typing = false;
+        log.AddSentence(characterName, sentence);
     }
 }
