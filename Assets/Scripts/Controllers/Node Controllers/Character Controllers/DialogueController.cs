@@ -26,13 +26,14 @@ public class DialogueController : NodeController
     IEnumerator typingCoroutine;
 
     [SerializeField] GameObject dialogue = null;
-    [SerializeField] RectTransform[] dialogueButtons = null;
     [SerializeField] Image dialogueBox = null;
     [SerializeField] TextMeshProUGUI nameText = null;
     [SerializeField] TextMeshProUGUI dialogueText = null;
     [SerializeField] Log log = null;
     CharacterController characterManager;
     NoodlesNodeMultipleDialogue node;
+
+    public List<RectTransform> clickableRects = new List<RectTransform>();
 
     Queue<string> sentenceQueue = new Queue<string>();
 
@@ -54,7 +55,7 @@ public class DialogueController : NodeController
         if (!dialogue.activeInHierarchy) return;
 
         bool hoveringOverButton = false;
-        foreach (RectTransform button in dialogueButtons)
+        foreach (RectTransform button in clickableRects)
         {
             if (RectTransformUtility.RectangleContainsScreenPoint(button, Input.mousePosition))
             {

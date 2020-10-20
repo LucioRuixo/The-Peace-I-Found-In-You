@@ -351,14 +351,15 @@ MonoBehaviour:
   pauseWaitTime: 0.5
   whisperFontSizeFactor: 0.75
   dialogue: {fileID: 590469008}
-  dialogueButtons:
-  - {fileID: 639351860}
-  - {fileID: 2044728274}
-  - {fileID: 896051249}
   dialogueBox: {fileID: 644522514}
   nameText: {fileID: 982045083}
   dialogueText: {fileID: 1123153518}
   log: {fileID: 161944892}
+  clickableRects:
+  - {fileID: 639351860}
+  - {fileID: 2044728274}
+  - {fileID: 896051249}
+  - {fileID: 161944891}
 --- !u!1 &138360882
 GameObject:
   m_ObjectHideFlags: 0
@@ -6229,6 +6230,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   log: {fileID: 161944890}
+  confirmationMenuPrefab: {fileID: 3648222499761110402, guid: 818402243fcd2a045be1705bd4d5400c,
+    type: 3}
+  confirmationMenuContainer: {fileID: 414413656}
+  dialogueController: {fileID: 121330168}
 --- !u!4 &1787929897
 Transform:
   m_ObjectHideFlags: 0
