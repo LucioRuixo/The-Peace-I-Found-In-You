@@ -26,6 +26,7 @@ public class DialogueController : NodeController
     IEnumerator typingCoroutine;
 
     [SerializeField] GameObject dialogue = null;
+    [SerializeField] RectTransform[] dialogueButtons = null;
     [SerializeField] Image dialogueBox = null;
     [SerializeField] TextMeshProUGUI nameText = null;
     [SerializeField] TextMeshProUGUI dialogueText = null;
@@ -52,7 +53,17 @@ public class DialogueController : NodeController
     {
         if (!dialogue.activeInHierarchy) return;
 
-        if (Input.GetButtonDown("Continue"))
+        bool hoveringOverButton = false;
+        foreach (RectTransform button in dialogueButtons)
+        {
+            if (RectTransformUtility.RectangleContainsScreenPoint(button, Input.mousePosition))
+            {
+                hoveringOverButton = true;
+                break;
+            }
+        }
+
+        if (!hoveringOverButton && Input.GetButtonDown("Continue"))
         {
             if (typing)
             {
