@@ -40,7 +40,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         }
     }
 
-    public int SaveSlotsAmount { private set; get; } = 3;
+    public int SaveSlotsAmount { private set; get; } = 4;
 
     string savesFolderPath;
 

@@ -18,7 +18,9 @@ public class UIManager_MainMenu : MonoBehaviour
     bool decreasingAlpha = false;
 
     [SerializeField] GameObject saveSlotButtonPrefab = null;
+    [SerializeField] GameObject cover = null;
     [SerializeField] Transform saveSlotButtonContainer = null;
+    [SerializeField] Transform confirmationMenuContainer = null;
     [SerializeField] TextMeshProUGUI versionText = null;
 
     [Header("Background Change: ")]
@@ -64,7 +66,7 @@ public class UIManager_MainMenu : MonoBehaviour
         for (int i = 0; i < SaveManager.Get().SaveSlotsAmount; i++)
         {
             SaveSlotButton newSaveSlotButton = Instantiate(saveSlotButtonPrefab, saveSlotButtonContainer).GetComponent<SaveSlotButton>();
-            newSaveSlotButton.Initialize(i, saveSelectionScreenMode);
+            newSaveSlotButton.Initialize(i, saveSelectionScreenMode, cover, confirmationMenuContainer);
         }
 
         saveSelectionScreen.SetActive(true);

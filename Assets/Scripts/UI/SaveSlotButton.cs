@@ -11,6 +11,8 @@ public class SaveSlotButton : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI text = null;
     [SerializeField] GameObject confirmationMenuPrefab = null;
+    GameObject cover;
+    Transform confirmationMenuContainer;
 
     void Start()
     {
@@ -29,16 +31,20 @@ public class SaveSlotButton : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 
-    public void Initialize(int _slotIndex, UIManager_MainMenu.SaveSelectionScreenMode _saveSelectionScreenMode)
+    public void Initialize(int _slotIndex, UIManager_MainMenu.SaveSelectionScreenMode _saveSelectionScreenMode, GameObject _cover, Transform _confirmationMenuContainer)
     {
         slotIndex = _slotIndex;
         saveSelectionScreenMode = _saveSelectionScreenMode;
+        cover = _cover;
+        confirmationMenuContainer = _confirmationMenuContainer;
     }
 
     public void InstantiateConfirmationMenu()
     {
+        cover.SetActive(true);
+
         Vector2 position = new Vector2(Screen.width / 2f, Screen.height / 2f);
-        ConfirmationMenu newConfirmationMenu = Instantiate(confirmationMenuPrefab, position, Quaternion.identity, transform).GetComponent<ConfirmationMenu>();
+        ConfirmationMenu newConfirmationMenu = Instantiate(confirmationMenuPrefab, position, Quaternion.identity, confirmationMenuContainer).GetComponent<ConfirmationMenu>();
 
         string menuText = "";
         UnityAction positiveAction = null;
@@ -55,6 +61,6 @@ public class SaveSlotButton : MonoBehaviour
 
         newConfirmationMenu.text.text = menuText;
         newConfirmationMenu.positiveButton.onClick.AddListener(positiveAction);
-        newConfirmationMenu.negativeButton.onClick.AddListener(() => Destroy(newConfirmationMenu.gameObject));
+        newConfirmationMenu.negativeButton.onClick.AddListener(() => { cover.SetActive(false); Destroy(newConfirmationMenu.gameObject); });
     }
 }
