@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9b329c1489a05a44b03f2c24869823b, type: 3}
-  m_Name: Hoshi B A1 3
+  m_Name: Seijun G A1 2
   m_EditorClassIdentifier: 
   location: 0
-  ilustration: 7
-  sprite: {fileID: 21300000, guid: 0b61c0c9ffd69f0499cffc3b2db382c8, type: 3}
+  ilustration: 9
+  sprite: {fileID: 21300000, guid: 67ca7a1fffc6f8c428326d17955da804, type: 3}

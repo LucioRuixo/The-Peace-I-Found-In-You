@@ -30,17 +30,12 @@ public class BackgroundController : NodeController
         Empty,
         HoshiG_A11,
         HoshiG_A12,
-        HoshiG_A131,
-        HoshiG_A132,
         HoshiB_A11,
         HoshiB_A12,
-        HoshiB_A13,
         SeijunG_A11,
         SeijunG_A12,
-        SeijunG_A13,
         SeijunB_A11,
         SeijunB_A12,
-        SeijunB_A13
     }
 
     public override Type NodeType { protected set; get; }

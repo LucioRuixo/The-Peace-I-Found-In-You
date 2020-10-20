@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,17 +14,41 @@ public class UIManager_MainMenu : MonoBehaviour
         LoadGame
     }
 
-    [SerializeField] GameObject mainMenuFirstSelected = null, creditsScreenFirstSelected = null;
-    [SerializeField] GameObject mainMenu = null, mainScreen = null, saveSelectionScreen = null, creditsScreen = null;
+    bool increasingAlpha = false;
+    bool decreasingAlpha = false;
+
     [SerializeField] GameObject saveSlotButtonPrefab = null;
     [SerializeField] Transform saveSlotButtonContainer = null;
     [SerializeField] TextMeshProUGUI versionText = null;
+
+    [Header("Background Change: ")]
+    [SerializeField] float backgroundChangeTime = 15f;
+    [SerializeField] float fadeDuration = 3f;
+
+    [SerializeField] Image background1 = null;
+    [SerializeField] Image background2 = null;
+
+    [SerializeField] Sprite[] backgrounds = null;
+
+    [Header("Screens: ")]
+    [SerializeField] GameObject mainMenu = null;
+    [SerializeField] GameObject mainScreen = null;
+    [SerializeField] GameObject saveSelectionScreen = null;
+    [SerializeField] GameObject creditsScreen = null;
+    [SerializeField] GameObject extrasScreen = null;
+
+    [Header("Screens First Selected: ")]
+    [SerializeField] GameObject mainMenuFirstSelected = null;
+    [SerializeField] GameObject creditsScreenFirstSelected = null;
+    [SerializeField] GameObject extrasScreenFirstSelected = null;
 
     public static event Action<SaveSelectionScreenMode> OnSaveSelectionScreenEnabled;
 
     void Start()
     {
         versionText.text = "v" + Application.version;
+
+        StartCoroutine(ChangeBackground());
     }
 
     public void Play()
@@ -57,9 +81,19 @@ public class UIManager_MainMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(creditsScreenFirstSelected);
     }
 
+    public void GoToExtrasScreen()
+    {
+        mainMenu.SetActive(false);
+        extrasScreen.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(extrasScreenFirstSelected);
+    }
+
     public void Return()
     {
         creditsScreen.SetActive(false);
+        extrasScreen.SetActive(false);
         mainMenu.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(null);
@@ -69,5 +103,79 @@ public class UIManager_MainMenu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+    
+    IEnumerator ChangeBackground()
+    {
+        int backgroundIndex = UnityEngine.Random.Range(0, backgrounds.Length - 1);
+        background1.sprite = backgrounds[backgroundIndex];
+
+        while (true)
+        {
+            yield return new WaitForSeconds(backgroundChangeTime);
+
+            int newBackgroundIndex;
+            do newBackgroundIndex = UnityEngine.Random.Range(0, backgrounds.Length - 1);
+            while (newBackgroundIndex == backgroundIndex);
+            backgroundIndex = newBackgroundIndex;
+
+            increasingAlpha = true;
+            decreasingAlpha = true;
+
+            if (background1.color.a == 1f)
+            {
+                background2.sprite = backgrounds[backgroundIndex];
+
+                StartCoroutine(IncreaseAlpha(background2));
+                StartCoroutine(DecreaseAlpha(background1));
+            }
+            else
+            {
+                background1.sprite = backgrounds[backgroundIndex];
+
+                StartCoroutine(IncreaseAlpha(background1));
+                StartCoroutine(DecreaseAlpha(background2));
+            }
+
+            yield return new WaitUntil(() => increasingAlpha == false && decreasingAlpha == false);
+        }
+    }
+
+    IEnumerator IncreaseAlpha(Image image)
+    {
+        float currentAlphaValue = 0f;
+
+        while (currentAlphaValue < 1f)
+        {
+            float addedValue = 1f / (fadeDuration / Time.deltaTime);
+            currentAlphaValue += addedValue;
+
+            Color newColor = image.color;
+            newColor.a = currentAlphaValue;
+            image.color = newColor;
+
+            yield return null;
+        }
+
+        increasingAlpha = false;
+    }
+
+    IEnumerator DecreaseAlpha(Image image)
+    {
+        float currentAlphaValue = 1f;
+
+        while (currentAlphaValue > 0f)
+        {
+            float subtractedValue = 1f / (fadeDuration / Time.deltaTime);
+            currentAlphaValue -= subtractedValue;
+
+            Color newColor = image.color;
+            newColor.a = currentAlphaValue;
+            image.color = newColor;
+
+            yield return null;
+        }
+
+        decreasingAlpha = false;
     }
 }

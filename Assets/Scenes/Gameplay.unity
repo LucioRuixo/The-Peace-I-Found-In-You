@@ -489,17 +489,13 @@ MonoBehaviour:
   ilustrations:
   - {fileID: 11400000, guid: 0316b41108e28f045b379b27ad68bb39, type: 2}
   - {fileID: 11400000, guid: d621122b734c6c74f932150fbb48e2b7, type: 2}
-  - {fileID: 11400000, guid: d2f9f25875219994385d8f11fc48e428, type: 2}
   - {fileID: 11400000, guid: 7e7d1e3059119af4c901a1cc4e5fe263, type: 2}
-  - {fileID: 11400000, guid: cb81806428395aa4687335a4854e7b43, type: 2}
   - {fileID: 11400000, guid: 270b0d90c6a5a954ba35674e2e33621f, type: 2}
   - {fileID: 11400000, guid: f33cbafe1e6cb7f4cb571d7fbd112794, type: 2}
   - {fileID: 11400000, guid: d54c45675f0ccdf45b45477b1b5adadf, type: 2}
   - {fileID: 11400000, guid: d58b018c1b3f11a4ea4e0760f0103bf1, type: 2}
-  - {fileID: 11400000, guid: 1f11df1244ae31f4f80a009b256f4b2b, type: 2}
   - {fileID: 11400000, guid: c26009e151801314a992ebca117e2679, type: 2}
   - {fileID: 11400000, guid: fa2c957499550c94981d950a44540d73, type: 2}
-  - {fileID: 11400000, guid: 97fc27b01b8f15f4b9cfbcbbfb006682, type: 2}
 --- !u!1 &157306317
 GameObject:
   m_ObjectHideFlags: 0
