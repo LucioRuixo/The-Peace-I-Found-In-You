@@ -21,6 +21,7 @@ public class UIManager_MainMenu : MonoBehaviour
     [SerializeField] GameObject cover = null;
     [SerializeField] Transform saveSlotButtonContainer = null;
     [SerializeField] Transform confirmationMenuContainer = null;
+    [SerializeField] RectTransform selectionIcon = null;
     [SerializeField] TextMeshProUGUI versionText = null;
 
     [Header("Background Change: ")]
@@ -41,6 +42,7 @@ public class UIManager_MainMenu : MonoBehaviour
 
     [Header("Screens First Selected: ")]
     [SerializeField] GameObject mainMenuFirstSelected = null;
+    [SerializeField] GameObject saveSelectionScreenFirstSelected = null;
     [SerializeField] GameObject creditsScreenFirstSelected = null;
     [SerializeField] GameObject extrasScreenFirstSelected = null;
 
@@ -67,9 +69,14 @@ public class UIManager_MainMenu : MonoBehaviour
         {
             SaveSlotButton newSaveSlotButton = Instantiate(saveSlotButtonPrefab, saveSlotButtonContainer).GetComponent<SaveSlotButton>();
             newSaveSlotButton.Initialize(i, saveSelectionScreenMode, cover, confirmationMenuContainer);
+
+            newSaveSlotButton.GetComponent<SelectableButton>().SetSelectionIcon(selectionIcon);
         }
 
         saveSelectionScreen.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(saveSelectionScreenFirstSelected);
 
         OnSaveSelectionScreenEnabled?.Invoke((SaveSelectionScreenMode)mode);
     }
@@ -94,9 +101,11 @@ public class UIManager_MainMenu : MonoBehaviour
 
     public void Return()
     {
+        saveSelectionScreen.SetActive(false);
         creditsScreen.SetActive(false);
         extrasScreen.SetActive(false);
         mainMenu.SetActive(true);
+        mainScreen.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(mainMenuFirstSelected);
