@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class SaveSlotButton : MonoBehaviour
 {
@@ -31,6 +32,17 @@ public class SaveSlotButton : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 
+    void CloseConfirmationMenu(GameObject menuObject, GameObject firstSelected)
+    {
+        Debug.Log(firstSelected);
+
+        cover.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstSelected);
+
+        Destroy(menuObject);
+    }
+
     public void Initialize(int _slotIndex, UIManager_MainMenu.SaveSelectionScreenMode _saveSelectionScreenMode, GameObject _cover, Transform _confirmationMenuContainer)
     {
         slotIndex = _slotIndex;
@@ -42,6 +54,8 @@ public class SaveSlotButton : MonoBehaviour
     public void InstantiateConfirmationMenu()
     {
         cover.SetActive(true);
+
+        GameObject currentSelected = EventSystem.current.currentSelectedGameObject;
 
         Vector2 position = new Vector2(Screen.width / 2f, Screen.height / 2f);
         ConfirmationMenu newConfirmationMenu = Instantiate(confirmationMenuPrefab, position, Quaternion.identity, confirmationMenuContainer).GetComponent<ConfirmationMenu>();
@@ -58,9 +72,10 @@ public class SaveSlotButton : MonoBehaviour
             menuText = "¿Cargar esta partida?";
             positiveAction = LoadGame;
         }
-
         newConfirmationMenu.text.text = menuText;
         newConfirmationMenu.positiveButton.onClick.AddListener(positiveAction);
-        newConfirmationMenu.negativeButton.onClick.AddListener(() => { cover.SetActive(false); Destroy(newConfirmationMenu.gameObject); });
+
+        UnityAction negativeAction = () => CloseConfirmationMenu(newConfirmationMenu.gameObject, currentSelected);
+        newConfirmationMenu.negativeButton.onClick.AddListener(negativeAction);
     }
 }
