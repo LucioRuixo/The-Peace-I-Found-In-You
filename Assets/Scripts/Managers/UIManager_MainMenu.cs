@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class UIManager_MainMenu : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class UIManager_MainMenu : MonoBehaviour
     [SerializeField] Transform confirmationMenuContainer = null;
     [SerializeField] RectTransform selectionIcon = null;
     [SerializeField] TextMeshProUGUI versionText = null;
+
+    List<GameObject> saveSlotButtons = new List<GameObject>();
 
     [Header("Background Change: ")]
     [SerializeField] float backgroundChangeTime = 15f;
@@ -60,19 +63,33 @@ public class UIManager_MainMenu : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 
+    void GenerateSaveSlotButtons(SaveSelectionScreenMode saveSelectionScreenMode)
+    {
+        for (int i = 0; i < SaveManager.Get().SaveSlotsAmount; i++)
+        {
+            GameObject newSaveSlotButton = Instantiate(saveSlotButtonPrefab, saveSlotButtonContainer);
+
+            newSaveSlotButton.GetComponent<SaveSlotButton>().Initialize(i, saveSelectionScreenMode, cover, confirmationMenuContainer);
+            newSaveSlotButton.GetComponent<SelectableButton>().SetSelectionIcon(selectionIcon);
+
+            saveSlotButtons.Add(newSaveSlotButton);
+        }
+    }
+
+    public void DeleteSaveSlotButtons()
+    {
+        foreach (GameObject button in saveSlotButtons)
+        {
+            Destroy(button);
+        }
+
+        saveSlotButtons.Clear();
+    }
+
     public void GoToSaveSelectionScreen(int mode)
     {
         mainScreen.SetActive(false);
-
-        SaveSelectionScreenMode saveSelectionScreenMode = (SaveSelectionScreenMode)mode;
-        for (int i = 0; i < SaveManager.Get().SaveSlotsAmount; i++)
-        {
-            SaveSlotButton newSaveSlotButton = Instantiate(saveSlotButtonPrefab, saveSlotButtonContainer).GetComponent<SaveSlotButton>();
-            newSaveSlotButton.Initialize(i, saveSelectionScreenMode, cover, confirmationMenuContainer);
-
-            newSaveSlotButton.GetComponent<SelectableButton>().SetSelectionIcon(selectionIcon);
-        }
-
+        GenerateSaveSlotButtons((SaveSelectionScreenMode)mode);
         saveSelectionScreen.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(null);
