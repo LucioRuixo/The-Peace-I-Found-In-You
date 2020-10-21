@@ -12,6 +12,7 @@ public class DialogueController : NodeController
     public override Type NodeType { protected set; get; }
 
     bool typing = false;
+    bool logActive = false;
 
     string characterName;
     string sentence;
@@ -47,6 +48,7 @@ public class DialogueController : NodeController
 
     void OnEnable()
     {
+        UIManager_Gameplay.OnLogStateChange += UpdateLogState;
         //NodeManager.OnDialogue += Begin;
     }
 
@@ -64,7 +66,7 @@ public class DialogueController : NodeController
             }
         }
 
-        if (!hoveringOverButton && Input.GetButtonDown("Continue"))
+        if (!hoveringOverButton && !logActive && Input.GetButtonDown("Continue"))
         {
             if (typing)
             {
@@ -80,6 +82,7 @@ public class DialogueController : NodeController
 
     void OnDisable()
     {
+        UIManager_Gameplay.OnLogStateChange -= UpdateLogState;
         //NodeManager.OnDialogue -= Begin;
     }
 
@@ -89,6 +92,11 @@ public class DialogueController : NodeController
         dialogue.SetActive(true);
 
         ExecuteNextDialogueStrip();
+    }
+
+    void UpdateLogState(bool state)
+    {
+        logActive = state;
     }
 
     public void ExecuteNextDialogueStrip() // Cuando cambie sentence de DialogueStrip por una lista de oraciones volver a hacerla privada y hacer que Continue llame a DisplayNextSentence

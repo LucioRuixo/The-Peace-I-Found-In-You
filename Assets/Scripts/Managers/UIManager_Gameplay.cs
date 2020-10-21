@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UIManager_Gameplay : MonoBehaviour
@@ -8,6 +9,8 @@ public class UIManager_Gameplay : MonoBehaviour
     [SerializeField] GameObject confirmationMenuPrefab = null;
     [SerializeField] Transform confirmationMenuContainer = null;
     [SerializeField] DialogueController dialogueController = null;
+
+    public static event Action<bool> OnLogStateChange;
 
     void CloseConfirmationMenu(ConfirmationMenu confirmationMenu)
     {
@@ -19,6 +22,8 @@ public class UIManager_Gameplay : MonoBehaviour
     {
         dialogueCover.SetActive(state);
         log.SetActive(state);
+
+        OnLogStateChange?.Invoke(state);
     }
 
     public void SaveGame()
