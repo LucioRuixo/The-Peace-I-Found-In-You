@@ -32,6 +32,7 @@ MonoBehaviour:
   - id: 16
   - id: 17
   - id: 18
+  - id: 19
   references:
     version: 1
     00000000:
@@ -174,9 +175,9 @@ MonoBehaviour:
         - GUID: 75c5ab4d-2876-48d1-9be4-d1e0fa4c0254
           parentNodeGUID: f181b702-10d7-4450-9452-2c0bb9e9af59
           targetNodeGUID:
-          - 36bc93f0-3e6f-42ac-8cc8-63e0658beae4
+          - 683d45d2-0449-4bb2-aa87-a8a3f386aa6f
           targetPortGUID:
-          - c610fdc4-e61d-44af-b320-8c00156f38af
+          - 32606fda-3ff0-47d3-979b-2bec9b5b7c95
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
@@ -301,8 +302,8 @@ MonoBehaviour:
         GUID: 36bc93f0-3e6f-42ac-8cc8-63e0658beae4
         rect:
           serializedVersion: 2
-          x: 1097
-          y: 351
+          x: 1102
+          y: 452
           width: 279
           height: 96
         width: 600
@@ -311,9 +312,9 @@ MonoBehaviour:
         - GUID: c610fdc4-e61d-44af-b320-8c00156f38af
           parentNodeGUID: 36bc93f0-3e6f-42ac-8cc8-63e0658beae4
           targetNodeGUID:
-          - f181b702-10d7-4450-9452-2c0bb9e9af59
+          - 683d45d2-0449-4bb2-aa87-a8a3f386aa6f
           targetPortGUID:
-          - 75c5ab4d-2876-48d1-9be4-d1e0fa4c0254
+          - a8928ccd-2b87-48ec-87bc-d5b1c13fb14a
           text: Input
           isEditable: 0
         outputPorts:
@@ -369,8 +370,8 @@ MonoBehaviour:
         GUID: 5c2ee150-b65f-4ef6-b613-a4c0df8ae7b7
         rect:
           serializedVersion: 2
-          x: 2025
-          y: 96
+          x: 2027
+          y: 98
           width: 46
           height: 71
         width: 100
@@ -777,3 +778,37 @@ MonoBehaviour:
           status: 0
           sentence: "(Para mi ese ataque fue uno de muchos que viv\xED, pero para
             ella fue algo que nunca olvidar\xE1...)"
+    00000013:
+      type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Animation
+        GUID: 683d45d2-0449-4bb2-aa87-a8a3f386aa6f
+        rect:
+          serializedVersion: 2
+          x: 1109
+          y: 345
+          width: 272
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 32606fda-3ff0-47d3-979b-2bec9b5b7c95
+          parentNodeGUID: 683d45d2-0449-4bb2-aa87-a8a3f386aa6f
+          targetNodeGUID:
+          - f181b702-10d7-4450-9452-2c0bb9e9af59
+          targetPortGUID:
+          - 75c5ab4d-2876-48d1-9be4-d1e0fa4c0254
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: a8928ccd-2b87-48ec-87bc-d5b1c13fb14a
+          parentNodeGUID: 683d45d2-0449-4bb2-aa87-a8a3f386aa6f
+          targetNodeGUID:
+          - 36bc93f0-3e6f-42ac-8cc8-63e0658beae4
+          targetPortGUID:
+          - c610fdc4-e61d-44af-b320-8c00156f38af
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        animation: 14

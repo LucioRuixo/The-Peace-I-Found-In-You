@@ -22,20 +22,28 @@ public class AnimationController : NodeController
         Blinking,
         Rain,
         Jump,
-        CameraShake
+        CameraShake,
+        AfternoonFilter,
+        NightFilter,
+        DisableFilter
     }
 
     public override Type NodeType { protected set; get; }
 
-    [SerializeField] GameObject animationContainer = null;
+    [SerializeField] new GameObject animation = null;
     [SerializeField] Image blackCover = null;
     [SerializeField] Image whiteCover = null;
+    [SerializeField] Image filter = null;
     [SerializeField] Animator fadeInBlinkTop = null, fadeInBlinkBottom = null;
 
     [Header("Camera Shake: ")]
     [SerializeField] int shakePointsAmount = 1;
     [SerializeField] float shakeMagnitude = 1f;
     [SerializeField] float shakeSpeed = 1f;
+
+    [Header("Filters: ")]
+    [SerializeField] Sprite afternoonFilter = null;
+    [SerializeField] Sprite nightFilter = null;
 
     //public static event Action<int> OnNodeExecutionCompleted;
 
@@ -58,7 +66,7 @@ public class AnimationController : NodeController
 
     void Begin(CustomAnimationNode node)
     {
-        animationContainer.SetActive(true);
+        animation.SetActive(true);
 
         switch (node.animation)
         {
@@ -96,6 +104,15 @@ public class AnimationController : NodeController
             case Animation.CameraShake:
                 StartCoroutine(ShakeCamera());
                 break;
+            case Animation.AfternoonFilter:
+                ApplyFilter(afternoonFilter);
+                break;
+            case Animation.NightFilter:
+                ApplyFilter(nightFilter);
+                break;
+            case Animation.DisableFilter:
+                ApplyFilter(null);
+                break;
             default:
                 Debug.LogError("Animation in node not found");
                 break;
@@ -108,10 +125,23 @@ public class AnimationController : NodeController
         fadeInBlinkBottom.SetTrigger("Blink Open");
     }
 
+    void ApplyFilter(Sprite newFilter)
+    {
+        if (newFilter)
+        {
+            filter.sprite = newFilter;
+            filter.gameObject.SetActive(true);
+            End();
+        }
+        else
+        {
+            filter.gameObject.SetActive(false);
+            End();
+        }
+    }
+
     void End()
     {
-        animationContainer.SetActive(false);
-
         CallNodeExecutionCompletion(0);
     }
 

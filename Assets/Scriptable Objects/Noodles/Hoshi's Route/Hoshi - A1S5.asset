@@ -47,6 +47,7 @@ MonoBehaviour:
   - id: 31
   - id: 32
   - id: 33
+  - id: 34
   references:
     version: 1
     00000000:
@@ -83,7 +84,7 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 24279
-          y: -772
+          y: -651
           width: 279
           height: 96
         width: 600
@@ -92,9 +93,9 @@ MonoBehaviour:
         - GUID: c71489fa-6fe1-4ebd-bb2f-70e21a6ffcdf
           parentNodeGUID: 8a4e3a74-ebf8-49db-a454-53ade114734c
           targetNodeGUID:
-          - 0a2f585c-d72f-47db-84c0-b23fff136218
+          - 8488813a-5a8c-4c42-b473-1f30c7fa4c8f
           targetPortGUID:
-          - 0c78d8c8-685f-49ae-beeb-93b1ee3d78ea
+          - dbc83040-0ac9-4a33-b381-0dae5bb9e3b1
           text: Input
           isEditable: 0
         outputPorts:
@@ -172,9 +173,9 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 24292
-          y: -665
+          y: -544
           width: 253
-          height: 175
+          height: 176
         width: 600
         height: 500
         inputPorts:
@@ -210,9 +211,9 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 24293
-          y: -480
+          y: -359
           width: 253
-          height: 175
+          height: 177
         width: 600
         height: 500
         inputPorts:
@@ -446,7 +447,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 25627
           y: -915
-          width: 265
+          width: 285
           height: 175
         width: 600
         height: 500
@@ -484,7 +485,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 25628
           y: -728
-          width: 265
+          width: 285
           height: 175
         width: 600
         height: 500
@@ -1293,9 +1294,9 @@ MonoBehaviour:
         - GUID: 0c78d8c8-685f-49ae-beeb-93b1ee3d78ea
           parentNodeGUID: 0a2f585c-d72f-47db-84c0-b23fff136218
           targetNodeGUID:
-          - 8a4e3a74-ebf8-49db-a454-53ade114734c
+          - 8488813a-5a8c-4c42-b473-1f30c7fa4c8f
           targetPortGUID:
-          - c71489fa-6fe1-4ebd-bb2f-70e21a6ffcdf
+          - 6107b5e3-d86a-4616-99ee-e912e4932184
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
@@ -1337,3 +1338,37 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         songTitle: 0
+    00000022:
+      type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Animation
+        GUID: 8488813a-5a8c-4c42-b473-1f30c7fa4c8f
+        rect:
+          serializedVersion: 2
+          x: 24297
+          y: -765
+          width: 245
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 6107b5e3-d86a-4616-99ee-e912e4932184
+          parentNodeGUID: 8488813a-5a8c-4c42-b473-1f30c7fa4c8f
+          targetNodeGUID:
+          - 0a2f585c-d72f-47db-84c0-b23fff136218
+          targetPortGUID:
+          - 0c78d8c8-685f-49ae-beeb-93b1ee3d78ea
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: dbc83040-0ac9-4a33-b381-0dae5bb9e3b1
+          parentNodeGUID: 8488813a-5a8c-4c42-b473-1f30c7fa4c8f
+          targetNodeGUID:
+          - 8a4e3a74-ebf8-49db-a454-53ade114734c
+          targetPortGUID:
+          - c71489fa-6fe1-4ebd-bb2f-70e21a6ffcdf
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        animation: 15

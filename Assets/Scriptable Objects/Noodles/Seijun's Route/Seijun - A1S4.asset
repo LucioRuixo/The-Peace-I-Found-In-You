@@ -50,6 +50,7 @@ MonoBehaviour:
   - id: 34
   - id: 35
   - id: 36
+  - id: 37
   references:
     version: 1
     00000000:
@@ -61,7 +62,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: -769
           y: 20
-          width: 75
+          width: 76
           height: 71
         width: 100
         height: 100
@@ -86,7 +87,7 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: -703
-          y: 275
+          y: 403
           width: 280
           height: 96
         width: 600
@@ -95,9 +96,9 @@ MonoBehaviour:
         - GUID: eced161b-144f-4af9-a213-0b627df51007
           parentNodeGUID: 48f0ecf1-e064-44b5-a745-13644c274d4b
           targetNodeGUID:
-          - 5e0fa1de-4e4f-4878-b25f-7516e6c1063b
+          - b528a28b-6797-4977-b2e2-ff8e3d6f03c8
           targetPortGUID:
-          - 5f62fd8d-170a-46d4-b8ce-52af9403050f
+          - 4db04291-59f7-42ed-94c1-1eac12a17214
           text: Input
           isEditable: 0
         outputPorts:
@@ -138,9 +139,9 @@ MonoBehaviour:
         - GUID: 5f62fd8d-170a-46d4-b8ce-52af9403050f
           parentNodeGUID: 5e0fa1de-4e4f-4878-b25f-7516e6c1063b
           targetNodeGUID:
-          - 48f0ecf1-e064-44b5-a745-13644c274d4b
+          - b528a28b-6797-4977-b2e2-ff8e3d6f03c8
           targetPortGUID:
-          - eced161b-144f-4af9-a213-0b627df51007
+          - a2c67ce1-3346-4431-b632-427959f6b334
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
@@ -197,8 +198,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: -63
           y: 14
-          width: 252
-          height: 172
+          width: 253
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -306,8 +307,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 554
           y: 13
-          width: 253
-          height: 172
+          width: 255
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -442,8 +443,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 1167
           y: 13
-          width: 252
-          height: 172
+          width: 253
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -517,8 +518,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 1777
           y: 16
-          width: 259
-          height: 172
+          width: 260
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -616,8 +617,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 2395
           y: 16
-          width: 259
-          height: 172
+          width: 260
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -703,8 +704,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 3021
           y: 17
-          width: 259
-          height: 172
+          width: 260
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -784,8 +785,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 3641
           y: 18
-          width: 259
-          height: 172
+          width: 260
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -872,8 +873,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 4260
           y: 20
-          width: 259
-          height: 172
+          width: 260
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -955,8 +956,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 4874
           y: 25
-          width: 259
-          height: 172
+          width: 260
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -1035,8 +1036,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 5499
           y: 26
-          width: 259
-          height: 172
+          width: 260
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -1110,8 +1111,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 6130
           y: 29
-          width: 259
-          height: 172
+          width: 260
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -1185,8 +1186,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 6759
           y: 31
-          width: 253
-          height: 172
+          width: 255
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -1260,8 +1261,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 7387
           y: 33
-          width: 259
-          height: 172
+          width: 260
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -1355,8 +1356,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 8010
           y: 34
-          width: 259
-          height: 172
+          width: 260
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -1479,8 +1480,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 8638
           y: 35
-          width: 253
-          height: 172
+          width: 255
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -1576,7 +1577,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 9259
           y: 35
-          width: 270
+          width: 268
           height: 101
         width: 600
         height: 500
@@ -1645,7 +1646,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: -665
           y: 18
-          width: 220
+          width: 219
           height: 96
         width: 600
         height: 500
@@ -1670,3 +1671,37 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         songTitle: 1
+    00000025:
+      type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Animation
+        GUID: b528a28b-6797-4977-b2e2-ff8e3d6f03c8
+        rect:
+          serializedVersion: 2
+          x: -695
+          y: 290
+          width: 272
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: a2c67ce1-3346-4431-b632-427959f6b334
+          parentNodeGUID: b528a28b-6797-4977-b2e2-ff8e3d6f03c8
+          targetNodeGUID:
+          - 5e0fa1de-4e4f-4878-b25f-7516e6c1063b
+          targetPortGUID:
+          - 5f62fd8d-170a-46d4-b8ce-52af9403050f
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 4db04291-59f7-42ed-94c1-1eac12a17214
+          parentNodeGUID: b528a28b-6797-4977-b2e2-ff8e3d6f03c8
+          targetNodeGUID:
+          - 48f0ecf1-e064-44b5-a745-13644c274d4b
+          targetPortGUID:
+          - eced161b-144f-4af9-a213-0b627df51007
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        animation: 14

@@ -42,6 +42,7 @@ MonoBehaviour:
   - id: 26
   - id: 27
   - id: 28
+  - id: 29
   references:
     version: 1
     00000000:
@@ -122,9 +123,9 @@ MonoBehaviour:
         - GUID: afb11515-e4f5-4e56-bf39-e9f22ada29e2
           parentNodeGUID: 8a82e90a-6225-436b-a716-03e27851255a
           targetNodeGUID:
-          - e9f2c89e-d35e-4362-bc7b-3289d46fa784
+          - de8d0d70-7f9e-4dae-9bd9-f5e09308a6bd
           targetPortGUID:
-          - 67ebf072-9351-45f9-be79-06e27d859fae
+          - 55e00b6c-063c-436f-a6ec-46b233f7345c
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
@@ -137,8 +138,8 @@ MonoBehaviour:
         GUID: e9f2c89e-d35e-4362-bc7b-3289d46fa784
         rect:
           serializedVersion: 2
-          x: 403
-          y: 315
+          x: 400
+          y: 429
           width: 257
           height: 134
         width: 600
@@ -147,9 +148,9 @@ MonoBehaviour:
         - GUID: 67ebf072-9351-45f9-be79-06e27d859fae
           parentNodeGUID: e9f2c89e-d35e-4362-bc7b-3289d46fa784
           targetNodeGUID:
-          - 8a82e90a-6225-436b-a716-03e27851255a
+          - de8d0d70-7f9e-4dae-9bd9-f5e09308a6bd
           targetPortGUID:
-          - afb11515-e4f5-4e56-bf39-e9f22ada29e2
+          - d7903ad0-d979-4409-8ae2-193a3f4d9e8a
           text: Input
           isEditable: 0
         outputPorts:
@@ -909,8 +910,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 5425
           y: 236
-          width: 262
-          height: 134
+          width: 242
+          height: 132
         width: 600
         height: 500
         inputPorts:
@@ -987,8 +988,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 5426
           y: 389
-          width: 261
-          height: 134
+          width: 242
+          height: 132
         width: 600
         height: 500
         inputPorts:
@@ -1296,3 +1297,37 @@ MonoBehaviour:
         - character: 0
           status: 0
           sentence: "(\xBFAcaso merezco ser feliz...?)"
+    0000001D:
+      type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Animation
+        GUID: de8d0d70-7f9e-4dae-9bd9-f5e09308a6bd
+        rect:
+          serializedVersion: 2
+          x: 402
+          y: 314
+          width: 245
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 55e00b6c-063c-436f-a6ec-46b233f7345c
+          parentNodeGUID: de8d0d70-7f9e-4dae-9bd9-f5e09308a6bd
+          targetNodeGUID:
+          - 8a82e90a-6225-436b-a716-03e27851255a
+          targetPortGUID:
+          - afb11515-e4f5-4e56-bf39-e9f22ada29e2
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: d7903ad0-d979-4409-8ae2-193a3f4d9e8a
+          parentNodeGUID: de8d0d70-7f9e-4dae-9bd9-f5e09308a6bd
+          targetNodeGUID:
+          - e9f2c89e-d35e-4362-bc7b-3289d46fa784
+          targetPortGUID:
+          - 67ebf072-9351-45f9-be79-06e27d859fae
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        animation: 15

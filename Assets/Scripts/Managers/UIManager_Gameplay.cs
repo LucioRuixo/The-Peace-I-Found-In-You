@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager_Gameplay : MonoBehaviour
 {
+    [SerializeField] GameObject dialogueCover = null;
     [SerializeField] GameObject log = null;
     [SerializeField] GameObject confirmationMenuPrefab = null;
     [SerializeField] Transform confirmationMenuContainer = null;
@@ -14,12 +15,13 @@ public class UIManager_Gameplay : MonoBehaviour
         Destroy(confirmationMenu.gameObject);
     }
 
-    public void Log()
+    public void SetLogActive(bool state)
     {
-        log.SetActive(true);
+        dialogueCover.SetActive(state);
+        log.SetActive(state);
     }
 
-    public void Save()
+    public void SaveGame()
     {
         SaveManager.Get().SaveFile();
     }
@@ -34,10 +36,5 @@ public class UIManager_Gameplay : MonoBehaviour
         newConfirmationMenu.text.text = "¿Salir del juego?";
         newConfirmationMenu.positiveButton.onClick.AddListener(() => SceneManager.LoadScene("Main Menu"));
         newConfirmationMenu.negativeButton.onClick.AddListener(() => CloseConfirmationMenu(newConfirmationMenu));
-    }
-
-    public void CloseLog()
-    {
-        log.SetActive(false);
     }
 }
