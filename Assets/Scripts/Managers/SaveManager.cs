@@ -188,4 +188,11 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
 
         Debug.Log("file loaded");
     }
+
+    public bool FileExists(int index)
+    {
+        string filePath = savesFolderPath + "\\save" + index + ".dat";
+
+        return File.Exists(filePath);
+    }
 }

@@ -122,6 +122,8 @@ MonoBehaviour:
   text: {fileID: 3066135782487347628}
   confirmationMenuPrefab: {fileID: 3648222499761110402, guid: 818402243fcd2a045be1705bd4d5400c,
     type: 3}
+  notificationMenuPrefab: {fileID: 3648222499761110402, guid: 0fc0aa14b7e95f54daa855602c5037e1,
+    type: 3}
 --- !u!1 &5164017369519230197
 GameObject:
   m_ObjectHideFlags: 0
