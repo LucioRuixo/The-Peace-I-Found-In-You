@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class CharacterManager : MonoBehaviour
 {
-    public enum Character
+    public enum CharacterName
     {
         Protagonist,
         Hoshi,
@@ -22,13 +22,14 @@ public class CharacterController : MonoBehaviour
     }
 
     public List<CharacterSO> characters;
-    public Dictionary<Character, CharacterSO> characterDictionary = new Dictionary<Character, CharacterSO>();
 
-    void Awake()
+    public CharacterSO GetCharacterSO(CharacterName name)
     {
         foreach (CharacterSO character in characters)
         {
-            characterDictionary.Add(character.character, character);
+            if (character.characterName == name) return character;
         }
+
+        return null;
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character")]
 public class CharacterSO : ScriptableObject
 {
-    public CharacterController.Character character;
+    public CharacterManager.CharacterName characterName;
 
-    public string characterName;
+    public string nameText;
 
     public Sprite dialogueBoxSprite;
 

@@ -19,25 +19,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
 
         [HideInInspector] public string currentNodeGUID;
 
-        [HideInInspector] public List<CharacterData> charactersInScene;
-    }
-
-    [Serializable]
-    public struct CharacterData
-    {
-        public int BodyIndex { get; }
-        public int ArmIndex { get; }
-        public int HeadIndex { get; }
-
-        public CharacterController.Character Character { get; }
-
-        public CharacterData(int _bodyIndex, int _armIndex, int _headIndex, CharacterController.Character _character)
-        {
-            BodyIndex = _bodyIndex;
-            ArmIndex = _armIndex;
-            HeadIndex = _headIndex;
-            Character = _character;
-        }
+        [HideInInspector] public List<Character> charactersInScene;
     }
 
     public int SaveSlotsAmount { private set; get; } = 4;
@@ -130,11 +112,10 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
             loadedData.currentRoute = noodleManager.CurrentRoute;
             loadedData.currentNodeGUID = noodler.CurrentNode.GUID;
 
-            loadedData.charactersInScene = new List<CharacterData>();
-            foreach (ActionController.ActiveCharacter character in actionController.charactersInScene)
+            loadedData.charactersInScene = new List<Character>();
+            foreach (KeyValuePair<Character, GameObject> character in actionController.GetCharactersInScene())
             {
-                loadedData.charactersInScene.Add(character);
-                Debug.Log("hasta aca llega");
+                loadedData.charactersInScene.Add(character.Key);
             }
         }
         catch (NullReferenceException e)

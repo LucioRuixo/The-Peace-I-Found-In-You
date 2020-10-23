@@ -31,7 +31,7 @@ public class DialogueController : NodeController
     [SerializeField] TextMeshProUGUI nameText = null;
     [SerializeField] TextMeshProUGUI dialogueText = null;
     [SerializeField] Log log = null;
-    CharacterController characterManager;
+    CharacterManager characterManager;
     NoodlesNodeMultipleDialogue node;
 
     public List<RectTransform> clickableRects = new List<RectTransform>();
@@ -42,7 +42,7 @@ public class DialogueController : NodeController
     {
         NodeType = typeof(NoodlesNodeMultipleDialogue);
 
-        characterManager = transform.parent.GetComponent<CharacterController>();
+        characterManager = transform.parent.GetComponent<CharacterManager>();
         fontSize = dialogueText.fontSize;
     }
 
@@ -103,17 +103,18 @@ public class DialogueController : NodeController
     {
         if (node.dialogueStrips.Count > currentDialogueStripIndex)
         {
-            CharacterController.Character key = node.dialogueStrips[currentDialogueStripIndex].character;
-            if (characterManager.characterDictionary.TryGetValue(key, out CharacterSO character))
+            CharacterManager.CharacterName name = node.dialogueStrips[currentDialogueStripIndex].characterName;
+            CharacterSO character = characterManager.GetCharacterSO(name);
+            if (character)
             {
                 dialogueBox.sprite = character.dialogueBoxSprite;
 
-                if (node.dialogueStrips[currentDialogueStripIndex].status == CharacterController.Status.Known)
-                    characterName = character.characterName;
+                if (node.dialogueStrips[currentDialogueStripIndex].status == CharacterManager.Status.Known)
+                    characterName = character.nameText;
                 else
                     characterName = "???";
 
-                nameText.text = characterName;
+                nameText.text = this.characterName;
             }
 
             //DisplayNextSentence();
