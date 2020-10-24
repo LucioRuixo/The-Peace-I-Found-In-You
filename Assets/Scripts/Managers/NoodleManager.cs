@@ -19,7 +19,6 @@ public class NoodleManager : MonoBehaviour
 
     void OnEnable()
     {
-        SaveManager.OnGameDataLoaded += SetLoadedData;
         RouteController.OnRouteChosen += SelectRoute;
         NodeManager.OnNoodleFinished += PlayNextScene;
     }
@@ -31,22 +30,8 @@ public class NoodleManager : MonoBehaviour
 
     void OnDisable()
     {
-        SaveManager.OnGameDataLoaded -= SetLoadedData;
         RouteController.OnRouteChosen -= SelectRoute;
         NodeManager.OnNoodleFinished -= PlayNextScene;
-    }
-
-    void SetLoadedData(SaveManager.SaveData loadedData)
-    {
-        RouteNoodleIndex = loadedData.routeNoodleIndex;
-        CurrentRoute = loadedData.currentRoute;
-
-        if (CurrentRoute != RouteController.Route.None)
-            noodler.controller = CurrentRoute == RouteController.Route.Hoshi ? hoshiRoute[RouteNoodleIndex] : seijunRoute[RouteNoodleIndex];
-        else
-            noodler.controller = initialNoodle;
-
-        OnNoodlerControllerSet?.Invoke(loadedData.currentNodeGUID);
     }
 
     void SelectRoute(RouteController.Route selectedRoute)
@@ -73,5 +58,18 @@ public class NoodleManager : MonoBehaviour
             RouteNoodleIndex++;
         }
         else OnNoNoodlesRemaining?.Invoke();
+    }
+
+    public void SetData(GameManager.GameData loadedData)
+    {
+        RouteNoodleIndex = loadedData.routeNoodleIndex;
+        CurrentRoute = loadedData.currentRoute;
+
+        if (CurrentRoute != RouteController.Route.None)
+            noodler.controller = CurrentRoute == RouteController.Route.Hoshi ? hoshiRoute[RouteNoodleIndex] : seijunRoute[RouteNoodleIndex];
+        else
+            noodler.controller = initialNoodle;
+
+        OnNoodlerControllerSet?.Invoke(loadedData.currentNodeGUID);
     }
 }

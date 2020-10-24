@@ -11,7 +11,7 @@ public class NoodlesNodeMultipleDialogue : NoodlesNode
 	[Serializable]
 	public class DialogueStrip
 	{
-		public CharacterManager.CharacterName characterName;
+		public CharacterManager.CharacterName character;
 		public CharacterManager.Status status;
 		public string sentence;
 	}
@@ -42,7 +42,7 @@ public class NoodlesNodeMultipleDialogue : NoodlesNode
 	public DialogueStrip AddDialogueStrip()
 	{
 		DialogueStrip ds = new DialogueStrip();
-		ds.characterName = 0;
+		ds.character = 0;
 		ds.sentence = "Dialogue";
 
 		dialogueStrips.Add(ds);
@@ -108,8 +108,8 @@ public class NoodlesNodeMultipleDialogueVisual : NoodlesNodeVisual
 		VisualElement container = new Box();
 		container.style.flexDirection = FlexDirection.Column;
 
-		var combo = new EnumField("Character", ds.characterName);
-		combo.RegisterValueChangedCallback(evt => { ds.characterName = (CharacterManager.CharacterName)evt.newValue; });
+		var combo = new EnumField("Character", ds.character);
+		combo.RegisterValueChangedCallback(evt => { ds.character = (CharacterManager.CharacterName)evt.newValue; });
 		container.Add(combo);
 
 		combo = new EnumField("Status", ds.status);

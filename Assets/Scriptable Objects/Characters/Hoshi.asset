@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc43126eb542cc04f8d7fcd7113487a4, type: 3}
   m_Name: Hoshi
   m_EditorClassIdentifier: 
-  character: 1
-  characterName: Hoshi
+  characterName: 1
+  nameText: Hoshi
   dialogueBoxSprite: {fileID: 21300000, guid: 2413ec3e3767ad545942c2fd2706c9c4, type: 3}
   bodySprites:
   - {fileID: 21300000, guid: f101dd2aa10a82c4788d9808ef16226f, type: 3}

@@ -42,9 +42,9 @@ public class ActionController : NodeController
 
     float initialX;
 
+    [SerializeField] CharacterManager characterManager = null;
     [SerializeField] GameObject characterPrefab = null;
     [SerializeField] Transform characterContainer = null;
-    CharacterManager characterManager;
 
     bool fadingOutOfScene = false;
 
@@ -62,45 +62,6 @@ public class ActionController : NodeController
         NodeType = typeof(CustomCharacterActionNode);
 
         initialX = -(characterPrefab.GetComponent<RectTransform>().rect.width / 2f);
-
-        characterManager = transform.parent.GetComponent<CharacterManager>();
-    }
-
-    void OnEnable()
-    {
-        SaveManager.OnGameDataLoaded += SetLoadedData;
-        //NodeManager.OnCharacterAction += Begin;
-    }
-
-    void OnDisable()
-    {
-        SaveManager.OnGameDataLoaded -= SetLoadedData;
-        //NodeManager.OnCharacterAction -= Begin;
-    }
-
-    void SetLoadedData(SaveManager.SaveData loadedData)
-    {
-        Debug.Log("loading character into scene");
-        if (loadedData.charactersInScene != null && loadedData.charactersInScene.Count > 0)
-        {
-            float spacing = Screen.width / (loadedData.charactersInScene.Count + 1);
-            for (int i = 0; i < loadedData.charactersInScene.Count; i++)
-            {
-                int bodyIndex = loadedData.charactersInScene[i].BodyIndex;
-                int armIndex = loadedData.charactersInScene[i].ArmIndex;
-                int headIndex = loadedData.charactersInScene[i].HeadIndex;
-                CharacterManager.CharacterName characterName = loadedData.charactersInScene[i].CharacterName;
-
-                Character newCharacter = new Character(bodyIndex, armIndex, headIndex, characterName);
-                GameObject characterObject = GenerateCharacterObject(characterName, bodyIndex, armIndex, headIndex);
-                charactersInScene.Add(new KeyValuePair<Character, GameObject>(newCharacter, characterObject));
-
-                float targetX = Screen.width - spacing * (i + 1);
-                Vector2 position = characterObject.transform.position;
-                position.x = targetX;
-                characterObject.transform.position = position;
-            }
-        }
     }
 
     void Begin(CustomCharacterActionNode node)
@@ -141,8 +102,8 @@ public class ActionController : NodeController
 
     void EnterCharacter(CustomCharacterActionNode node)
     {
-        Character newCharacter = new Character(node.bodyIndex, node.armIndex, node.headIndex, node.characterName);
-        GameObject characterObject = GenerateCharacterObject(node.characterName, node.bodyIndex, node.armIndex, node.headIndex);
+        Character newCharacter = new Character(node.bodyIndex, node.armIndex, node.headIndex, node.character);
+        GameObject characterObject = GenerateCharacterObject(node.character, node.bodyIndex, node.armIndex, node.headIndex);
         charactersInScene.Add(new KeyValuePair<Character, GameObject>(newCharacter, characterObject));
 
         float spacing = Screen.width / (charactersInScene.Count + 1);
@@ -279,6 +240,7 @@ public class ActionController : NodeController
         go.name = newCharacter.nameText;
 
         Image image = go.GetComponent<Image>();
+        Debug.Log(newCharacter.nameText);
         image.sprite = newCharacter.bodySprites[bodyIndex];
         image.SetNativeSize();
         position = new Vector2(image.rectTransform.anchoredPosition.x, 0f);
@@ -308,7 +270,7 @@ public class ActionController : NodeController
         bool characterFound = false;
         foreach (KeyValuePair<Character, GameObject> character in charactersInScene)
         {
-            if (character.Key.CharacterName == node.characterName)
+            if (character.Key.CharacterName == node.character)
             {
                 float targetX = Screen.width - initialX;
 
@@ -409,9 +371,9 @@ public class ActionController : NodeController
         bool characterFound = false;
         foreach (KeyValuePair<Character, GameObject> characterInScene in charactersInScene)
         {
-            if (characterInScene.Key.CharacterName == node.characterName)
+            if (characterInScene.Key.CharacterName == node.character)
             {
-                CharacterSO character = characterManager.GetCharacterSO(node.characterName);
+                CharacterSO character = characterManager.GetCharacterSO(node.character);
 
                 Image image = null;
 
@@ -475,9 +437,40 @@ public class ActionController : NodeController
         Begin(node);
     }
 
-    public List<KeyValuePair<Character, GameObject>> GetCharactersInScene()
+    public void SetData(GameManager.GameData loadedData)
     {
-        return charactersInScene;
+        Debug.Log("loading character into scene");
+        if (loadedData.charactersInScene != null && loadedData.charactersInScene.Count > 0)
+        {
+            float spacing = Screen.width / (loadedData.charactersInScene.Count + 1);
+            for (int i = 0; i < loadedData.charactersInScene.Count; i++)
+            {
+                int bodyIndex = loadedData.charactersInScene[i].BodyIndex;
+                int armIndex = loadedData.charactersInScene[i].ArmIndex;
+                int headIndex = loadedData.charactersInScene[i].HeadIndex;
+                CharacterManager.CharacterName characterName = loadedData.charactersInScene[i].CharacterName;
+
+                Character newCharacter = new Character(bodyIndex, armIndex, headIndex, characterName);
+                GameObject characterObject = GenerateCharacterObject(characterName, bodyIndex, armIndex, headIndex);
+                charactersInScene.Add(new KeyValuePair<Character, GameObject>(newCharacter, characterObject));
+
+                float targetX = Screen.width - spacing * (i + 1);
+                Vector2 position = characterObject.transform.position;
+                position.x = targetX;
+                characterObject.transform.position = position;
+            }
+        }
+    }
+
+    public List<Character> GetCharactersInScene()
+    {
+        List<Character> characterKeys = new List<Character>();
+        foreach (KeyValuePair<Character, GameObject> character in charactersInScene)
+        {
+            characterKeys.Add(character.Key);
+        }
+
+        return characterKeys;
     }
 
     IEnumerator MoveCharacter(Transform character, float targetX, bool destroyOnFinish, Action action)

@@ -26,12 +26,12 @@ public class DialogueController : NodeController
 
     IEnumerator typingCoroutine;
 
+    [SerializeField] CharacterManager characterManager = null;
     [SerializeField] GameObject dialogue = null;
     [SerializeField] Image dialogueBox = null;
     [SerializeField] TextMeshProUGUI nameText = null;
     [SerializeField] TextMeshProUGUI dialogueText = null;
     [SerializeField] Log log = null;
-    CharacterManager characterManager;
     NoodlesNodeMultipleDialogue node;
 
     public List<RectTransform> clickableRects = new List<RectTransform>();
@@ -103,7 +103,7 @@ public class DialogueController : NodeController
     {
         if (node.dialogueStrips.Count > currentDialogueStripIndex)
         {
-            CharacterManager.CharacterName name = node.dialogueStrips[currentDialogueStripIndex].characterName;
+            CharacterManager.CharacterName name = node.dialogueStrips[currentDialogueStripIndex].character;
             CharacterSO character = characterManager.GetCharacterSO(name);
             if (character)
             {

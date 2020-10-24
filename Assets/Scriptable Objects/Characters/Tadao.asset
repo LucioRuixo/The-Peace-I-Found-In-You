@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc43126eb542cc04f8d7fcd7113487a4, type: 3}
   m_Name: Tadao
   m_EditorClassIdentifier: 
-  character: 6
-  characterName: Tadao
+  characterName: 6
+  nameText: Tadao
   dialogueBoxSprite: {fileID: 21300000, guid: c27857995652dc74da99ca0bfe97b208, type: 3}
   bodySprites:
   - {fileID: 21300000, guid: b71988aba10674b40a17ea16b90b26ed, type: 3}

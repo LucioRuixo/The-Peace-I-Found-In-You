@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc43126eb542cc04f8d7fcd7113487a4, type: 3}
   m_Name: Protagonist
   m_EditorClassIdentifier: 
-  character: 0
-  characterName: Protagonista
+  characterName: 0
+  nameText: Protagonist
   dialogueBoxSprite: {fileID: 21300000, guid: cc4c3a5c40407584cba68ab0fc7b518f, type: 3}
   bodySprites: []
   headSprites: []

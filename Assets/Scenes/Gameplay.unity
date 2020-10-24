@@ -333,7 +333,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 505166548}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &121330168
 MonoBehaviour:
@@ -350,6 +350,7 @@ MonoBehaviour:
   letterDisplayWaitTime: 0.06
   pauseWaitTime: 0.5
   whisperFontSizeFactor: 0.75
+  characterManager: {fileID: 1662388384}
   dialogue: {fileID: 590469008}
   dialogueBox: {fileID: 644522514}
   nameText: {fileID: 982045083}
@@ -705,7 +706,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &200455748
 MonoBehaviour:
@@ -719,6 +720,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7037a7d2389814abdd127a94e441f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noodleManager: {fileID: 1270931764}
+  noodler: {fileID: 505166549}
+  decisionCheckController: {fileID: 1677762215}
+  actionController: {fileID: 595585450}
 --- !u!1 &239322525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,8 +1649,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 121330167}
   - {fileID: 595585449}
+  - {fileID: 121330167}
   - {fileID: 1243667191}
   - {fileID: 143043581}
   - {fileID: 1077869659}
@@ -1668,7 +1673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdac0ff4b4acada4aa0d8ba28354ce48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 11400000, guid: 13e33f54d8b9ee444a41559b6f207016, type: 2}
+  controller: {fileID: 0}
   startOnAwake: 0
   playing: 0
 --- !u!114 &505166551
@@ -2045,7 +2050,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 505166548}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &595585450
 MonoBehaviour:
@@ -2059,6 +2064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fae20cb7770e314eb2ebd8ca2c1bf0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterManager: {fileID: 1662388384}
   characterPrefab: {fileID: 2210280816483008521, guid: 26d8d091ff73b124a806d7b76c6faf51,
     type: 3}
   characterContainer: {fileID: 1191916006}
@@ -5581,7 +5587,7 @@ GameObject:
   - component: {fileID: 1662388383}
   - component: {fileID: 1662388384}
   m_Layer: 0
-  m_Name: Character Controller
+  m_Name: Character Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5613,7 +5619,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b809df1e082e74cabf1cd1c598fc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters: []
+  characters:
+  - {fileID: 11400000, guid: a0efbfb1559bbbf44826706033e33d45, type: 2}
+  - {fileID: 11400000, guid: 15eb3008dd2d34649a6afdd4339c7652, type: 2}
+  - {fileID: 11400000, guid: faf935d56a95c9748bf986874e03b581, type: 2}
+  - {fileID: 11400000, guid: 0f20109a5016c2d4383ac2b9df1fef5a, type: 2}
+  - {fileID: 11400000, guid: 820a2af36f7579241bfbc9e9b9cb4f27, type: 2}
+  - {fileID: 11400000, guid: 24ca70d8a5ebbd14ab99eaa15b6f6956, type: 2}
+  - {fileID: 11400000, guid: c4bf674070dec4149a491a5e593ec7c8, type: 2}
+  - {fileID: 11400000, guid: 9f385469ed4200f41a32feef25a8c233, type: 2}
 --- !u!1 &1667829954
 GameObject:
   m_ObjectHideFlags: 0
@@ -6315,7 +6329,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1836916888
 GameObject:

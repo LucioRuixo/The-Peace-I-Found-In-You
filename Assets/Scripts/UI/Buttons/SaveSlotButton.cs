@@ -20,15 +20,9 @@ public class SaveSlotButton : MonoBehaviour
         text.text = "Archivo " + (slotIndex + 1);
     }
 
-    void CreateNewGame()
-    {
-        SaveManager.Get().CreateFile(slotIndex);
-        LoadGame();
-    }
-
     void LoadGame()
     {
-        SaveManager.Get().LoadFile(slotIndex);
+        SaveManager.Get().SetLoadedFileIndex(slotIndex);
         SceneManager.LoadScene("Gameplay");
     }
 
@@ -63,7 +57,7 @@ public class SaveSlotButton : MonoBehaviour
             ConfirmationMenu newConfirmationMenu = Instantiate(confirmationMenuPrefab, position, Quaternion.identity, confirmationMenuContainer).GetComponent<ConfirmationMenu>();
 
             newConfirmationMenu.text.text = "¿Crear nueva partida en este espacio de guardado?";
-            newConfirmationMenu.positiveButton.onClick.AddListener(CreateNewGame);
+            newConfirmationMenu.positiveButton.onClick.AddListener(LoadGame);
             newConfirmationMenu.negativeButton.onClick.AddListener(() => CloseMenu(newConfirmationMenu.gameObject, currentSelected));
         }
         else

@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
 
-public class Character : MonoBehaviour
+[Serializable]
+public class Character
 {
     public int BodyIndex { get; }
     public int ArmIndex { get; }

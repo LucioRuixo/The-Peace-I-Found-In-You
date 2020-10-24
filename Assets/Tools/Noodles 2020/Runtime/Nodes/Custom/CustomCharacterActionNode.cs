@@ -9,7 +9,7 @@ namespace nullbloq.Noodles
 	public class CustomCharacterActionNode : NoodlesNode
 	{
 		public ActionController.Action action;
-		public CharacterManager.CharacterName characterName;
+		public CharacterManager.CharacterName character;
 		public int bodyIndex;
 		public int armIndex;
 		public int headIndex;
@@ -49,8 +49,8 @@ namespace nullbloq.Noodles
 			combo.RegisterValueChangedCallback(evt => { actionNode.action = (ActionController.Action)evt.newValue; });
 			mainContainer.Add(combo);
 
-			combo = new EnumField("Character", actionNode.characterName);
-			combo.RegisterValueChangedCallback(evt => { actionNode.characterName = (CharacterManager.CharacterName)evt.newValue; });
+			combo = new EnumField("Character", actionNode.character);
+			combo.RegisterValueChangedCallback(evt => { actionNode.character = (CharacterManager.CharacterName)evt.newValue; });
 			mainContainer.Add(combo);
 
 			var intField = new IntegerField("Body Index");

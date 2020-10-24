@@ -10,6 +10,7 @@ public class UIManager_Gameplay : MonoBehaviour
     [SerializeField] Transform confirmationMenuContainer = null;
     [SerializeField] DialogueController dialogueController = null;
 
+    public static event Action OnGameSave;
     public static event Action<bool> OnLogStateChange;
 
     void CloseConfirmationMenu(ConfirmationMenu confirmationMenu)
@@ -28,7 +29,7 @@ public class UIManager_Gameplay : MonoBehaviour
 
     public void SaveGame()
     {
-        SaveManager.Get().SaveFile();
+        OnGameSave?.Invoke();
     }
 
     public void Exit()

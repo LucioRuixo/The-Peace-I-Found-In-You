@@ -16,21 +16,14 @@ public class DecisionCheckController : NodeController
 
     void OnEnable()
     {
-        SaveManager.OnGameDataLoaded += SetLoadedData;
         DecisionButton.OnDecisionButtonPressed += SetLastDecision;
         //NodeManager.OnDecisionCheck += CheckLastDecision;
     }
 
     void OnDisable()
     {
-        SaveManager.OnGameDataLoaded -= SetLoadedData;
         DecisionButton.OnDecisionButtonPressed -= SetLastDecision;
         //NodeManager.OnDecisionCheck -= CheckLastDecision;
-    }
-
-    void SetLoadedData(SaveManager.SaveData loadedData)
-    {
-        LastDecisionGood = loadedData.lastDecisionGood;
     }
 
     void SetLastDecision(int portIndex)
@@ -43,6 +36,11 @@ public class DecisionCheckController : NodeController
         int index = LastDecisionGood ? 0 : 1;
 
         CallNodeExecutionCompletion(index);
+    }
+
+    public void SetData(GameManager.GameData loadedData)
+    {
+        LastDecisionGood = loadedData.lastDecisionGood;
     }
 
     public override void Execute(NoodlesNode genericNode)

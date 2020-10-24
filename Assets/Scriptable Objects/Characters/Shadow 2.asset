@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc43126eb542cc04f8d7fcd7113487a4, type: 3}
   m_Name: Shadow 2
   m_EditorClassIdentifier: 
-  character: 4
-  characterName: Sombras
+  characterName: 4
+  nameText: Shadow
   dialogueBoxSprite: {fileID: 21300000, guid: c27857995652dc74da99ca0bfe97b208, type: 3}
   bodySprites:
   - {fileID: 21300000, guid: 00df9b68da925ef4cbc495c340c6e24b, type: 3}
