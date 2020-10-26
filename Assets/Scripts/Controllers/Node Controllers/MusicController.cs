@@ -28,37 +28,24 @@ public class MusicController : NodeController
     [SerializeField] AudioSource channel2 = null;
 
     [SerializeField] List<SongSO> songs = null;
-    Dictionary<SongTitle, AudioClip> songDictionary = new Dictionary<SongTitle, AudioClip>();
-
-    //public static event Action<int> OnNodeExecutionCompleted;
 
     void Awake()
     {
         NodeType = typeof(CustomMusicChangeNode);
-
-        foreach (SongSO song in songs)
-        {
-            songDictionary.Add(song.title, song.clip);
-        }
-    }
-
-    void OnEnable()
-    {
-        //NodeManager.OnMusicChange += PlaySong;
-    }
-
-    void OnDisable()
-    {
-        //NodeManager.OnMusicChange -= PlaySong;
     }
 
     void PlaySong(CustomMusicChangeNode node)
     {
         AudioClip clip = null;
 
-        SongTitle key = node.songTitle;
-        if (!songDictionary.TryGetValue(key, out clip))
-            Debug.LogError("Song not found");
+        foreach (SongSO song in songs)
+        {
+            if (song.title == node.songTitle)
+            {
+                clip = song.clip;
+                break;
+            }
+        }
 
         if (!channel1.isPlaying)
         {

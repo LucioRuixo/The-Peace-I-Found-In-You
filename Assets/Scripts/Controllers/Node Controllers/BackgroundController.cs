@@ -50,10 +50,6 @@ public class BackgroundController : NodeController
 
     public List<BackgroundSO> locations;
     public List<BackgroundSO> ilustrations;
-    Dictionary<Location, BackgroundSO> locationDictionary = new Dictionary<Location, BackgroundSO>();
-    Dictionary<Ilustration, BackgroundSO> ilustrationDictionary = new Dictionary<Ilustration, BackgroundSO>();
-
-    //public static event Action<int> OnNodeExecutionCompleted;
 
     void Awake()
     {
@@ -62,31 +58,11 @@ public class BackgroundController : NodeController
         cameraHeight = Camera.main.orthographicSize * 2f;
         cameraSize = new Vector2(Camera.main.aspect * cameraHeight, cameraHeight);
         bgSpriteRenderer = bgContainer.GetComponent<SpriteRenderer>();
-
-        foreach (BackgroundSO location in locations)
-        {
-            locationDictionary.Add(location.location, location);
-        }
-
-        foreach (BackgroundSO ilustration in ilustrations)
-        {
-            ilustrationDictionary.Add(ilustration.ilustration, ilustration);
-        }
-    }
-
-    void OnEnable()
-    {
-        //NodeManager.OnBackgroundChange += ChangeBackground;
     }
 
     void Start()
     {
         SetBackground(initialBackground);
-    }
-
-    void OnDisable()
-    {
-        //NodeManager.OnBackgroundChange -= ChangeBackground;
     }
 
     void SetBackground(Sprite newBG)
@@ -102,15 +78,25 @@ public class BackgroundController : NodeController
     {
         if (node.backgroundType == BackgroundType.Location)
         {
-            Location key = node.location;
-            if (locationDictionary.TryGetValue(key, out BackgroundSO newBG))
-                SetBackground(newBG.sprite);
+            foreach (BackgroundSO background in locations)
+            {
+                if (node.location == background.location)
+                {
+                    SetBackground(background.sprite);
+                    break;
+                }
+            }
         }
         else
         {
-            Ilustration key = node.ilustration;
-            if (ilustrationDictionary.TryGetValue(key, out BackgroundSO newBG))
-                SetBackground(newBG.sprite);
+            foreach (BackgroundSO background in ilustrations)
+            {
+                if (node.ilustration == background.ilustration)
+                {
+                    SetBackground(background.sprite);
+                    break;
+                }
+            }
         }
 
         CallNodeExecutionCompletion(0);
