@@ -22,14 +22,14 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
 
     void CreateFile(int fileIndex)
     {
+        Debug.Log("creating file");
+
         FileStream file = File.Create(savesFolderPath + "\\save" + fileIndex + ".dat");
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
         binaryFormatter.Serialize(file, initialGameData);
 
         file.Close();
-
-        Debug.Log("file created");
     }
 
     public void SetLoadedFileIndex(int fileIndex)
@@ -37,15 +37,13 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         loadedFileIndex = fileIndex;
 
         string filePath = savesFolderPath + "\\save" + loadedFileIndex + ".dat";
-        if (!File.Exists(filePath))
-        {
-            Debug.Log("file path doesn't exist");
-            CreateFile(fileIndex);
-        }
+        if (!File.Exists(filePath)) CreateFile(fileIndex);
     }
 
     public void SaveFile(GameManager.GameData gameData)
     {
+        Debug.Log("saving file");
+
         string filePath = savesFolderPath + "\\save" + loadedFileIndex + ".dat";
 
         FileStream file = File.OpenWrite(filePath);
@@ -53,11 +51,12 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         binaryFormatter.Serialize(file, gameData);
 
         file.Close();
-        Debug.Log("file saved");
     }
 
     public GameManager.GameData LoadFile()
     {
+        Debug.Log("loading file");
+
         string filePath = savesFolderPath + "\\save" + loadedFileIndex + ".dat";
         if (File.Exists(filePath))
         {
@@ -67,7 +66,6 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
 
             file.Close();
 
-            Debug.Log("file loaded");
             return fileData;
         }
         else

@@ -438,7 +438,6 @@ public class ActionController : NodeController
 
     public void SetData(GameManager.GameData loadedData)
     {
-        Debug.Log("loading character into scene");
         if (loadedData.charactersInScene != null && loadedData.charactersInScene.Count > 0)
         {
             float spacing = Screen.width / (loadedData.charactersInScene.Count + 1);

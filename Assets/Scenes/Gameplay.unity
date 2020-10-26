@@ -350,11 +350,11 @@ MonoBehaviour:
   letterDisplayWaitTime: 0.06
   pauseWaitTime: 0.5
   whisperFontSizeFactor: 0.75
-  characterManager: {fileID: 1662388384}
   dialogue: {fileID: 590469008}
   dialogueBox: {fileID: 644522514}
   nameText: {fileID: 982045083}
   dialogueText: {fileID: 1123153518}
+  characterManager: {fileID: 1662388384}
   log: {fileID: 161944892}
   clickableRects:
   - {fileID: 639351860}
@@ -2064,10 +2064,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fae20cb7770e314eb2ebd8ca2c1bf0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterManager: {fileID: 1662388384}
   characterPrefab: {fileID: 2210280816483008521, guid: 26d8d091ff73b124a806d7b76c6faf51,
     type: 3}
   characterContainer: {fileID: 1191916006}
+  characterManager: {fileID: 1662388384}
   movementDuration: 0.5
   movementAccuracyRange: 1
   fadeDuration: 2
@@ -7232,7 +7232,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1787929896}
-        m_MethodName: Save
+        m_MethodName: SaveGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
