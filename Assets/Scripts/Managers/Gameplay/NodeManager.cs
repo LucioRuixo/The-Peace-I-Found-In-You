@@ -49,10 +49,8 @@ public class NodeManager : MonoBehaviour
 
     public void ExecuteNode(NoodlesNode node)
     {
-        NodeController controller = null;
-
         Type key = node.GetType();
-        if (controllersByNodeType.TryGetValue(key, out controller))
+        if (controllersByNodeType.TryGetValue(key, out NodeController controller))
         {
             controller.Execute(node);
 

@@ -45,6 +45,7 @@ public class ActionController : NodeController
     [SerializeField] GameObject characterPrefab = null;
     [SerializeField] Transform characterContainer = null;
     [SerializeField] CharacterManager characterManager = null;
+    FXManager fxManager;
 
     bool fadingOutOfScene = false;
 
@@ -62,6 +63,7 @@ public class ActionController : NodeController
         NodeType = typeof(CustomCharacterActionNode);
 
         initialX = -(characterPrefab.GetComponent<RectTransform>().rect.width / 2f);
+        fxManager = FXManager.Get();
     }
 
     void Begin(CustomCharacterActionNode node)
@@ -139,7 +141,8 @@ public class ActionController : NodeController
                         charactersInScene[i].Value.transform.position = position;
 
                         Image image = charactersInScene[i].Value.GetComponent<Image>();
-                        StartCoroutine(IncreaseAlpha(image));
+                        //StartCoroutine(IncreaseAlpha(image));
+                        fxManager.StartAlphaLerp0To1(image, fadeDuration, End);
                         pendingCorroutines++;
                     }
 
@@ -149,18 +152,6 @@ public class ActionController : NodeController
                     Debug.LogError("Cannot enter scene using selected action");
                     break;
             }
-
-            //if (node.action == Action.EnterScene)
-            //{
-            //    StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false));
-            //    pendingCorroutines++;
-            //}
-            //else
-            //{
-            //    Vector2 position = charactersInScene[i].Value.transform.position;
-            //    position.x = targetX;
-            //    charactersInScene[i].Value.transform.position = position;
-            //}
         }
 
         if (node.action == Action.PopIntoScene) End();
@@ -204,7 +195,8 @@ public class ActionController : NodeController
                         charactersInScene[i].Value.transform.position = position;
 
                         Image image = charactersInScene[i].Value.GetComponent<Image>();
-                        StartCoroutine(IncreaseAlpha(image));
+                        //StartCoroutine(IncreaseAlpha(image));
+                        fxManager.StartAlphaLerp0To1(image, fadeDuration, End);
                         pendingCorroutines++;
                     }
 
@@ -214,18 +206,6 @@ public class ActionController : NodeController
                     Debug.LogError("Cannot enter scene using selected action");
                     break;
             }
-
-            //if (node.action == Action.EnterScene)
-            //{
-            //    StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false));
-            //    pendingCorroutines++;
-            //}
-            //else
-            //{
-            //    Vector2 position = charactersInScene[i].Value.transform.position;
-            //    position.x = targetX;
-            //    charactersInScene[i].Value.transform.position = position;
-            //}
         }
 
         if (action == Action.PopIntoScene) End();
@@ -286,12 +266,9 @@ public class ActionController : NodeController
                         break;
 
                     case Action.FadeOutOfScene:
-                        //Vector2 position = character.Value.transform.position;
-                        //position.x = targetX;
-                        //character.Value.transform.position = position;
-
                         Image image = character.Value.GetComponent<Image>();
-                        StartCoroutine(DecreaseAlpha(image, node.action));
+                        //StartCoroutine(DecreaseAlpha(image, node.action));
+                        fxManager.StartAlphaLerp1To0(image, fadeDuration, End);
                         pendingCorroutines++;
                         fadingOutOfScene = true;
 
@@ -301,13 +278,6 @@ public class ActionController : NodeController
                         Debug.LogError("Cannot exit scene using selected action");
                         break;
                 }
-
-                //if (node.action == Action.ExitScene)
-                //{
-                //    StartCoroutine(MoveCharacter(characterInScene.Value.transform, targetX, true));
-                //    pendingCorroutines++;
-                //}
-                //else Destroy(characterInScene.Value);
 
                 charactersInScene.Remove(character);
 
@@ -342,18 +312,6 @@ public class ActionController : NodeController
                     Debug.LogError("Cannot exit scene using selected action");
                     break;
             }
-
-            //if (node.action == Action.ExitScene)
-            //{
-            //    StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false));
-            //    pendingCorroutines++;
-            //}
-            //else
-            //{
-            //    Vector2 position = charactersInScene[i].Value.transform.position;
-            //    position.x = targetX;
-            //    charactersInScene[i].Value.transform.position = position;
-            //}
         }
 
         if (node.action == Action.PopOutOfScene) End();
@@ -497,49 +455,5 @@ public class ActionController : NodeController
 
         if (destroyOnFinish) Destroy(character.gameObject);
         FinishCorroutine();
-    }
-
-    IEnumerator IncreaseAlpha(Image image)
-    {
-        float currentAlphaValue = 0f;
-
-        while (currentAlphaValue < 1f)
-        {
-            float addedValue = Time.deltaTime / fadeDuration;
-            //float addedValue = 1f / (fadeDuration / Time.deltaTime);
-            currentAlphaValue += addedValue;
-
-            Color newColor = image.color;
-            newColor.a = currentAlphaValue;
-            image.color = newColor;
-
-            yield return null;
-        }
-
-        End();
-    }
-
-    IEnumerator DecreaseAlpha(Image image, Action action)
-    {
-        float currentAlphaValue = 1f;
-
-        while (currentAlphaValue > 0f)
-        {
-            float subtractedValue = Time.deltaTime / fadeDuration;
-            currentAlphaValue -= subtractedValue;
-
-            Color newColor = image.color;
-            newColor.a = currentAlphaValue;
-            image.color = newColor;
-
-            yield return null;
-        }
-
-        if (action == Action.FadeOutOfScene)
-        {
-            fadingOutOfScene = false;
-        }
-
-        End();
     }
 }

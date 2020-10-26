@@ -32,12 +32,13 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         file.Close();
     }
 
-    public void SetLoadedFileIndex(int fileIndex)
+    public void SetLoadedFileIndex(int fileIndex, UIManager_MainMenu.SaveSelectionScreenMode saveSelectionScreenMode)
     {
         loadedFileIndex = fileIndex;
 
         string filePath = savesFolderPath + "\\save" + loadedFileIndex + ".dat";
-        if (!File.Exists(filePath)) CreateFile(fileIndex);
+        if (saveSelectionScreenMode == UIManager_MainMenu.SaveSelectionScreenMode.NewGame || !File.Exists(filePath))
+            CreateFile(fileIndex);
     }
 
     public void SaveFile(GameManager.GameData gameData)

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic;
 
 public class UIManager_MainMenu : MonoBehaviour
 {
@@ -15,8 +15,8 @@ public class UIManager_MainMenu : MonoBehaviour
         LoadGame
     }
 
-    bool increasingAlpha = false;
-    bool decreasingAlpha = false;
+    bool lerpingAlpha1 = false;
+    bool lerpingAlpha2 = false;
 
     [SerializeField] GameObject saveSlotButtonPrefab = null;
     [SerializeField] GameObject cover = null;
@@ -24,6 +24,7 @@ public class UIManager_MainMenu : MonoBehaviour
     [SerializeField] Transform confirmationMenuContainer = null;
     [SerializeField] RectTransform selectionIcon = null;
     [SerializeField] TextMeshProUGUI versionText = null;
+    FXManager fxManager;
 
     List<GameObject> saveSlotButtons = new List<GameObject>();
 
@@ -50,6 +51,11 @@ public class UIManager_MainMenu : MonoBehaviour
     [SerializeField] GameObject extrasScreenFirstSelected = null;
 
     public static event Action<SaveSelectionScreenMode> OnSaveSelectionScreenEnabled;
+
+    void Awake()
+    {
+        fxManager = FXManager.Get();
+    }
 
     void Start()
     {
@@ -147,63 +153,29 @@ public class UIManager_MainMenu : MonoBehaviour
             while (newBackgroundIndex == backgroundIndex);
             backgroundIndex = newBackgroundIndex;
 
-            increasingAlpha = true;
-            decreasingAlpha = true;
+            lerpingAlpha1 = true;
+            lerpingAlpha2 = true;
 
             if (background1.color.a == 1f)
             {
                 background2.sprite = backgrounds[backgroundIndex];
 
-                StartCoroutine(IncreaseAlpha(background2));
-                StartCoroutine(DecreaseAlpha(background1));
+                //StartCoroutine(IncreaseAlpha(background2));
+                //StartCoroutine(DecreaseAlpha(background1));
+                fxManager.StartAlphaLerp0To1(background2, fadeDuration, () => lerpingAlpha2 = false);
+                fxManager.StartAlphaLerp1To0(background1, fadeDuration, () => lerpingAlpha1 = false);
             }
             else
             {
                 background1.sprite = backgrounds[backgroundIndex];
 
-                StartCoroutine(IncreaseAlpha(background1));
-                StartCoroutine(DecreaseAlpha(background2));
+                //StartCoroutine(IncreaseAlpha(background1));
+                //StartCoroutine(DecreaseAlpha(background2));
+                fxManager.StartAlphaLerp0To1(background1, fadeDuration, () => lerpingAlpha1 = false);
+                fxManager.StartAlphaLerp1To0(background2, fadeDuration, () => lerpingAlpha2 = false);
             }
 
-            yield return new WaitUntil(() => increasingAlpha == false && decreasingAlpha == false);
+            yield return new WaitUntil(() => lerpingAlpha1 == false && lerpingAlpha2 == false);
         }
-    }
-
-    IEnumerator IncreaseAlpha(Image image)
-    {
-        float currentAlphaValue = 0f;
-
-        while (currentAlphaValue < 1f)
-        {
-            float addedValue = 1f / (fadeDuration / Time.deltaTime);
-            currentAlphaValue += addedValue;
-
-            Color newColor = image.color;
-            newColor.a = currentAlphaValue;
-            image.color = newColor;
-
-            yield return null;
-        }
-
-        increasingAlpha = false;
-    }
-
-    IEnumerator DecreaseAlpha(Image image)
-    {
-        float currentAlphaValue = 1f;
-
-        while (currentAlphaValue > 0f)
-        {
-            float subtractedValue = 1f / (fadeDuration / Time.deltaTime);
-            currentAlphaValue -= subtractedValue;
-
-            Color newColor = image.color;
-            newColor.a = currentAlphaValue;
-            image.color = newColor;
-
-            yield return null;
-        }
-
-        decreasingAlpha = false;
     }
 }

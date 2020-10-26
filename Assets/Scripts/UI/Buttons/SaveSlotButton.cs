@@ -20,9 +20,9 @@ public class SaveSlotButton : MonoBehaviour
         text.text = "Archivo " + (slotIndex + 1);
     }
 
-    void LoadGame()
+    void LoadGame(UIManager_MainMenu.SaveSelectionScreenMode saveSelectionScreenMode)
     {
-        SaveManager.Get().SetLoadedFileIndex(slotIndex);
+        SaveManager.Get().SetLoadedFileIndex(slotIndex, saveSelectionScreenMode);
         SceneManager.LoadScene("Gameplay");
     }
 
@@ -57,7 +57,7 @@ public class SaveSlotButton : MonoBehaviour
             ConfirmationMenu newConfirmationMenu = Instantiate(confirmationMenuPrefab, position, Quaternion.identity, confirmationMenuContainer).GetComponent<ConfirmationMenu>();
 
             newConfirmationMenu.text.text = "¿Crear nueva partida en este espacio de guardado?";
-            newConfirmationMenu.positiveButton.onClick.AddListener(LoadGame);
+            newConfirmationMenu.positiveButton.onClick.AddListener(() => LoadGame(saveSelectionScreenMode));
             newConfirmationMenu.negativeButton.onClick.AddListener(() => CloseMenu(newConfirmationMenu.gameObject, currentSelected));
         }
         else
@@ -70,7 +70,7 @@ public class SaveSlotButton : MonoBehaviour
                 ConfirmationMenu newConfirmationMenu = Instantiate(confirmationMenuPrefab, position, Quaternion.identity, confirmationMenuContainer).GetComponent<ConfirmationMenu>();
 
                 newConfirmationMenu.text.text = "¿Cargar esta partida?";
-                newConfirmationMenu.positiveButton.onClick.AddListener(LoadGame);
+                newConfirmationMenu.positiveButton.onClick.AddListener(() => LoadGame(saveSelectionScreenMode));
                 newConfirmationMenu.negativeButton.onClick.AddListener(() => CloseMenu(newConfirmationMenu.gameObject, currentSelected));
             }
             else
