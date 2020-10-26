@@ -42,9 +42,9 @@ public class ActionController : NodeController
 
     float initialX;
 
-    [SerializeField] CharacterManager characterManager = null;
     [SerializeField] GameObject characterPrefab = null;
     [SerializeField] Transform characterContainer = null;
+    [SerializeField] CharacterManager characterManager = null;
 
     bool fadingOutOfScene = false;
 
@@ -240,7 +240,6 @@ public class ActionController : NodeController
         go.name = newCharacter.nameText;
 
         Image image = go.GetComponent<Image>();
-        Debug.Log(newCharacter.nameText);
         image.sprite = newCharacter.bodySprites[bodyIndex];
         image.SetNativeSize();
         position = new Vector2(image.rectTransform.anchoredPosition.x, 0f);

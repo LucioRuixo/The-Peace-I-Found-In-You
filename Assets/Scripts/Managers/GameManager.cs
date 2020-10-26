@@ -1,8 +1,8 @@
-﻿using nullbloq.Noodles;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using nullbloq.Noodles;
 
 public class GameManager : MonoBehaviour
 {

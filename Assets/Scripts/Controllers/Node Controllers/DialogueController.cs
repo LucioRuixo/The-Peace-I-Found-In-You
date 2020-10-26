@@ -26,11 +26,11 @@ public class DialogueController : NodeController
 
     IEnumerator typingCoroutine;
 
-    [SerializeField] CharacterManager characterManager = null;
     [SerializeField] GameObject dialogue = null;
     [SerializeField] Image dialogueBox = null;
     [SerializeField] TextMeshProUGUI nameText = null;
     [SerializeField] TextMeshProUGUI dialogueText = null;
+    [SerializeField] CharacterManager characterManager = null;
     [SerializeField] Log log = null;
     NoodlesNodeMultipleDialogue node;
 
@@ -42,7 +42,6 @@ public class DialogueController : NodeController
     {
         NodeType = typeof(NoodlesNodeMultipleDialogue);
 
-        characterManager = transform.parent.GetComponent<CharacterManager>();
         fontSize = dialogueText.fontSize;
     }
 
@@ -104,6 +103,7 @@ public class DialogueController : NodeController
         if (node.dialogueStrips.Count > currentDialogueStripIndex)
         {
             CharacterManager.CharacterName name = node.dialogueStrips[currentDialogueStripIndex].character;
+            if (characterManager == null) Debug.Log("character manager null");
             CharacterSO character = characterManager.GetCharacterSO(name);
             if (character)
             {

@@ -37,7 +37,11 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         loadedFileIndex = fileIndex;
 
         string filePath = savesFolderPath + "\\save" + loadedFileIndex + ".dat";
-        if (!Directory.Exists(filePath)) CreateFile(fileIndex);
+        if (!File.Exists(filePath))
+        {
+            Debug.Log("file path doesn't exist");
+            CreateFile(fileIndex);
+        }
     }
 
     public void SaveFile(GameManager.GameData gameData)
