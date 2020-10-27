@@ -44,7 +44,6 @@ public class ActionController : NodeController
 
     [SerializeField] GameObject characterPrefab = null;
     [SerializeField] Transform characterContainer = null;
-    [SerializeField] CharacterManager characterManager = null;
     FXManager fxManager;
 
     bool fadingOutOfScene = false;
@@ -213,7 +212,7 @@ public class ActionController : NodeController
 
     GameObject GenerateCharacterObject(CharacterManager.CharacterName characterName, int bodyIndex, int armIndex, int headIndex)
     {
-        CharacterSO newCharacter = characterManager.GetCharacterSO(characterName);
+        CharacterSO newCharacter = CharacterManager.Get().GetCharacterSO(characterName);
 
         Vector2 position = new Vector2(initialX, 0f);
         GameObject go = Instantiate(characterPrefab, position, Quaternion.identity, characterContainer);
@@ -330,7 +329,7 @@ public class ActionController : NodeController
         {
             if (characterInScene.Key.CharacterName == node.character)
             {
-                CharacterSO character = characterManager.GetCharacterSO(node.character);
+                CharacterSO character = CharacterManager.Get().GetCharacterSO(node.character);
 
                 Image image = null;
 

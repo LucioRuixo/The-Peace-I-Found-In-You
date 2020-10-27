@@ -34,7 +34,6 @@ public class DialogueController : NodeController
     [SerializeField] Image dialogueBox = null;
     [SerializeField] TextMeshProUGUI nameText = null;
     [SerializeField] TextMeshProUGUI dialogueText = null;
-    [SerializeField] CharacterManager characterManager = null;
     [SerializeField] Log log = null;
     NoodlesNodeMultipleDialogue node;
 
@@ -105,7 +104,7 @@ public class DialogueController : NodeController
         if (node.dialogueStrips.Count > currentDialogueStripIndex)
         {
             CharacterManager.CharacterName name = node.dialogueStrips[currentDialogueStripIndex].character;
-            CharacterSO character = characterManager.GetCharacterSO(name);
+            CharacterSO character = CharacterManager.Get().GetCharacterSO(name);
             if (character)
             {
                 dialogueBox.sprite = character.dialogueBoxSprite;
