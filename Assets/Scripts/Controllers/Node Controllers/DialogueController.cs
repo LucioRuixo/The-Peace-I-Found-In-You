@@ -48,7 +48,6 @@ public class DialogueController : NodeController
     void OnEnable()
     {
         UIManager_Gameplay.OnLogStateChange += UpdateLogState;
-        //NodeManager.OnDialogue += Begin;
     }
 
     void Update()
@@ -65,7 +64,7 @@ public class DialogueController : NodeController
             }
         }
 
-        if (!hoveringOverButton && !logActive && Input.GetButtonDown("Continue"))
+        if (!hoveringOverButton && !logActive && !DialogManager.Get().CoverActive && Input.GetButtonDown("Continue"))
         {
             if (typing)
             {
@@ -82,7 +81,6 @@ public class DialogueController : NodeController
     void OnDisable()
     {
         UIManager_Gameplay.OnLogStateChange -= UpdateLogState;
-        //NodeManager.OnDialogue -= Begin;
     }
 
     void Begin(NoodlesNodeMultipleDialogue _node)

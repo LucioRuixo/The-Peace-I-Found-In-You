@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -7,13 +6,19 @@ public class SaveSlotButton : MonoBehaviour
 {
     int slotIndex = -1;
 
+    [SerializeField] string newGameText = null;
+    [SerializeField] string loadGameText = null;
+    [SerializeField] string emptySlotText = null;
+
     UIManager_MainMenu.SaveSelectionScreenMode saveSelectionScreenMode;
 
     [SerializeField] TextMeshProUGUI text = null;
-    [SerializeField] GameObject confirmationMenuPrefab = null;
-    [SerializeField] GameObject notificationMenuPrefab = null;
-    GameObject cover;
-    Transform confirmationMenuContainer;
+    DialogManager dialogManager;
+
+    void Awake()
+    {
+        dialogManager = DialogManager.Get();
+    }
 
     void Start()
     {
@@ -26,63 +31,22 @@ public class SaveSlotButton : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 
-    void CloseMenu(GameObject menuObject, GameObject firstSelected)
-    {
-        Debug.Log(firstSelected);
-
-        cover.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(firstSelected);
-
-        Destroy(menuObject);
-    }
-
-    public void Initialize(int _slotIndex, UIManager_MainMenu.SaveSelectionScreenMode _saveSelectionScreenMode, GameObject _cover, Transform _confirmationMenuContainer)
+    public void Initialize(int _slotIndex, UIManager_MainMenu.SaveSelectionScreenMode _saveSelectionScreenMode)
     {
         slotIndex = _slotIndex;
         saveSelectionScreenMode = _saveSelectionScreenMode;
-        cover = _cover;
-        confirmationMenuContainer = _confirmationMenuContainer;
     }
 
     public void InstantiateConfirmationMenu()
     {
-        cover.SetActive(true);
-
         if (saveSelectionScreenMode == UIManager_MainMenu.SaveSelectionScreenMode.NewGame)
-        {
-            GameObject currentSelected = EventSystem.current.currentSelectedGameObject;
-
-            Vector2 position = new Vector2(Screen.width / 2f, Screen.height / 2f);
-            ConfirmationMenu newConfirmationMenu = Instantiate(confirmationMenuPrefab, position, Quaternion.identity, confirmationMenuContainer).GetComponent<ConfirmationMenu>();
-
-            newConfirmationMenu.text.text = "¿Crear nueva partida en este espacio de guardado?";
-            newConfirmationMenu.positiveButton.onClick.AddListener(() => LoadGame(saveSelectionScreenMode));
-            newConfirmationMenu.negativeButton.onClick.AddListener(() => CloseMenu(newConfirmationMenu.gameObject, currentSelected));
-        }
+            dialogManager.GenerateDialog(newGameText, null, () => LoadGame(saveSelectionScreenMode), null, null);
         else
         {
             if (SaveManager.Get().FileExists(slotIndex))
-            {
-                GameObject currentSelected = EventSystem.current.currentSelectedGameObject;
-
-                Vector2 position = new Vector2(Screen.width / 2f, Screen.height / 2f);
-                ConfirmationMenu newConfirmationMenu = Instantiate(confirmationMenuPrefab, position, Quaternion.identity, confirmationMenuContainer).GetComponent<ConfirmationMenu>();
-
-                newConfirmationMenu.text.text = "¿Cargar esta partida?";
-                newConfirmationMenu.positiveButton.onClick.AddListener(() => LoadGame(saveSelectionScreenMode));
-                newConfirmationMenu.negativeButton.onClick.AddListener(() => CloseMenu(newConfirmationMenu.gameObject, currentSelected));
-            }
+                dialogManager.GenerateDialog(loadGameText, null, () => LoadGame(saveSelectionScreenMode), null, null);
             else
-            {
-                GameObject currentSelected = EventSystem.current.currentSelectedGameObject;
-
-                Vector2 position = new Vector2(Screen.width / 2f, Screen.height / 2f);
-                NotificationMenu newNotificationMenu = Instantiate(notificationMenuPrefab, position, Quaternion.identity, confirmationMenuContainer).GetComponent<NotificationMenu>();
-
-                newNotificationMenu.text.text = "Este espacio de guardado está vacío.";
-                newNotificationMenu.closeButton.onClick.AddListener(() => CloseMenu(newNotificationMenu.gameObject, currentSelected));
-            }
+                dialogManager.GenerateDialog(emptySlotText, null);
         }
     }
 }

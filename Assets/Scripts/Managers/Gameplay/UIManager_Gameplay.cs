@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class UIManager_Gameplay : MonoBehaviour
 {
+    [SerializeField] string exitText = null;
+
     [SerializeField] GameObject dialogueCover = null;
     [SerializeField] GameObject log = null;
     [SerializeField] GameObject confirmationMenuPrefab = null;
@@ -12,12 +14,6 @@ public class UIManager_Gameplay : MonoBehaviour
 
     public static event Action OnGameSave;
     public static event Action<bool> OnLogStateChange;
-
-    void CloseConfirmationMenu(ConfirmationMenu confirmationMenu)
-    {
-        dialogueController.clickableRects.Remove(confirmationMenu.GetComponent<RectTransform>());
-        Destroy(confirmationMenu.gameObject);
-    }
 
     public void SetLogActive(bool state)
     {
@@ -34,13 +30,6 @@ public class UIManager_Gameplay : MonoBehaviour
 
     public void Exit()
     {
-        Vector2 position = new Vector2(Screen.width / 2f, Screen.height / 2f);
-        ConfirmationMenu newConfirmationMenu = Instantiate(confirmationMenuPrefab, position, Quaternion.identity, confirmationMenuContainer).GetComponent<ConfirmationMenu>();
-
-        dialogueController.clickableRects.Add(newConfirmationMenu.GetComponent<RectTransform>());
-
-        newConfirmationMenu.text.text = "¿Salir del juego?";
-        newConfirmationMenu.positiveButton.onClick.AddListener(() => SceneManager.LoadScene("Main Menu"));
-        newConfirmationMenu.negativeButton.onClick.AddListener(() => CloseConfirmationMenu(newConfirmationMenu));
+        DialogManager.Get().GenerateDialog(exitText, null, () => SceneManager.LoadScene("Main Menu"), null, null);
     }
 }

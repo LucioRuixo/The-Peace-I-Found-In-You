@@ -6355,6 +6355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a1b9703335d6b44b8cc6fcc42ce508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitText: "\xBFSalir al men\xFA principal?"
   dialogueCover: {fileID: 1765640382}
   log: {fileID: 161944890}
   confirmationMenuPrefab: {fileID: 3648222499761110402, guid: 818402243fcd2a045be1705bd4d5400c,

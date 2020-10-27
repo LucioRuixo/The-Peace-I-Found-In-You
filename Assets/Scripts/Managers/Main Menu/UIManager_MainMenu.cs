@@ -75,7 +75,7 @@ public class UIManager_MainMenu : MonoBehaviour
         {
             GameObject newSaveSlotButton = Instantiate(saveSlotButtonPrefab, saveSlotButtonContainer);
 
-            newSaveSlotButton.GetComponent<SaveSlotButton>().Initialize(i, saveSelectionScreenMode, cover, confirmationMenuContainer);
+            newSaveSlotButton.GetComponent<SaveSlotButton>().Initialize(i, saveSelectionScreenMode);
             newSaveSlotButton.GetComponent<SelectableButton>().SetSelectionIcon(selectionIcon);
 
             saveSlotButtons.Add(newSaveSlotButton);
