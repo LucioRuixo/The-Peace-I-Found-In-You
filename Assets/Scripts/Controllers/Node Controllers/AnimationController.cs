@@ -75,19 +75,15 @@ public class AnimationController : NodeController
         switch (node.animation)
         {
             case Animation.FadeToBlack:
-                //StartCoroutine(IncreaseAlpha(blackCover));
                 fxManager.StartAlphaLerp0To1(blackCover, fadeDuration, End);
                 break;
             case Animation.FadeFromBlack:
-                //StartCoroutine(DecreaseAlpha(blackCover));
                 fxManager.StartAlphaLerp1To0(blackCover, fadeDuration, End);
                 break;
             case Animation.FadeToWhite:
-                //StartCoroutine(IncreaseAlpha(whiteCover));
                 fxManager.StartAlphaLerp0To1(whiteCover, fadeDuration, End);
                 break;
             case Animation.FadeFromWhite:
-                //StartCoroutine(DecreaseAlpha(whiteCover));
                 fxManager.StartAlphaLerp1To0(whiteCover, fadeDuration, End);
                 break;
             case Animation.BlinkOpen:
@@ -110,7 +106,6 @@ public class AnimationController : NodeController
             case Animation.Jump:
                 break;
             case Animation.CameraShake:
-                //StartCoroutine(ShakeCamera());
                 fxManager.StartCameraShake(shakePointsAmount, shakeMagnitude, shakeSpeed, End);
                 break;
             case Animation.AfternoonFilter:

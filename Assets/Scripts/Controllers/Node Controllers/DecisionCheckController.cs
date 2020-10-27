@@ -7,8 +7,6 @@ public class DecisionCheckController : NodeController
 
     public bool LastDecisionGood { private set; get; }
 
-    //public static event Action<int> OnNodeExecutionCompleted;
-
     void Awake()
     {
         NodeType = typeof(CustomDecisionCheckNode);
@@ -17,13 +15,11 @@ public class DecisionCheckController : NodeController
     void OnEnable()
     {
         DecisionButton.OnDecisionButtonPressed += SetLastDecision;
-        //NodeManager.OnDecisionCheck += CheckLastDecision;
     }
 
     void OnDisable()
     {
         DecisionButton.OnDecisionButtonPressed -= SetLastDecision;
-        //NodeManager.OnDecisionCheck -= CheckLastDecision;
     }
 
     void SetLastDecision(int portIndex)

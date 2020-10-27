@@ -140,7 +140,6 @@ public class ActionController : NodeController
                         charactersInScene[i].Value.transform.position = position;
 
                         Image image = charactersInScene[i].Value.GetComponent<Image>();
-                        //StartCoroutine(IncreaseAlpha(image));
                         fxManager.StartAlphaLerp0To1(image, fadeDuration, End);
                         pendingCorroutines++;
                     }
@@ -194,7 +193,6 @@ public class ActionController : NodeController
                         charactersInScene[i].Value.transform.position = position;
 
                         Image image = charactersInScene[i].Value.GetComponent<Image>();
-                        //StartCoroutine(IncreaseAlpha(image));
                         fxManager.StartAlphaLerp0To1(image, fadeDuration, End);
                         pendingCorroutines++;
                     }
@@ -257,7 +255,6 @@ public class ActionController : NodeController
                     case Action.ExitScene:
                         StartCoroutine(MoveCharacter(character.Value.transform, targetX, false, node.action));
                         pendingCorroutines++;
-
                         break;
 
                     case Action.PopOutOfScene:
@@ -266,11 +263,10 @@ public class ActionController : NodeController
 
                     case Action.FadeOutOfScene:
                         Image image = character.Value.GetComponent<Image>();
-                        //StartCoroutine(DecreaseAlpha(image, node.action));
                         fxManager.StartAlphaLerp1To0(image, fadeDuration, End);
                         pendingCorroutines++;
-                        fadingOutOfScene = true;
 
+                        fadingOutOfScene = true;
                         break;
 
                     default:

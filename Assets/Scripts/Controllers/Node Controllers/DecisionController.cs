@@ -9,15 +9,13 @@ public class DecisionController : NodeController
 {
     public override Type NodeType { protected set; get; }
 
-    //[SerializeField] GameObject buttonPrefab = null;
     [SerializeField] DecisionButton option1Button = null, option2Button = null;
     [SerializeField] TextMeshProUGUI option1Text = null, option2Text = null;
     [SerializeField] GameObject decision = null;
+    //[SerializeField] GameObject buttonPrefab = null;
     //[SerializeField] Transform buttonContainer = null;
 
-    //List<GameObject> buttons = new List<GameObject>();;
-
-    //public static event Action<int> OnNodeExecutionCompleted;
+    //List<GameObject> buttons = new List<GameObject>();
 
     void Awake()
     {
@@ -26,13 +24,11 @@ public class DecisionController : NodeController
 
     void OnEnable()
     {
-        //NodeManager.OnDecision += Begin;
         DecisionButton.OnDecisionButtonPressed += End;
     }
 
     void OnDisable()
     {
-        //NodeManager.OnDecision -= Begin;
         DecisionButton.OnDecisionButtonPressed -= End;
     }
 

@@ -160,8 +160,6 @@ public class UIManager_MainMenu : MonoBehaviour
             {
                 background2.sprite = backgrounds[backgroundIndex];
 
-                //StartCoroutine(IncreaseAlpha(background2));
-                //StartCoroutine(DecreaseAlpha(background1));
                 fxManager.StartAlphaLerp0To1(background2, fadeDuration, () => lerpingAlpha2 = false);
                 fxManager.StartAlphaLerp1To0(background1, fadeDuration, () => lerpingAlpha1 = false);
             }
@@ -169,8 +167,6 @@ public class UIManager_MainMenu : MonoBehaviour
             {
                 background1.sprite = backgrounds[backgroundIndex];
 
-                //StartCoroutine(IncreaseAlpha(background1));
-                //StartCoroutine(DecreaseAlpha(background2));
                 fxManager.StartAlphaLerp0To1(background1, fadeDuration, () => lerpingAlpha1 = false);
                 fxManager.StartAlphaLerp1To0(background2, fadeDuration, () => lerpingAlpha2 = false);
             }
