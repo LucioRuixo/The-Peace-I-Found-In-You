@@ -20,11 +20,16 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         Directory.CreateDirectory(savesFolderPath);
     }
 
+    string GetSaveFilePath(int fileIndex)
+    {
+        return savesFolderPath + "\\save" + fileIndex + ".dat";
+    }
+
     void CreateFile(int fileIndex)
     {
         Debug.Log("creating file");
 
-        FileStream file = File.Create(savesFolderPath + "\\save" + fileIndex + ".dat");
+        FileStream file = File.Create(GetSaveFilePath(fileIndex));
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
         binaryFormatter.Serialize(file, initialGameData);
@@ -36,7 +41,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
     {
         loadedFileIndex = fileIndex;
 
-        string filePath = savesFolderPath + "\\save" + loadedFileIndex + ".dat";
+        string filePath = GetSaveFilePath(fileIndex);
         if (saveSelectionScreenMode == UIManager_MainMenu.SaveSelectionScreenMode.NewGame || !File.Exists(filePath))
             CreateFile(fileIndex);
     }
@@ -45,7 +50,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
     {
         Debug.Log("saving file");
 
-        string filePath = savesFolderPath + "\\save" + loadedFileIndex + ".dat";
+        string filePath = GetSaveFilePath(loadedFileIndex);
 
         FileStream file = File.OpenWrite(filePath);
         BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -58,7 +63,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
     {
         Debug.Log("loading file");
 
-        string filePath = savesFolderPath + "\\save" + loadedFileIndex + ".dat";
+        string filePath = GetSaveFilePath(loadedFileIndex);
         if (File.Exists(filePath))
         {
             FileStream file = File.OpenRead(filePath);
@@ -76,9 +81,9 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         }
     }
 
-    public bool FileExists(int index)
+    public bool FileExists(int fileIndex)
     {
-        string filePath = savesFolderPath + "\\save" + index + ".dat";
+        string filePath = GetSaveFilePath(fileIndex);
 
         return File.Exists(filePath);
     }

@@ -14,8 +14,12 @@ public class DialogueController : NodeController
     bool typing = false;
     bool logActive = false;
 
+    [SerializeField] char[] pauseCharacters;
+
+    [SerializeField] string unknownCharacterName = "";
     string characterName;
     string sentence;
+
 
     int currentDialogueStripIndex = 0;
 
@@ -101,7 +105,6 @@ public class DialogueController : NodeController
         if (node.dialogueStrips.Count > currentDialogueStripIndex)
         {
             CharacterManager.CharacterName name = node.dialogueStrips[currentDialogueStripIndex].character;
-            if (characterManager == null) Debug.Log("character manager null");
             CharacterSO character = characterManager.GetCharacterSO(name);
             if (character)
             {
@@ -110,9 +113,9 @@ public class DialogueController : NodeController
                 if (node.dialogueStrips[currentDialogueStripIndex].status == CharacterManager.Status.Known)
                     characterName = character.nameText;
                 else
-                    characterName = "???";
+                    characterName = unknownCharacterName;
 
-                nameText.text = this.characterName;
+                nameText.text = characterName;
             }
 
             //DisplayNextSentence();
@@ -159,18 +162,27 @@ public class DialogueController : NodeController
         Begin(node);
     }
 
+    bool PauseFound(char character)
+    {
+        foreach (char pauseCharacter in pauseCharacters)
+        {
+            if (character == pauseCharacter) return true;
+        }
+
+        return false;
+    }
+
     IEnumerator TypeSentence(bool whispering)
     {
         dialogueText.fontSize = fontSize;
         if (whispering) dialogueText.fontSize *= whisperFontSizeFactor;
 
         dialogueText.text = "";
-
-        foreach (char letter in sentence.ToCharArray())
+        foreach (char character in sentence.ToCharArray())
         {
-            dialogueText.text += letter;
+            dialogueText.text += character;
 
-            if (letter == '.' || letter == ',' || letter == '-')
+            if (PauseFound(character))
                 yield return new WaitForSeconds(pauseWaitTime);
 
             yield return new WaitForSeconds(letterDisplayWaitTime);

@@ -30,6 +30,6 @@ public class UIManager_Gameplay : MonoBehaviour
 
     public void Exit()
     {
-        DialogManager.Get().GenerateDialog(exitText, null, () => SceneManager.LoadScene("Main Menu"), null, null);
+        DialogManager.Get().GenerateDialog(exitText, null, () => SceneManager.LoadScene(SceneNameManager.Get().MainMenu), null, null);
     }
 }

@@ -6,9 +6,11 @@ public class SaveSlotButton : MonoBehaviour
 {
     int slotIndex = -1;
 
-    [SerializeField] string newGameText = null;
-    [SerializeField] string loadGameText = null;
-    [SerializeField] string emptySlotText = null;
+    [SerializeField] string preIndexButtonText = "";
+    [SerializeField] string postIndexButtonText = "";
+    [SerializeField] string newGameText = "";
+    [SerializeField] string loadGameText = "";
+    [SerializeField] string emptySlotText = "";
 
     UIManager_MainMenu.SaveSelectionScreenMode saveSelectionScreenMode;
 
@@ -22,13 +24,13 @@ public class SaveSlotButton : MonoBehaviour
 
     void Start()
     {
-        text.text = "Archivo " + (slotIndex + 1);
+        text.text = preIndexButtonText + (slotIndex + 1) + postIndexButtonText;
     }
 
     void LoadGame(UIManager_MainMenu.SaveSelectionScreenMode saveSelectionScreenMode)
     {
         SaveManager.Get().SetLoadedFileIndex(slotIndex, saveSelectionScreenMode);
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene(SceneNameManager.Get().Gameplay);
     }
 
     public void Initialize(int _slotIndex, UIManager_MainMenu.SaveSelectionScreenMode _saveSelectionScreenMode)

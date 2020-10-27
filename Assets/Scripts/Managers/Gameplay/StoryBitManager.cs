@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using nullbloq.Noodles;
 
-public class NodeManager : MonoBehaviour
+public class StoryBitManager : MonoBehaviour
 {
     Noodler noodler;
 

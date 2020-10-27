@@ -2,12 +2,12 @@
 using UnityEngine;
 using nullbloq.Noodles;
 
-public class NoodleManager : MonoBehaviour
+public class StoryManager : MonoBehaviour
 {
     public int RouteNoodleIndex { private set; get; } = 0;
     public RouteController.Route CurrentRoute { private set; get; } = RouteController.Route.None;
 
-    [SerializeField] NodeManager nodeManager = null;
+    [SerializeField] StoryBitManager nodeManager = null;
     [SerializeField] Noodler noodler = null;
 
     [SerializeField] Noodle initialNoodle = null;
@@ -20,7 +20,7 @@ public class NoodleManager : MonoBehaviour
     void OnEnable()
     {
         RouteController.OnRouteChosen += SelectRoute;
-        NodeManager.OnNoodleFinished += PlayNextScene;
+        StoryBitManager.OnNoodleFinished += PlayNextScene;
     }
 
     void Start()
@@ -31,7 +31,7 @@ public class NoodleManager : MonoBehaviour
     void OnDisable()
     {
         RouteController.OnRouteChosen -= SelectRoute;
-        NodeManager.OnNoodleFinished -= PlayNextScene;
+        StoryBitManager.OnNoodleFinished -= PlayNextScene;
     }
 
     void SelectRoute(RouteController.Route selectedRoute)

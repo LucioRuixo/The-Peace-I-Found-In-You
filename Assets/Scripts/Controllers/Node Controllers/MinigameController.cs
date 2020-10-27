@@ -16,12 +16,13 @@ public class MinigameController : NodeController
 
     bool minigameWon;
 
+    [SerializeField] string victoryText;
+    [SerializeField] string defeatText;
+
     public GameObject cooking;
     public GameObject cookingUI,puzzleUI;
     public GameObject gameEndMenu;
     public TextMeshProUGUI gameEndText;
-
-    //public static event Action<int> OnNodeExecutionCompleted;
 
     void Awake()
     {
@@ -30,16 +31,12 @@ public class MinigameController : NodeController
 
     void OnEnable()
     {
-        //NodeManager.OnMinigame += Begin;
-
         CookingMinigameManager.OnGameEnd += EnableGameEndMenu;
         PuzzleController.OnGameEnd += EnableGameEndMenu;
     }
 
     void OnDisable()
     {
-        //NodeManager.OnMinigame -= Begin;
-
         CookingMinigameManager.OnGameEnd -= EnableGameEndMenu;
         PuzzleController.OnGameEnd -= EnableGameEndMenu;
     }
@@ -66,7 +63,7 @@ public class MinigameController : NodeController
     {
         minigameWon = win;
 
-        gameEndText.text = win ? "You won!" : "You lost!";
+        gameEndText.text = win ? victoryText : defeatText;
         gameEndMenu.SetActive(true);
     }
 

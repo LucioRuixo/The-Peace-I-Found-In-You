@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     GameData gameData;
 
-    [SerializeField] NoodleManager noodleManager = null;
+    [SerializeField] StoryManager noodleManager = null;
     [SerializeField] Noodler noodler = null;
     [SerializeField] DecisionCheckController decisionCheckController = null;
     [SerializeField] ActionController actionController = null;
@@ -35,13 +35,13 @@ public class GameManager : MonoBehaviour
     void OnEnable()
     {
         UIManager_Gameplay.OnGameSave += SaveGameData;
-        NoodleManager.OnNoNoodlesRemaining += GoToMainMenu;
+        StoryManager.OnNoNoodlesRemaining += GoToMainMenu;
     }
 
     void OnDisable()
     {
         UIManager_Gameplay.OnGameSave -= SaveGameData;
-        NoodleManager.OnNoNoodlesRemaining -= GoToMainMenu;
+        StoryManager.OnNoNoodlesRemaining -= GoToMainMenu;
     }
 
     void SetGameData()
@@ -70,6 +70,6 @@ public class GameManager : MonoBehaviour
 
     void GoToMainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene(SceneNameManager.Get().MainMenu);
     }
 }

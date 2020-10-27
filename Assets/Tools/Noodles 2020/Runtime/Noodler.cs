@@ -30,12 +30,12 @@ namespace nullbloq.Noodles
 
         void OnEnable()
         {
-			NoodleManager.OnNoodlerControllerSet += SetLoadedNode;
+			StoryManager.OnNoodlerControllerSet += SetLoadedNode;
 		}
 
         void OnDisable()
         {
-			NoodleManager.OnNoodlerControllerSet -= SetLoadedNode;
+			StoryManager.OnNoodlerControllerSet -= SetLoadedNode;
         }
 
         void SetLoadedNode(string nodeGUID)

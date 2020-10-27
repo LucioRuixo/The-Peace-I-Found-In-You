@@ -347,6 +347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f80aae76ea81c4ba55f11f812fe1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseCharacters: 2e002c002d00
+  unknownCharacterName: 
   letterDisplayWaitTime: 0.06
   pauseWaitTime: 0.5
   whisperFontSizeFactor: 0.75
@@ -817,6 +819,7 @@ MonoBehaviour:
   filter: {fileID: 1049884700}
   fadeInBlinkTop: {fileID: 1468766616}
   fadeInBlinkBottom: {fileID: 8638643}
+  blinkOpenTrigger: Blink Open
   shakePointsAmount: 8
   shakeMagnitude: 0.25
   shakeSpeed: 15
@@ -1676,7 +1679,7 @@ GameObject:
   - component: {fileID: 505166551}
   - component: {fileID: 505166549}
   m_Layer: 0
-  m_Name: Node Manager
+  m_Name: Story Bit Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3787,6 +3790,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0d7c99582267d4f9cc5650a0cbf4b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  victoryText: You won!
+  defeatText: You lost!
   cooking: {fileID: 1836916888}
   cookingUI: {fileID: 1165898070}
   puzzleUI: {fileID: 2075796760}
@@ -4505,7 +4510,7 @@ GameObject:
   - component: {fileID: 1270931763}
   - component: {fileID: 1270931764}
   m_Layer: 0
-  m_Name: Noodle Manager
+  m_Name: Story Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4535,7 +4540,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1270931762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 357726171f19a2a4a8936deb3933e761, type: 3}
+  m_Script: {fileID: 11500000, guid: e7b4e142c06dfe549ac80114af3609b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nodeManager: {fileID: 505166551}

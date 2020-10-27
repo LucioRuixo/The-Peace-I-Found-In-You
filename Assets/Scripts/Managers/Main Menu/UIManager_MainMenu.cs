@@ -66,7 +66,7 @@ public class UIManager_MainMenu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene(SceneNameManager.Get().Gameplay);
     }
 
     void GenerateSaveSlotButtons(SaveSelectionScreenMode saveSelectionScreenMode)

@@ -39,6 +39,9 @@ public class AnimationController : NodeController
     [SerializeField] Animator fadeInBlinkTop = null, fadeInBlinkBottom = null;
     FXManager fxManager;
 
+    [Header("Blink Animation: ")]
+    [SerializeField] string blinkOpenTrigger = "";
+
     [Header("Camera Shake: ")]
     [SerializeField] int shakePointsAmount = 1;
     [SerializeField] float shakeMagnitude = 1f;
@@ -127,8 +130,8 @@ public class AnimationController : NodeController
 
     void StartBlinkOpen()
     {
-        fadeInBlinkTop.SetTrigger("Blink Open");
-        fadeInBlinkBottom.SetTrigger("Blink Open");
+        fadeInBlinkTop.SetTrigger(blinkOpenTrigger);
+        fadeInBlinkBottom.SetTrigger(blinkOpenTrigger);
     }
 
     void ApplyFilter(Sprite newFilter)

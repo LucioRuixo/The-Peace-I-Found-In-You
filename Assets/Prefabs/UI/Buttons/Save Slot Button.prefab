@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7d0edd7b6a3154cb9c4490b4d2329f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  preIndexButtonText: 'Archivo '
+  postIndexButtonText: 
   newGameText: "\xBFCrear una nueva partida en este archivo de guardado?"
   loadGameText: "\xBFCargar esta partida?"
   emptySlotText: "Archivo de guardado vac\xEDo"
