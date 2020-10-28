@@ -38,18 +38,36 @@ public class BackgroundController : NodeController
         SeijunB_A12,
     }
 
+    [Serializable]
+    public struct BackgroundData
+    {
+        public BackgroundType type;
+        public Location location;
+        public Ilustration ilustration;
+
+        public BackgroundData(BackgroundType _type, Location _location, Ilustration _ilustration)
+        {
+            type = _type;
+            location = _location;
+            ilustration = _ilustration;
+        }
+    }
+
     public override Type NodeType { protected set; get; }
 
     float cameraHeight;
 
     Vector2 cameraSize;
 
-    public Sprite initialBackground;
-    public GameObject bgContainer;
-    SpriteRenderer bgSpriteRenderer;
+    BackgroundData currentBackgroundData;
 
-    public List<BackgroundSO> locations;
-    public List<BackgroundSO> ilustrations;
+    [SerializeField] GameObject backgroundContainer = null;
+    SpriteRenderer backgroundSR;
+
+    [SerializeField] List<BackgroundSO> locations = null;
+    [SerializeField] List<BackgroundSO> ilustrations = null;
+
+    public BackgroundData CurrentBackgroundData { get { return currentBackgroundData; } }
 
     void Awake()
     {
@@ -57,55 +75,54 @@ public class BackgroundController : NodeController
 
         cameraHeight = Camera.main.orthographicSize * 2f;
         cameraSize = new Vector2(Camera.main.aspect * cameraHeight, cameraHeight);
-        bgSpriteRenderer = bgContainer.GetComponent<SpriteRenderer>();
+        backgroundSR = backgroundContainer.GetComponent<SpriteRenderer>();
     }
 
-    void Start()
+    Sprite GetBackgroundSprite(BackgroundType type, Location location, Ilustration ilustration)
     {
-        SetBackground(initialBackground);
-    }
-
-    void SetBackground(Sprite newBG)
-    {
-        bgSpriteRenderer.sprite = newBG;
-
-        bgContainer.transform.localScale = Vector3.one;
-        Vector2 spriteSize = bgSpriteRenderer.sprite.bounds.size;
-        bgContainer.transform.localScale *= cameraSize.x >= cameraSize.y ? cameraSize.x / spriteSize.x : cameraSize.y / spriteSize.y;
-    }
-
-    void ChangeBackground(CustomBackgroundChangeNode node)
-    {
-        if (node.backgroundType == BackgroundType.Location)
+        if (type == BackgroundType.Location)
         {
             foreach (BackgroundSO background in locations)
             {
-                if (node.location == background.location)
-                {
-                    SetBackground(background.sprite);
-                    break;
-                }
+                if (location == background.location)
+                    return background.sprite;
             }
         }
         else
         {
             foreach (BackgroundSO background in ilustrations)
             {
-                if (node.ilustration == background.ilustration)
-                {
-                    SetBackground(background.sprite);
-                    break;
-                }
+                if (ilustration == background.ilustration)
+                    return background.sprite;
             }
         }
 
-        CallNodeExecutionCompletion(0);
+        return null;
+    }
+
+    void SetBackground(BackgroundType type, Location location, Ilustration ilustration)
+    {
+        Sprite newBackground = GetBackgroundSprite(type, location, ilustration);
+        backgroundSR.sprite = newBackground;
+
+        backgroundContainer.transform.localScale = Vector3.one;
+        Vector2 spriteSize = backgroundSR.sprite.bounds.size;
+        backgroundContainer.transform.localScale *= cameraSize.x >= cameraSize.y ? cameraSize.x / spriteSize.x : cameraSize.y / spriteSize.y;
+
+        currentBackgroundData = new BackgroundData(type, location, ilustration);
     }
 
     public override void Execute(NoodlesNode genericNode)
     {
         var node = genericNode as CustomBackgroundChangeNode;
 
-        ChangeBackground(node);
+        SetBackground(node.backgroundType, node.location, node.ilustration);
+
+        CallNodeExecutionCompletion(0);
+    }
+
+    public void SetData(GameManager.GameData loadedData)
+    {
+        SetBackground(loadedData.backgroundData.type, loadedData.backgroundData.location, loadedData.backgroundData.ilustration);
     }
 }

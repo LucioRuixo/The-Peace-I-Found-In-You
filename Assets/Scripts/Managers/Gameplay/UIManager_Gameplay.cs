@@ -8,9 +8,6 @@ public class UIManager_Gameplay : MonoBehaviour
 
     [SerializeField] GameObject dialogueCover = null;
     [SerializeField] GameObject log = null;
-    [SerializeField] GameObject confirmationMenuPrefab = null;
-    [SerializeField] Transform confirmationMenuContainer = null;
-    [SerializeField] DialogueController dialogueController = null;
 
     public static event Action OnGameSave;
     public static event Action<bool> OnLogStateChange;

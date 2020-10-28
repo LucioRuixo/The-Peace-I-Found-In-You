@@ -16,8 +16,8 @@ public class MinigameController : NodeController
 
     bool minigameWon;
 
-    [SerializeField] string victoryText;
-    [SerializeField] string defeatText;
+    [SerializeField] string victoryText = "";
+    [SerializeField] string defeatText = "";
 
     public GameObject cooking;
     public GameObject cookingUI,puzzleUI;

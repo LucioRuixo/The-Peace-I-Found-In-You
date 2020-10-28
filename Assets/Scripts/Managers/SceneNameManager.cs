@@ -2,9 +2,9 @@
 
 public class SceneNameManager : MonoBehaviourSingleton<SceneNameManager>
 {
-    [SerializeField] string mainMenuSceneName;
+    [SerializeField] string mainMenuSceneName = "";
     public string MainMenu { get { return mainMenuSceneName; } }
 
-    [SerializeField] string gameplaySceneName;
+    [SerializeField] string gameplaySceneName = "";
     public string Gameplay { get { return gameplaySceneName; } }
 }

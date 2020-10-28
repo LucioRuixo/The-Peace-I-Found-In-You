@@ -1433,9 +1433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveSlotButtonPrefab: {fileID: 4147636179237842633, guid: 472789d92a314a645be2bb26c832cf4b,
     type: 3}
-  cover: {fileID: 983837526}
   saveSlotButtonContainer: {fileID: 330493398}
-  confirmationMenuContainer: {fileID: 1732387535}
   selectionIcon: {fileID: 395102332}
   versionText: {fileID: 1947136258}
   backgroundChangeTime: 15
@@ -1537,6 +1535,10 @@ MonoBehaviour:
     routeNoodleIndex: 0
     currentRoute: 2
     currentNodeGUID: 
+    backgroundData:
+      type: 0
+      location: 3
+      ilustration: 0
     charactersInScene: []
 --- !u!4 &474491383
 Transform:

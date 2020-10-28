@@ -19,9 +19,7 @@ public class UIManager_MainMenu : MonoBehaviour
     bool lerpingAlpha2 = false;
 
     [SerializeField] GameObject saveSlotButtonPrefab = null;
-    [SerializeField] GameObject cover = null;
     [SerializeField] Transform saveSlotButtonContainer = null;
-    [SerializeField] Transform confirmationMenuContainer = null;
     [SerializeField] RectTransform selectionIcon = null;
     [SerializeField] TextMeshProUGUI versionText = null;
     FXManager fxManager;

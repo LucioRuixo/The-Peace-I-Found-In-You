@@ -573,7 +573,7 @@ MonoBehaviour:
         GUID: 2a501501-bb85-46ce-a022-3323db50a30a
         rect:
           serializedVersion: 2
-          x: -670
+          x: -662
           y: 124
           width: 271
           height: 175
@@ -855,7 +855,7 @@ MonoBehaviour:
         GUID: fdd2e14c-7912-49db-885e-ec92e75fcf4a
         rect:
           serializedVersion: 2
-          x: -672
+          x: -664
           y: 313
           width: 271
           height: 175
@@ -893,7 +893,7 @@ MonoBehaviour:
         GUID: 380a0eb2-0909-4980-9d6b-9e9b38919cec
         rect:
           serializedVersion: 2
-          x: -672
+          x: -664
           y: 503
           width: 271
           height: 175
@@ -1103,7 +1103,7 @@ MonoBehaviour:
         GUID: b37eb6a6-34d7-4cf2-aecc-1b2a84de00d3
         rect:
           serializedVersion: 2
-          x: -655
+          x: -647
           y: 11
           width: 234
           height: 96

@@ -481,8 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ca193308b26ca4ba7a4c50aa3904dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialBackground: {fileID: 21300000, guid: d06af50b015bea842a8ab2c062ab73e7, type: 3}
-  bgContainer: {fileID: 254615190}
+  backgroundContainer: {fileID: 254615190}
   locations:
   - {fileID: 11400000, guid: 238866f9aa0671748bffb6b32ab1f467, type: 2}
   - {fileID: 11400000, guid: 0667c4f635d3e964b8b86f7215603a74, type: 2}
@@ -724,6 +723,7 @@ MonoBehaviour:
   noodleManager: {fileID: 1270931764}
   noodler: {fileID: 505166549}
   decisionCheckController: {fileID: 1677762215}
+  backgroundController: {fileID: 143043582}
   actionController: {fileID: 595585450}
 --- !u!1 &239236763
 GameObject:
@@ -6362,10 +6362,6 @@ MonoBehaviour:
   exitText: "\xBFSalir al men\xFA principal?"
   dialogueCover: {fileID: 1765640382}
   log: {fileID: 161944890}
-  confirmationMenuPrefab: {fileID: 3648222499761110402, guid: 818402243fcd2a045be1705bd4d5400c,
-    type: 3}
-  confirmationMenuContainer: {fileID: 414413656}
-  dialogueController: {fileID: 121330168}
 --- !u!4 &1787929897
 Transform:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class DialogueController : NodeController
     bool typing = false;
     bool logActive = false;
 
-    [SerializeField] char[] pauseCharacters;
+    [SerializeField] char[] pauseCharacters = null;
 
     [SerializeField] string unknownCharacterName = "";
     string characterName;

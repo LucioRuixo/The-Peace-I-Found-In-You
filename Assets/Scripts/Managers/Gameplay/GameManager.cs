@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
         [HideInInspector] public string currentNodeGUID;
 
+        public BackgroundController.BackgroundData backgroundData;
+
         [HideInInspector] public List<Character> charactersInScene;
     }
 
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] StoryManager noodleManager = null;
     [SerializeField] Noodler noodler = null;
     [SerializeField] DecisionCheckController decisionCheckController = null;
+    [SerializeField] BackgroundController backgroundController = null;
     [SerializeField] ActionController actionController = null;
 
     void Awake()
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
 
         noodleManager.SetData(gameData);
         decisionCheckController.SetData(gameData);
+        backgroundController.SetData(gameData);
         actionController.SetData(gameData);
     }
 
@@ -59,7 +63,8 @@ public class GameManager : MonoBehaviour
         gameData.routeNoodleIndex = noodleManager.RouteNoodleIndex;
         gameData.currentRoute = noodleManager.CurrentRoute;
         gameData.currentNodeGUID = noodler.CurrentNode.GUID;
-        gameData.charactersInScene = actionController.GetCharactersInScene();
+        gameData.backgroundData = backgroundController.CurrentBackgroundData;
+        gameData.charactersInScene = actionController.CharactersInScene;
     }
 
     void SaveGameData()

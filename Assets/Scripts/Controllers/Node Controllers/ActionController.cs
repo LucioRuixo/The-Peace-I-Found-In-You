@@ -57,6 +57,17 @@ public class ActionController : NodeController
     [Header("Fade Into/Off Scene: ")]
     [SerializeField] float fadeDuration = 1f;
 
+    public List<Character> CharactersInScene { get
+    {
+        List<Character> characterKeys = new List<Character>();
+        foreach (KeyValuePair<Character, GameObject> character in charactersInScene)
+        {
+            characterKeys.Add(character.Key);
+        }
+
+        return characterKeys;
+    } }
+
     void Awake()
     {
         NodeType = typeof(CustomCharacterActionNode);
@@ -413,16 +424,16 @@ public class ActionController : NodeController
         }
     }
 
-    public List<Character> GetCharactersInScene()
-    {
-        List<Character> characterKeys = new List<Character>();
-        foreach (KeyValuePair<Character, GameObject> character in charactersInScene)
-        {
-            characterKeys.Add(character.Key);
-        }
-
-        return characterKeys;
-    }
+    //public List<Character> GetCharactersInScene()
+    //{
+    //    List<Character> characterKeys = new List<Character>();
+    //    foreach (KeyValuePair<Character, GameObject> character in charactersInScene)
+    //    {
+    //        characterKeys.Add(character.Key);
+    //    }
+    //
+    //    return characterKeys;
+    //}
 
     IEnumerator MoveCharacter(Transform character, float targetX, bool destroyOnFinish, Action action)
     {
