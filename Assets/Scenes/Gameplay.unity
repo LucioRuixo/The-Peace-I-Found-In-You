@@ -356,7 +356,6 @@ MonoBehaviour:
   dialogueBox: {fileID: 644522514}
   nameText: {fileID: 982045083}
   dialogueText: {fileID: 1123153518}
-  characterManager: {fileID: 1662388384}
   log: {fileID: 161944892}
   clickableRects:
   - {fileID: 639351860}
@@ -2114,7 +2113,6 @@ MonoBehaviour:
   characterPrefab: {fileID: 2210280816483008521, guid: 26d8d091ff73b124a806d7b76c6faf51,
     type: 3}
   characterContainer: {fileID: 1191916006}
-  characterManager: {fileID: 1662388384}
   movementDuration: 0.5
   movementAccuracyRange: 1
   fadeDuration: 2
@@ -4553,6 +4551,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f37f67860c2204f4b98b7544f07be4e2, type: 2}
   - {fileID: 11400000, guid: 103743fcae099f4458befbaf31beb237, type: 2}
   - {fileID: 11400000, guid: 06d57249446e73741953d9559f580ccc, type: 2}
+  - {fileID: 11400000, guid: 5453fdf2d61512148ab6dc9cc7901454, type: 2}
   seijunRoute:
   - {fileID: 11400000, guid: 40f5a0d3e2e12824abcf4f8a21add142, type: 2}
   - {fileID: 11400000, guid: 0a95cd3be73b3fd4cb81118028d54cb9, type: 2}

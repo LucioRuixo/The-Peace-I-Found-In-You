@@ -1,0 +1,555 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cbd2643b65e0f4480e4201a5f9b5f1, type: 3}
+  m_Name: Hoshi - A1S7
+  m_EditorClassIdentifier: 
+  nodes:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  references:
+    version: 1
+    00000000:
+      type: {class: NoodlesNodeBorder, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Start
+        GUID: aeffae31-4a4b-48c7-8a63-955c40c39b0b
+        rect:
+          serializedVersion: 2
+          x: -6
+          y: 213
+          width: 76
+          height: 71
+        width: 100
+        height: 100
+        inputPorts: []
+        outputPorts:
+        - GUID: 75f4cc40-26e0-405d-bda5-4fde744f273f
+          parentNodeGUID: aeffae31-4a4b-48c7-8a63-955c40c39b0b
+          targetNodeGUID:
+          - 21b37dbf-4e14-4c1a-a141-838f2580cbee
+          targetPortGUID:
+          - 4b640b98-b97e-47a2-a7f9-37f850c02e56
+          text: Start
+          isEditable: 0
+        classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        isStartNode: 1
+    00000001:
+      type: {class: NoodlesNodeBorder, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: End
+        GUID: 7eae137e-7662-4e03-824b-bbb2e0e65c6b
+        rect:
+          serializedVersion: 2
+          x: 1934
+          y: 222
+          width: 69
+          height: 71
+        width: 100
+        height: 100
+        inputPorts:
+        - GUID: 13b00d3f-f621-400c-bb4a-49eb282ffcfd
+          parentNodeGUID: 7eae137e-7662-4e03-824b-bbb2e0e65c6b
+          targetNodeGUID:
+          - 2d218483-6fb7-47c7-943f-f92ad57d85b0
+          targetPortGUID:
+          - c8d7307a-a637-4167-a320-b1185665d944
+          text: End
+          isEditable: 0
+        outputPorts: []
+        classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        isStartNode: 0
+    00000002:
+      type: {class: CustomMusicChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Music Change
+        GUID: 21b37dbf-4e14-4c1a-a141-838f2580cbee
+        rect:
+          serializedVersion: 2
+          x: 106
+          y: 211
+          width: 250
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 4b640b98-b97e-47a2-a7f9-37f850c02e56
+          parentNodeGUID: 21b37dbf-4e14-4c1a-a141-838f2580cbee
+          targetNodeGUID:
+          - aeffae31-4a4b-48c7-8a63-955c40c39b0b
+          targetPortGUID:
+          - 75f4cc40-26e0-405d-bda5-4fde744f273f
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: c2c1a2d0-ff7b-4a49-b9f8-2895becc5873
+          parentNodeGUID: 21b37dbf-4e14-4c1a-a141-838f2580cbee
+          targetNodeGUID:
+          - 7a41e80f-2789-439a-b009-0bf87d2c8997
+          targetPortGUID:
+          - 5edf8498-15dd-42b4-bd11-413fed977729
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        songTitle: 3
+    00000003:
+      type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        title: Multiple Dialogue
+        GUID: c5b3b42b-5ed0-40dc-9a09-8b94f339bcb8
+        rect:
+          serializedVersion: 2
+          x: 602
+          y: 212
+          width: 328
+          height: 577
+        width: 1500
+        height: 500
+        inputPorts:
+        - GUID: 4b3e45e7-ee9f-441e-be4f-642d05f37202
+          parentNodeGUID: c5b3b42b-5ed0-40dc-9a09-8b94f339bcb8
+          targetNodeGUID:
+          - 7a41e80f-2789-439a-b009-0bf87d2c8997
+          targetPortGUID:
+          - 5f8f1116-7a78-4771-8afc-a4711c56f060
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: e73418d8-cd96-499d-9610-7bd4ca04d575
+          parentNodeGUID: c5b3b42b-5ed0-40dc-9a09-8b94f339bcb8
+          targetNodeGUID:
+          - 90254751-3239-4bc7-8788-0d8d41e83ef7
+          targetPortGUID:
+          - a751c3aa-f6e8-4afa-ac16-6b288b84d8ba
+          text: Out
+          isEditable: 0
+        classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        dialogueStrips:
+        - character: 0
+          status: 0
+          sentence: Yo tampoco pude hacer nada Hoshi, solo pude mirar...
+        - character: 0
+          status: 0
+          sentence: Esas sombras son la culpa que sentimos por las acciones que cometimos
+            en el pasado.
+        - character: 0
+          status: 0
+          sentence: Creo que nadie en tu hogar te quisiera ver sufriendo.
+        - character: 0
+          status: 0
+          sentence: "Hicimos lo que pudimos, pero no fue suficiente, pero nadie te
+            lo va a recriminar jam\xE1s."
+        - character: 0
+          status: 0
+          sentence: "Despu\xE9s de todo Hoshi, todos en ese pueblo te amaban, yo
+            lo vi con mis propios ojos."
+        - character: 0
+          status: 0
+          sentence: "Estoy seguro que ellos quer\xEDan que su estrella siga brillando
+            a pesar de todo..."
+        - character: 1
+          status: 0
+          sentence: P..., Gracias...
+    00000004:
+      type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        title: Multiple Dialogue
+        GUID: a0190eb2-213a-4297-8361-3d60923f78be
+        rect:
+          serializedVersion: 2
+          x: 602
+          y: 811
+          width: 328
+          height: 577
+        width: 1500
+        height: 500
+        inputPorts:
+        - GUID: e9c8f505-37ff-4a23-af7b-4dfb71500d8d
+          parentNodeGUID: a0190eb2-213a-4297-8361-3d60923f78be
+          targetNodeGUID:
+          - 7a41e80f-2789-439a-b009-0bf87d2c8997
+          targetPortGUID:
+          - 8b0750af-1ac0-4158-b845-779f64c19b73
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: d11dd25e-b4ca-4bdc-ae38-59401ab1fa28
+          parentNodeGUID: a0190eb2-213a-4297-8361-3d60923f78be
+          targetNodeGUID:
+          - 2d218483-6fb7-47c7-943f-f92ad57d85b0
+          targetPortGUID:
+          - e654a250-a852-4da5-a59e-f9f00396d3e4
+          text: Out
+          isEditable: 0
+        classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        dialogueStrips:
+        - character: 0
+          status: 0
+          sentence: Lo importante, Hoshi, es que sobrevivimos. A pesar de todo pudimos
+            seguir adelante para vivir.
+        - character: 0
+          status: 0
+          sentence: "Cumpliste con lo que quer\xEDa tu padre y todos en tu pueblo."
+        - character: 0
+          status: 0
+          sentence: "\xBFRecuerdas ese d\xEDa en el que te ense\xF1e a trepar \xE1rboles?"
+        - character: 1
+          status: 0
+          sentence: Lo recuerdo...
+        - character: 0
+          status: 0
+          sentence: "Ese d\xEDa ca\xEDste much\xEDsimas veces, fue muy gracioso verte
+            caer una y otra vez."
+        - character: 0
+          status: 0
+          sentence: Pero lo importante fue que siempre te levantaste, Hoshi.
+        - character: 0
+          status: 0
+          sentence: "A diferencia de m\xED, t\xFA no te rindes al primer fallo."
+        - character: 0
+          status: 0
+          sentence: "Por eso pienso que deber\xEDas centrarte en seguir."
+        - character: 0
+          status: 0
+          sentence: "No s\xE9 qu\xE9 pas\xF3 en el bosque, pero, sea lo que sea,
+            puedes seguir adelante."
+        - character: 0
+          status: 0
+          sentence: Si no hubieras participado en la guerra no hubieras vivido todas
+            esas experiencias que te fortalecieron.
+        - character: 1
+          status: 0
+          sentence: Gracias, P.
+        - character: 1
+          status: 0
+          sentence: "[Aunque dar\xEDa lo que fuera para volver atr\xE1s el tiempo
+            y evitar el conflicto...]"
+        - character: 1
+          status: 0
+          sentence: "No quiero molestarte m\xE1s, P, as\xED que me voy a llevar a
+            Tadao a mi casa."
+        - character: 0
+          status: 0
+          sentence: "\xBFQuieres que te acompa\xF1e, Hoshi?"
+        - character: 1
+          status: 0
+          sentence: "No hace falta, P, puedo cuidarme sola. Adem\xE1s, las calles
+            del pueblo siempre est\xE1n iluminadas."
+        - character: 0
+          status: 0
+          sentence: "(Debe estar cansada, el d\xEDa de hoy tuvo que haber sido estresante
+            para ella)"
+        - character: 0
+          status: 0
+          sentence: (No puedo imaginar lo que debe estar pasando)
+        - character: 0
+          status: 0
+          sentence: "(Si bien yo tengo pesadillas tambi\xE9n, no deben ser tan h\xF3rridas
+            como las de Hoshi)"
+        - character: 0
+          status: 0
+          sentence: "(Una estrella que se apag\xF3 por la oscuridad del mundo...)"
+        - character: 0
+          status: 0
+          sentence: "(Mientras que yo soy una simple piedra en el camino de los dem\xE1s)"
+        - character: 0
+          status: 0
+          sentence: "(Alguien ego\xEDsta que le encanta pelear y que le cuesta arrepentirse
+            por sus acciones)"
+        - character: 0
+          status: 0
+          sentence: (Espero que Hoshi pueda volver a brillar)
+    00000005:
+      type: {class: CustomBackgroundChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Background Change
+        GUID: 90254751-3239-4bc7-8788-0d8d41e83ef7
+        rect:
+          serializedVersion: 2
+          x: 963
+          y: 215
+          width: 256
+          height: 134
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: a751c3aa-f6e8-4afa-ac16-6b288b84d8ba
+          parentNodeGUID: 90254751-3239-4bc7-8788-0d8d41e83ef7
+          targetNodeGUID:
+          - c5b3b42b-5ed0-40dc-9a09-8b94f339bcb8
+          targetPortGUID:
+          - e73418d8-cd96-499d-9610-7bd4ca04d575
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 82ffa6e2-99a8-4915-8b83-8b1ff1b320c3
+          parentNodeGUID: 90254751-3239-4bc7-8788-0d8d41e83ef7
+          targetNodeGUID:
+          - 415bb7f2-497e-4c69-9e72-979539bb88f3
+          targetPortGUID:
+          - f476593a-8f21-4837-a9fd-1db4fc4959b5
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        backgroundType: 1
+        location: 0
+        ilustration: 4
+    00000006:
+      type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        title: Multiple Dialogue
+        GUID: 415bb7f2-497e-4c69-9e72-979539bb88f3
+        rect:
+          serializedVersion: 2
+          x: 1267
+          y: 217
+          width: 328
+          height: 577
+        width: 1500
+        height: 500
+        inputPorts:
+        - GUID: f476593a-8f21-4837-a9fd-1db4fc4959b5
+          parentNodeGUID: 415bb7f2-497e-4c69-9e72-979539bb88f3
+          targetNodeGUID:
+          - 90254751-3239-4bc7-8788-0d8d41e83ef7
+          targetPortGUID:
+          - 82ffa6e2-99a8-4915-8b83-8b1ff1b320c3
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: bcd99b93-3e27-4cc0-b8be-f3f880a394ba
+          parentNodeGUID: 415bb7f2-497e-4c69-9e72-979539bb88f3
+          targetNodeGUID:
+          - 2d218483-6fb7-47c7-943f-f92ad57d85b0
+          targetPortGUID:
+          - e654a250-a852-4da5-a59e-f9f00396d3e4
+          text: Out
+          isEditable: 0
+        classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        dialogueStrips:
+        - character: 0
+          status: 0
+          sentence: "Adem\xE1s, no eres la \xFAnica que sufre ese tipo de cosas."
+        - character: 0
+          status: 0
+          sentence: "Por ejemplo, esta ma\xF1ana tuve una pesadilla parecida a lo
+            que viviste."
+        - character: 0
+          status: 0
+          sentence: Y varias veces me ocurre lo mismo cuando estoy solo...
+        - character: 0
+          status: 0
+          sentence: "As\xED que, Hoshi..."
+        - character: 0
+          status: 0
+          sentence: "No est\xE1s sola, puedes contar conmigo y Tadao, los tres sufrimos
+            bastante en nuestra vida."
+        - character: 0
+          status: 0
+          sentence: Pero no creo que tengamos que sufrir toda la vida.
+        - character: 0
+          status: 0
+          sentence: "En alg\xFAn momento... vamos a encontrar paz y felicidad..."
+        - character: 1
+          status: 0
+          sentence: "P..., no sab\xEDa que fueras tan maduro."
+        - character: 1
+          status: 0
+          sentence: Pero... gracias por estar conmigo y no dejarme sola.
+        - character: 1
+          status: 0
+          sentence: Yo... espero poder encontrar esa paz y felicidad de la que hablas.
+        - character: 1
+          status: 0
+          sentence: "Supongo que tienes raz\xF3n, mi familia..."
+        - character: 1
+          status: 0
+          sentence: "No, todos los que conoc\xED en ese pueblo no quer\xEDan que
+            yo sufriera."
+        - character: 1
+          status: 0
+          sentence: "Siempre dec\xEDan que era su estrella, que tra\xEDa felicidad
+            a todos."
+        - character: 1
+          status: 0
+          sentence: "P, los extra\xF1o mucho..."
+        - character: 0
+          status: 0
+          sentence: "(No pens\xE9 que Hoshi iba a volver a llorar despu\xE9s de ese
+            d\xEDa...)"
+        - character: 0
+          status: 0
+          sentence: "S\xE9 que los extra\xF1as, Hoshi, pero estoy seguro que ellos
+            te est\xE1n cuidando desde el otro lado."
+        - character: 0
+          status: 0
+          sentence: "Llora todo el tiempo que necesites, Hoshi, no voy a irme a ning\xFAn
+            lado..."
+        - character: 1
+          status: 0
+          sentence: De verdad, P, gracias...
+        - character: 0
+          status: 0
+          sentence: "(La guerra nos provoc\xF3 mucho dolor y nos dej\xF3 cicatrices
+            que el paso del tiempo nunca va a poder borrar)"
+        - character: 0
+          status: 0
+          sentence: "(Cicatrices en nuestro alma que no nos dejan ver la luz del
+            d\xEDa)"
+        - character: 0
+          status: 0
+          sentence: "(Los gritos de los ca\xEDdos y las sombras que nos persiguen...)"
+        - character: 0
+          status: 0
+          sentence: (Son nuestro castigo...)
+        - character: 0
+          status: 0
+          sentence: "(Hoshi no solo perdi\xF3 su pueblo, sino que tambi\xE9n perdi\xF3
+            parte de su humanidad)"
+        - character: 0
+          status: 0
+          sentence: (Ambos tuvimos que matar para sobrevivir, dejar a alguien sin
+            un ser querido...)
+        - character: 0
+          status: 0
+          sentence: "(Pero a diferencia de m\xED, ella no se merece sufrir as\xED)"
+        - character: 0
+          status: 0
+          sentence: "(Ella no tuvo opci\xF3n, en cambio yo...)"
+        - character: 0
+          status: 0
+          sentence: "(Asesin\xE9 a muchas personas sin titubear para poder vivir...)"
+        - character: 0
+          status: 0
+          sentence: "(Alguien que vivi\xF3 toda su vida para \xE9l mismo, no merece
+            la paz y la felicidad)"
+        - character: 0
+          status: 0
+          sentence: (Ella fue la luz de muchos, mientras que yo fui la oscuridad...)
+        - character: 0
+          status: 0
+          sentence: "(Espero que ella pueda seguir adelante y volver a sonre\xEDr
+            como sol\xEDa hacerlo)"
+        - character: 1
+          status: 0
+          sentence: P, espero que ambos podamos volver a ser felices...
+        - character: 1
+          status: 0
+          sentence: "T\xFA tambi\xE9n lo mereces, nunca me dejaste sola despu\xE9s
+            de lo que sucedi\xF3 y me protegiste mucho."
+        - character: 1
+          status: 0
+          sentence: "Me ense\xF1aste a sobrevivir y por eso sigo viva."
+        - character: 1
+          status: 0
+          sentence: Gracias por todo, P...
+        - character: 1
+          status: 0
+          sentence: '[Y no dejarme sola nunca...]'
+        - character: 0
+          status: 0
+          sentence: Gracias, Hoshi...
+        - character: 0
+          status: 0
+          sentence: "(Me gustar\xEDa que eso fuese cierto. Ser feliz... no estar\xEDa
+            nada mal...)"
+    00000007:
+      type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Animation
+        GUID: 2d218483-6fb7-47c7-943f-f92ad57d85b0
+        rect:
+          serializedVersion: 2
+          x: 1630
+          y: 219
+          width: 264
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: e654a250-a852-4da5-a59e-f9f00396d3e4
+          parentNodeGUID: 2d218483-6fb7-47c7-943f-f92ad57d85b0
+          targetNodeGUID:
+          - 415bb7f2-497e-4c69-9e72-979539bb88f3
+          - a0190eb2-213a-4297-8361-3d60923f78be
+          targetPortGUID:
+          - bcd99b93-3e27-4cc0-b8be-f3f880a394ba
+          - d11dd25e-b4ca-4bdc-ae38-59401ab1fa28
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: c8d7307a-a637-4167-a320-b1185665d944
+          parentNodeGUID: 2d218483-6fb7-47c7-943f-f92ad57d85b0
+          targetNodeGUID:
+          - 7eae137e-7662-4e03-824b-bbb2e0e65c6b
+          targetPortGUID:
+          - 13b00d3f-f621-400c-bb4a-49eb282ffcfd
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        animation: 0
+    00000008:
+      type: {class: CustomDecisionCheckNode, ns: , asm: Assembly-CSharp}
+      data:
+        title: Last Decision Check
+        GUID: 7a41e80f-2789-439a-b009-0bf87d2c8997
+        rect:
+          serializedVersion: 2
+          x: 394
+          y: 212
+          width: 164
+          height: 101
+        width: 1500
+        height: 500
+        inputPorts:
+        - GUID: 5edf8498-15dd-42b4-bd11-413fed977729
+          parentNodeGUID: 7a41e80f-2789-439a-b009-0bf87d2c8997
+          targetNodeGUID:
+          - 21b37dbf-4e14-4c1a-a141-838f2580cbee
+          targetPortGUID:
+          - c2c1a2d0-ff7b-4a49-b9f8-2895becc5873
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 5f8f1116-7a78-4771-8afc-a4711c56f060
+          parentNodeGUID: 7a41e80f-2789-439a-b009-0bf87d2c8997
+          targetNodeGUID:
+          - c5b3b42b-5ed0-40dc-9a09-8b94f339bcb8
+          targetPortGUID:
+          - 4b3e45e7-ee9f-441e-be4f-642d05f37202
+          text: Good
+          isEditable: 0
+        - GUID: 8b0750af-1ac0-4158-b845-779f64c19b73
+          parentNodeGUID: 7a41e80f-2789-439a-b009-0bf87d2c8997
+          targetNodeGUID:
+          - a0190eb2-213a-4297-8361-3d60923f78be
+          targetPortGUID:
+          - e9c8f505-37ff-4a23-af7b-4dfb71500d8d
+          text: Bad
+          isEditable: 0
+        classNameString: CustomDecisionCheckNodeVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        dialogueStrips: []
