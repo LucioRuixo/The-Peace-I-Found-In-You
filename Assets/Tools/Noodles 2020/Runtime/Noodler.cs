@@ -23,11 +23,6 @@ namespace nullbloq.Noodles
 			}
 		}
 
-		void Awake()
-		{
-			//currentNode = controller.GetStartNode();
-		}
-
         void OnEnable()
         {
 			StoryManager.OnNoodlerControllerSet += SetLoadedNode;

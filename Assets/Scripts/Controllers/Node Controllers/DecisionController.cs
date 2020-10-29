@@ -11,7 +11,7 @@ public class DecisionController : NodeController
 
     [SerializeField] DecisionButton option1Button = null, option2Button = null;
     [SerializeField] TextMeshProUGUI option1Text = null, option2Text = null;
-    [SerializeField] GameObject decision = null;
+    [SerializeField] GameObject decisionBox = null;
     //[SerializeField] GameObject buttonPrefab = null;
     //[SerializeField] Transform buttonContainer = null;
 
@@ -42,7 +42,7 @@ public class DecisionController : NodeController
         option2Text.text = node.outputPorts[1].text;
         option2Button.gameObject.SetActive(true);
 
-        decision.SetActive(true);
+        decisionBox.SetActive(true);
 
         //int currentPortIndex = 0;
         //foreach (NoodlesPort port in node.outputPorts)
@@ -70,7 +70,7 @@ public class DecisionController : NodeController
         //    Destroy(button);
         //}
         //buttons.Clear();
-        decision.SetActive(false);
+        decisionBox.SetActive(false);
 
         CallNodeExecutionCompletion(portIndex); // Adaptar en NodeManager para que funcione al conectar el puerto con varios nodos en vez de uno solo
     }

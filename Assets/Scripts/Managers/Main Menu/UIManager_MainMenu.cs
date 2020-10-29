@@ -18,6 +18,8 @@ public class UIManager_MainMenu : MonoBehaviour
     bool lerpingAlpha1 = false;
     bool lerpingAlpha2 = false;
 
+    [SerializeField] string exitGameText = "";
+
     [SerializeField] GameObject saveSlotButtonPrefab = null;
     [SerializeField] Transform saveSlotButtonContainer = null;
     [SerializeField] RectTransform selectionIcon = null;
@@ -62,9 +64,9 @@ public class UIManager_MainMenu : MonoBehaviour
         StartCoroutine(ChangeBackground());
     }
 
-    public void Play()
+    void ExitGame()
     {
-        SceneManager.LoadScene(SceneNameManager.Get().Gameplay);
+        Application.Quit();
     }
 
     void GenerateSaveSlotButtons(SaveSelectionScreenMode saveSelectionScreenMode)
@@ -78,6 +80,11 @@ public class UIManager_MainMenu : MonoBehaviour
 
             saveSlotButtons.Add(newSaveSlotButton);
         }
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene(SceneNameManager.Get().Gameplay);
     }
 
     public void DeleteSaveSlotButtons()
@@ -134,7 +141,7 @@ public class UIManager_MainMenu : MonoBehaviour
 
     public void Quit()
     {
-        Application.Quit();
+        DialogManager.Get().GenerateDialog(exitGameText, null, ExitGame, null, null);
     }
     
     IEnumerator ChangeBackground()

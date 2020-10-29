@@ -20,32 +20,33 @@ public class DialogueController : NodeController
     string characterName;
     string sentence;
 
-
     int currentDialogueStripIndex = 0;
-
-    public float letterDisplayWaitTime;
-    public float pauseWaitTime;
-    public float whisperFontSizeFactor = 0.5f;
     float fontSize;
 
     IEnumerator typingCoroutine;
 
-    [SerializeField] GameObject dialogue = null;
-    [SerializeField] Image dialogueBox = null;
+    [SerializeField] GameObject dialogueBox = null;
     [SerializeField] TextMeshProUGUI nameText = null;
     [SerializeField] TextMeshProUGUI dialogueText = null;
     [SerializeField] Log log = null;
+    Image dialogueBoxImage;
     NoodlesNodeMultipleDialogue node;
 
     public List<RectTransform> clickableRects = new List<RectTransform>();
 
     Queue<string> sentenceQueue = new Queue<string>();
 
+    [Header("Sentence Typing: ")]
+    [SerializeField] float letterDisplayWaitTime = 0.1f;
+    [SerializeField] float pauseWaitTime = 0.5f;
+    [SerializeField] float whisperFontSizeFactor = 0.5f;
+
     void Awake()
     {
         NodeType = typeof(NoodlesNodeMultipleDialogue);
 
         fontSize = dialogueText.fontSize;
+        dialogueBoxImage = dialogueBox.GetComponent<Image>();
     }
 
     void OnEnable()
@@ -55,7 +56,7 @@ public class DialogueController : NodeController
 
     void Update()
     {
-        if (!dialogue.activeInHierarchy) return;
+        if (!dialogueBox.activeInHierarchy) return;
 
         bool hoveringOverButton = false;
         foreach (RectTransform button in clickableRects)
@@ -89,7 +90,7 @@ public class DialogueController : NodeController
     void Begin(NoodlesNodeMultipleDialogue _node)
     {
         node = _node;
-        dialogue.SetActive(true);
+        dialogueBox.SetActive(true);
 
         ExecuteNextDialogueStrip();
     }
@@ -107,7 +108,7 @@ public class DialogueController : NodeController
             CharacterSO character = CharacterManager.Get().GetCharacterSO(name);
             if (character)
             {
-                dialogueBox.sprite = character.dialogueBoxSprite;
+                dialogueBoxImage.sprite = character.dialogueBoxSprite;
 
                 if (node.dialogueStrips[currentDialogueStripIndex].status == CharacterManager.Status.Known)
                     characterName = character.nameText;
@@ -138,7 +139,7 @@ public class DialogueController : NodeController
     void End()
     {
         currentDialogueStripIndex = 0;
-        dialogue.SetActive(false);
+        dialogueBox.SetActive(false);
 
         CallNodeExecutionCompletion(0); // Adaptar en NodeManager para que funcione al conectar el puerto con varios nodos en vez de uno solo
     }

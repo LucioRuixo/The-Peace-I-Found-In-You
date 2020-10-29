@@ -38,15 +38,15 @@ public class ActionController : NodeController
 
     public override Type NodeType { protected set; get; }
 
-    int pendingCorroutines;
+    bool fadingOutOfScene = false;
+
+    int activeCorroutines;
 
     float initialX;
 
     [SerializeField] GameObject characterPrefab = null;
     [SerializeField] Transform characterContainer = null;
     FXManager fxManager;
-
-    bool fadingOutOfScene = false;
 
     List<KeyValuePair<Character, GameObject>> charactersInScene = new List<KeyValuePair<Character, GameObject>>();
 
@@ -74,6 +74,11 @@ public class ActionController : NodeController
 
         initialX = -(characterPrefab.GetComponent<RectTransform>().rect.width / 2f);
         fxManager = FXManager.Get();
+    }
+
+    void Update()
+    {
+        Debug.Log("pending corroutines: " + activeCorroutines);
     }
 
     void Begin(CustomCharacterActionNode node)
@@ -127,7 +132,7 @@ public class ActionController : NodeController
             {
                 case Action.EnterScene:
                     StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, node.action));
-                    pendingCorroutines++;
+                    activeCorroutines++;
 
                     break;
 
@@ -142,7 +147,7 @@ public class ActionController : NodeController
                     if (i < charactersInScene.Count - 1)
                     {
                         StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, node.action));
-                        pendingCorroutines++;
+                        activeCorroutines++;
                     }
                     else
                     {
@@ -151,8 +156,8 @@ public class ActionController : NodeController
                         charactersInScene[i].Value.transform.position = position;
 
                         Image image = charactersInScene[i].Value.GetComponent<Image>();
-                        fxManager.StartAlphaLerp0To1(image, fadeDuration, End);
-                        pendingCorroutines++;
+                        fxManager.StartAlphaLerp0To1(image, fadeDuration, FinishCorroutine);
+                        activeCorroutines++;
                     }
 
                     break;
@@ -180,7 +185,7 @@ public class ActionController : NodeController
             {
                 case Action.EnterScene:
                     StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, action));
-                    pendingCorroutines++;
+                    activeCorroutines++;
 
                     break;
 
@@ -195,7 +200,7 @@ public class ActionController : NodeController
                     if (i < charactersInScene.Count - 1)
                     {
                         StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, action));
-                        pendingCorroutines++;
+                        activeCorroutines++;
                     }
                     else
                     {
@@ -204,8 +209,8 @@ public class ActionController : NodeController
                         charactersInScene[i].Value.transform.position = position;
 
                         Image image = charactersInScene[i].Value.GetComponent<Image>();
-                        fxManager.StartAlphaLerp0To1(image, fadeDuration, End);
-                        pendingCorroutines++;
+                        fxManager.StartAlphaLerp0To1(image, fadeDuration, FinishCorroutine);
+                        activeCorroutines++;
                     }
 
                     break;
@@ -265,7 +270,7 @@ public class ActionController : NodeController
                 {
                     case Action.ExitScene:
                         StartCoroutine(MoveCharacter(character.Value.transform, targetX, false, node.action));
-                        pendingCorroutines++;
+                        activeCorroutines++;
                         break;
 
                     case Action.PopOutOfScene:
@@ -274,8 +279,8 @@ public class ActionController : NodeController
 
                     case Action.FadeOutOfScene:
                         Image image = character.Value.GetComponent<Image>();
-                        fxManager.StartAlphaLerp1To0(image, fadeDuration, End);
-                        pendingCorroutines++;
+                        fxManager.StartAlphaLerp1To0(image, fadeDuration, FinishCorroutine);
+                        activeCorroutines++;
 
                         fadingOutOfScene = true;
                         break;
@@ -303,7 +308,7 @@ public class ActionController : NodeController
                 case Action.ExitScene:
                 case Action.FadeOutOfScene:
                     StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, node.action));
-                    pendingCorroutines++;
+                    activeCorroutines++;
 
                     break;
 
@@ -325,8 +330,9 @@ public class ActionController : NodeController
 
     void FinishCorroutine()
     {
-        pendingCorroutines--;
-        if (pendingCorroutines == 0) End();
+        Debug.Log("finishing corroutine");
+        activeCorroutines--;
+        if (activeCorroutines <= 0) End();
     }
 
     void ChangeBodyPart(BodyPart bodyPart, CustomCharacterActionNode node)
@@ -390,6 +396,7 @@ public class ActionController : NodeController
 
     void End()
     {
+        Debug.Log("ending character action");
         CallNodeExecutionCompletion(0);
     }
 

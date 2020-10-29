@@ -1431,6 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f310618487a040bd5c0ca3fe8265c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitGameText: "\xBFSalir del juego?"
   saveSlotButtonPrefab: {fileID: 4147636179237842633, guid: 472789d92a314a645be2bb26c832cf4b,
     type: 3}
   saveSlotButtonContainer: {fileID: 330493398}
