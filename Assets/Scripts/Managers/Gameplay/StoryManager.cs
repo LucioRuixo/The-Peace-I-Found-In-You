@@ -4,7 +4,7 @@ using nullbloq.Noodles;
 
 public class StoryManager : MonoBehaviour
 {
-    public int RouteNoodleIndex { private set; get; } = 0;
+    public int RouteNoodleIndex { private set; get; } = -1;
     public RouteController.Route CurrentRoute { private set; get; } = RouteController.Route.None;
 
     [SerializeField] StoryBitManager nodeManager = null;
@@ -47,15 +47,16 @@ public class StoryManager : MonoBehaviour
             CheckForNextNoodle(seijunRoute);
     }
 
-    void CheckForNextNoodle(Noodle[] noodles)
+    void CheckForNextNoodle(Noodle[] routeNoodles)
     {
-        if (RouteNoodleIndex < noodles.Length)
+        if (RouteNoodleIndex < routeNoodles.Length)
         {
-            noodler.controller = noodles[RouteNoodleIndex];
+            RouteNoodleIndex++;
+
+            noodler.controller = routeNoodles[RouteNoodleIndex];
             noodler.ResetNoodle();
             nodeManager.ExecuteNode(noodler.CurrentNode);
 
-            RouteNoodleIndex++;
         }
         else OnNoNoodlesRemaining?.Invoke();
     }

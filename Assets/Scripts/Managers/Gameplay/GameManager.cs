@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     GameData gameData;
 
-    [SerializeField] StoryManager noodleManager = null;
+    [SerializeField] StoryManager storyManager = null;
     [SerializeField] Noodler noodler = null;
     [SerializeField] DecisionCheckController decisionCheckController = null;
     [SerializeField] BackgroundController backgroundController = null;
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     {
         gameData = SaveManager.Get().LoadFile();
 
-        noodleManager.SetData(gameData);
+        storyManager.SetData(gameData);
         decisionCheckController.SetData(gameData);
         backgroundController.SetData(gameData);
         actionController.SetData(gameData);
@@ -60,8 +60,8 @@ public class GameManager : MonoBehaviour
     void UpdateGameData()
     {
         gameData.lastDecisionGood = decisionCheckController.LastDecisionGood;
-        gameData.routeNoodleIndex = noodleManager.RouteNoodleIndex;
-        gameData.currentRoute = noodleManager.CurrentRoute;
+        gameData.routeNoodleIndex = storyManager.RouteNoodleIndex;
+        gameData.currentRoute = storyManager.CurrentRoute;
         gameData.currentNodeGUID = noodler.CurrentNode.GUID;
         gameData.backgroundData = backgroundController.CurrentBackgroundData;
         gameData.charactersInScene = actionController.CharactersInScene;

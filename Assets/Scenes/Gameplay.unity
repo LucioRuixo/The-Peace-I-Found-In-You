@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7037a7d2389814abdd127a94e441f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noodleManager: {fileID: 1270931764}
+  storyManager: {fileID: 1270931764}
   noodler: {fileID: 505166549}
   decisionCheckController: {fileID: 1677762215}
   backgroundController: {fileID: 143043582}

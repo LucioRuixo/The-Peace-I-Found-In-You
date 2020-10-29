@@ -76,11 +76,6 @@ public class ActionController : NodeController
         fxManager = FXManager.Get();
     }
 
-    void Update()
-    {
-        Debug.Log("pending corroutines: " + activeCorroutines);
-    }
-
     void Begin(CustomCharacterActionNode node)
     {
         switch (node.action)
@@ -330,7 +325,6 @@ public class ActionController : NodeController
 
     void FinishCorroutine()
     {
-        Debug.Log("finishing corroutine");
         activeCorroutines--;
         if (activeCorroutines <= 0) End();
     }
@@ -396,7 +390,6 @@ public class ActionController : NodeController
 
     void End()
     {
-        Debug.Log("ending character action");
         CallNodeExecutionCompletion(0);
     }
 

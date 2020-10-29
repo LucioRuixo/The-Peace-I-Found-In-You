@@ -1533,7 +1533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialGameData:
     lastDecisionGood: 0
-    routeNoodleIndex: 0
+    routeNoodleIndex: -1
     currentRoute: 2
     currentNodeGUID: 
     backgroundData:
