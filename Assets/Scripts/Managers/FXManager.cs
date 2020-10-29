@@ -12,38 +12,38 @@ public class FXManager : MonoBehaviourSingleton<FXManager>
     }
 
     #region Alpha Lerp
-
+    #region Image Lerps
     public void StartAlphaLerp(Image image, float from, float to, float duration)
     {
-        StartCoroutine(LerpAlpha(image, from, to, duration, null));
+        StartCoroutine(LerpImageAlpha(image, from, to, duration, null));
     }
 
     public void StartAlphaLerp(Image image, float from, float to, float duration, Action onEnd)
     {
-        StartCoroutine(LerpAlpha(image, from, to, duration, onEnd));
+        StartCoroutine(LerpImageAlpha(image, from, to, duration, onEnd));
     }
 
     public void StartAlphaLerp0To1(Image image, float duration)
     {
-        StartCoroutine(LerpAlpha(image, 0f, 1f, duration, null));
+        StartCoroutine(LerpImageAlpha(image, 0f, 1f, duration, null));
     }
 
     public void StartAlphaLerp0To1(Image image, float duration, Action onEnd)
     {
-        StartCoroutine(LerpAlpha(image, 0f, 1f, duration, onEnd));
+        StartCoroutine(LerpImageAlpha(image, 0f, 1f, duration, onEnd));
     }
 
     public void StartAlphaLerp1To0(Image image, float duration)
     {
-        StartCoroutine(LerpAlpha(image, 1f, 0f, duration, null));
+        StartCoroutine(LerpImageAlpha(image, 1f, 0f, duration, null));
     }
 
     public void StartAlphaLerp1To0(Image image, float duration, Action onEnd)
     {
-        StartCoroutine(LerpAlpha(image, 1f, 0f, duration, onEnd));
+        StartCoroutine(LerpImageAlpha(image, 1f, 0f, duration, onEnd));
     }
 
-    IEnumerator LerpAlpha(Image image, float from, float to, float duration, Action onEnd)
+    IEnumerator LerpImageAlpha(Image image, float from, float to, float duration, Action onEnd)
     {
         float currentAlpha = from;
 
@@ -62,7 +62,59 @@ public class FXManager : MonoBehaviourSingleton<FXManager>
 
         onEnd?.Invoke();
     }
+    #endregion
 
+    #region SR Lerp
+    public void StartAlphaLerp(SpriteRenderer sr, float from, float to, float duration)
+    {
+        StartCoroutine(LerpSRAlpha(sr, from, to, duration, null));
+    }
+
+    public void StartAlphaLerp(SpriteRenderer sr, float from, float to, float duration, Action onEnd)
+    {
+        StartCoroutine(LerpSRAlpha(sr, from, to, duration, onEnd));
+    }
+
+    public void StartAlphaLerp0To1(SpriteRenderer sr, float duration)
+    {
+        StartCoroutine(LerpSRAlpha(sr, 0f, 1f, duration, null));
+    }
+
+    public void StartAlphaLerp0To1(SpriteRenderer sr, float duration, Action onEnd)
+    {
+        StartCoroutine(LerpSRAlpha(sr, 0f, 1f, duration, onEnd));
+    }
+
+    public void StartAlphaLerp1To0(SpriteRenderer sr, float duration)
+    {
+        StartCoroutine(LerpSRAlpha(sr, 1f, 0f, duration, null));
+    }
+
+    public void StartAlphaLerp1To0(SpriteRenderer sr, float duration, Action onEnd)
+    {
+        StartCoroutine(LerpSRAlpha(sr, 1f, 0f, duration, onEnd));
+    }
+    #endregion
+
+    IEnumerator LerpSRAlpha(SpriteRenderer SR, float from, float to, float duration, Action onEnd)
+    {
+        float currentAlpha = from;
+
+        while (!ValueReached(from, to, currentAlpha))
+        {
+            float step = 1f / (duration / Time.deltaTime);
+            if (from > to) step *= -1f;
+            currentAlpha += step;
+
+            Color newColor = SR.color;
+            newColor.a = currentAlpha;
+            SR.color = newColor;
+
+            yield return null;
+        }
+
+        onEnd?.Invoke();
+    }
     #endregion
 
     #region Camera Shake

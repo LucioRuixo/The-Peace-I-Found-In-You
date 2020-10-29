@@ -20,6 +20,10 @@ public class UIManager_MainMenu : MonoBehaviour
 
     [SerializeField] string exitGameText = "";
 
+    float cameraHeight;
+
+    Vector2 cameraSize;
+
     [SerializeField] GameObject saveSlotButtonPrefab = null;
     [SerializeField] Transform saveSlotButtonContainer = null;
     [SerializeField] RectTransform selectionIcon = null;
@@ -31,9 +35,12 @@ public class UIManager_MainMenu : MonoBehaviour
     [Header("Background Change: ")]
     [SerializeField] float backgroundChangeTime = 15f;
     [SerializeField] float fadeDuration = 3f;
+    [SerializeField] float alphaAccuracyRange = 0.1f;
 
-    [SerializeField] Image background1 = null;
-    [SerializeField] Image background2 = null;
+    [SerializeField] GameObject backgroundContainer = null;
+
+    [SerializeField] SpriteRenderer background1SR = null;
+    [SerializeField] SpriteRenderer background2SR = null;
 
     [SerializeField] Sprite[] backgrounds = null;
 
@@ -55,6 +62,9 @@ public class UIManager_MainMenu : MonoBehaviour
     void Awake()
     {
         fxManager = FXManager.Get();
+
+        cameraHeight = Camera.main.orthographicSize * 2f;
+        cameraSize = new Vector2(Camera.main.aspect * cameraHeight, cameraHeight);
     }
 
     void Start()
@@ -67,6 +77,15 @@ public class UIManager_MainMenu : MonoBehaviour
     void ExitGame()
     {
         Application.Quit();
+    }
+
+    void SetBackground(Sprite newBackground, SpriteRenderer backgroundSR)
+    {
+        backgroundSR.sprite = newBackground;
+
+        backgroundContainer.transform.localScale = Vector3.one;
+        Vector2 spriteSize = backgroundSR.sprite.bounds.size;
+        backgroundContainer.transform.localScale *= cameraSize.x >= cameraSize.y ? cameraSize.x / spriteSize.x : cameraSize.y / spriteSize.y;
     }
 
     void GenerateSaveSlotButtons(SaveSelectionScreenMode saveSelectionScreenMode)
@@ -147,7 +166,7 @@ public class UIManager_MainMenu : MonoBehaviour
     IEnumerator ChangeBackground()
     {
         int backgroundIndex = UnityEngine.Random.Range(0, backgrounds.Length - 1);
-        background1.sprite = backgrounds[backgroundIndex];
+        SetBackground(backgrounds[backgroundIndex], background1SR);
 
         while (true)
         {
@@ -161,19 +180,19 @@ public class UIManager_MainMenu : MonoBehaviour
             lerpingAlpha1 = true;
             lerpingAlpha2 = true;
 
-            if (background1.color.a == 1f)
+            if (background1SR.color.a > 1f - alphaAccuracyRange / 2f && background1SR.color.a < 1f + alphaAccuracyRange / 2f)
             {
-                background2.sprite = backgrounds[backgroundIndex];
+                SetBackground(backgrounds[backgroundIndex], background2SR);
 
-                fxManager.StartAlphaLerp0To1(background2, fadeDuration, () => lerpingAlpha2 = false);
-                fxManager.StartAlphaLerp1To0(background1, fadeDuration, () => lerpingAlpha1 = false);
+                fxManager.StartAlphaLerp0To1(background2SR, fadeDuration, () => lerpingAlpha2 = false);
+                fxManager.StartAlphaLerp1To0(background1SR, fadeDuration, () => lerpingAlpha1 = false);
             }
             else
             {
-                background1.sprite = backgrounds[backgroundIndex];
+                SetBackground(backgrounds[backgroundIndex], background1SR);
 
-                fxManager.StartAlphaLerp0To1(background1, fadeDuration, () => lerpingAlpha1 = false);
-                fxManager.StartAlphaLerp1To0(background2, fadeDuration, () => lerpingAlpha2 = false);
+                fxManager.StartAlphaLerp0To1(background1SR, fadeDuration, () => lerpingAlpha1 = false);
+                fxManager.StartAlphaLerp1To0(background2SR, fadeDuration, () => lerpingAlpha2 = false);
             }
 
             yield return new WaitUntil(() => lerpingAlpha1 == false && lerpingAlpha2 == false);
