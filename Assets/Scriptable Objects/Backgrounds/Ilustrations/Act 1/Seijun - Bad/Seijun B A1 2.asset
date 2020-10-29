@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Seijun B A1 2
   m_EditorClassIdentifier: 
   location: 0
-  ilustration: 12
-  sprite: {fileID: 21300000, guid: ca0b5a58fd8043d489bde9556935f9ae, type: 3}
+  ilustration: 9
+  sprite: {fileID: 21300000, guid: 8796f2b000bfe014bb935f22ac80851c, type: 3}

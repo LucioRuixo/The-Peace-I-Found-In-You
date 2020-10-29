@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Hoshi B A1 1
   m_EditorClassIdentifier: 
   location: 0
-  ilustration: 5
-  sprite: {fileID: 21300000, guid: 0fed5b7e8c08ea4468585891a87be8a8, type: 3}
+  ilustration: 4
+  sprite: {fileID: 21300000, guid: 699ad752575f0a7418fb3892f791a22a, type: 3}

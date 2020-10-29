@@ -93,7 +93,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: -1389
           y: 1120
-          width: 262
+          width: 260
           height: 134
         width: 600
         height: 500
@@ -119,7 +119,7 @@ MonoBehaviour:
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         backgroundType: 1
         location: 0
-        ilustration: 8
+        ilustration: 6
     00000003:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -226,7 +226,7 @@ MonoBehaviour:
           x: -1389
           y: 751
           width: 285
-          height: 175
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -264,7 +264,7 @@ MonoBehaviour:
           x: -1388
           y: 569
           width: 285
-          height: 175
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -302,7 +302,7 @@ MonoBehaviour:
           x: -1391
           y: 935
           width: 285
-          height: 175
+          height: 172
         width: 600
         height: 500
         inputPorts:

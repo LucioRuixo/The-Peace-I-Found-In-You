@@ -126,7 +126,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 582
           y: 658
-          width: 285
+          width: 314
           height: 134
         width: 600
         height: 500
@@ -309,9 +309,9 @@ MonoBehaviour:
         GUID: 2ef52e3c-0921-499c-b807-3443330c36a5
         rect:
           serializedVersion: 2
-          x: 1838
+          x: 1829
           y: 113
-          width: 231
+          width: 248
           height: 134
         width: 600
         height: 500
@@ -753,7 +753,7 @@ MonoBehaviour:
         GUID: 3ecfe32b-ae2d-4606-a9b7-d6ed587a8d43
         rect:
           serializedVersion: 2
-          x: 1201
+          x: 1203
           y: 365
           width: 279
           height: 96

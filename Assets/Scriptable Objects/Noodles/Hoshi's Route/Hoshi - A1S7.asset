@@ -288,7 +288,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 963
           y: 215
-          width: 256
+          width: 270
           height: 134
         width: 600
         height: 500
@@ -314,7 +314,7 @@ MonoBehaviour:
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         backgroundType: 1
         location: 0
-        ilustration: 4
+        ilustration: 3
     00000006:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:

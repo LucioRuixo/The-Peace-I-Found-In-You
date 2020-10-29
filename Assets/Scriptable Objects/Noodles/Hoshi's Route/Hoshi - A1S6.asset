@@ -524,9 +524,9 @@ MonoBehaviour:
         GUID: 11ae15f3-8e20-493e-825d-62306c6fc6b3
         rect:
           serializedVersion: 2
-          x: 2846
+          x: 2831
           y: 226
-          width: 285
+          width: 314
           height: 134
         width: 600
         height: 500
@@ -849,9 +849,9 @@ MonoBehaviour:
         GUID: 9def48ed-4db3-4ffc-b181-7aabbe5d9818
         rect:
           serializedVersion: 2
-          x: 5293
-          y: 242
-          width: 256
+          x: 5286
+          y: 241
+          width: 271
           height: 134
         width: 600
         height: 500
@@ -877,7 +877,7 @@ MonoBehaviour:
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         backgroundType: 1
         location: 0
-        ilustration: 3
+        ilustration: 2
     00000015:
       type: {class: CustomBackgroundChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -887,7 +887,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 5295
           y: 397
-          width: 261
+          width: 256
           height: 134
         width: 600
         height: 500
@@ -913,7 +913,7 @@ MonoBehaviour:
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         backgroundType: 1
         location: 0
-        ilustration: 7
+        ilustration: 5
     00000016:
       type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -921,8 +921,8 @@ MonoBehaviour:
         GUID: 82dbf47c-df5f-44d1-88c5-55174310ccf7
         rect:
           serializedVersion: 2
-          x: 5593
-          y: 245
+          x: 5592
+          y: 243
           width: 279
           height: 96
         width: 600
@@ -1061,8 +1061,8 @@ MonoBehaviour:
         GUID: 304a926d-002a-4cc1-95a5-e46da2bd06ca
         rect:
           serializedVersion: 2
-          x: 3163
-          y: 232
+          x: 3169
+          y: 230
           width: 279
           height: 96
         width: 600
@@ -1136,7 +1136,7 @@ MonoBehaviour:
           x: 2851
           y: 381
           width: 285
-          height: 175
+          height: 174
         width: 600
         height: 500
         inputPorts:

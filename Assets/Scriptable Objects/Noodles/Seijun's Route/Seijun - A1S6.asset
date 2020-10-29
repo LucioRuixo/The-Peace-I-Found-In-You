@@ -910,8 +910,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 5425
           y: 236
-          width: 242
-          height: 132
+          width: 262
+          height: 134
         width: 600
         height: 500
         inputPorts:
@@ -936,7 +936,7 @@ MonoBehaviour:
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         backgroundType: 1
         location: 0
-        ilustration: 10
+        ilustration: 7
     00000015:
       type: {class: CustomDecisionCheckNode, ns: , asm: Assembly-CSharp}
       data:
@@ -988,8 +988,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 5426
           y: 389
-          width: 242
-          height: 132
+          width: 261
+          height: 134
         width: 600
         height: 500
         inputPorts:
@@ -1014,7 +1014,7 @@ MonoBehaviour:
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         backgroundType: 1
         location: 0
-        ilustration: 13
+        ilustration: 9
     00000017:
       type: {class: CustomMusicChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:

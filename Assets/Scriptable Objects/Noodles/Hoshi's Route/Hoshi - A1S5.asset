@@ -1275,9 +1275,9 @@ MonoBehaviour:
         GUID: 0a2f585c-d72f-47db-84c0-b23fff136218
         rect:
           serializedVersion: 2
-          x: 17455
-          y: 626
-          width: 285
+          x: 17437
+          y: 622
+          width: 321
           height: 134
         width: 600
         height: 500
@@ -1302,7 +1302,7 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         backgroundType: 0
-        location: 4
+        location: 10
         ilustration: 0
     00000021:
       type: {class: CustomMusicChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}

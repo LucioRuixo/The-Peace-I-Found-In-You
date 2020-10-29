@@ -15,21 +15,25 @@ public class BackgroundController : NodeController
     public enum Location
     {
         Empty,
-        Forest,
+        Forest_Day,
         Village,
         Battlefield,
-        ProtagonistHome,
-        Sanctuary,
+        ProtagonistHome_Day,
+        Sanctuary_Day,
         SeijunHome,
         BlackBackground,
-        BattleForest
+        BattleForest,
+        Forest_Night,
+        ProtagonistHome_Night,
+        Sanctuary_Night
     }
 
     public enum Ilustration
     {
         Empty,
         HoshiG_A11,
-        HoshiG_A12,
+        HoshiG_A12_1,
+        HoshiG_A12_2,
         HoshiB_A11,
         HoshiB_A12,
         SeijunG_A11,
