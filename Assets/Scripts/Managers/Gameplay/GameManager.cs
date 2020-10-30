@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     {
         [HideInInspector] public bool lastDecisionGood;
 
-        public int routeNoodleIndex;
+        public int routeSceneIndex;
 
         public RouteController.Route currentRoute;
 
@@ -38,13 +38,13 @@ public class GameManager : MonoBehaviour
     void OnEnable()
     {
         UIManager_Gameplay.OnGameSave += SaveGameData;
-        StoryManager.OnNoNoodlesRemaining += GoToMainMenu;
+        StoryManager.OnNoScenesRemaining += GoToMainMenu;
     }
 
     void OnDisable()
     {
         UIManager_Gameplay.OnGameSave -= SaveGameData;
-        StoryManager.OnNoNoodlesRemaining -= GoToMainMenu;
+        StoryManager.OnNoScenesRemaining -= GoToMainMenu;
     }
 
     void SetGameData()
@@ -60,17 +60,17 @@ public class GameManager : MonoBehaviour
     void UpdateGameData()
     {
         gameData.lastDecisionGood = decisionCheckController.LastDecisionGood;
-        gameData.routeNoodleIndex = storyManager.RouteNoodleIndex;
+        gameData.routeSceneIndex = storyManager.RouteSceneIndex;
         gameData.currentRoute = storyManager.CurrentRoute;
         gameData.currentNodeGUID = noodler.CurrentNode.GUID;
         gameData.backgroundData = backgroundController.CurrentBackgroundData;
         gameData.charactersInScene = actionController.CharactersInScene;
     }
 
-    void SaveGameData()
+    void SaveGameData(bool saveAsJson)
     {
         UpdateGameData();
-        SaveManager.Get().SaveFile(gameData);
+        SaveManager.Get().SaveFile(gameData, saveAsJson);
     }
 
     void GoToMainMenu()

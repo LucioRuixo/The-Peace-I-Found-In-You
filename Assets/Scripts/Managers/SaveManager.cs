@@ -1,35 +1,44 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEditor;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviourSingleton<SaveManager>
 {
     public int SaveSlotsAmount { private set; get; } = 4;
 
-    string savesFolderPath;
-
     int loadedFileIndex = -1;
 
     [SerializeField] GameManager.GameData initialGameData = new GameManager.GameData();
+
+    [SerializeField] DefaultAsset fileModificationGuide = null;
+
+    public string SavesFolderPath { private set; get; }
 
     new void Awake()
     {
         base.Awake();
 
-        savesFolderPath = Application.persistentDataPath + "\\Saves";
-        Directory.CreateDirectory(savesFolderPath);
+        SavesFolderPath = Application.persistentDataPath + "\\Saves";
+        Directory.CreateDirectory(SavesFolderPath);
+
+        string fileName = fileModificationGuide.name + ".txt";
+        string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
+        string destFilePath = Path.Combine(SavesFolderPath, fileName);
+        if (!File.Exists(destFilePath)) File.Copy(filePath, destFilePath);
     }
 
-    string GetSaveFilePath(int fileIndex)
+    string GetSaveFilePath(int fileIndex, bool saveAsJson)
     {
-        return savesFolderPath + "\\save" + fileIndex + ".dat";
+        string extension = saveAsJson ? ".json" : ".dat";
+        return SavesFolderPath + "\\save" + fileIndex + extension;
     }
 
     void CreateFile(int fileIndex)
     {
         Debug.Log("creating file");
 
-        FileStream file = File.Create(GetSaveFilePath(fileIndex));
+        FileStream file = File.Create(GetSaveFilePath(fileIndex, false));
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
         binaryFormatter.Serialize(file, initialGameData);
@@ -41,21 +50,37 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
     {
         loadedFileIndex = fileIndex;
 
-        string filePath = GetSaveFilePath(fileIndex);
+        string filePath = GetSaveFilePath(fileIndex, false);
         if (saveSelectionScreenMode == UIManager_MainMenu.SaveSelectionScreenMode.NewGame || !File.Exists(filePath))
             CreateFile(fileIndex);
     }
 
-    public void SaveFile(GameManager.GameData gameData)
+    public void SaveFile(GameManager.GameData gameData, bool saveAsJson)
     {
         Debug.Log("saving file");
 
-        string filePath = GetSaveFilePath(loadedFileIndex);
+        string datPath = GetSaveFilePath(loadedFileIndex, false);
+        string jsonPath = GetSaveFilePath(loadedFileIndex, true);
+        string filePath = saveAsJson ? jsonPath : datPath;
 
         FileStream file = File.OpenWrite(filePath);
-        BinaryFormatter binaryFormatter = new BinaryFormatter();
-        binaryFormatter.Serialize(file, gameData);
+        if (saveAsJson)
+        {
+            if (File.Exists(datPath)) File.Delete(datPath);
 
+            string data = JsonUtility.ToJson(gameData, true);
+
+            StreamWriter streamWriter = new StreamWriter(file);
+            streamWriter.Write(data);
+            streamWriter.Close();
+        }
+        else
+        {
+            if (File.Exists(jsonPath)) File.Delete(jsonPath);
+
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            binaryFormatter.Serialize(file, gameData);
+        }
         file.Close();
     }
 
@@ -63,12 +88,26 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
     {
         Debug.Log("loading file");
 
-        string filePath = GetSaveFilePath(loadedFileIndex);
-        if (File.Exists(filePath))
+        string datPath = GetSaveFilePath(loadedFileIndex, false);
+        string jsonPath = GetSaveFilePath(loadedFileIndex, true);
+        if (File.Exists(datPath))
         {
-            FileStream file = File.OpenRead(filePath);
+            FileStream file = File.OpenRead(datPath);
+
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             GameManager.GameData fileData = (GameManager.GameData)binaryFormatter.Deserialize(file);
+
+            file.Close();
+
+            return fileData;
+        }
+        else if (File.Exists(jsonPath))
+        {
+            FileStream file = File.OpenRead(jsonPath);
+
+            StreamReader streamReader = new StreamReader(file);
+            string data = streamReader.ReadToEnd();
+            GameManager.GameData fileData = JsonUtility.FromJson<GameManager.GameData>(data);
 
             file.Close();
 
@@ -83,8 +122,9 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
 
     public bool FileExists(int fileIndex)
     {
-        string filePath = GetSaveFilePath(fileIndex);
+        string datPath = GetSaveFilePath(fileIndex, false);
+        string jsonPath = GetSaveFilePath(fileIndex, true);
 
-        return File.Exists(filePath);
+        return File.Exists(datPath) || File.Exists(jsonPath);
     }
 }

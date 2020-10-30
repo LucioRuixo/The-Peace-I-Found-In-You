@@ -162,6 +162,11 @@ public class UIManager_MainMenu : MonoBehaviour
     {
         DialogManager.Get().GenerateDialog(exitGameText, null, ExitGame, null, null);
     }
+
+    public void DisplaySavesFolderPath()
+    {
+        DialogManager.Get().GenerateDialog(SaveManager.Get().SavesFolderPath, null);
+    }
     
     IEnumerator ChangeBackground()
     {

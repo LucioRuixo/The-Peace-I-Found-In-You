@@ -10,7 +10,7 @@ public class StoryBitManager : MonoBehaviour
     [SerializeField] List<NodeController> nodeControllers = null;
     Dictionary<Type, NodeController> controllersByNodeType = new Dictionary<Type, NodeController>();
 
-    public static event Action OnNoodleFinished;
+    public static event Action OnSceneFinished;
 
     void Awake()
     {
@@ -27,27 +27,27 @@ public class StoryBitManager : MonoBehaviour
 
     void OnEnable()
     {
-        NodeController.OnNodeExecutionCompleted += CheckForNextNode;
+        NodeController.OnNodeExecutionCompleted += CheckForNextBit;
     }
 
     void OnDisable()
     {
-        NodeController.OnNodeExecutionCompleted -= CheckForNextNode;
+        NodeController.OnNodeExecutionCompleted -= CheckForNextBit;
     }
 
-    void CheckForNextNode(int portIndex)
+    void CheckForNextBit(int portIndex)
     {
         if (noodler.HasNextNode())
         {
-            NoodlesNode node = noodler.Next(portIndex);
+            NoodlesNode bit = noodler.Next(portIndex);
 
-            if (node != null) ExecuteNode(node);
+            if (bit != null) ExecuteBit(bit);
             else Debug.LogError("Node not found");
         }
         else Debug.Log("No noodles remaining");
     }
 
-    public void ExecuteNode(NoodlesNode node)
+    public void ExecuteBit(NoodlesNode node)
     {
         Type key = node.GetType();
         if (controllersByNodeType.TryGetValue(key, out NodeController controller))
@@ -58,7 +58,7 @@ public class StoryBitManager : MonoBehaviour
         }
         else if (node is NoodlesNodeBorder borderNode && !borderNode.isStartNode)
         {
-            OnNoodleFinished?.Invoke();
+            OnSceneFinished?.Invoke();
 
             return;
         }

@@ -1,0 +1,24 @@
+GUÍA PARA MODIFICAR ARCHIVOS DE GUARDADO:
+
+
+lastDecisionGood: define si la última decisión tomada fue buena o mala. Es irrelevante hasta que no se toma la primera decisión dentro de una ruta. La decisión de ignorar los ruidos metálicos no cuenta para esta variable ya que su función es decidir qué ruta se va a tomar.
+
+routeSceneIndex: define el índice de la escena actual de la ruta tomada. Si su valor se setea en menor que 0 o mayor que la cantidad de escenas en la ruta seleccionada menos 1 (ver en Unity) el juego no va a saber qué escena cargar y va a crashear.
+
+currentRoute: define la escena seleccionada. Sus valores posibles son:
+0: ruta de Hoshi
+1: ruta de Seijun
+Cualquier valor que no sea uno de esos números no va a funcionar.
+
+currentNodeGUID: define el ID del nodo actual de la escena. No tocar.
+
+backgroundData: los valores del fondo actual de la escena:
+	type: de qué tipo es el fondo. Puede ser una locación (0) o una ilustración (1).
+	location: qué elemento de la lista de locaciones (ver en Unity) se setea como fondo.
+	ilustration: qué elemento de la lista de ilustraciones (ver en Unity) se setea como fondo.
+Cualquier valor de location o ilustration que esté fuera de su respectiva lista va a romper todo 
+
+charactersInScene: define qué personajes hay en escena. No tocar.
+
+
+Para saltar entre distintas partes del juego lo que más les va a interesar son las tres primeras variable, lo otro se puede ignorar.

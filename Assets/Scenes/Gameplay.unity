@@ -570,7 +570,7 @@ RectTransform:
   - {fileID: 830438526}
   - {fileID: 405215454}
   m_Father: {fileID: 590469009}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1985,7 +1985,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 644522512}
-  - {fileID: 1765640383}
   - {fileID: 161944891}
   m_Father: {fileID: 414413656}
   m_RootOrder: 2
@@ -2775,7 +2774,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -644760363
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 416d1acca83514c44852b188949ec0ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3125,7 +3124,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1787929896}
-        m_MethodName: Exit
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4467,9 +4466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b4e142c06dfe549ac80114af3609b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeManager: {fileID: 505166551}
+  storyBitManager: {fileID: 505166551}
   noodler: {fileID: 505166549}
-  initialNoodle: {fileID: 11400000, guid: 13e33f54d8b9ee444a41559b6f207016, type: 2}
+  initialScene: {fileID: 11400000, guid: 13e33f54d8b9ee444a41559b6f207016, type: 2}
   hoshiRoute:
   - {fileID: 11400000, guid: 8686aae361cafea4688b34d35a47527f, type: 2}
   - {fileID: 11400000, guid: 58578d8c90f4a4f44973c8dcd09c2d46, type: 2}
@@ -6048,80 +6047,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723201648}
   m_CullTransparentMesh: 0
---- !u!1 &1765640382
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1765640383}
-  - component: {fileID: 1765640385}
-  - component: {fileID: 1765640384}
-  m_Layer: 5
-  m_Name: Cover
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1765640383
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765640382}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 590469009}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1765640384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765640382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1765640385
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765640382}
-  m_CullTransparentMesh: 0
 --- !u!1 &1784378891
 GameObject:
   m_ObjectHideFlags: 0
@@ -6285,8 +6210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a1b9703335d6b44b8cc6fcc42ce508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitText: "\xBFSalir al men\xFA principal?"
-  dialogueCover: {fileID: 1765640382}
+  exitGameText: "\xBFSalir de la partida?"
+  saveGameText: "\xBFGuardar la partida?"
+  saveAsJsonText: "\xBFGuardar con extensi\xF3n JSON para que el archivo sea modificable?"
   log: {fileID: 161944890}
 --- !u!4 &1787929897
 Transform:

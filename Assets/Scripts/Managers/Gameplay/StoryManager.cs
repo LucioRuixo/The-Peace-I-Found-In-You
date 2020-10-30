@@ -4,34 +4,36 @@ using nullbloq.Noodles;
 
 public class StoryManager : MonoBehaviour
 {
-    public int RouteNoodleIndex { private set; get; } = -1;
+    bool routeExecutionStarted = false;
+
+    public int RouteSceneIndex { private set; get; } = 0;
     public RouteController.Route CurrentRoute { private set; get; } = RouteController.Route.None;
 
-    [SerializeField] StoryBitManager nodeManager = null;
+    [SerializeField] StoryBitManager storyBitManager = null;
     [SerializeField] Noodler noodler = null;
 
-    [SerializeField] Noodle initialNoodle = null;
+    [SerializeField] Noodle initialScene = null;
     [SerializeField] Noodle[] hoshiRoute = null;
     [SerializeField] Noodle[] seijunRoute = null;
 
     public static event Action<string> OnNoodlerControllerSet;
-    public static event Action OnNoNoodlesRemaining;
+    public static event Action OnNoScenesRemaining;
 
     void OnEnable()
     {
         RouteController.OnRouteChosen += SelectRoute;
-        StoryBitManager.OnNoodleFinished += PlayNextScene;
+        StoryBitManager.OnSceneFinished += PlayNextScene;
     }
 
     void Start()
     {
-        nodeManager.ExecuteNode(noodler.CurrentNode);
+        storyBitManager.ExecuteBit(noodler.CurrentNode);
     }
 
     void OnDisable()
     {
         RouteController.OnRouteChosen -= SelectRoute;
-        StoryBitManager.OnNoodleFinished -= PlayNextScene;
+        StoryBitManager.OnSceneFinished -= PlayNextScene;
     }
 
     void SelectRoute(RouteController.Route selectedRoute)
@@ -42,34 +44,34 @@ public class StoryManager : MonoBehaviour
     void PlayNextScene()
     {
         if (CurrentRoute == RouteController.Route.Hoshi)
-            CheckForNextNoodle(hoshiRoute);
+            CheckForNextScene(hoshiRoute);
         else
-            CheckForNextNoodle(seijunRoute);
+            CheckForNextScene(seijunRoute);
     }
 
-    void CheckForNextNoodle(Noodle[] routeNoodles)
+    void CheckForNextScene(Noodle[] scenes)
     {
-        if (RouteNoodleIndex < routeNoodles.Length)
+        if (RouteSceneIndex < scenes.Length)
         {
-            RouteNoodleIndex++;
+            if (routeExecutionStarted) RouteSceneIndex++;
+            else routeExecutionStarted = true;
 
-            noodler.controller = routeNoodles[RouteNoodleIndex];
+            noodler.controller = scenes[RouteSceneIndex];
             noodler.ResetNoodle();
-            nodeManager.ExecuteNode(noodler.CurrentNode);
-
+            storyBitManager.ExecuteBit(noodler.CurrentNode);
         }
-        else OnNoNoodlesRemaining?.Invoke();
+        else OnNoScenesRemaining?.Invoke();
     }
 
     public void SetData(GameManager.GameData loadedData)
     {
-        RouteNoodleIndex = loadedData.routeNoodleIndex;
+        RouteSceneIndex = loadedData.routeSceneIndex;
         CurrentRoute = loadedData.currentRoute;
 
         if (CurrentRoute != RouteController.Route.None)
-            noodler.controller = CurrentRoute == RouteController.Route.Hoshi ? hoshiRoute[RouteNoodleIndex] : seijunRoute[RouteNoodleIndex];
+            noodler.controller = CurrentRoute == RouteController.Route.Hoshi ? hoshiRoute[RouteSceneIndex] : seijunRoute[RouteSceneIndex];
         else
-            noodler.controller = initialNoodle;
+            noodler.controller = initialScene;
 
         OnNoodlerControllerSet?.Invoke(loadedData.currentNodeGUID);
     }
