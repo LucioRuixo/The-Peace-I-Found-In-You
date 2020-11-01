@@ -146,7 +146,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 0
           status: 0
-          sentence: "Bienvenidos a mi hogar. S\xE9 que no est\xE1 muy limpia, no
+          sentence: "Bienvenidos a mi hogar. S\xE9 que no est\xE1 muy limpio, no
             hace falta que me lo digan."
         - character: 1
           status: 0

@@ -106,7 +106,7 @@ MonoBehaviour:
         - character: 0
           status: 0
           sentence: "(Estoy seguro de que estaba por aqu\xED, ah... despu\xE9s de
-            todo marque el camino)"
+            todo marqu\xE9 el camino)"
         - character: 0
           status: 0
           sentence: (El mejor lugar para cortar madera, ah...)
@@ -358,7 +358,7 @@ MonoBehaviour:
           sentence: (Mi espada... la necesito)
         - character: 0
           status: 0
-          sentence: "(Respira bien, P, calma tu coraz\xF3n, todo va a salir bien
+          sentence: "(Respira bien, P, calma tu coraz\xF3n. Todo va a salir bien,
             todo va a salir bien)"
         - character: 0
           status: 0
@@ -475,7 +475,7 @@ MonoBehaviour:
           x: 5008
           y: 344
           width: 277
-          height: 178
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -598,7 +598,7 @@ MonoBehaviour:
           sentence: NO, NO, NO, NO.
         - character: 0
           status: 0
-          sentence: "\xA1ALEJENSE!"
+          sentence: "\xA1AL\xC9JENSE!"
         - character: 0
           status: 0
           sentence: Yo no...

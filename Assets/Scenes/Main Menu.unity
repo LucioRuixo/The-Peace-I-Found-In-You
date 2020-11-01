@@ -4281,7 +4281,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1616570340}
   serializedVersion: 6
   lengthInSec: 15
-  simulationSpeed: 0.15
+  simulationSpeed: 0.1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -4355,7 +4355,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5105,7 +5105,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 15
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5607,8 +5607,8 @@ ParticleSystem:
     fps: 30
     frameOverTime:
       serializedVersion: 2
-      minMaxState: 1
-      scalar: 0.9999
+      minMaxState: 0
+      scalar: 0
       minScalar: 0.9999
       maxCurve:
         serializedVersion: 2
@@ -5660,8 +5660,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startFrame:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 0.9999
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5721,6 +5721,8 @@ ParticleSystem:
     rowMode: 1
     sprites:
     - sprite: {fileID: 21300000, guid: f3448d53ec85633409af156a1443f259, type: 3}
+    - sprite: {fileID: 21300000, guid: 751b7a657532551418e765cc675009bf, type: 3}
+    - sprite: {fileID: 21300000, guid: 0b275eb7c3880ce41990f7d8d2737f86, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:

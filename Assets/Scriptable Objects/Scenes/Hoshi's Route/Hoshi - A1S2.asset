@@ -231,7 +231,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 4031
           y: -412
-          width: 231
+          width: 248
           height: 134
         width: 600
         height: 500
@@ -373,7 +373,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 4031
           y: -1116
-          width: 231
+          width: 248
           height: 134
         width: 600
         height: 500
@@ -2593,7 +2593,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: "S\xED, Tadao las manzanas que quieras."
+          sentence: "S\xED, Tadao, las manzanas que quieras."
         - character: 0
           status: 0
           sentence: Por hoy te voy a mimar un poco como disculpa.
@@ -2681,7 +2681,7 @@ MonoBehaviour:
           sentence: Solo era una broma Hoshi, lo que menos quiero es hacerte enojar.
         - character: 6
           status: 0
-          sentence: "\xBFPodemos ir ahora, Hoshi?, tengo hambre, je je."
+          sentence: "\xBFPodemos ir ahora, Hoshi? Tengo hambre, je je."
         - character: 1
           status: 0
           sentence: "Vamos Tadao, no tengo nada que hacer aqu\xED."

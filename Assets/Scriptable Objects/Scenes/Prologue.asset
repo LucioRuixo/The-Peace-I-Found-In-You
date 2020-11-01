@@ -201,7 +201,7 @@ MonoBehaviour:
           sentence: "Ayer me olvid\xE9 de ver cu\xE1nta madera me queda."
         - character: 0
           status: 0
-          sentence: "Mmm..., me qued\xE9 sin madera. Deber\xEDa ir al bosque otra
+          sentence: "Mmm... me qued\xE9 sin madera. Deber\xEDa ir al bosque otra
             vez."
         - character: 0
           status: 0
@@ -279,7 +279,7 @@ MonoBehaviour:
         - character: 0
           status: 0
           sentence: "Es otro hermoso d\xEDa a pesar del calor, espero que el bosque
-            sea m\xE1s fresco hoy."
+            est\xE9 m\xE1s fresco hoy."
         - character: 0
           status: 0
           sentence: "(Y pensar que en las dem\xE1s islas las guerras no paraban...)"
@@ -294,7 +294,7 @@ MonoBehaviour:
         - character: 0
           status: 0
           sentence: "(Lo hac\xEDamos para sobrevivir, los que no ten\xEDamos nada
-            teniamos que pelear para vivir...)"
+            deb\xEDamos pelear para vivir...)"
         - character: 0
           status: 0
           sentence: "(Los cuerpos esparcidos por los campos y los llantos de los

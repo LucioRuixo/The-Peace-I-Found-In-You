@@ -7,4 +7,6 @@ public class BackgroundSO : ScriptableObject
     public BackgroundController.Ilustration ilustration;
 
     public Sprite sprite;
+
+    public BackgroundController.BackgroundFX effect;
 }

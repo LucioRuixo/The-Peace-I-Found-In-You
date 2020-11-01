@@ -42,6 +42,16 @@ public class BackgroundController : NodeController
         SeijunB_A12,
     }
 
+    public enum BackgroundFX
+    {
+        None,
+        Leaves,
+        YellowLightBugs,
+        BlueLightBugs,
+        RandomYellowLightBugs,
+        RandomBlueLightBugs
+    }
+
     [Serializable]
     public struct BackgroundData
     {
@@ -71,6 +81,10 @@ public class BackgroundController : NodeController
     [SerializeField] List<BackgroundSO> locations = null;
     [SerializeField] List<BackgroundSO> ilustrations = null;
 
+    [Header("Background FX: ")]
+    [SerializeField] Leaves leaves = null;
+    [SerializeField] LightBugs lightBugs = null;
+
     public BackgroundData CurrentBackgroundData { get { return currentBackgroundData; } }
 
     void Awake()
@@ -82,14 +96,14 @@ public class BackgroundController : NodeController
         backgroundSR = backgroundContainer.GetComponent<SpriteRenderer>();
     }
 
-    Sprite GetBackgroundSprite(BackgroundType type, Location location, Ilustration ilustration)
+    BackgroundSO GetBackgroundSprite(BackgroundType type, Location location, Ilustration ilustration)
     {
         if (type == BackgroundType.Location)
         {
             foreach (BackgroundSO background in locations)
             {
                 if (location == background.location)
-                    return background.sprite;
+                    return background;
             }
         }
         else
@@ -97,7 +111,7 @@ public class BackgroundController : NodeController
             foreach (BackgroundSO background in ilustrations)
             {
                 if (ilustration == background.ilustration)
-                    return background.sprite;
+                    return background;
             }
         }
 
@@ -106,12 +120,39 @@ public class BackgroundController : NodeController
 
     void SetBackground(BackgroundType type, Location location, Ilustration ilustration)
     {
-        Sprite newBackground = GetBackgroundSprite(type, location, ilustration);
-        backgroundSR.sprite = newBackground;
+        if (leaves.IsPlaying) leaves.Stop();
+        if (lightBugs.IsPlaying) lightBugs.Stop();
+
+        BackgroundSO newBackground = GetBackgroundSprite(type, location, ilustration);
+        backgroundSR.sprite = newBackground.sprite;
 
         backgroundContainer.transform.localScale = Vector3.one;
         Vector2 spriteSize = backgroundSR.sprite.bounds.size;
         backgroundContainer.transform.localScale *= cameraSize.x >= cameraSize.y ? cameraSize.x / spriteSize.x : cameraSize.y / spriteSize.y;
+
+        if (newBackground.effect != BackgroundFX.None)
+        {
+            switch (newBackground.effect)
+            {
+                case BackgroundFX.Leaves:
+                    leaves.Play();
+                    break;
+                case BackgroundFX.YellowLightBugs:
+                    lightBugs.Play(LightBugs.LightBugsColor.Yellow, false);
+                    break;
+                case BackgroundFX.BlueLightBugs:
+                    lightBugs.Play(LightBugs.LightBugsColor.Blue, false);
+                    break;
+                case BackgroundFX.RandomYellowLightBugs:
+                    lightBugs.Play(LightBugs.LightBugsColor.Yellow, true);
+                    break;
+                case BackgroundFX.RandomBlueLightBugs:
+                    lightBugs.Play(LightBugs.LightBugsColor.Blue, true);
+                    break;
+                default:
+                    break;
+            }
+        }
 
         currentBackgroundData = new BackgroundData(type, location, ilustration);
     }

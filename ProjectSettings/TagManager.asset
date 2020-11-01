@@ -46,11 +46,14 @@ TagManager:
   - name: Background
     uniqueID: 327090223
     locked: 0
-  - name: Leaves
+  - name: Background Particles
     uniqueID: 3342286625
     locked: 0
   - name: Character
     uniqueID: 3112342849
+    locked: 0
+  - name: Forefront Particles
+    uniqueID: 2080934789
     locked: 0
   - name: Minigame Element
     uniqueID: 1870160753

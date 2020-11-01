@@ -158,7 +158,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 1128
           y: 200
-          width: 231
+          width: 248
           height: 134
         width: 600
         height: 500
@@ -776,7 +776,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 0
           status: 0
-          sentence: "(Para mi ese ataque fue uno de muchos que viv\xED, pero para
+          sentence: "(Para m\xED ese ataque fue uno de muchos que viv\xED, pero para
             ella fue algo que nunca olvidar\xE1...)"
     00000013:
       type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}

@@ -15,3 +15,4 @@ MonoBehaviour:
   location: 0
   ilustration: 3
   sprite: {fileID: 21300000, guid: 7dead0dc9e97ba147af56ea0e9b024a5, type: 3}
+  effect: 2

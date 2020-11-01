@@ -393,7 +393,8 @@ MonoBehaviour:
         dialogueStrips:
         - character: 0
           status: 0
-          sentence: "Tadao, qu\xE9 te parece si despu\xE9s de comer jugamos un rato."
+          sentence: "Tadao, \xBFqu\xE9 te parece si despu\xE9s de comer jugamos un
+            rato?"
         - character: 6
           status: 0
           sentence: "\xBFDe verdad P?, \xBFHoshi puede jugar tambi\xE9n?"
@@ -641,7 +642,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: "Perd\xF3n por molestarte esta noche, P, no cre\xED que termin\xE1ramos
+          sentence: "Perd\xF3n por molestarte esta noche, P, no cre\xED que terminar\xEDamos
             tan tarde."
         - character: 0
           status: 0

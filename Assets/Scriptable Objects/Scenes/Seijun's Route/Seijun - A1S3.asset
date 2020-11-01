@@ -166,14 +166,14 @@ MonoBehaviour:
           sentence: "(\xBFD\xF3nde estoy?)"
         - character: 3
           status: 1
-          sentence: "Hmph, que pat\xE9tico. Y pensar que eras una bestia en el campo
-            de batalla."
+          sentence: "Hmph, qu\xE9 pat\xE9tico. Y pensar que eras una bestia en el
+            campo de batalla."
         - character: 0
           status: 0
           sentence: "\xBF...?"
         - character: 0
           status: 0
-          sentence: "\xBFD\xF3nde est\xE1s?, \xBFQui\xE9n eres?"
+          sentence: "\xBFD\xF3nde est\xE1s? \xBFQui\xE9n eres?"
         - character: 3
           status: 1
           sentence: Je je je, soy alguien muy familiarizado contigo, P.
