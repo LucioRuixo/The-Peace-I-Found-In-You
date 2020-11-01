@@ -12,8 +12,6 @@ public class Log : MonoBehaviour
     void Start()
     {
         logText.text = "";
-
-        gameObject.SetActive(false);
     }
 
     public void AddSentence(string characterName, string sentence)

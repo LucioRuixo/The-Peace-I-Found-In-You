@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Protagonist
   m_EditorClassIdentifier: 
   characterName: 0
-  nameText: Protagonist
+  nameText: Protagonista
   dialogueBoxSprite: {fileID: 21300000, guid: cc4c3a5c40407584cba68ab0fc7b518f, type: 3}
   bodySprites: []
   headSprites: []
