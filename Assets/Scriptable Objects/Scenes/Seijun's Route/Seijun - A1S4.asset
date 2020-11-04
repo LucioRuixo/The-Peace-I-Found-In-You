@@ -788,7 +788,7 @@ MonoBehaviour:
           sentence: "Como viajo desde mis doce a\xF1os de edad, recorr\xED bastante."
         - character: 7
           status: 0
-          sentence: "\xBFY cuantos a\xF1os tienes ahora?"
+          sentence: "\xBFY cu\xE1ntos a\xF1os tienes ahora?"
         - character: 0
           status: 0
           sentence: "Tengo veinticuatro a\xF1os, as\xED que llevo doce a\xF1os recorriendo

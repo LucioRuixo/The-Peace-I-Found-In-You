@@ -392,7 +392,7 @@ MonoBehaviour:
           sentence: "*Sonidos met\xE1licos*"
         - character: 0
           status: 0
-          sentence: (Ese sonido los conozco...)
+          sentence: (Ese sonido lo conozco...)
     00000008:
       type: {class: CustomDecisionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:

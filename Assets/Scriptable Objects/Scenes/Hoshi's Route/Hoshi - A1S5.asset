@@ -672,7 +672,7 @@ MonoBehaviour:
           x: 19374
           y: 628
           width: 271
-          height: 175
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -815,7 +815,7 @@ MonoBehaviour:
         - character: 1
           status: 0
           sentence: "Como nunca cocinaste en todo el tiempo que nos conocemos pens\xE9
-            que ni sabias hervir arroz."
+            que ni sab\xEDas hervir arroz."
         - character: 0
           status: 0
           sentence: "(De hecho hace poco aprend\xED a cocinar, pero no puedo decir

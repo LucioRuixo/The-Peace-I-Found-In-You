@@ -21,6 +21,8 @@ public class Leaves : MonoBehaviour
     {
         backgroundParticles.Stop();
         backgroundParticles.gameObject.SetActive(false);
+        forefrontParticles.Stop();
+        forefrontParticles.gameObject.SetActive(false);
 
         IsPlaying = false;
     }

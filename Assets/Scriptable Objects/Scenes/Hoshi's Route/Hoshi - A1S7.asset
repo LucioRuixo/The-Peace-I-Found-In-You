@@ -288,7 +288,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 963
           y: 215
-          width: 270
+          width: 271
           height: 134
         width: 600
         height: 500
@@ -416,7 +416,7 @@ MonoBehaviour:
             que el paso del tiempo nunca va a poder borrar)"
         - character: 0
           status: 0
-          sentence: "(Cicatrices en nuestro alma que no nos dejan ver la luz del
+          sentence: "(Cicatrices en nuestra alma que no nos dejan ver la luz del
             d\xEDa)"
         - character: 0
           status: 0

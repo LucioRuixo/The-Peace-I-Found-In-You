@@ -553,8 +553,8 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: "Por fin se durmi\xF3..., no pens\xE9 que tuviera tanta energ\xEDa
-            despu\xE9s caminar tanto hoy."
+          sentence: "Por fin se durmi\xF3..., no pens\xE9 que tendr\xEDa tanta energ\xEDa
+            despu\xE9s de caminar tanto hoy."
         - character: 0
           status: 0
           sentence: "As\xED son los chicos, Hoshi, llenos de energ\xEDa siempre."

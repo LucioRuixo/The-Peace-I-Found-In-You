@@ -290,7 +290,7 @@ MonoBehaviour:
           sentence: "Creo que le pas\xF3 algo en el bosque."
         - character: 0
           status: 0
-          sentence: "(No me sorprende, despu\xE9s de lo que paso hoy...)"
+          sentence: "(No me sorprende, despu\xE9s de lo que pas\xF3 hoy...)"
         - character: 0
           status: 0
           sentence: "Por cierto, \xBFc\xF3mo se conocieron?"
@@ -911,8 +911,8 @@ MonoBehaviour:
           sentence: "\xA1No es cierto, yo no soy molesto!, \xBFverdad, P?"
         - character: 0
           status: 0
-          sentence: "No est\xE1 molest\xE1ndome, Hoshi. De hecho, lo invite a comer
-            algo a mi hogar."
+          sentence: "No est\xE1 molest\xE1ndome, Hoshi. De hecho, lo invit\xE9 a
+            comer algo a mi hogar."
     00000015:
       type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
