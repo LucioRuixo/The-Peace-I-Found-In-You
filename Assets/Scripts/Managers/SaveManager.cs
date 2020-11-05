@@ -46,8 +46,6 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
 
     void CreateFile(int fileIndex)
     {
-        Debug.Log("creating file");
-
         string jsonPath = CreateSaveFilePath(fileIndex, true);
         if (File.Exists(jsonPath)) File.Delete(jsonPath);
 
@@ -70,8 +68,6 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
 
     public void SaveFile(SaveData gameData, bool saveAsJson)
     {
-        Debug.Log("saving file");
-
         string datPath = CreateSaveFilePath(loadedFileIndex, false);
         string jsonPath = CreateSaveFilePath(loadedFileIndex, true);
         string filePath = saveAsJson ? jsonPath : datPath;
@@ -98,8 +94,6 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
 
     public SaveData LoadFile()
     {
-        Debug.Log("loading file");
-
         string datPath = CreateSaveFilePath(loadedFileIndex, false);
         string jsonPath = CreateSaveFilePath(loadedFileIndex, true);
         if (File.Exists(datPath))

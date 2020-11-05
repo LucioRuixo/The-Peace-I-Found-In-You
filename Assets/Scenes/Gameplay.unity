@@ -494,7 +494,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 505166548}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &121330168
 MonoBehaviour:
@@ -877,6 +877,7 @@ MonoBehaviour:
   actionController: {fileID: 595585450}
   backgroundController: {fileID: 143043582}
   decisionCheckController: {fileID: 1677762215}
+  dialogueController: {fileID: 121330168}
   musicController: {fileID: 1364809731}
 --- !u!1001 &213880782
 PrefabInstance:
@@ -2563,9 +2564,9 @@ Transform:
   - {fileID: 595585449}
   - {fileID: 239322526}
   - {fileID: 143043581}
-  - {fileID: 121330167}
   - {fileID: 1243667191}
   - {fileID: 1677762214}
+  - {fileID: 121330167}
   - {fileID: 1077869659}
   - {fileID: 1364809730}
   - {fileID: 1916708732}
@@ -6640,7 +6641,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 505166548}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1243667192
 MonoBehaviour:
@@ -13420,7 +13421,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 505166548}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1677762215
 MonoBehaviour:

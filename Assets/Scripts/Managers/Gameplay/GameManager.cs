@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] ActionController actionController = null;
     [SerializeField] BackgroundController backgroundController = null;
     [SerializeField] DecisionCheckController decisionCheckController = null;
+    [SerializeField] DialogueController dialogueController = null;
     [SerializeField] MusicController musicController = null;
 
     void Awake()
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
         actionController.SetLoadedData(gameData);
         backgroundController.SetLoadedData(gameData);
         decisionCheckController.SetLoadedData(gameData);
+        dialogueController.SetLoadedData(gameData);
         musicController.SetLoadedData(gameData);
     }
 
@@ -46,6 +48,10 @@ public class GameManager : MonoBehaviour
         gameData.lastDecisionGood = decisionCheckController.LastDecisionGood;
         gameData.currentNodeGUID = noodler.CurrentNode.GUID;
         gameData.routeSceneIndex = storyManager.RouteSceneIndex;
+
+        gameData.currentDialogueStripIndex = dialogueController.CurrentDialogueStripIndex - 1;
+        if (gameData.currentDialogueStripIndex < 0) gameData.currentDialogueStripIndex = 0;
+
         gameData.currentRoute = storyManager.CurrentRoute;
         gameData.backgroundData = backgroundController.CurrentBackgroundData;
         gameData.charactersInScene = actionController.CharactersInScene;

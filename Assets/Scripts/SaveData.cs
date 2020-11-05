@@ -32,6 +32,7 @@ public class SaveData
     public string currentNodeGUID;
 
     public int routeSceneIndex;
+    public int currentDialogueStripIndex;
 
     public RouteController.Route currentRoute;
 

@@ -7,7 +7,7 @@ using TMPro;
 using nullbloq.Noodles;
 
 [Serializable]
-public class DialogueController : NodeController
+public class DialogueController : NodeController, ISaveComponent
 {
     public override Type NodeType { protected set; get; }
 
@@ -20,7 +20,6 @@ public class DialogueController : NodeController
     string characterName;
     string sentence;
 
-    int currentDialogueStripIndex = 0;
     float fontSize;
 
     Coroutine typingCoroutine;
@@ -40,6 +39,8 @@ public class DialogueController : NodeController
     [SerializeField] float letterDisplayWaitTime = 0.1f;
     [SerializeField] float pauseWaitTime = 0.5f;
     [SerializeField] float whisperFontSizeFactor = 0.5f;
+
+    public int CurrentDialogueStripIndex { private set; get; } = 0;
 
     void Awake()
     {
@@ -102,19 +103,19 @@ public class DialogueController : NodeController
 
     public void ExecuteNextDialogueStrip() // Cuando cambie sentence de DialogueStrip por una lista de oraciones volver a hacerla privada y hacer que Continue llame a DisplayNextSentence
     {
-        if (currentDialogueStripIndex >= node.dialogueStrips.Count)
+        if (CurrentDialogueStripIndex >= node.dialogueStrips.Count)
         {
             End();
             return;
         }
 
-        CharacterManager.CharacterName name = node.dialogueStrips[currentDialogueStripIndex].character;
+        CharacterManager.CharacterName name = node.dialogueStrips[CurrentDialogueStripIndex].character;
         CharacterSO character = CharacterManager.Get().GetCharacterSO(name);
         if (character)
         {
             dialogueBoxImage.sprite = character.dialogueBoxSprite;
 
-            if (node.dialogueStrips[currentDialogueStripIndex].status == CharacterManager.Status.Known)
+            if (node.dialogueStrips[CurrentDialogueStripIndex].status == CharacterManager.Status.Known)
                 characterName = character.nameText;
             else
                 characterName = unknownCharacterName;
@@ -123,14 +124,13 @@ public class DialogueController : NodeController
         }
 
         //DisplayNextSentence();
-        //if (typing) StopCoroutine(typingCoroutine); // CREO que esta línea es innecesaria
-        sentence = node.dialogueStrips[currentDialogueStripIndex].sentence;
+        sentence = node.dialogueStrips[CurrentDialogueStripIndex].sentence;
 
         bool whispering = CheckForWhisper();
         typingCoroutine = StartCoroutine(TypeSentence(whispering));
         typing = true;
 
-        currentDialogueStripIndex++;
+        CurrentDialogueStripIndex++;
     }
 
     bool CheckForWhisper()
@@ -140,7 +140,7 @@ public class DialogueController : NodeController
 
     void End()
     {
-        currentDialogueStripIndex = 0;
+        CurrentDialogueStripIndex = 0;
         dialogueBox.SetActive(false);
 
         CallNodeExecutionCompletion(0); // Adaptar en NodeManager para que funcione al conectar el puerto con varios nodos en vez de uno solo
@@ -157,13 +157,6 @@ public class DialogueController : NodeController
     //    StartCoroutine(TypeSentence(sentenceQueue.Dequeue()));
     //}
 
-    public override void Execute(NoodlesNode genericNode)
-    {
-        var node = genericNode as NoodlesNodeMultipleDialogue;
-
-        Begin(node);
-    }
-
     bool PauseFound(char character)
     {
         foreach (char pauseCharacter in pauseCharacters)
@@ -172,6 +165,18 @@ public class DialogueController : NodeController
         }
 
         return false;
+    }
+
+    public override void Execute(NoodlesNode genericNode)
+    {
+        var node = genericNode as NoodlesNodeMultipleDialogue;
+
+        Begin(node);
+    }
+
+    public void SetLoadedData(SaveData loadedData)
+    {
+        CurrentDialogueStripIndex = loadedData.currentDialogueStripIndex;
     }
 
     IEnumerator TypeSentence(bool whispering)

@@ -13,13 +13,8 @@ public class AnimationController : NodeController
         FadeFromWhite,
         BlinkOpen,
         BlinkClosed,
-        EnterFromLeft,
-        LeaveOnRight,
-        TopToBottom,
         BackgroundTransition,
         Blinking,
-        Rain,
-        Jump,
         CameraShake,
         AfternoonFilter,
         NightFilter,
@@ -88,20 +83,13 @@ public class AnimationController : NodeController
                 StartBlinkOpen();
                 break;
             case Animation.BlinkClosed:
-                break;
-            case Animation.EnterFromLeft:
-                break;
-            case Animation.LeaveOnRight:
-                break;
-            case Animation.TopToBottom:
+                // No implementado
                 break;
             case Animation.BackgroundTransition:
+                // No implementado
                 break;
             case Animation.Blinking:
-                break;
-            case Animation.Rain:
-                break;
-            case Animation.Jump:
+                // No implementado
                 break;
             case Animation.CameraShake:
                 fxManager.StartCameraShake(shakePointsAmount, shakeMagnitude, shakeSpeed, End);
