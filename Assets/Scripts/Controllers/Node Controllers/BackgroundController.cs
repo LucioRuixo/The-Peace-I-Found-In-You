@@ -4,7 +4,7 @@ using UnityEngine;
 using nullbloq.Noodles;
 
 [Serializable]
-public class BackgroundController : NodeController
+public class BackgroundController : NodeController, ISaveComponent
 {
     public enum BackgroundType
     {
@@ -52,28 +52,13 @@ public class BackgroundController : NodeController
         RandomBlueLightBugs
     }
 
-    [Serializable]
-    public struct BackgroundData
-    {
-        public BackgroundType type;
-        public Location location;
-        public Ilustration ilustration;
-
-        public BackgroundData(BackgroundType _type, Location _location, Ilustration _ilustration)
-        {
-            type = _type;
-            location = _location;
-            ilustration = _ilustration;
-        }
-    }
-
     public override Type NodeType { protected set; get; }
 
     float cameraHeight;
 
     Vector2 cameraSize;
 
-    BackgroundData currentBackgroundData;
+    SaveData.BackgroundData currentBackgroundData;
 
     [SerializeField] GameObject backgroundContainer = null;
     SpriteRenderer backgroundSR;
@@ -85,7 +70,7 @@ public class BackgroundController : NodeController
     [SerializeField] Leaves leaves = null;
     [SerializeField] LightBugs lightBugs = null;
 
-    public BackgroundData CurrentBackgroundData { get { return currentBackgroundData; } }
+    public SaveData.BackgroundData CurrentBackgroundData { get { return currentBackgroundData; } }
 
     void Awake()
     {
@@ -154,7 +139,7 @@ public class BackgroundController : NodeController
             }
         }
 
-        currentBackgroundData = new BackgroundData(type, location, ilustration);
+        currentBackgroundData = new SaveData.BackgroundData(type, location, ilustration);
     }
 
     public override void Execute(NoodlesNode genericNode)
@@ -166,7 +151,7 @@ public class BackgroundController : NodeController
         CallNodeExecutionCompletion(0);
     }
 
-    public void SetData(GameManager.GameData loadedData)
+    public void SetLoadedData(SaveData loadedData)
     {
         SetBackground(loadedData.backgroundData.type, loadedData.backgroundData.location, loadedData.backgroundData.ilustration);
     }

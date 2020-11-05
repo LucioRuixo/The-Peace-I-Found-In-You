@@ -1,34 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using nullbloq.Noodles;
 
 public class GameManager : MonoBehaviour
 {
-    [Serializable]
-    public struct GameData
-    {
-        [HideInInspector] public bool lastDecisionGood;
+    SaveData gameData;
 
-        public int routeSceneIndex;
-
-        public RouteController.Route currentRoute;
-
-        [HideInInspector] public string currentNodeGUID;
-
-        public BackgroundController.BackgroundData backgroundData;
-
-        [HideInInspector] public List<Character> charactersInScene;
-    }
-
-    GameData gameData;
-
-    [SerializeField] StoryManager storyManager = null;
     [SerializeField] Noodler noodler = null;
-    [SerializeField] DecisionCheckController decisionCheckController = null;
-    [SerializeField] BackgroundController backgroundController = null;
+    [SerializeField] StoryManager storyManager = null;
     [SerializeField] ActionController actionController = null;
+    [SerializeField] BackgroundController backgroundController = null;
+    [SerializeField] DecisionCheckController decisionCheckController = null;
+    [SerializeField] MusicController musicController = null;
 
     void Awake()
     {
@@ -51,20 +34,27 @@ public class GameManager : MonoBehaviour
     {
         gameData = SaveManager.Get().LoadFile();
 
-        storyManager.SetData(gameData);
-        decisionCheckController.SetData(gameData);
-        backgroundController.SetData(gameData);
-        actionController.SetData(gameData);
+        storyManager.SetLoadedData(gameData);
+        actionController.SetLoadedData(gameData);
+        backgroundController.SetLoadedData(gameData);
+        decisionCheckController.SetLoadedData(gameData);
+        musicController.SetLoadedData(gameData);
     }
 
     void UpdateGameData()
     {
         gameData.lastDecisionGood = decisionCheckController.LastDecisionGood;
+        gameData.currentNodeGUID = noodler.CurrentNode.GUID;
         gameData.routeSceneIndex = storyManager.RouteSceneIndex;
         gameData.currentRoute = storyManager.CurrentRoute;
-        gameData.currentNodeGUID = noodler.CurrentNode.GUID;
         gameData.backgroundData = backgroundController.CurrentBackgroundData;
         gameData.charactersInScene = actionController.CharactersInScene;
+
+        gameData.musicData = new SaveData.MusicData()
+        {
+            musicPlaying = musicController.MusicPlaying,
+            songTitle = musicController.CurrentSong
+        };
     }
 
     void SaveGameData(bool saveAsJson)

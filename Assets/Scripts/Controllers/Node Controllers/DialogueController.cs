@@ -23,7 +23,7 @@ public class DialogueController : NodeController
     int currentDialogueStripIndex = 0;
     float fontSize;
 
-    IEnumerator typingCoroutine;
+    Coroutine typingCoroutine;
 
     [SerializeField] GameObject dialogueBox = null;
     [SerializeField] TextMeshProUGUI nameText = null;
@@ -102,33 +102,35 @@ public class DialogueController : NodeController
 
     public void ExecuteNextDialogueStrip() // Cuando cambie sentence de DialogueStrip por una lista de oraciones volver a hacerla privada y hacer que Continue llame a DisplayNextSentence
     {
-        if (node.dialogueStrips.Count > currentDialogueStripIndex)
+        if (currentDialogueStripIndex >= node.dialogueStrips.Count)
         {
-            CharacterManager.CharacterName name = node.dialogueStrips[currentDialogueStripIndex].character;
-            CharacterSO character = CharacterManager.Get().GetCharacterSO(name);
-            if (character)
-            {
-                dialogueBoxImage.sprite = character.dialogueBoxSprite;
-
-                if (node.dialogueStrips[currentDialogueStripIndex].status == CharacterManager.Status.Known)
-                    characterName = character.nameText;
-                else
-                    characterName = unknownCharacterName;
-
-                nameText.text = characterName;
-            }
-
-            //DisplayNextSentence();
-            if (typing) StopCoroutine(typingCoroutine);
-
-            sentence = node.dialogueStrips[currentDialogueStripIndex].sentence;
-            typingCoroutine = TypeSentence(CheckForWhisper());
-            StartCoroutine(typingCoroutine);
-            typing = true;
-
-            currentDialogueStripIndex++;
+            End();
+            return;
         }
-        else End();
+
+        CharacterManager.CharacterName name = node.dialogueStrips[currentDialogueStripIndex].character;
+        CharacterSO character = CharacterManager.Get().GetCharacterSO(name);
+        if (character)
+        {
+            dialogueBoxImage.sprite = character.dialogueBoxSprite;
+
+            if (node.dialogueStrips[currentDialogueStripIndex].status == CharacterManager.Status.Known)
+                characterName = character.nameText;
+            else
+                characterName = unknownCharacterName;
+
+            nameText.text = characterName;
+        }
+
+        //DisplayNextSentence();
+        //if (typing) StopCoroutine(typingCoroutine); // CREO que esta línea es innecesaria
+        sentence = node.dialogueStrips[currentDialogueStripIndex].sentence;
+
+        bool whispering = CheckForWhisper();
+        typingCoroutine = StartCoroutine(TypeSentence(whispering));
+        typing = true;
+
+        currentDialogueStripIndex++;
     }
 
     bool CheckForWhisper()

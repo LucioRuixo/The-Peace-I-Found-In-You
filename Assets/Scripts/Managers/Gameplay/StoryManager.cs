@@ -2,7 +2,7 @@
 using UnityEngine;
 using nullbloq.Noodles;
 
-public class StoryManager : MonoBehaviour
+public class StoryManager : MonoBehaviour, ISaveComponent
 {
     bool routeExecutionStarted = false;
 
@@ -63,7 +63,7 @@ public class StoryManager : MonoBehaviour
         else OnNoScenesRemaining?.Invoke();
     }
 
-    public void SetData(GameManager.GameData loadedData)
+    public void SetLoadedData(SaveData loadedData)
     {
         RouteSceneIndex = loadedData.routeSceneIndex;
         CurrentRoute = loadedData.currentRoute;

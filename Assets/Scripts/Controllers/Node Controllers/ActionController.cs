@@ -14,7 +14,7 @@ DUDAS:
 - Pueden cambiar de posición? (POR AHORA: no)
 - Hay márgenes a los costados de la pantalla a tener en cuenta al posicionar a los pjs? (POR AHORA: no)
 */
-public class ActionController : NodeController
+public class ActionController : NodeController, ISaveComponent
 {
     public enum Action
     {
@@ -168,7 +168,7 @@ public class ActionController : NodeController
 
     void EnterCharacter(Character character, GameObject characterObject, Action action)
     {
-        Character newCharacter = new Character(character.BodyIndex, character.ArmIndex, character.HeadIndex, character.CharacterName);
+        Character newCharacter = new Character(character.bodyIndex, character.armIndex, character.headIndex, character.characterName);
         charactersInScene.Add(new KeyValuePair<Character, GameObject>(newCharacter, characterObject));
 
         float spacing = Screen.width / (charactersInScene.Count + 1);
@@ -257,7 +257,7 @@ public class ActionController : NodeController
         bool characterFound = false;
         foreach (KeyValuePair<Character, GameObject> character in charactersInScene)
         {
-            if (character.Key.CharacterName == node.character)
+            if (character.Key.characterName == node.character)
             {
                 float targetX = Screen.width - initialX;
 
@@ -334,7 +334,7 @@ public class ActionController : NodeController
         bool characterFound = false;
         foreach (KeyValuePair<Character, GameObject> characterInScene in charactersInScene)
         {
-            if (characterInScene.Key.CharacterName == node.character)
+            if (characterInScene.Key.characterName == node.character)
             {
                 CharacterSO character = CharacterManager.Get().GetCharacterSO(node.character);
 
@@ -400,17 +400,17 @@ public class ActionController : NodeController
         Begin(node);
     }
 
-    public void SetData(GameManager.GameData loadedData)
+    public void SetLoadedData(SaveData loadedData)
     {
         if (loadedData.charactersInScene != null && loadedData.charactersInScene.Count > 0)
         {
             float spacing = Screen.width / (loadedData.charactersInScene.Count + 1);
             for (int i = 0; i < loadedData.charactersInScene.Count; i++)
             {
-                int bodyIndex = loadedData.charactersInScene[i].BodyIndex;
-                int armIndex = loadedData.charactersInScene[i].ArmIndex;
-                int headIndex = loadedData.charactersInScene[i].HeadIndex;
-                CharacterManager.CharacterName characterName = loadedData.charactersInScene[i].CharacterName;
+                int bodyIndex = loadedData.charactersInScene[i].bodyIndex;
+                int armIndex = loadedData.charactersInScene[i].armIndex;
+                int headIndex = loadedData.charactersInScene[i].headIndex;
+                CharacterManager.CharacterName characterName = loadedData.charactersInScene[i].characterName;
 
                 Character newCharacter = new Character(bodyIndex, armIndex, headIndex, characterName);
                 GameObject characterObject = GenerateCharacterObject(characterName, bodyIndex, armIndex, headIndex);

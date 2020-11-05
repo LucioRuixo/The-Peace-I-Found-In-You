@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using nullbloq.Noodles;
 
-public class MusicController : NodeController
+public class MusicController : NodeController, ISaveComponent
 {
     public enum SongTitle
     {
+        None,
         Calm,
         Forest,
         GoodMemories,
@@ -29,44 +30,57 @@ public class MusicController : NodeController
 
     [SerializeField] List<SongSO> songs = null;
 
+    public bool MusicPlaying { private set; get; } = false;
+    public SongTitle CurrentSong { private set; get; } = SongTitle.None;
+
     void Awake()
     {
         NodeType = typeof(CustomMusicChangeNode);
     }
 
-    void PlaySong(CustomMusicChangeNode node)
+    void PlaySong(SongTitle songTitle)
     {
-        AudioClip clip = null;
+        if (songTitle == SongTitle.None) return;
 
+        SongSO newSong = null;
         foreach (SongSO song in songs)
         {
-            if (song.title == node.songTitle)
+            if (song.title == songTitle)
             {
-                clip = song.clip;
+                newSong = song;
                 break;
             }
         }
 
         if (!channel1.isPlaying)
         {
-            StartCoroutine(FadeIn(channel1, clip));
+            StartCoroutine(FadeIn(channel1, newSong.clip));
 
             if (channel2.isPlaying) StartCoroutine(FadeOut(channel2));
         }
         else
         {
             StartCoroutine(FadeOut(channel1));
-            StartCoroutine(FadeIn(channel2, clip));
+            StartCoroutine(FadeIn(channel2, newSong.clip));
         }
 
-        CallNodeExecutionCompletion(0);
+        MusicPlaying = true;
+        CurrentSong = newSong.title;
     }
 
     public override void Execute(NoodlesNode genericNode)
     {
         var node = genericNode as CustomMusicChangeNode;
 
-        PlaySong(node);
+        PlaySong(node.songTitle);
+
+        CallNodeExecutionCompletion(0);
+    }
+
+    public void SetLoadedData(SaveData loadedData)
+    {
+        if (loadedData.musicData.musicPlaying)
+            PlaySong(loadedData.musicData.songTitle);
     }
 
     IEnumerator FadeIn(AudioSource source, AudioClip clip)

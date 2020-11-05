@@ -1,7 +1,7 @@
 ﻿using System;
 using nullbloq.Noodles;
 
-public class DecisionCheckController : NodeController
+public class DecisionCheckController : NodeController, ISaveComponent
 {
     public override Type NodeType { protected set; get; }
 
@@ -34,15 +34,15 @@ public class DecisionCheckController : NodeController
         CallNodeExecutionCompletion(index);
     }
 
-    public void SetData(GameManager.GameData loadedData)
-    {
-        LastDecisionGood = loadedData.lastDecisionGood;
-    }
-
     public override void Execute(NoodlesNode genericNode)
     {
         var node = genericNode as CustomDecisionCheckNode;
 
         CheckLastDecision(node);
+    }
+
+    public void SetLoadedData(SaveData loadedData)
+    {
+        LastDecisionGood = loadedData.lastDecisionGood;
     }
 }

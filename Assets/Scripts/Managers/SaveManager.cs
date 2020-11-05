@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using UnityEditor;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviourSingleton<SaveManager>
@@ -9,7 +8,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
 
     int loadedFileIndex = -1;
 
-    [SerializeField] GameManager.GameData initialGameData = new GameManager.GameData();
+    [SerializeField] SaveData initialGameData = new SaveData();
 
     [SerializeField] Object fileModificationGuide = null;
 
@@ -69,7 +68,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
             CreateFile(loadedFileIndex);
     }
 
-    public void SaveFile(GameManager.GameData gameData, bool saveAsJson)
+    public void SaveFile(SaveData gameData, bool saveAsJson)
     {
         Debug.Log("saving file");
 
@@ -81,28 +80,8 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         {
             if (File.Exists(datPath)) File.Delete(datPath);
 
-            //DEBUG
-            foreach (Character ch in gameData.charactersInScene)
-            {
-                Debug.Log("pjs antes de guardar: " + ch.CharacterName);
-            }
-            //
-
             string data = JsonUtility.ToJson(gameData, true);
             File.WriteAllText(jsonPath, data);
-
-            //DEBUG
-            FileStream file = File.OpenRead(jsonPath);
-            StreamReader streamReader = new StreamReader(file);
-            string debugData = streamReader.ReadToEnd();
-            GameManager.GameData fileData = JsonUtility.FromJson<GameManager.GameData>(debugData);
-            foreach (Character ch in fileData.charactersInScene)
-            {
-                Debug.Log("pjs despues de guardar: " + ch.CharacterName);
-            }
-            //
-
-            file.Close();
         }
         else
         {
@@ -117,7 +96,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         }
     }
 
-    public GameManager.GameData LoadFile()
+    public SaveData LoadFile()
     {
         Debug.Log("loading file");
 
@@ -128,7 +107,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
             FileStream file = File.OpenRead(datPath);
 
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            GameManager.GameData fileData = (GameManager.GameData)binaryFormatter.Deserialize(file);
+            SaveData fileData = (SaveData)binaryFormatter.Deserialize(file);
 
             file.Close();
 
@@ -138,22 +117,17 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         {
             FileStream file = File.OpenRead(jsonPath);
 
-            StreamReader streamReader = new StreamReader(file);
-            string data = streamReader.ReadToEnd();
-            GameManager.GameData fileData = JsonUtility.FromJson<GameManager.GameData>(data);
+            string data = File.ReadAllText(jsonPath);
+            SaveData fileData = JsonUtility.FromJson<SaveData>(data);
 
             file.Close();
-            foreach (Character ch in fileData.charactersInScene)
-            {
-                Debug.Log("pjs despues de guardar: " + ch.CharacterName);
-            }
 
             return fileData;
         }
         else
         {
             Debug.LogError("The file you were trying to load could not be found");
-            return new GameManager.GameData();
+            return new SaveData();
         }
     }
 

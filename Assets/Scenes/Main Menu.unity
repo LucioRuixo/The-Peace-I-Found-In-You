@@ -1616,13 +1616,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialGameData:
     lastDecisionGood: 0
+    currentNodeGUID: 
     routeSceneIndex: 0
     currentRoute: 2
-    currentNodeGUID: 
     backgroundData:
       type: 0
       location: 3
       ilustration: 0
+    musicData:
+      musicPlaying: 1
+      songTitle: 7
     charactersInScene: []
   fileModificationGuide: {fileID: 102900000, guid: 684019bf67fabdd49a982485703f4c48,
     type: 3}
