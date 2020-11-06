@@ -35,6 +35,7 @@ public class SaveData
     public int currentDialogueStripIndex;
 
     public RouteController.Route currentRoute;
+    public FilterController.Filter currentFilter;
 
     public BackgroundData backgroundData;
     public MusicData musicData;

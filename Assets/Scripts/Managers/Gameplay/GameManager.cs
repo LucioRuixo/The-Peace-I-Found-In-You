@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] BackgroundController backgroundController = null;
     [SerializeField] DecisionCheckController decisionCheckController = null;
     [SerializeField] DialogueController dialogueController = null;
+    [SerializeField] FilterController filterController = null;
     [SerializeField] MusicController musicController = null;
 
     void Awake()
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
         backgroundController.SetLoadedData(gameData);
         decisionCheckController.SetLoadedData(gameData);
         dialogueController.SetLoadedData(gameData);
+        filterController.SetLoadedData(gameData);
         musicController.SetLoadedData(gameData);
     }
 
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
         if (gameData.currentDialogueStripIndex < 0) gameData.currentDialogueStripIndex = 0;
 
         gameData.currentRoute = storyManager.CurrentRoute;
+        gameData.currentFilter = filterController.CurrentFilter;
         gameData.backgroundData = backgroundController.CurrentBackgroundData;
         gameData.charactersInScene = actionController.CharactersInScene;
 

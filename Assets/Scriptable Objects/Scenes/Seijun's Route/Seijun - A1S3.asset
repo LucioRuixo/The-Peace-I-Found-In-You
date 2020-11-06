@@ -495,8 +495,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: -635
           y: 16
-          width: 213
-          height: 96
+          width: 212
+          height: 97
         width: 600
         height: 500
         inputPorts:
@@ -519,4 +519,4 @@ MonoBehaviour:
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        songTitle: 0
+        songTitle: 1

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86252f98566d31a4da0b5d698d804fd3, type: 3}
   m_Name: Hoshi and I
   m_EditorClassIdentifier: 
-  title: 3
+  title: 4
   clip: {fileID: 8300000, guid: 4452755607e790c43b1a2b5def3e0cb4, type: 3}

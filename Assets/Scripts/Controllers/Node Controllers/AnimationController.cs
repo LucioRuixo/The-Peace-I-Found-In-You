@@ -16,9 +16,6 @@ public class AnimationController : NodeController
         BackgroundTransition,
         Blinking,
         CameraShake,
-        AfternoonFilter,
-        NightFilter,
-        DisableFilter
     }
 
     public override Type NodeType { protected set; get; }
@@ -28,7 +25,6 @@ public class AnimationController : NodeController
     [SerializeField] new GameObject animation = null;
     [SerializeField] Image blackCover = null;
     [SerializeField] Image whiteCover = null;
-    [SerializeField] Image filter = null;
     [SerializeField] Animator fadeInBlinkTop = null, fadeInBlinkBottom = null;
     FXManager fxManager;
 
@@ -39,10 +35,6 @@ public class AnimationController : NodeController
     [SerializeField] int shakePointsAmount = 1;
     [SerializeField] float shakeMagnitude = 1f;
     [SerializeField] float shakeSpeed = 1f;
-
-    [Header("Filters: ")]
-    [SerializeField] Sprite afternoonFilter = null;
-    [SerializeField] Sprite nightFilter = null;
 
     void Awake()
     {
@@ -94,15 +86,6 @@ public class AnimationController : NodeController
             case Animation.CameraShake:
                 fxManager.StartCameraShake(shakePointsAmount, shakeMagnitude, shakeSpeed, End);
                 break;
-            case Animation.AfternoonFilter:
-                ApplyFilter(afternoonFilter);
-                break;
-            case Animation.NightFilter:
-                ApplyFilter(nightFilter);
-                break;
-            case Animation.DisableFilter:
-                ApplyFilter(null);
-                break;
             default:
                 Debug.LogError("Animation in node not found");
                 break;
@@ -113,21 +96,6 @@ public class AnimationController : NodeController
     {
         fadeInBlinkTop.SetTrigger(blinkOpenTrigger);
         fadeInBlinkBottom.SetTrigger(blinkOpenTrigger);
-    }
-
-    void ApplyFilter(Sprite newFilter)
-    {
-        if (newFilter)
-        {
-            filter.sprite = newFilter;
-            filter.gameObject.SetActive(true);
-            End();
-        }
-        else
-        {
-            filter.gameObject.SetActive(false);
-            End();
-        }
     }
 
     void End()

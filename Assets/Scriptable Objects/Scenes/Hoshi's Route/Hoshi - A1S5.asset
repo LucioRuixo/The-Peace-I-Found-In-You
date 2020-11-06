@@ -93,9 +93,9 @@ MonoBehaviour:
         - GUID: c71489fa-6fe1-4ebd-bb2f-70e21a6ffcdf
           parentNodeGUID: 8a4e3a74-ebf8-49db-a454-53ade114734c
           targetNodeGUID:
-          - 8488813a-5a8c-4c42-b473-1f30c7fa4c8f
+          - 6e927f4f-b867-4d23-9055-20484eaf6bfb
           targetPortGUID:
-          - dbc83040-0ac9-4a33-b381-0dae5bb9e3b1
+          - 824053dd-cae2-4e63-a0b7-217ef37e6e46
           text: Input
           isEditable: 0
         outputPorts:
@@ -672,7 +672,7 @@ MonoBehaviour:
           x: 19374
           y: 628
           width: 271
-          height: 172
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -1294,9 +1294,9 @@ MonoBehaviour:
         - GUID: 0c78d8c8-685f-49ae-beeb-93b1ee3d78ea
           parentNodeGUID: 0a2f585c-d72f-47db-84c0-b23fff136218
           targetNodeGUID:
-          - 8488813a-5a8c-4c42-b473-1f30c7fa4c8f
+          - 6e927f4f-b867-4d23-9055-20484eaf6bfb
           targetPortGUID:
-          - 6107b5e3-d86a-4616-99ee-e912e4932184
+          - 35c876ed-5edf-4d8f-990d-604263b5f03d
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomBackgroundChangeNodeVisual, Assembly-CSharp,
@@ -1337,23 +1337,23 @@ MonoBehaviour:
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        songTitle: 0
+        songTitle: 1
     00000022:
-      type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      type: {class: CustomFilterNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
-        title: Animation
-        GUID: 8488813a-5a8c-4c42-b473-1f30c7fa4c8f
+        title: Apply Filter
+        GUID: 6e927f4f-b867-4d23-9055-20484eaf6bfb
         rect:
           serializedVersion: 2
-          x: 17477
-          y: 775
+          x: 17481
+          y: 771
           width: 245
           height: 96
         width: 600
         height: 500
         inputPorts:
-        - GUID: 6107b5e3-d86a-4616-99ee-e912e4932184
-          parentNodeGUID: 8488813a-5a8c-4c42-b473-1f30c7fa4c8f
+        - GUID: 35c876ed-5edf-4d8f-990d-604263b5f03d
+          parentNodeGUID: 6e927f4f-b867-4d23-9055-20484eaf6bfb
           targetNodeGUID:
           - 0a2f585c-d72f-47db-84c0-b23fff136218
           targetPortGUID:
@@ -1361,14 +1361,14 @@ MonoBehaviour:
           text: Input
           isEditable: 0
         outputPorts:
-        - GUID: dbc83040-0ac9-4a33-b381-0dae5bb9e3b1
-          parentNodeGUID: 8488813a-5a8c-4c42-b473-1f30c7fa4c8f
+        - GUID: 824053dd-cae2-4e63-a0b7-217ef37e6e46
+          parentNodeGUID: 6e927f4f-b867-4d23-9055-20484eaf6bfb
           targetNodeGUID:
           - 8a4e3a74-ebf8-49db-a454-53ade114734c
           targetPortGUID:
           - c71489fa-6fe1-4ebd-bb2f-70e21a6ffcdf
           text: Output
           isEditable: 0
-        classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
+        classNameString: nullbloq.Noodles.CustomFilterNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        animation: 15
+        filter: 2

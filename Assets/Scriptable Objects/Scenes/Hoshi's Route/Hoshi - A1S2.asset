@@ -2884,8 +2884,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 5997
           y: -1220
-          width: 219
-          height: 96
+          width: 218
+          height: 97
         width: 600
         height: 500
         inputPorts:
@@ -2908,7 +2908,7 @@ MonoBehaviour:
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        songTitle: 8
+        songTitle: 9
     00000046:
       type: {class: CustomMusicChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -2918,8 +2918,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 5977
           y: -510
-          width: 219
-          height: 96
+          width: 218
+          height: 97
         width: 600
         height: 500
         inputPorts:
@@ -2942,7 +2942,7 @@ MonoBehaviour:
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        songTitle: 8
+        songTitle: 9
     00000047:
       type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -2952,8 +2952,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 7873
           y: -130
-          width: 269
-          height: 96
+          width: 184
+          height: 94
         width: 600
         height: 500
         inputPorts:
