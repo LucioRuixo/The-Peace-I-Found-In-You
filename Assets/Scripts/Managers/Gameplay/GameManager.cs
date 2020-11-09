@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     SaveData gameData;
 
+    [Header("Save Components: ")]
     [SerializeField] Noodler noodler = null;
     [SerializeField] StoryManager storyManager = null;
     [SerializeField] ActionController actionController = null;
@@ -50,14 +51,14 @@ public class GameManager : MonoBehaviour
         gameData.lastDecisionGood = decisionCheckController.LastDecisionGood;
         gameData.currentNodeGUID = noodler.CurrentNode.GUID;
         gameData.routeSceneIndex = storyManager.RouteSceneIndex;
-
-        gameData.currentDialogueStripIndex = dialogueController.CurrentDialogueStripIndex - 1;
-        if (gameData.currentDialogueStripIndex < 0) gameData.currentDialogueStripIndex = 0;
-
         gameData.currentRoute = storyManager.CurrentRoute;
         gameData.currentFilter = filterController.CurrentFilter;
         gameData.backgroundData = backgroundController.CurrentBackgroundData;
+        gameData.logData = dialogueController.GetLogData();
         gameData.charactersInScene = actionController.CharactersInScene;
+
+        gameData.currentDialogueStripIndex = dialogueController.CurrentDialogueStripIndex - 1;
+        if (gameData.currentDialogueStripIndex < 0) gameData.currentDialogueStripIndex = 0;
 
         gameData.musicData = new SaveData.MusicData()
         {

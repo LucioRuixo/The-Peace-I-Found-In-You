@@ -20,6 +20,13 @@ public class SaveData
     }
 
     [Serializable]
+    public struct LogData
+    {
+        public string lastCharacterToSpeak;
+        public string logText;
+    }
+
+    [Serializable]
     public struct MusicData
     {
         public bool musicPlaying;
@@ -38,6 +45,7 @@ public class SaveData
     public FilterController.Filter currentFilter;
 
     public BackgroundData backgroundData;
+    public LogData logData;
     public MusicData musicData;
 
     public List<Character> charactersInScene;

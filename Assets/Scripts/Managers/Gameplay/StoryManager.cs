@@ -27,6 +27,8 @@ public class StoryManager : MonoBehaviour, ISaveComponent
 
     void Start()
     {
+        if (RouteSceneIndex > 0) routeExecutionStarted = true;
+
         storyBitManager.ExecuteBit(noodler.CurrentNode);
     }
 
@@ -51,11 +53,11 @@ public class StoryManager : MonoBehaviour, ISaveComponent
 
     void CheckForNextScene(Noodle[] scenes)
     {
+        if (routeExecutionStarted) RouteSceneIndex++;
+        else routeExecutionStarted = true;
+
         if (RouteSceneIndex < scenes.Length)
         {
-            if (routeExecutionStarted) RouteSceneIndex++;
-            else routeExecutionStarted = true;
-
             noodler.controller = scenes[RouteSceneIndex];
             noodler.ResetNoodle();
             storyBitManager.ExecuteBit(noodler.CurrentNode);

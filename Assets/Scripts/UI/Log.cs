@@ -3,29 +3,41 @@ using TMPro;
 
 public class Log : MonoBehaviour
 {
-    bool firstSentenceAdded = false;
+    string lastCharacterToSpeak = "";
 
-    string lastCharacterName = "";
-
-    [SerializeField] TextMeshProUGUI logText = null;
-
-    void Start()
-    {
-        logText.text = "";
-    }
+    [SerializeField] TextMeshProUGUI log = null;
 
     public void AddSentence(string characterName, string sentence)
     {
-        if (characterName != lastCharacterName)
+        if (characterName != lastCharacterToSpeak)
         {
-            lastCharacterName = characterName;
+            lastCharacterToSpeak = characterName;
 
-            if (firstSentenceAdded) logText.text += "\n\n";
-            else firstSentenceAdded = true;
+            if (log.text != "") log.text += "\n\n";
 
-            logText.text += lastCharacterName + ": ";
+            log.text += lastCharacterToSpeak + ": ";
         }
 
-        logText.text += "\n" + sentence;
+        log.text += "\n" + sentence;
+    }
+
+    public void SetLastCharacterToSpeak(string _lastCharacterToSpeak)
+    {
+        lastCharacterToSpeak = _lastCharacterToSpeak;
+    }
+
+    public string GetLastCharacterToSpeak()
+    {
+        return lastCharacterToSpeak;
+    }
+
+    public void SetLogText(string logText)
+    {
+        log.text = logText;
+    }
+
+    public string GetLogText()
+    {
+        return log.text;
     }
 }

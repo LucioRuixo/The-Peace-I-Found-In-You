@@ -83,7 +83,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -6269172751896057315}
-        m_MethodName: InstantiateConfirmationMenu
+        m_MethodName: GenerateGameLoadDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

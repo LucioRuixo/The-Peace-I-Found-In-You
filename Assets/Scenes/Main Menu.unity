@@ -1618,7 +1618,9 @@ MonoBehaviour:
     lastDecisionGood: 0
     currentNodeGUID: 
     routeSceneIndex: 0
+    currentDialogueStripIndex: 0
     currentRoute: 2
+    currentFilter: 0
     backgroundData:
       type: 0
       location: 3
@@ -1627,6 +1629,7 @@ MonoBehaviour:
       musicPlaying: 1
       songTitle: 7
     charactersInScene: []
+    logText: 
   fileModificationGuide: {fileID: 102900000, guid: 684019bf67fabdd49a982485703f4c48,
     type: 3}
 --- !u!4 &474491383

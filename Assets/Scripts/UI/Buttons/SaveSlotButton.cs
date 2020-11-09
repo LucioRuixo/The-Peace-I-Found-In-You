@@ -39,7 +39,7 @@ public class SaveSlotButton : MonoBehaviour
         saveSelectionScreenMode = _saveSelectionScreenMode;
     }
 
-    public void InstantiateConfirmationMenu()
+    public void GenerateGameLoadDialog()
     {
         if (saveSelectionScreenMode == UIManager_MainMenu.SaveSelectionScreenMode.NewGame)
             dialogManager.GenerateDialog(newGameText, null, () => LoadGame(saveSelectionScreenMode), null, null);

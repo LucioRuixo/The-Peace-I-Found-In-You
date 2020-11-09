@@ -12,33 +12,18 @@ public class FXManager : MonoBehaviourSingleton<FXManager>
     }
 
     #region Alpha Lerp
-    #region Image Lerps
-    public void StartAlphaLerp(Image image, float from, float to, float duration)
-    {
-        StartCoroutine(LerpImageAlpha(image, from, to, duration, null));
-    }
-
-    public void StartAlphaLerp(Image image, float from, float to, float duration, Action onEnd)
+    #region Image Lerp
+    public void StartAlphaLerp(Image image, float from, float to, float duration, Action onEnd = null)
     {
         StartCoroutine(LerpImageAlpha(image, from, to, duration, onEnd));
     }
 
-    public void StartAlphaLerp0To1(Image image, float duration)
-    {
-        StartCoroutine(LerpImageAlpha(image, 0f, 1f, duration, null));
-    }
-
-    public void StartAlphaLerp0To1(Image image, float duration, Action onEnd)
+    public void StartAlphaLerp0To1(Image image, float duration, Action onEnd = null)
     {
         StartCoroutine(LerpImageAlpha(image, 0f, 1f, duration, onEnd));
     }
 
-    public void StartAlphaLerp1To0(Image image, float duration)
-    {
-        StartCoroutine(LerpImageAlpha(image, 1f, 0f, duration, null));
-    }
-
-    public void StartAlphaLerp1To0(Image image, float duration, Action onEnd)
+    public void StartAlphaLerp1To0(Image image, float duration, Action onEnd = null)
     {
         StartCoroutine(LerpImageAlpha(image, 1f, 0f, duration, onEnd));
     }
@@ -65,36 +50,20 @@ public class FXManager : MonoBehaviourSingleton<FXManager>
     #endregion
 
     #region SR Lerp
-    public void StartAlphaLerp(SpriteRenderer sr, float from, float to, float duration)
-    {
-        StartCoroutine(LerpSRAlpha(sr, from, to, duration, null));
-    }
-
-    public void StartAlphaLerp(SpriteRenderer sr, float from, float to, float duration, Action onEnd)
+    public void StartAlphaLerp(SpriteRenderer sr, float from, float to, float duration, Action onEnd = null)
     {
         StartCoroutine(LerpSRAlpha(sr, from, to, duration, onEnd));
     }
 
-    public void StartAlphaLerp0To1(SpriteRenderer sr, float duration)
-    {
-        StartCoroutine(LerpSRAlpha(sr, 0f, 1f, duration, null));
-    }
-
-    public void StartAlphaLerp0To1(SpriteRenderer sr, float duration, Action onEnd)
+    public void StartAlphaLerp0To1(SpriteRenderer sr, float duration, Action onEnd = null)
     {
         StartCoroutine(LerpSRAlpha(sr, 0f, 1f, duration, onEnd));
     }
 
-    public void StartAlphaLerp1To0(SpriteRenderer sr, float duration)
-    {
-        StartCoroutine(LerpSRAlpha(sr, 1f, 0f, duration, null));
-    }
-
-    public void StartAlphaLerp1To0(SpriteRenderer sr, float duration, Action onEnd)
+    public void StartAlphaLerp1To0(SpriteRenderer sr, float duration, Action onEnd = null)
     {
         StartCoroutine(LerpSRAlpha(sr, 1f, 0f, duration, onEnd));
     }
-    #endregion
 
     IEnumerator LerpSRAlpha(SpriteRenderer SR, float from, float to, float duration, Action onEnd)
     {
@@ -116,15 +85,10 @@ public class FXManager : MonoBehaviourSingleton<FXManager>
         onEnd?.Invoke();
     }
     #endregion
+    #endregion
 
     #region Camera Shake
-
-    public void StartCameraShake(float shakePointsAmount, float shakeMagnitude, float shakeSpeed)
-    {
-        StartCoroutine(ShakeCamera(shakePointsAmount, shakeMagnitude, shakeSpeed, null));
-    }
-
-    public void StartCameraShake(float shakePointsAmount, float shakeMagnitude, float shakeSpeed, Action onEnd)
+    public void StartCameraShake(float shakePointsAmount, float shakeMagnitude, float shakeSpeed, Action onEnd = null)
     {
         StartCoroutine(ShakeCamera(shakePointsAmount, shakeMagnitude, shakeSpeed, onEnd));
     }
@@ -171,6 +135,5 @@ public class FXManager : MonoBehaviourSingleton<FXManager>
 
         onEnd?.Invoke();
     }
-
     #endregion
 }

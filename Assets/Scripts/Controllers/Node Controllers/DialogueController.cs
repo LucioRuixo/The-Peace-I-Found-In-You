@@ -13,6 +13,7 @@ public class DialogueController : NodeController, ISaveComponent
 
     bool typing = false;
     bool logActive = false;
+    bool firstSentenceAfterLoad;
 
     [SerializeField] char[] pauseCharacters = null;
 
@@ -77,7 +78,8 @@ public class DialogueController : NodeController, ISaveComponent
                 dialogueText.text = sentence;
 
                 typing = false;
-                log.AddSentence(characterName, sentence);
+                if (!firstSentenceAfterLoad) log.AddSentence(characterName, sentence);
+                else firstSentenceAfterLoad = false;
             }
             else ExecuteNextDialogueStrip();
         }
@@ -177,6 +179,19 @@ public class DialogueController : NodeController, ISaveComponent
     public void SetLoadedData(SaveData loadedData)
     {
         CurrentDialogueStripIndex = loadedData.currentDialogueStripIndex;
+        log.SetLogText(loadedData.logData.logText);
+        log.SetLastCharacterToSpeak(loadedData.logData.lastCharacterToSpeak);
+
+        firstSentenceAfterLoad = log.GetLogText() != "";
+    }
+
+    public SaveData.LogData GetLogData()
+    {
+        return new SaveData.LogData()
+        {
+            lastCharacterToSpeak = log.GetLastCharacterToSpeak(),
+            logText = log.GetLogText()
+        };
     }
 
     IEnumerator TypeSentence(bool whispering)
@@ -196,6 +211,7 @@ public class DialogueController : NodeController, ISaveComponent
         }
 
         typing = false;
-        log.AddSentence(characterName, sentence);
+        if (!firstSentenceAfterLoad) log.AddSentence(characterName, sentence);
+        else firstSentenceAfterLoad = false;
     }
 }
