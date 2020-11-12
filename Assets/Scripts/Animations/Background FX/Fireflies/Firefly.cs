@@ -1,13 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Firefly : MonoBehaviour
 {
     bool glowing = false;
-    bool fullyBright = false;
-    bool canStartGlowing = true;
 
     float size;
     float fadeDuration;
@@ -18,8 +14,6 @@ public class Firefly : MonoBehaviour
     Image image;
     FXManager fXManager;
 
-    Queue<IEnumerator> glowingCoroutines = new Queue<IEnumerator>();
-
     void Awake()
     {
         rect = GetComponent<RectTransform>();
@@ -29,44 +23,25 @@ public class Firefly : MonoBehaviour
 
     void OnEnable()
     {
-        //StartCoroutine(WaitToStartGlowing());
-        //Debug.Log("execute, shouldGlow = " + shouldGlow);
-        glowingCoroutines.Enqueue(Glow());
+        if (!glowing)
+        {
+            StartIncreasingAlpha();
+            glowing = true;
+        }
     }
 
-    void Start()
+    void StartIncreasingAlpha()
     {
-        ExecuteGlowingCoroutines();
+        if (gameObject.activeInHierarchy)
+            fXManager.StartAlphaLerp0To1(image, fadeDuration, StartDecreasingAlpha);
+        else glowing = false;
     }
 
-    void OnDisable()
+    void StartDecreasingAlpha()
     {
-        glowing = false;
-    }
-
-    void ExecuteGlowingCoroutines()
-    {
-        if (glowingCoroutines.Count > 0)
-            StartCoroutine(glowingCoroutines.Peek());
-    }
-
-    void ExecuteNextGlowingCoroutine()
-    {
-        if (glowingCoroutines.Count == 0) return;
-
-        glowingCoroutines.Dequeue();
-
-        if (glowingCoroutines.Count == 0) return;
-
-        ExecuteGlowingCoroutines();
-    }
-
-    void OnGlowingPhaseEnded(bool brightnessIncreased)
-    {
-        fullyBright = brightnessIncreased;
-
-        //canStartGlowing = true;
-        if (!glowing) ExecuteGlowingCoroutines();
+        if (gameObject.activeInHierarchy)
+            fXManager.StartAlphaLerp1To0(image, fadeDuration, StartIncreasingAlpha);
+        else glowing = false;
     }
 
     public void Initialize(float _size, float _fadeDuration, Color _color)
@@ -77,22 +52,5 @@ public class Firefly : MonoBehaviour
 
         rect.sizeDelta = new Vector2(size, size);
         image.color = color;
-    }
-
-    IEnumerator Glow()
-    {
-        glowing = true;
-
-        while (true)
-        {
-            if (gameObject.name == "Firefly (Test)") Debug.Log("glowing");
-            //canStartGlowing = false;
-            fXManager.StartAlphaLerp0To1(image, fadeDuration, () => OnGlowingPhaseEnded(true));
-            yield return new WaitUntil(() => fullyBright == true);
-
-            //canStartGlowing = false;
-            fXManager.StartAlphaLerp1To0(image, fadeDuration, () => OnGlowingPhaseEnded(false));
-            yield return new WaitUntil(() => fullyBright == false);
-        }
     }
 }
