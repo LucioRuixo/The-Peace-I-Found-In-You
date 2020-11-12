@@ -833,7 +833,7 @@ MonoBehaviour:
           sentence: "Hola de nuevo, P, \xBFTadao te est\xE1 distrayendo?"
         - character: 1
           status: 0
-          sentence: "S\xE9 que puede ser molesto a veces, pero no lo hace aprop\xF3sito."
+          sentence: "S\xE9 que puede ser molesto a veces, pero no lo hace a prop\xF3sito."
     00000013:
       type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:

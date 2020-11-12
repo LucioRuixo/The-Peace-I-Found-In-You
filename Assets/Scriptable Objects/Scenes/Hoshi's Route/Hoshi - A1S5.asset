@@ -939,7 +939,7 @@ MonoBehaviour:
         - character: 0
           status: 0
           sentence: "(\xBFQ-qu\xE9 fue esa expresi\xF3n en su rostro?, la \xFAltima
-            vez que la v\xED de esa manera fue antes de ese d\xEDa...)"
+            vez que la vi de esa manera fue antes de ese d\xEDa...)"
     00000017:
       type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:

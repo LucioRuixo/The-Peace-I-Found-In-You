@@ -312,10 +312,10 @@ MonoBehaviour:
           sentence: '*Golpe*'
         - character: 0
           status: 0
-          sentence: "\xA1Ouch!, \xA1No hac\xEDa falta que me golpearas!"
+          sentence: "\xA1Ouch! \xA1No hac\xEDa falta que me golpearas!"
         - character: 0
           status: 0
-          sentence: "No recuerdo bien que pas\xF3 antes de desmayarme."
+          sentence: "No recuerdo bien qu\xE9 pas\xF3 antes de desmayarme."
         - character: 0
           status: 0
           sentence: "Lo \xFAltimo que recuerdo es ver una figura con colas o algo
@@ -360,7 +360,7 @@ MonoBehaviour:
             detr\xE1s de t\xED."
         - character: 2
           status: 0
-          sentence: Seguro estas cansado toda-
+          sentence: "Seguro est\xE1s cansado toda-"
         - character: 2
           status: 0
           sentence: "\xA1Bienvenida de nuevo!"

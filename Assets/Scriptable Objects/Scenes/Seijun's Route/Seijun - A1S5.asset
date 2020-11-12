@@ -604,7 +604,7 @@ MonoBehaviour:
           sentence: "Conoc\xED a Seiju hace doce a\xF1os en el bosque."
         - character: 7
           status: 0
-          sentence: "Un d\xEDa, con mis dos hermanos preparamos un picnic."
+          sentence: "Un d\xEDa, con mis dos hermanos preparamos un p\xEDcnic."
         - character: 7
           status: 0
           sentence: "Mi hermano Kichiro encontr\xF3 un hermoso lugar para hacerlo."
@@ -685,7 +685,7 @@ MonoBehaviour:
           sentence: "\xA1Comimos mucho ese d\xEDa y tomamos una siesta!"
         - character: 7
           status: 0
-          sentence: "Me divert\xED mucho en ese picnic."
+          sentence: "Me divert\xED mucho en ese p\xEDcnic."
         - character: 7
           status: 0
           sentence: Pero...
@@ -734,8 +734,8 @@ MonoBehaviour:
         GUID: 8bbafe36-59e2-4cdc-a4bb-40fa66f08472
         rect:
           serializedVersion: 2
-          x: 5853
-          y: 253
+          x: 5851
+          y: 254
           width: 328
           height: 577
         width: 1500
@@ -990,7 +990,7 @@ MonoBehaviour:
         - character: 7
           status: 0
           sentence: Incluso con mis hermanos.
-        - character: 0
+        - character: 7
           status: 0
           sentence: "\xA1Ella es muy buena persona y la abuela m\xE1s tierna que
             conozco!"
@@ -1109,7 +1109,7 @@ MonoBehaviour:
           sentence: "\xBF\xA1C\xD3MO QUE ABUELA!?"
         - character: 2
           status: 0
-          sentence: "\xBF\xA1ACASO NO VEZ LO JOVEN QUE SOY!?"
+          sentence: "\xBF\xA1ACASO NO VES LO JOVEN QUE SOY!?"
         - character: 7
           status: 0
           sentence: Que tu cuerpo sea joven no significa que no tengas-
@@ -1165,7 +1165,7 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 8483
-          y: 273
+          y: 272
           width: 328
           height: 577
         width: 1500
@@ -1191,7 +1191,7 @@ MonoBehaviour:
         classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         dialogueStrips:
-        - character: 0
+        - character: 7
           status: 0
           sentence: "Ja ja ja, \xA1adoro cuando te enojas de esa manera!"
     0000001A:
@@ -1473,7 +1473,7 @@ MonoBehaviour:
         classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         dialogueStrips:
-        - character: 0
+        - character: 7
           status: 0
           sentence: "Tienes raz\xF3n, no quiero preocupar a mis hermanos..."
     00000021:
@@ -1707,7 +1707,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 7
           status: 0
-          sentence: "Oh, vamos Seiju, \xBFporque no puede acompa\xF1arme?"
+          sentence: "Oh, vamos, Seiju, \xBFpor qu\xE9 no puede acompa\xF1arme?"
         - character: 0
           status: 0
           sentence: "Pero, \xBFno es mejor que descanse en mi hogar?"
@@ -1742,7 +1742,7 @@ MonoBehaviour:
           sentence: Ahora recuerdo, las sombras...
         - character: 0
           status: 0
-          sentence: "Gracias, Seijun, por salvarme. Supongo que no me queda de otra
+          sentence: "Gracias, Seijun, por salvarme. Supongo que no me queda otra
             m\xE1s que quedarme contigo."
         - character: 7
           status: 0
