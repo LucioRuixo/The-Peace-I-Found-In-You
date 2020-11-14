@@ -66,6 +66,8 @@ public class AnimationController : NodeController
                 fxManager.StartAlphaLerp1To0(blackCover, fadeDuration, End);
                 break;
             case Animation.FadeToWhite:
+                if (!fxManager) Debug.Log("fxManager null");
+                if (!whiteCover) Debug.Log("whiteCover null");
                 fxManager.StartAlphaLerp0To1(whiteCover, fadeDuration, End);
                 break;
             case Animation.FadeFromWhite:

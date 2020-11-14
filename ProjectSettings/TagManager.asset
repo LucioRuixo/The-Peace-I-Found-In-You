@@ -49,8 +49,14 @@ TagManager:
   - name: Background Particles
     uniqueID: 3342286625
     locked: 0
-  - name: Character
+  - name: Character Body
     uniqueID: 3112342849
+    locked: 0
+  - name: Character Arm
+    uniqueID: 728291237
+    locked: 0
+  - name: Character Head
+    uniqueID: 528307465
     locked: 0
   - name: Forefront Particles
     uniqueID: 2080934789

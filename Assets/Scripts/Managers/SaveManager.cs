@@ -120,8 +120,8 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         }
         else
         {
-            Debug.LogError("The file you were trying to load could not be found");
-            return new SaveData();
+            Debug.LogWarning("You won't be able to save the game because a save file wasn't chosen.");
+            return initialGameData;
         }
     }
 

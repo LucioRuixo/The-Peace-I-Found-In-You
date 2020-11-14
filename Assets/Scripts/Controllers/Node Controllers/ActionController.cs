@@ -5,16 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using nullbloq.Noodles;
 
-/*
-DUDAS:
-- Los pjs se siguen viendo durante las decisiones? (POR AHORA: sí)
-- Siempre van a entrar por la izquierda e irse por la derecha? (POR AHORA: sí)
-- Pueden entrar o irse más de un pj a la vez? (POR AHORA: no)
-- Si un pj entra por la izquierda, se queda en la posición más a la izquierda o puede ponerse en otra? (POR AHORA: se queda en la izquierda)
-- Pueden cambiar de posición? (POR AHORA: no)
-- Hay márgenes a los costados de la pantalla a tener en cuenta al posicionar a los pjs? (POR AHORA: no)
-*/
-public class ActionController : NodeController, ISaveComponent
+public class ActionController : NodeController, ISaveComponent //TODO: separar esta clase en CharacterSpriteController y CharacterEnterExitController y hacer nodos para cada una
 {
     public enum Action
     {
@@ -42,7 +33,13 @@ public class ActionController : NodeController, ISaveComponent
 
     int activeCorroutines;
 
+    float leftScreenLimit;
+    float rightScreenLimit;
+    float lowerScreenLimit;
+    float upperScreenLimit;
     float initialX;
+
+    public Vector2 screenBounds;
 
     [SerializeField] GameObject characterPrefab = null;
     [SerializeField] Transform characterContainer = null;
@@ -51,6 +48,7 @@ public class ActionController : NodeController, ISaveComponent
     List<KeyValuePair<Character, GameObject>> charactersInScene = new List<KeyValuePair<Character, GameObject>>();
 
     [Header("Enter/Exit Scene: ")]
+    [SerializeField] float offScreenCharacterWidth = 1f;
     [SerializeField] float movementDuration = 1f;
     [SerializeField] float movementAccuracyRange = 1f;
 
@@ -72,8 +70,20 @@ public class ActionController : NodeController, ISaveComponent
     {
         NodeType = typeof(CustomCharacterActionNode);
 
-        initialX = -(characterPrefab.GetComponent<RectTransform>().rect.width / 2f);
+        Vector3 position = new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z);
+        screenBounds = Camera.main.ScreenToWorldPoint(position);
+        SetScreenLimits();
+        initialX = leftScreenLimit - offScreenCharacterWidth / 2f;
+
         fxManager = FXManager.Get();
+    }
+
+    void SetScreenLimits()
+    {
+        leftScreenLimit = screenBounds.x * -1f;
+        rightScreenLimit = screenBounds.x;
+        lowerScreenLimit = screenBounds.y;
+        upperScreenLimit = screenBounds.y * -1f;
     }
 
     void Begin(CustomCharacterActionNode node)
@@ -112,16 +122,47 @@ public class ActionController : NodeController, ISaveComponent
         }
     }
 
+    GameObject GenerateCharacterObject(CharacterManager.CharacterName characterName, int bodyIndex, int armIndex, int headIndex)
+    {
+        CharacterSO newCharacter = CharacterManager.Get().GetCharacterSO(characterName);
+
+        Vector2 position = new Vector2(initialX, 0f);
+        GameObject go = Instantiate(characterPrefab, position, Quaternion.identity, characterContainer);
+        go.name = newCharacter.nameText;
+
+        SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
+        sr.sprite = newCharacter.bodySprites[bodyIndex];
+
+        if (newCharacter.armSprites.Count > 0)
+        {
+            sr = go.transform.GetChild(0).GetComponent<SpriteRenderer>();
+            sr.sprite = newCharacter.armSprites[armIndex];
+        }
+        else
+            go.transform.GetChild(0).gameObject.SetActive(false);
+
+        if (newCharacter.headSprites.Count > 0)
+        {
+            sr = go.transform.GetChild(1).GetComponent<SpriteRenderer>();
+            sr.sprite = newCharacter.headSprites[headIndex];
+        }
+        else
+            go.transform.GetChild(1).gameObject.SetActive(false);
+
+        return go;
+    }
+
+    #region Enter/Exit Character
     void EnterCharacter(CustomCharacterActionNode node)
     {
         Character newCharacter = new Character(node.bodyIndex, node.armIndex, node.headIndex, node.character);
         GameObject characterObject = GenerateCharacterObject(node.character, node.bodyIndex, node.armIndex, node.headIndex);
         charactersInScene.Add(new KeyValuePair<Character, GameObject>(newCharacter, characterObject));
 
-        float spacing = Screen.width / (charactersInScene.Count + 1);
+        float spacing = (screenBounds.x * 2f) / (charactersInScene.Count + 1);
         for (int i = 0; i < charactersInScene.Count; i++)
         {
-            float targetX = Screen.width - spacing * (i + 1);
+            float targetX = screenBounds.x - spacing * (i + 1);
 
             switch (node.action)
             {
@@ -150,8 +191,8 @@ public class ActionController : NodeController, ISaveComponent
                         position.x = targetX;
                         charactersInScene[i].Value.transform.position = position;
 
-                        Image image = charactersInScene[i].Value.GetComponent<Image>();
-                        fxManager.StartAlphaLerp0To1(image, fadeDuration, FinishCorroutine);
+                        SpriteRenderer sr = charactersInScene[i].Value.GetComponent<SpriteRenderer>();
+                        fxManager.StartAlphaLerp0To1(sr, fadeDuration, FinishCorroutine);
                         activeCorroutines++;
                     }
 
@@ -171,10 +212,10 @@ public class ActionController : NodeController, ISaveComponent
         Character newCharacter = new Character(character.bodyIndex, character.armIndex, character.headIndex, character.characterName);
         charactersInScene.Add(new KeyValuePair<Character, GameObject>(newCharacter, characterObject));
 
-        float spacing = Screen.width / (charactersInScene.Count + 1);
+        float spacing = (screenBounds.x * 2f) / (charactersInScene.Count + 1);
         for (int i = 0; i < charactersInScene.Count; i++)
         {
-            float targetX = Screen.width - spacing * (i + 1);
+            float targetX = screenBounds.x - spacing * (i + 1);
 
             switch (action)
             {
@@ -203,8 +244,8 @@ public class ActionController : NodeController, ISaveComponent
                         position.x = targetX;
                         charactersInScene[i].Value.transform.position = position;
 
-                        Image image = charactersInScene[i].Value.GetComponent<Image>();
-                        fxManager.StartAlphaLerp0To1(image, fadeDuration, FinishCorroutine);
+                        SpriteRenderer sr = charactersInScene[i].Value.GetComponent<SpriteRenderer>();
+                        fxManager.StartAlphaLerp0To1(sr, fadeDuration, FinishCorroutine);
                         activeCorroutines++;
                     }
 
@@ -218,39 +259,6 @@ public class ActionController : NodeController, ISaveComponent
 
         if (action == Action.PopIntoScene) End();
     }
-
-    GameObject GenerateCharacterObject(CharacterManager.CharacterName characterName, int bodyIndex, int armIndex, int headIndex)
-    {
-        CharacterSO newCharacter = CharacterManager.Get().GetCharacterSO(characterName);
-
-        Vector2 position = new Vector2(initialX, 0f);
-        GameObject go = Instantiate(characterPrefab, position, Quaternion.identity, characterContainer);
-        go.name = newCharacter.nameText;
-
-        Image image = go.GetComponent<Image>();
-        image.sprite = newCharacter.bodySprites[bodyIndex];
-        image.SetNativeSize();
-        position = new Vector2(image.rectTransform.anchoredPosition.x, 0f);
-        image.rectTransform.anchoredPosition = position;
-
-        if (newCharacter.armSprites.Count > 0)
-        {
-            image = go.transform.GetChild(0).GetComponent<Image>();
-            image.sprite = newCharacter.armSprites[armIndex];
-        }
-        else
-            go.transform.GetChild(0).gameObject.SetActive(false);
-
-        if (newCharacter.headSprites.Count > 0)
-        {
-            image = go.transform.GetChild(1).GetComponent<Image>();
-            image.sprite = newCharacter.headSprites[headIndex];
-        }
-        else
-            go.transform.GetChild(1).gameObject.SetActive(false);
-
-        return go;
-    }
     
     void ExitCharacter(CustomCharacterActionNode node)
     {
@@ -259,7 +267,7 @@ public class ActionController : NodeController, ISaveComponent
         {
             if (character.Key.characterName == node.character)
             {
-                float targetX = Screen.width - initialX;
+                float targetX = screenBounds.x - initialX;
 
                 switch (node.action)
                 {
@@ -273,8 +281,8 @@ public class ActionController : NodeController, ISaveComponent
                         break;
 
                     case Action.FadeOutOfScene:
-                        Image image = character.Value.GetComponent<Image>();
-                        fxManager.StartAlphaLerp1To0(image, fadeDuration, FinishCorroutine);
+                        SpriteRenderer sr = character.Value.GetComponent<SpriteRenderer>();
+                        fxManager.StartAlphaLerp1To0(sr, fadeDuration, FinishCorroutine);
                         activeCorroutines++;
 
                         fadingOutOfScene = true;
@@ -293,10 +301,10 @@ public class ActionController : NodeController, ISaveComponent
         }
         if (!characterFound) Debug.LogError("Character not found");
 
-        float spacing = Screen.width / (charactersInScene.Count + 1);
+        float spacing = (screenBounds.x * 2f) / (charactersInScene.Count + 1);
         for (int i = 0; i < charactersInScene.Count; i++)
         {
-            float targetX = Screen.width - spacing * (i + 1);
+            float targetX = screenBounds.x - spacing * (i + 1);
 
             switch (node.action)
             {
@@ -322,12 +330,7 @@ public class ActionController : NodeController, ISaveComponent
 
         if (node.action == Action.PopOutOfScene) End();
     }
-
-    void FinishCorroutine()
-    {
-        activeCorroutines--;
-        if (activeCorroutines <= 0) End();
-    }
+#endregion
 
     void ChangeBodyPart(BodyPart bodyPart, CustomCharacterActionNode node)
     {
@@ -338,15 +341,15 @@ public class ActionController : NodeController, ISaveComponent
             {
                 CharacterSO character = CharacterManager.Get().GetCharacterSO(node.character);
 
-                Image image = null;
+                SpriteRenderer sr = null;
 
                 switch (bodyPart)
                 {
                     case BodyPart.Body:
                         if (node.bodyIndex >= 0 && node.bodyIndex < character.bodySprites.Count)
                         {
-                            image = characterInScene.Value.GetComponent<Image>();
-                            image.sprite = character.bodySprites[node.bodyIndex];
+                            sr = characterInScene.Value.GetComponent<SpriteRenderer>();
+                            sr.sprite = character.bodySprites[node.bodyIndex];
                         }
 
                         break;
@@ -356,8 +359,8 @@ public class ActionController : NodeController, ISaveComponent
                             &&
                             character.armSprites.Count > 0)
                         {
-                            image = characterInScene.Value.transform.GetChild(0).GetComponent<Image>();
-                            image.sprite = character.armSprites[node.armIndex];
+                            sr = characterInScene.Value.transform.GetChild(0).GetComponent<SpriteRenderer>();
+                            sr.sprite = character.armSprites[node.armIndex];
                         }
                         else Debug.LogError("Sprite index out of range");
 
@@ -368,8 +371,8 @@ public class ActionController : NodeController, ISaveComponent
                             &&
                             character.headSprites.Count > 0)
                         {
-                            image = characterInScene.Value.transform.GetChild(1).GetComponent<Image>();
-                            image.sprite = character.headSprites[node.headIndex];
+                            sr = characterInScene.Value.transform.GetChild(1).GetComponent<SpriteRenderer>();
+                            sr.sprite = character.headSprites[node.headIndex];
                         }
                         else Debug.LogError("Sprite index out of range");
 
@@ -388,6 +391,12 @@ public class ActionController : NodeController, ISaveComponent
         End();
     }
 
+    void FinishCorroutine()
+    {
+        activeCorroutines--;
+        if (activeCorroutines <= 0) End();
+    }
+
     void End()
     {
         CallNodeExecutionCompletion(0);
@@ -404,7 +413,7 @@ public class ActionController : NodeController, ISaveComponent
     {
         if (loadedData.charactersInScene != null && loadedData.charactersInScene.Count > 0)
         {
-            float spacing = Screen.width / (loadedData.charactersInScene.Count + 1);
+            float spacing = (screenBounds.x * 2f) / (loadedData.charactersInScene.Count + 1);
             for (int i = 0; i < loadedData.charactersInScene.Count; i++)
             {
                 int bodyIndex = loadedData.charactersInScene[i].bodyIndex;
@@ -416,24 +425,13 @@ public class ActionController : NodeController, ISaveComponent
                 GameObject characterObject = GenerateCharacterObject(characterName, bodyIndex, armIndex, headIndex);
                 charactersInScene.Add(new KeyValuePair<Character, GameObject>(newCharacter, characterObject));
 
-                float targetX = Screen.width - spacing * (i + 1);
+                float targetX = screenBounds.x - spacing * (i + 1);
                 Vector2 position = characterObject.transform.position;
                 position.x = targetX;
                 characterObject.transform.position = position;
             }
         }
     }
-
-    //public List<Character> GetCharactersInScene()
-    //{
-    //    List<Character> characterKeys = new List<Character>();
-    //    foreach (KeyValuePair<Character, GameObject> character in charactersInScene)
-    //    {
-    //        characterKeys.Add(character.Key);
-    //    }
-    //
-    //    return characterKeys;
-    //}
 
     IEnumerator MoveCharacter(Transform character, float targetX, bool destroyOnFinish, Action action)
     {
