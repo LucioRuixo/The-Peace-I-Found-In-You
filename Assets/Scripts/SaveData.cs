@@ -20,6 +20,16 @@ public class SaveData
     }
 
     [Serializable]
+    public struct CharacterData
+    {
+        public int bodyIndex;
+        public int armIndex;
+        public int headIndex;
+
+        public CharacterManager.CharacterName name;
+    }
+
+    [Serializable]
     public struct LogData
     {
         public string lastCharacterToSpeak;
@@ -48,5 +58,5 @@ public class SaveData
     public LogData logData;
     public MusicData musicData;
 
-    public List<Character> charactersInScene;
+    public List<CharacterData> charactersInScene;
 }
