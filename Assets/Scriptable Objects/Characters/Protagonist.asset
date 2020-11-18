@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 0
   nameText: Protagonista
-  dialogueBoxSprite: {fileID: 21300000, guid: cc4c3a5c40407584cba68ab0fc7b518f, type: 3}
+  dialogueBoxSprite: {fileID: 21300000, guid: d1d6fdc4095a2da4b8b61953df830ad2, type: 3}
   bodySprites: []
   headSprites: []
   armSprites: []
+  armatureObject: {fileID: 0}

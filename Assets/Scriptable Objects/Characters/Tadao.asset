@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 6
   nameText: Tadao
-  dialogueBoxSprite: {fileID: 21300000, guid: c27857995652dc74da99ca0bfe97b208, type: 3}
+  dialogueBoxSprite: {fileID: 21300000, guid: 41be3a0bb4f931e409bf433613a84eab, type: 3}
   bodySprites:
   - {fileID: 21300000, guid: b71988aba10674b40a17ea16b90b26ed, type: 3}
   headSprites:
@@ -23,3 +23,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5dbc0ae73699b714e8d9fe7fefea83a4, type: 3}
   - {fileID: 21300000, guid: c2e92463b758dbb4d9094b0e791a12de, type: 3}
   armSprites: []
+  armatureObject: {fileID: 0}

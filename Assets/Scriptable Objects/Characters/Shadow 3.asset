@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 5
   nameText: Shadow
-  dialogueBoxSprite: {fileID: 21300000, guid: c27857995652dc74da99ca0bfe97b208, type: 3}
+  dialogueBoxSprite: {fileID: 21300000, guid: f44bccef773944048880a2ca412c0ba9, type: 3}
   bodySprites:
   - {fileID: 21300000, guid: c8425ddedae6e134eb9b42726d5b3a71, type: 3}
   headSprites: []
   armSprites: []
+  armatureObject: {fileID: 0}
