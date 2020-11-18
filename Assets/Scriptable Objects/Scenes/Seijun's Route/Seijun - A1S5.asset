@@ -1838,7 +1838,7 @@ MonoBehaviour:
           x: 13512
           y: 315
           width: 244
-          height: 175
+          height: 172
         width: 600
         height: 500
         inputPorts:
@@ -2203,7 +2203,7 @@ MonoBehaviour:
           sentence: "\xA1Te voy a golpear hasta que aceptes la promesa!"
         - character: 0
           status: 0
-          sentence: "\xBFEh?, \xBFest\xE1s bromeando no?"
+          sentence: "\xBFEh?, \xBFest\xE1s bromeando, no?"
         - character: 2
           status: 0
           sentence: '*Golpe*'

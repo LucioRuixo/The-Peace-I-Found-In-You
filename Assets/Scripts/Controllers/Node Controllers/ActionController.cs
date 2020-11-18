@@ -27,13 +27,10 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
 
     float initialX;
 
-    Vector2 screenBounds;
-    Vector2 minScreenLimits; // Izquierda y abajo
-    Vector2 maxScreenLimits; // Derecha y arriba
-
     [SerializeField] GameObject staticCharacterPrefab = null;
     [SerializeField] Transform characterContainer = null;
     FXManager fxManager;
+    ScreenManager screenManager;
 
     List<KeyValuePair<Character, GameObject>> charactersInScene = new List<KeyValuePair<Character, GameObject>>();
 
@@ -68,18 +65,11 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
     {
         NodeType = typeof(CustomCharacterActionNode);
 
-        Vector3 position = new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z);
-        screenBounds = Camera.main.ScreenToWorldPoint(position);
-        SetScreenLimits();
-        initialX = minScreenLimits.x - offScreenCharacterWidth / 2f;
-
         fxManager = FXManager.Get();
-    }
+        screenManager = ScreenManager.Get();
 
-    void SetScreenLimits()
-    {
-        minScreenLimits = new Vector2(screenBounds.x * -1f, screenBounds.y);
-        maxScreenLimits = new Vector2(screenBounds.x, screenBounds.y - -1f);
+        initialX = screenManager.MinScreenLimits.x - offScreenCharacterWidth / 2f;
+
     }
 
     void Begin(CustomCharacterActionNode node)
@@ -127,27 +117,7 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
         if (characterData.armatureObject)
             go = Instantiate(characterData.armatureObject, position, Quaternion.identity, characterContainer);
         else
-        {
             go = Instantiate(staticCharacterPrefab, position, Quaternion.identity, characterContainer);
-            //SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
-            //sr.sprite = characterData.bodySprites[bodyIndex];
-            //
-            //if (characterData.armSprites.Length > 0)
-            //{
-            //    sr = go.transform.GetChild(0).GetComponent<SpriteRenderer>();
-            //    sr.sprite = characterData.armSprites[armIndex];
-            //}
-            //else
-            //    go.transform.GetChild(0).gameObject.SetActive(false);
-            //
-            //if (characterData.headSprites.Length > 0)
-            //{
-            //    sr = go.transform.GetChild(1).GetComponent<SpriteRenderer>();
-            //    sr.sprite = characterData.headSprites[headIndex];
-            //}
-            //else
-            //    go.transform.GetChild(1).gameObject.SetActive(false);
-        }
 
         go.name = characterData.nameText;
 
@@ -160,15 +130,14 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
     #region Enter/Exit Character
     void EnterCharacter(CustomCharacterActionNode node)
     {
-        //Character newCharacter = new Character(node.bodyIndex, node.armIndex, node.headIndex, node.character);
         GameObject characterObject = GenerateCharacterObject(node.character, node.bodyIndex, node.armIndex, node.headIndex);
         Character newCharacter = characterObject.GetComponent<Character>();
         charactersInScene.Add(new KeyValuePair<Character, GameObject>(newCharacter, characterObject));
 
-        float spacing = (screenBounds.x * 2f) / (charactersInScene.Count + 1);
+        float spacing = (screenManager.ScreenBounds.x * 2f) / (charactersInScene.Count + 1);
         for (int i = 0; i < charactersInScene.Count; i++)
         {
-            float targetX = screenBounds.x - spacing * (i + 1);
+            float targetX = screenManager.ScreenBounds.x - spacing * (i + 1);
 
             switch (node.action)
             {
@@ -219,10 +188,10 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
         Character newCharacter = characterObject.GetComponent<Character>();
         charactersInScene.Add(new KeyValuePair<Character, GameObject>(newCharacter, characterObject));
 
-        float spacing = (screenBounds.x * 2f) / (charactersInScene.Count + 1);
+        float spacing = (screenManager.ScreenBounds.x * 2f) / (charactersInScene.Count + 1);
         for (int i = 0; i < charactersInScene.Count; i++)
         {
-            float targetX = screenBounds.x - spacing * (i + 1);
+            float targetX = screenManager.ScreenBounds.x - spacing * (i + 1);
 
             switch (action)
             {
@@ -274,7 +243,7 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
         {
             if (character.Key.characterName == node.character)
             {
-                float targetX = screenBounds.x - initialX;
+                float targetX = screenManager.ScreenBounds.x - initialX;
 
                 switch (node.action)
                 {
@@ -308,10 +277,10 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
         }
         if (!characterFound) Debug.LogError("Character not found");
 
-        float spacing = (screenBounds.x * 2f) / (charactersInScene.Count + 1);
+        float spacing = (screenManager.ScreenBounds.x * 2f) / (charactersInScene.Count + 1);
         for (int i = 0; i < charactersInScene.Count; i++)
         {
-            float targetX = screenBounds.x - spacing * (i + 1);
+            float targetX = screenManager.ScreenBounds.x - spacing * (i + 1);
 
             switch (node.action)
             {
@@ -394,7 +363,7 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
     {
         if (loadedData.charactersInScene != null && loadedData.charactersInScene.Count > 0)
         {
-            float spacing = (screenBounds.x * 2f) / (loadedData.charactersInScene.Count + 1);
+            float spacing = (screenManager.ScreenBounds.x * 2f) / (loadedData.charactersInScene.Count + 1);
             for (int i = 0; i < loadedData.charactersInScene.Count; i++)
             {
                 int bodyIndex = loadedData.charactersInScene[i].bodyIndex;
@@ -407,7 +376,7 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
                 Character newCharacter = characterObject.GetComponent<Character>();
                 charactersInScene.Add(new KeyValuePair<Character, GameObject>(newCharacter, characterObject));
 
-                float targetX = screenBounds.x - spacing * (i + 1);
+                float targetX = screenManager.ScreenBounds.x - spacing * (i + 1);
                 Vector2 position = characterObject.transform.position;
                 position.x = targetX;
                 characterObject.transform.position = position;

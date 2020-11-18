@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 
 public class UIManager_MainMenu : MonoBehaviour
@@ -103,7 +101,7 @@ public class UIManager_MainMenu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(SceneNameManager.Get().Gameplay);
+        SceneLoadManager.Get().LoadGameplay();
     }
 
     public void DeleteSaveSlotButtons()

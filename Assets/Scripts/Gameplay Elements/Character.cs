@@ -66,6 +66,18 @@ public class Character : MonoBehaviour
         ChangeBodyPart(BodyPart.Body, bodyIndex);
         ChangeBodyPart(BodyPart.Arm, armIndex);
         ChangeBodyPart(BodyPart.Head, headIndex);
+
+        Vector2 position = transform.position;
+        if (armature) //TODO: Hacer que la posición se ajuste sola en base al tamaño de los sprites y pedir que ajusten la escala.
+        {
+            position.y = -0.5f;
+
+            Vector3 scale = new Vector3(1.1f, 1.1f, 1f);
+            transform.localScale = scale;
+        }
+        else
+            position.y = body.bounds.extents.y - ScreenManager.Get().MinScreenLimits.y;
+        transform.position = position;
     }
 
     public void ChangeBodyPart(BodyPart bodyPart, int index)

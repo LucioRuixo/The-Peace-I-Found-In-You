@@ -64,7 +64,7 @@ public class CookingMinigameManager : MonoBehaviour
     {
         playing = false;
 
-        foodGenerator.generationActive = false;
+        foodGenerator.generate = false;
         clock.timerActive = false;
 
         OnGameEnd?.Invoke(win);

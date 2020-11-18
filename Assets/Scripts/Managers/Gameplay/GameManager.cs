@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using nullbloq.Noodles;
 
 public class GameManager : MonoBehaviour
@@ -77,6 +76,6 @@ public class GameManager : MonoBehaviour
 
     void GoToMainMenu()
     {
-        SceneManager.LoadScene(SceneNameManager.Get().MainMenu);
+        SceneLoadManager.Get().LoadMainMenu();
     }
 }

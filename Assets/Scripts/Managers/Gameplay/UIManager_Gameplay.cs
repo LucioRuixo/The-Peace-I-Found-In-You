@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 public class UIManager_Gameplay : MonoBehaviour
 {
@@ -42,7 +41,7 @@ public class UIManager_Gameplay : MonoBehaviour
 
     public void ExitGame()
     {
-        UnityAction positiveAction = () => SceneManager.LoadScene(SceneNameManager.Get().MainMenu);
+        UnityAction positiveAction = () => SceneLoadManager.Get().LoadMainMenu();
         DialogManager.Get().GenerateDialog(exitGameText, null, positiveAction, null, null);
     }
 }

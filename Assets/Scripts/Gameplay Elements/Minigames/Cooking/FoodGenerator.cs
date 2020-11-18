@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class FoodGenerator : MonoBehaviour
 {
-    public bool generationActive = true;
+    public bool generate = true;
 
-    public float initialWaitTime;
-    public float waitTime;
-    public float impulse;
-    public float angleRange;
-    public float minX;
-    public float maxX;
+    [SerializeField] float initialWaitTime = 1f;
+    [SerializeField] float waitTime = 1f;
+    [SerializeField] float impulse = 1f;
+    [SerializeField] float angleRange = 1f;
+    [SerializeField] float minX = 1f;
+    [SerializeField] float maxX = 1f;
 
-    public List<GameObject> foodPrefabs = new List<GameObject>();
+    [SerializeField] List<GameObject> foodPrefabs = new List<GameObject>();
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class FoodGenerator : MonoBehaviour
     {
         yield return new WaitForSeconds(initialWaitTime);
 
-        while (generationActive)
+        while (generate)
         {
             Vector2 position = transform.position;
             position.x = Random.Range(minX, maxX);
@@ -35,7 +35,8 @@ public class FoodGenerator : MonoBehaviour
 
             GameObject prefab = foodPrefabs[Random.Range(0, foodPrefabs.Count)];
             Food newFood = Instantiate(prefab, position, rotation, transform).GetComponent<Food>();
-            newFood.SetFall(impulse, position, rotation);
+            newFood.Initialize(position, rotation);
+            newFood.SetForce(Vector2.up * impulse, ForceMode2D.Impulse);
 
             yield return new WaitForSeconds(waitTime);
         }

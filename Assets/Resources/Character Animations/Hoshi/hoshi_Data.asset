@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: hoshi_Data
   m_EditorClassIdentifier: 
   dataName: hoshi
-  dragonBonesJSON: {fileID: 4900000, guid: dce825b4f848f7b4389bbbe3ef29c5d4, type: 3}
+  dragonBonesJSON: {fileID: 4900000, guid: 881e16c9ed4304145adb33454ee1a7b0, type: 3}
   textureAtlas:
-  - textureAtlasJSON: {fileID: 4900000, guid: 72784fe573850e246af6767b3c2a0075, type: 3}
-    texture: {fileID: 2800000, guid: 690a743e05a44ef419409748bbc62c44, type: 3}
-    material: {fileID: 2100000, guid: fda60f912ec4ffd49917a97aee3111f6, type: 2}
+  - textureAtlasJSON: {fileID: 4900000, guid: 692b108e5f9aad7418d5f4515906f752, type: 3}
+    texture: {fileID: 2800000, guid: 86ed81988e2ad434791f6e9121316706, type: 3}
+    material: {fileID: 2100000, guid: b3b74ea5e6890fc478eeb746e4731354, type: 2}
     uiMaterial: {fileID: 0}

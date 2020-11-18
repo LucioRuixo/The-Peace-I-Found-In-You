@@ -2952,8 +2952,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 7873
           y: -130
-          width: 184
-          height: 94
+          width: 269
+          height: 96
         width: 600
         height: 500
         inputPorts:
@@ -2976,4 +2976,4 @@ MonoBehaviour:
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        animation: 13
+        animation: 8

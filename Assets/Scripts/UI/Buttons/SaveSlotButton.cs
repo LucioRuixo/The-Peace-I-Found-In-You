@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class SaveSlotButton : MonoBehaviour
@@ -30,7 +29,7 @@ public class SaveSlotButton : MonoBehaviour
     void LoadGame(UIManager_MainMenu.SaveSelectionScreenMode saveSelectionScreenMode)
     {
         SaveManager.Get().SetLoadedFileIndex(slotIndex, saveSelectionScreenMode);
-        SceneManager.LoadScene(SceneNameManager.Get().Gameplay);
+        SceneLoadManager.Get().LoadGameplay();
     }
 
     public void Initialize(int _slotIndex, UIManager_MainMenu.SaveSelectionScreenMode _saveSelectionScreenMode)
