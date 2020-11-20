@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     void UpdateGameData()
     {
+        gameData.routeExecutionStarted = storyManager.RouteExecutionStarted;
         gameData.lastDecisionGood = decisionCheckController.LastDecisionGood;
         gameData.currentNodeGUID = noodler.CurrentNode.GUID;
         gameData.routeSceneIndex = storyManager.RouteSceneIndex;

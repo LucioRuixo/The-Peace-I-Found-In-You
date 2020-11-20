@@ -70,7 +70,7 @@ public class Character : MonoBehaviour
         Vector2 position = transform.position;
         if (armature) //TODO: Hacer que la posición se ajuste sola en base al tamaño de los sprites y pedir que ajusten la escala.
         {
-            position.y = -0.5f;
+            position.y = -0.45f;
 
             Vector3 scale = new Vector3(1.1f, 1.1f, 1f);
             transform.localScale = scale;
@@ -116,7 +116,7 @@ public class Character : MonoBehaviour
             }
         }
 
-        string animationName = "brazo" + (armIndex + 1) + "_cabeza" + (headIndex + 1);
+        string animationName = "brazo" + (armIndex + 1) + "-cabeza" + (headIndex + 1);
 
         if (animated)
         {

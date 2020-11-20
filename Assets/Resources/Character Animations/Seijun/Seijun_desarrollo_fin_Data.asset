@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Seijun_desarrollo_fin_Data
   m_EditorClassIdentifier: 
   dataName: Seijun_desarrollo_fin
-  dragonBonesJSON: {fileID: 4900000, guid: 70f299a9236b9474695d3f682f736252, type: 3}
+  dragonBonesJSON: {fileID: 4900000, guid: dd0b6c94f1e097b4bb4487a21c8a47d6, type: 3}
   textureAtlas:
-  - textureAtlasJSON: {fileID: 4900000, guid: 7c57064a85e2fe544825c93a2d5faa16, type: 3}
-    texture: {fileID: 2800000, guid: 1d8588b1c98b08b47806b8e6a1f1f68c, type: 3}
-    material: {fileID: 2100000, guid: 5a39381dd7c0a834d8bf9851cbb8da27, type: 2}
+  - textureAtlasJSON: {fileID: 4900000, guid: 3dc75c5f8b26b9f44adcc05056b8b377, type: 3}
+    texture: {fileID: 2800000, guid: 5aea31ffea6dbbd4ca8c8cf0b73597c8, type: 3}
+    material: {fileID: 2100000, guid: 8f30b45021c7d6a45b6a15bbac0c7c36, type: 2}
     uiMaterial: {fileID: 0}

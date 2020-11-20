@@ -4,11 +4,6 @@ using nullbloq.Noodles;
 
 public class StoryManager : MonoBehaviour, ISaveComponent
 {
-    bool routeExecutionStarted = false;
-
-    public int RouteSceneIndex { private set; get; } = 0;
-    public RouteController.Route CurrentRoute { private set; get; } = RouteController.Route.None;
-
     [SerializeField] StoryBitManager storyBitManager = null;
     [SerializeField] Noodler noodler = null;
 
@@ -19,6 +14,10 @@ public class StoryManager : MonoBehaviour, ISaveComponent
     public static event Action<string> OnNoodlerControllerSet;
     public static event Action OnNoScenesRemaining;
 
+    public bool RouteExecutionStarted { private set; get; } = false;
+    public int RouteSceneIndex { private set; get; } = 0;
+    public RouteController.Route CurrentRoute { private set; get; } = RouteController.Route.None;
+
     void OnEnable()
     {
         RouteController.OnRouteChosen += SelectRoute;
@@ -27,7 +26,7 @@ public class StoryManager : MonoBehaviour, ISaveComponent
 
     void Start()
     {
-        if (RouteSceneIndex > 0) routeExecutionStarted = true;
+        if (RouteSceneIndex > 0) RouteExecutionStarted = true;
 
         storyBitManager.ExecuteBit(noodler.CurrentNode);
     }
@@ -53,8 +52,8 @@ public class StoryManager : MonoBehaviour, ISaveComponent
 
     void CheckForNextScene(Noodle[] scenes)
     {
-        if (routeExecutionStarted) RouteSceneIndex++;
-        else routeExecutionStarted = true;
+        if (RouteExecutionStarted) RouteSceneIndex++;
+        else RouteExecutionStarted = true;
 
         if (RouteSceneIndex < scenes.Length)
         {
@@ -67,6 +66,7 @@ public class StoryManager : MonoBehaviour, ISaveComponent
 
     public void SetLoadedData(SaveData loadedData)
     {
+        RouteExecutionStarted = loadedData.routeExecutionStarted;
         RouteSceneIndex = loadedData.routeSceneIndex;
         CurrentRoute = loadedData.currentRoute;
 

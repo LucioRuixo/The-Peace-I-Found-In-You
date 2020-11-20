@@ -44,6 +44,7 @@ public class SaveData
         public MusicController.SongTitle songTitle;
     }
 
+    public bool routeExecutionStarted;
     public bool lastDecisionGood;
 
     public string currentNodeGUID;

@@ -49,6 +49,9 @@ TagManager:
   - name: Background Particles
     uniqueID: 3342286625
     locked: 0
+  - name: Character Animation
+    uniqueID: 3141331939
+    locked: 0
   - name: Character Body
     uniqueID: 3112342849
     locked: 0
