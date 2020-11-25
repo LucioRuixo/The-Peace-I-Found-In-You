@@ -326,7 +326,7 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
                         character.ChangeBodyPart(bodyPart, node.armIndex);
                         break;
                     case Character.BodyPart.Head:
-                        character.ChangeBodyPart(bodyPart, node.armIndex);
+                        character.ChangeBodyPart(bodyPart, node.headIndex);
                         break;
                     default:
                         break;

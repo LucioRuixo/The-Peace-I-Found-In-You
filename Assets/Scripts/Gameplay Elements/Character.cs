@@ -11,8 +11,6 @@ public class Character : MonoBehaviour
         Head
     }
 
-    bool animated;
-
     float animationFadeTime = 0.5f;
 
     public int bodyIndex;
@@ -26,17 +24,11 @@ public class Character : MonoBehaviour
     [SerializeField] DragonBones.UnityArmatureComponent armature;
     CharacterSO characterData;
 
-    //public Character(int _bodyIndex, int _armIndex, int _headIndex, CharacterManager.CharacterName _characterName)
-    //{
-    //    bodyIndex = _bodyIndex;
-    //    armIndex = _armIndex;
-    //    headIndex = _headIndex;
-    //    characterName = _characterName;
-    //}
+    public bool Animated { private set; get; }
 
     bool SpriteIndexInsideRange(BodyPart bodyPart, int index)
     {
-        if (!animated)
+        if (!Animated)
         {
             switch (bodyPart)
             {
@@ -60,7 +52,7 @@ public class Character : MonoBehaviour
         headIndex = _headIndex;
         characterName = _characterName;
 
-        animated = armature;
+        Animated = armature;
         characterData = CharacterManager.Get().GetCharacterSO(characterName);
 
         ChangeBodyPart(BodyPart.Body, bodyIndex);
@@ -82,6 +74,8 @@ public class Character : MonoBehaviour
 
     public void ChangeBodyPart(BodyPart bodyPart, int index)
     {
+        if (Animated) Debug.Log(characterName + ": changing " + bodyPart.ToString() + "(" + index + ")");
+
         SpriteRenderer sr = null;
         Sprite[] sprites = null;
 
@@ -118,7 +112,7 @@ public class Character : MonoBehaviour
 
         string animationName = "brazo" + (armIndex + 1) + "-cabeza" + (headIndex + 1);
 
-        if (animated)
+        if (Animated)
         {
             if (bodyPart != BodyPart.Body) //TODO: hacer que soporte cambios de animación de cuerpo
             {
@@ -128,5 +122,7 @@ public class Character : MonoBehaviour
             }
         }
         else sr.sprite = sprites[index];
+
+        if (Animated) Debug.Log(characterName + ": changed " + bodyPart.ToString() + " (" + armature.animation.lastAnimationName + ")");
     }
 }

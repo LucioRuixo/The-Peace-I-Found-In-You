@@ -4326,7 +4326,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -644760363
-  m_SortingLayer: 9
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 416d1acca83514c44852b188949ec0ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5168,7 +5168,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Close
+  m_text: Cerrar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4c316f4dcaa698149914d94688ed4ce2, type: 2}
   m_sharedMaterial: {fileID: 8499367679548609147, guid: 4c316f4dcaa698149914d94688ed4ce2,
@@ -12900,7 +12900,7 @@ PrefabInstance:
     - target: {fileID: 1908020125959088847, guid: 4d7bafb0d9705bf47b19c37f56c727ee,
         type: 3}
       propertyPath: m_text
-      value: Continue
+      value: Continuar
       objectReference: {fileID: 0}
     - target: {fileID: 1908020125959088847, guid: 4d7bafb0d9705bf47b19c37f56c727ee,
         type: 3}
@@ -15543,7 +15543,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2080934789
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -20958,6 +20958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialGameData:
+    routeExecutionStarted: 0
     lastDecisionGood: 0
     currentNodeGUID: 
     routeSceneIndex: 0
