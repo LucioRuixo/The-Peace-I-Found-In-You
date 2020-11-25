@@ -39,7 +39,9 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
+  m_SplashScreenLogos:
+  - logo: {fileID: 21300000, guid: 46c856297bb3ada4eb200bbebed52ab2, type: 3}
+    duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -124,7 +126,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.12
+  bundleVersion: 0.13
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -269,6 +271,48 @@ PlayerSettings:
       m_Icon: {fileID: 2800000, guid: ebea2f6a05c89b0429f2484919c1fb17, type: 3}
       m_Width: 128
       m_Height: 128
+      m_Kind: 0
+  - m_BuildTarget: Standalone
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 21f7a9d1df6401144a29a45bba3e386f, type: 3}
+      m_Width: 1024
+      m_Height: 1024
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: b60f78ccc8f74ea49a81d174e9e01a2c, type: 3}
+      m_Width: 512
+      m_Height: 512
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 25e1b44d245228a429705e02928ce6ad, type: 3}
+      m_Width: 256
+      m_Height: 256
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 60675bba351f92247b0983ffa173cefa, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 60675bba351f92247b0983ffa173cefa, type: 3}
+      m_Width: 64
+      m_Height: 64
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 9823152d58361e04b8fd4108623e00f7, type: 3}
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 9e4e1ffbcdbeecd44b4930efa0698888, type: 3}
+      m_Width: 32
+      m_Height: 32
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 0ccbe964e32c0ad479c5c2d5f0e7b72e, type: 3}
+      m_Width: 16
+      m_Height: 16
       m_Kind: 0
   m_BuildTargetPlatformIcons: []
   m_BuildTargetBatching: []
