@@ -8,5 +8,7 @@
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
   <SoundbankPath>Audio\GeneratedSoundBanks</SoundbankPath>
-  <WwiseProjectPath>../DVJ3-ThePeaceIFoundInYou_WwiseProject/DVJ3-ThePeaceIFoundInYou_WwiseProject.wproj</WwiseProjectPath>
+  <WwiseInstallationPathMac />
+  <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise 2019.2.6.7381</WwiseInstallationPathWindows>
+  <WwiseProjectPath>../Wwise Project/The Peace I Found In You.wproj</WwiseProjectPath>
 </WwiseSettings>

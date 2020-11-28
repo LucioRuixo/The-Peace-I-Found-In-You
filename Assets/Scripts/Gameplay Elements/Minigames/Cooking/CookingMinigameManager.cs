@@ -6,15 +6,15 @@ public class CookingMinigameManager : MonoBehaviour
 {
     bool playing = false;
 
-    public int cuttingTarget;
+    [SerializeField] int cuttingTarget;
 
-    public float timer = 60f;
+    [SerializeField] float timer = 60f;
     float currentlyCut = 0f;
 
-
-    public FoodGenerator foodGenerator;
-    public Slider progressBar;
-    public Clock clock;
+    [SerializeField] FoodGenerator foodGenerator = null;
+    [SerializeField] Slider progressBar = null;
+    [SerializeField] Clock clock = null;
+    [SerializeField] GameObject knife = null;
 
     static public event Action<bool> OnGameEnd;
 
@@ -27,16 +27,19 @@ public class CookingMinigameManager : MonoBehaviour
         Clock.OnTimeUp += EndGame;
     }
 
+    void Start()
+    {
+        foodGenerator.StartGeneration();
+        Cursor.visible = false;
+
+        clock.StartTimer(timer);
+    }
+
     void OnDisable()
     {
         Food.OnCut -= IncreaseCurrentlyCut;
         Food.OnFallenUnCut -= DecreaseCurrentlyCut;
         Clock.OnTimeUp -= EndGame;
-    }
-
-    void Start()
-    {
-        clock.StartTimer(timer);
     }
 
     void IncreaseCurrentlyCut()
@@ -66,6 +69,9 @@ public class CookingMinigameManager : MonoBehaviour
 
         foodGenerator.generate = false;
         clock.timerActive = false;
+        Cursor.visible = true;
+
+        knife.SetActive(false);
 
         OnGameEnd?.Invoke(win);
     }

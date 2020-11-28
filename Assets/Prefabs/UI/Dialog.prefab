@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3648222499615992288}
   - component: {fileID: 4313789788782668671}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: Message
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4c316f4dcaa698149914d94688ed4ce2, type: 2}
   m_sharedMaterial: {fileID: 8499367679548609147, guid: 4c316f4dcaa698149914d94688ed4ce2,
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6dbc0044b87cf4d8587ec7fe4c4be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 3648222499615992288}
+  message: {fileID: 3648222499615992288}
   buttonPrefab: {fileID: 5721117842320679057, guid: 4d7bafb0d9705bf47b19c37f56c727ee,
     type: 3}
   buttonContainer: {fileID: 3648222498565702035}

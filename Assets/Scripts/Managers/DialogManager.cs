@@ -4,48 +4,91 @@ using UnityEngine.EventSystems;
 
 public class DialogManager : MonoBehaviourSingleton<DialogManager>
 {
-    enum ButtonType
+    public class Button
+    {
+        public string Text { get; }
+        public ButtonType Type { get; }
+        public UnityAction OnPressed { get; }
+
+        public Button(string _text, ButtonType _type, UnityAction _onPressed)
+        {
+            Text = _text;
+            Type = _type;
+            OnPressed = _onPressed;
+        }
+    }
+
+    public enum ButtonType
     {
         Positive,
         Negative,
-        Close
+        Close,
+        Continue,
+        Cancel
     }
 
-    [SerializeField] string defaultPositiveText = "";
-    [SerializeField] string defaultNegativeText = "";
-    [SerializeField] string defaultCloseText = "";
-
     [SerializeField] GameObject cover = null;
-    [SerializeField] GameObject dialogPrefab = null;
+    [SerializeField] GameObject defaultDialogPrefab = null;
+    [SerializeField] GameObject promptDialogPrefab = null;
     [SerializeField] Transform dialogContainer = null;
+
+    [Header("Default Button Texts")]
+    [SerializeField] string defaultPositive = "";
+    [SerializeField] string defaultNegative = "";
+    [SerializeField] string defaultClose = "";
+    [SerializeField] string defaultContinue = "";
+    [SerializeField] string defaultCancel = "";
 
     public bool CoverActive { get { return cover.activeInHierarchy; } }
 
-    void AddButtonToDialog(Dialog dialog, ButtonType buttonType, string buttonText, UnityAction onPressed)
+    Dialog GenerateDialog(GameObject prefab, string message, Button[] buttons)
+    {
+        cover.SetActive(true);
+
+        Vector2 position = new Vector2(Screen.width / 2f, Screen.height / 2f);
+        Dialog newDialog = Instantiate(prefab, position, Quaternion.identity, dialogContainer).GetComponent<Dialog>();
+
+        newDialog.Message = message;
+
+        foreach (Button button in buttons)
+        {
+            AddButtonToDialog(button, newDialog);
+        }
+
+        return newDialog;
+    }
+
+    void AddButtonToDialog(Button button, Dialog dialog)
     {
         string text = "";
-        if (buttonText != null && buttonText != "") text = buttonText;
+        if (button.Text != null && button.Text != "") text = button.Text;
         else
         {
-            switch (buttonType)
+            switch (button.Type)
             {
                 case ButtonType.Positive:
-                    text = defaultPositiveText;
+                    text = defaultPositive;
                     break;
                 case ButtonType.Negative:
-                    text = defaultNegativeText;
+                    text = defaultNegative;
                     break;
                 case ButtonType.Close:
-                    text = defaultCloseText;
+                    text = defaultClose;
+                    break;
+                case ButtonType.Continue:
+                    text = defaultContinue;
+                    break;
+                case ButtonType.Cancel:
+                    text = defaultCancel;
                     break;
                 default:
                     break;
             }
         }
-
+        
         GameObject currentSelected = EventSystem.current.currentSelectedGameObject;
         UnityAction action = () => CloseDialog(dialog.gameObject, currentSelected);
-        if (onPressed != null) action += onPressed;
+        if (button.OnPressed != null) action += button.OnPressed;
 
         dialog.AddButton(text, action);
     }
@@ -58,28 +101,29 @@ public class DialogManager : MonoBehaviourSingleton<DialogManager>
         Destroy(menuObject);
     }
 
-    public void GenerateDialog(string dialogText, UnityAction onClose)
+    public Dialog DisplayMessageDialog(string message, string close, UnityAction onClose)
     {
-        cover.SetActive(true);
+        Button closeButton = new Button(close, ButtonType.Close, onClose);
 
-        Vector2 position = new Vector2(Screen.width / 2f, Screen.height / 2f);
-        Dialog newDialog = Instantiate(dialogPrefab, position, Quaternion.identity, dialogContainer).GetComponent<Dialog>();
-
-        newDialog.text.text = dialogText;
-
-        AddButtonToDialog(newDialog, ButtonType.Close, defaultCloseText, onClose);
+        return GenerateDialog(defaultDialogPrefab, message, new Button[] { closeButton });
     }
 
-    public void GenerateDialog(string dialogText, string positiveText, UnityAction onPositive, string negativeText, UnityAction onNegative)
+    public Dialog DisplayConfirmDialog(string message, string positive, UnityAction onPositive, string negative, UnityAction onNegative)
     {
-        cover.SetActive(true);
+        Button positiveButton = new Button(positive, ButtonType.Positive, onPositive);
+        Button negativeButton = new Button(negative, ButtonType.Negative, onNegative);
 
-        Vector2 position = new Vector2(Screen.width / 2f, Screen.height / 2f);
-        Dialog newDialog = Instantiate(dialogPrefab, position, Quaternion.identity, dialogContainer).GetComponent<Dialog>();
+        return GenerateDialog(defaultDialogPrefab, message, new Button[] { positiveButton, negativeButton });
+    }
 
-        newDialog.text.text = dialogText;
+    public PromptDialog DisplayPromptDialog(string message, string @continue, UnityAction<string> onContinue, string cancel, UnityAction onCancel)
+    {
+        PromptDialog newDialog = null;
 
-        AddButtonToDialog(newDialog, ButtonType.Positive, defaultPositiveText, onPositive);
-        AddButtonToDialog(newDialog, ButtonType.Negative, defaultNegativeText, onNegative);
+        Button cancelButton = new Button(cancel, ButtonType.Cancel, onCancel);
+        Button continueButton = new Button(@continue, ButtonType.Continue, () => { onContinue(newDialog.Input); });
+
+        newDialog = GenerateDialog(promptDialogPrefab, message, new Button[] { continueButton, cancelButton }) as PromptDialog;
+        return newDialog;
     }
 }

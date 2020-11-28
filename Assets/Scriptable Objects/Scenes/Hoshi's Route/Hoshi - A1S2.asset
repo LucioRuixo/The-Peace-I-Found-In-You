@@ -305,8 +305,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 4006
           y: -708
-          width: 279
-          height: 96
+          width: 288
+          height: 99
         width: 600
         height: 500
         inputPorts:
@@ -409,8 +409,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 4014
           y: -946
-          width: 271
-          height: 177
+          width: 276
+          height: 182
         width: 600
         height: 500
         inputPorts:

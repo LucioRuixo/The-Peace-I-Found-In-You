@@ -1,4 +1,4 @@
-﻿﻿#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 //////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2014 Audiokinetic Inc. / All Rights Reserved
@@ -13,16 +13,6 @@ public class AkWwiseXMLBuilder
 	static AkWwiseXMLBuilder()
 	{
 		AkWwiseXMLWatcher.Instance.PopulateXML = Populate;
-		UnityEditor.EditorApplication.playModeStateChanged += PlayModeChanged;
-	}
-
-	private static void PlayModeChanged(UnityEditor.PlayModeStateChange mode)
-	{
-		if (mode == UnityEditor.PlayModeStateChange.EnteredEditMode)
-		{
-			AkWwiseProjectInfo.Populate();
-			AkWwiseXMLWatcher.Instance.StartWatcher();
-		}
 	}
 
 	public static bool Populate()
@@ -150,7 +140,7 @@ public class AkWwiseXMLBuilder
 				}
 			}
 		}
-		
+
 		return bChanged;
 	}
 }

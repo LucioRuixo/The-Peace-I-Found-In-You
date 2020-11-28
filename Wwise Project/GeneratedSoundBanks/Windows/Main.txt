@@ -1,0 +1,75 @@
+Event	ID	Name			Wwise Object Path	Notes
+	59791624	Inicia_Amb_Rio			\Default Work Unit\AMB Escenas\Inicia_Amb_Rio	
+	157095356	Inicia_Amb_Santuario			\Default Work Unit\AMB Escenas\Inicia_Amb_Santuario	
+	476300500	Fx_CorteVerdura			\Default Work Unit\SFX\Fx_CorteVerdura	
+	522454013	Fx_Hojas			\Default Work Unit\SFX\Fx_Hojas	
+	802180522	Fx_Bostezo			\Default Work Unit\SFX\Fx_Bostezo	
+	898536980	Fx_GolpesDePuerta			\Default Work Unit\SFX\Fx_GolpesDePuerta	
+	928907744	Inicia_Menu			\Default Work Unit\Music Game\Inicia_Menu	
+	934405918	Fx_Gritos_Batalla			\Default Work Unit\SFX\Fx_Gritos_Batalla	
+	1114860582	Fx_Demonios			\Default Work Unit\SFX\Fx_Demonios	
+	1149882460	Fx_RevuelveObjetos			\Default Work Unit\SFX\Fx_RevuelveObjetos	
+	1190877053	Inicia_Juego			\Default Work Unit\Music Game\Inicia_Juego	
+	1195242306	Inicia_Amb_Casa			\Default Work Unit\AMB Escenas\Inicia_Amb_Casa	
+	1200327514	Fx_RisaMujer			\Default Work Unit\SFX\Fx_RisaMujer	
+	1209790620	Fx_Grillos			\Default Work Unit\SFX\Fx_Grillos	
+	1255459097	Fx_ApretaBoton			\Default Work Unit\SFX\Fx_ApretaBoton	
+	1483270277	Fx_AbrePuerta			\Default Work Unit\SFX\Fx_AbrePuerta	
+	1785455897	Fx_Sonido_Cubiertos			\Default Work Unit\SFX\Fx_Sonido_Cubiertos	
+	1958665138	Fx_HachaGolpeMadera			\Default Work Unit\SFX\Fx_HachaGolpeMadera	
+	1982181994	Fx_YaEstaOscureciendo			\Default Work Unit\SFX\Fx_YaEstaOscureciendo	
+	2039299266	Fx_CortesEspada			\Default Work Unit\SFX\Fx_CortesEspada	
+	2243875784	Fx_Susurros			\Default Work Unit\SFX\Fx_Susurros	
+	2345829145	Inicia_Amb_Pueblo			\Default Work Unit\AMB Escenas\Inicia_Amb_Pueblo	
+	2361847821	Fx_Respiracion			\Default Work Unit\SFX\Fx_Respiracion	
+	2373982872	Inicia_Amb_Campo			\Default Work Unit\AMB Escenas\Inicia_Amb_Campo	
+	2404135128	Fx_PisadasHojas			\Default Work Unit\SFX\Fx_PisadasHojas	
+	2625099695	Fx_ErrarCorte			\Default Work Unit\SFX\Fx_ErrarCorte	
+	2726817329	Fx_Lluvia			\Default Work Unit\SFX\Fx_Lluvia	
+	2751256073	Fx_Espadas_Chocando			\Default Work Unit\SFX\Fx_Espadas_Chocando	
+	2949372900	Fx_BotonDecision			\Default Work Unit\SFX\Fx_BotonDecision	
+	2950874771	Inicia_Amb_Noche			\Default Work Unit\AMB Escenas\Inicia_Amb_Noche	
+	3314407590	Inicia_Amb_CasaSeijun			\Default Work Unit\AMB Escenas\Inicia_Amb_CasaSeijun	
+	3332629534	Fx_Fogata			\Default Work Unit\SFX\Fx_Fogata	
+	3389716709	Inicia_Amb_Bosque			\Default Work Unit\AMB Escenas\Inicia_Amb_Bosque	
+	3705673444	Inicia_Amb_GritosYBatalla			\Default Work Unit\AMB Escenas\Inicia_Amb_GritosYBatalla	
+	4022812378	Fx_EspadaDesenvaine			\Default Work Unit\SFX\Fx_EspadaDesenvaine	
+	4126746240	Inicia_Creditos			\Default Work Unit\Music Game\Inicia_Creditos	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	2451887255	Personajes			\Default Work Unit\Personajes	
+	3830703178	Musicas			\Default Work Unit\Musicas	
+
+State	ID	Name	State Group			Notes
+	208248756	Protagonista	Personajes			
+	748895195	None	Personajes			
+	2200110088	Tadao	Personajes			
+	3771209684	Hoshi	Personajes			
+	748895195	None	Musicas			
+	956887760	Creditos	Musicas			
+	2607556080	Menu	Musicas			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	37124517	Whispers_1	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\DroneWhispers_BW.31967_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Whispers_1		11617344
+	48244002	Bostezo	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\BRS_Baby_6_Month_Old_Breaths_Yawn_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bostezo		269376
+	76329683	CorteEspada_03	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\KnifeStab_BW.12401_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cortes_Espada_Minijuego\CorteEspada_03		159808
+	96249414	Demonios	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\BRS_SFX_Whoosh_Ghostly_Demon_By_5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Demonios		341056
+	99871492	Desenvaine_Espada	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\SwordScrapeSingleHanded_B_6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Desenvaine_Espada		392256
+	154275362	Whispers_2	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\ESM_Horror_Game_Vocal_Creature_Voice_Ethereal_Spirit_Ghost_Whisper_4_Whoosh_Transition_Motion_Creepy_Wind_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Whispers_2		3878624
+	234994735	Ya_Esta_Oscureciendo	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\SPLC-5227_FX_Oneshot_Animal_Wolf_Howls_Solo_Expressive_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ya_Esta_Oscureciendo		900228
+	291983641	Gritos_Batalla_02	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\SwordBattle_BW.54354_B6E8E53E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gritos_Batalla_02		6121152
+	317315745	Demonios_Risas	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\ESM_Demon_Vocal_Low_Laugh_4_Monster_Game_Voice_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Demonios_Risas		844188
+	453597210	Gritos_batalla_01	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\SwordBattle_BW.54351_E7F9B4AB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gritos_batalla_01		3878212
+	462110999	CorteEspada_02	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\KnifeStabFleshWet_ZA02.361_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cortes_Espada_Minijuego\CorteEspada_02		154688
+	472041738	LaughFemale	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\LaughFemale_SFXB.2074_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LaughFemale		348224
+	569219775	Errar_Corte	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\KnifeStabFleshSolid_ZA02.35_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Errar_Corte_Minijuego\Errar_Corte		198720
+	616106930	Tadao	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\Tadao_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music personajes\Tadao\Tadao\Tadao		19741176
+	711391154	Respiracion_Scared	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\BreatheFemaleScared_ZA01.10_5194AB84.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respiracion_Scared		3534840
+	756130547	Menu_Track	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\Menu_Track_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Menu_Creditos\Musica Menu\Menu_Track\Menu_Track		5080384
+	765824009	Creditos_Track_V1	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\Creditos_Track_V1_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Menu_Creditos\Musica Creditos\Creditos_Track_V1\Creditos_Track_V1		5080384
+	810399844	Amb_Pueblo	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\TRFDC_Raw_People_09_General_Talking_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb_Pueblo		4878336
+	898354248	CorteEspada_01	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\KnifeSliceFace_ZA02.358_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cortes_Espada_Minijuego\CorteEspada_01		86080
+	976074025	Amb_Santuario	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\ESM_Ancient_Game_Peaceful_Sanctuary_Nature_Surreal_Background__10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb_Santuario		7678344
+	1040786354	Amb_Bosque	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\ESM_Forest_Woodland_Ambience_Ambience_Nature_Camp_Tribal_Organic_Insect_44EBA623.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb_Bosque		7698092
+	1065530339	Hoshi	C:\Users\Lucio\Repositorios\TSDV\DVJ3\The Peace I Found In You\Wwise Project\.cache\Windows\SFX\Hoshi_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music personajes\Hoshi\Hoshi\Hoshi		15006728
+

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" SchemaVersion="97">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="SFX" ID="{29C5D83C-1EA8-4121-BC1D-19F961A0D406}" ShortID="554775037">
+					<ChildrenList>
+						<Event Name="Fx_AbrePuerta" ID="{95F2B89E-D4DA-4306-A635-40B60ACE5ED3}"/>
+						<Event Name="Fx_ApretaBoton" ID="{F7BB0671-9F34-48C2-BC04-1EDEAB2F8829}"/>
+						<Event Name="Fx_Bostezo" ID="{8792C752-30B3-4F25-85B3-81F70F848082}">
+							<ChildrenList>
+								<Action Name="" ID="{3B33740E-9436-4AE4-9F34-D704DD011E8D}" ShortID="147566390">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Bostezo" ID="{F025DEB0-202E-4F0A-91A5-C371BC753DDC}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Fx_BotonDecision" ID="{0327032D-9273-43C0-9EBD-FC5A0D1A79A8}"/>
+						<Event Name="Fx_CortesEspada" ID="{5F5E4BB8-25F8-4573-9947-2EA523DC8908}"/>
+						<Event Name="Fx_CorteVerdura" ID="{B6D42FEF-ABD0-4EE8-8E61-215EA2F00540}">
+							<ChildrenList>
+								<Action Name="" ID="{EB344CB4-49F9-4B3E-B303-D909BFA703B6}" ShortID="413946903">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cortes_Espada_Minijuego" ID="{40750EF2-59E7-4C95-9560-FDF923972F4D}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Fx_Demonios" ID="{ACB00EE8-7E1B-4E91-A3CE-77F2A08C5648}">
+							<ChildrenList>
+								<Action Name="" ID="{917F0872-5997-4E0F-8B1F-8E5F95B2C481}" ShortID="262741529">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Demonios" ID="{A41A9A36-AE7E-4C18-AC38-EE223962CDDB}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{4274ACD3-AA81-49BA-B74B-C13D1ED8B6D2}" ShortID="175809420">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Demonios_Risas" ID="{C194C5F2-3C01-41DE-9D44-19864A603828}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Fx_ErrarCorte" ID="{168D7EEA-5107-406B-8DA8-EB6C50122D51}">
+							<ChildrenList>
+								<Action Name="" ID="{2E65E676-791F-4697-B593-C6BA5B77B674}" ShortID="631188252">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Errar_Corte_Minijuego" ID="{FCA7CA91-055B-481D-A50D-7F2783DD7AFB}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Fx_EspadaDesenvaine" ID="{F41BBF35-38CE-495D-98B8-7527A584B8AD}">
+							<ChildrenList>
+								<Action Name="" ID="{EA39C8BC-8A52-46C7-BB69-EBD77E3F92EC}" ShortID="122061198">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Desenvaine_Espada" ID="{125C2232-3EA8-4C6B-883A-DC004D7298F6}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Fx_Espadas_Chocando" ID="{CC232746-F66F-4274-897A-635D92C17C81}"/>
+						<Event Name="Fx_Fogata" ID="{20BF6D18-8781-4C92-85E3-A5D1D979E008}"/>
+						<Event Name="Fx_GolpesDePuerta" ID="{262FCD77-CCF2-4218-8BB1-D1DA7CBB7A3F}"/>
+						<Event Name="Fx_Grillos" ID="{AE2289D1-EA91-4DE9-B3BF-CC1E5160023B}"/>
+						<Event Name="Fx_Gritos_Batalla" ID="{D63D1CA1-F0B8-44D1-895B-93625F9D6D0F}"/>
+						<Event Name="Fx_HachaGolpeMadera" ID="{D782C28C-85E8-4115-B9C4-463D9A5D532C}"/>
+						<Event Name="Fx_Hojas" ID="{898FDF92-3180-41C6-BDCF-F0D8BBCF8998}"/>
+						<Event Name="Fx_Lluvia" ID="{CB352A6A-1D3A-476E-89D7-798B3C5FB86F}"/>
+						<Event Name="Fx_PisadasHojas" ID="{7F51CCA1-A407-43CE-A092-FD57C88ECD32}"/>
+						<Event Name="Fx_Respiracion" ID="{57D02428-47EC-4DCD-891C-26246F6B3C27}">
+							<ChildrenList>
+								<Action Name="" ID="{4E772A46-F812-4F01-B0EB-2627638FEEDA}" ShortID="926466698">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Respiracion_Scared" ID="{57222C75-9856-40AB-BCA5-34C6B736272A}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Fx_RevuelveObjetos" ID="{775F2EB7-8D8E-482B-BB22-CA641408317E}"/>
+						<Event Name="Fx_RisaMujer" ID="{37708A80-8C73-4EF8-84C9-D6467AC1E3B7}">
+							<ChildrenList>
+								<Action Name="" ID="{3E3CA15F-AE1D-4CD1-9244-6305B9564294}" ShortID="422464419">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LaughFemale" ID="{297A8E6C-A293-40F6-826E-7D7172DCE115}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Fx_Sonido_Cubiertos" ID="{9432E4ED-E6DF-4E09-BDFF-8DC27577F218}"/>
+						<Event Name="Fx_Susurros" ID="{18B320E0-87AF-4DA0-AE3E-57AFF7D94B8E}">
+							<ChildrenList>
+								<Action Name="" ID="{68D9CBF3-C18D-4A63-BB72-4C88EC59E0BC}" ShortID="452826488">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Whispers_1" ID="{988769E9-42E5-43B2-A647-FC13124B7C99}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{215FDEB0-6A28-45AA-8BBD-1EB844D626E5}" ShortID="279438427">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Whispers_2" ID="{E0D559BF-34B1-4DE5-AA7B-421B46E7E091}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Fx_YaEstaOscureciendo" ID="{F6A4C82E-582E-49E7-A15D-3701E5A77AFE}">
+							<ChildrenList>
+								<Action Name="" ID="{7127BD69-E9EF-4238-8964-F02632B37A29}" ShortID="710407662">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ya_Esta_Oscureciendo" ID="{AF1CEF9C-5771-433B-A6A9-2D9CF84DF606}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="AMB Escenas" ID="{C1B91969-837E-44D2-AA61-6037FDB04FCC}" ShortID="88796775">
+					<ChildrenList>
+						<Event Name="Inicia_Amb_Bosque" ID="{C6E6E739-830C-4C9E-A022-ABAC3A698887}">
+							<ChildrenList>
+								<Action Name="" ID="{C1747216-3ABE-4010-BA51-C181E648C584}" ShortID="297623485">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb_Bosque" ID="{E264D4C3-93A9-4008-B1AD-6D29E20DC866}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Inicia_Amb_Campo" ID="{E47EDA24-A012-448F-9950-23E30F2E0239}"/>
+						<Event Name="Inicia_Amb_Casa" ID="{1EF3B967-7308-453A-A80B-E2A0D3D82317}"/>
+						<Event Name="Inicia_Amb_CasaSeijun" ID="{06DF48E7-5A22-4A91-B5B2-D37BF1217B24}"/>
+						<Event Name="Inicia_Amb_GritosYBatalla" ID="{874D8749-5110-4398-9F76-5E6117B306DB}">
+							<ChildrenList>
+								<Action Name="" ID="{B770992B-82E2-4D44-8909-35D44381312F}" ShortID="736654230">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Gritos_batalla_01" ID="{0C493B06-4A87-437A-A524-440CDC768602}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{4B6DD46A-726E-4598-81E2-E652DED4D641}" ShortID="85060163">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Gritos_Batalla_02" ID="{27010C5E-E740-477A-A046-6F71189ECD83}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Inicia_Amb_Noche" ID="{322F3EE5-10ED-47A0-882F-861E1498DDB6}"/>
+						<Event Name="Inicia_Amb_Pueblo" ID="{C6F3A1E7-27D5-4DF3-9CB7-D12F2A22B247}">
+							<ChildrenList>
+								<Action Name="" ID="{FA6E011B-1F0B-4DC7-A35A-A2EF45A6F315}" ShortID="263402828">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb_Pueblo" ID="{8013A616-53F9-47DF-862B-E1192CCA663C}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Inicia_Amb_Rio" ID="{38F84F5F-F52B-4CBF-8270-EF0859F349D2}"/>
+						<Event Name="Inicia_Amb_Santuario" ID="{9B2F87C6-84BE-42C4-A65A-2D004DE3CE0F}">
+							<ChildrenList>
+								<Action Name="" ID="{7937D979-1B0D-4ACD-B552-F19592B12E51}" ShortID="198875436">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb_Santuario" ID="{A0ED68E6-C1D1-488E-BEDC-C91A6CC345AB}" WorkUnitID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Music Game" ID="{5DB2B7BF-55C0-4073-A99D-6F2496109D7C}" ShortID="497894510">
+					<ChildrenList>
+						<Event Name="Inicia_Creditos" ID="{09FFB0D0-E200-4377-B136-E53927E6CE92}">
+							<ChildrenList>
+								<Action Name="" ID="{E4B86995-2AC2-4D05-8EBF-CADC2513763E}" ShortID="712810796">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Musica Creditos" ID="{C04325F6-0C41-4E9A-B341-7F254DEF7D25}" WorkUnitID="{D980683E-F868-4614-81D1-F8A8B7D88181}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{4D210D00-6856-4345-9D04-85BA0134DD9D}" ShortID="1035129994">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Creditos" ID="{D4DFCB5A-7C1D-4F01-B253-0B22260B3193}" WorkUnitID="{A36EC48D-B292-420F-9372-6ADF927C401B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Inicia_Juego" ID="{5E3137FE-C933-4CD2-95AD-D23E9A30DABF}">
+							<ChildrenList>
+								<Action Name="" ID="{A6400D28-7B15-4614-80A7-63E0DB444A3C}" ShortID="957122897">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Menu_Creditos" ID="{74BB5373-4D89-4A6B-82DE-D682B56178D5}" WorkUnitID="{D980683E-F868-4614-81D1-F8A8B7D88181}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{4C6098AC-B7E5-4611-BBDE-FF957F6A4416}" ShortID="496302921">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music personajes" ID="{22AA9623-47C2-4A91-A170-0030B5EF2677}" WorkUnitID="{D980683E-F868-4614-81D1-F8A8B7D88181}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Inicia_Menu" ID="{C5818BEF-2A89-4AA1-9B6C-54A3C9FCC87C}">
+							<ChildrenList>
+								<Action Name="" ID="{7425B7C8-F8F1-4D9B-9FDF-9866EB6342F0}" ShortID="182834817">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Musica Menu" ID="{020EA421-0866-470C-B288-3FF4E4F0A3C4}" WorkUnitID="{D980683E-F868-4614-81D1-F8A8B7D88181}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{955C4481-8CBD-4A1D-BF50-3AB3A8DA799A}" ShortID="142401627">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Menu" ID="{8188635C-2F64-4DBF-8F05-3FE82D321152}" WorkUnitID="{A36EC48D-B292-420F-9372-6ADF927C401B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

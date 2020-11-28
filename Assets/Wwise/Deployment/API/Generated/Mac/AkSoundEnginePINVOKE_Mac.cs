@@ -1318,8 +1318,6 @@ class AkSoundEnginePINVOKE {
   public static extern int CSharp_GetTimeStamp();
   [global::System.Runtime.InteropServices.DllImport("AkSoundEngine", EntryPoint="CSharp_GetNumNonZeroBits")]
   public static extern uint CSharp_GetNumNonZeroBits(uint jarg1);
-  [global::System.Runtime.InteropServices.DllImport("AkSoundEngine", EntryPoint="CSharp_GetNextPowerOfTwo")]
-  public static extern uint CSharp_GetNextPowerOfTwo(uint jarg1);
   [global::System.Runtime.InteropServices.DllImport("AkSoundEngine", EntryPoint="CSharp_AkGetDefaultHighPriorityThreadProperties")]
   public static extern void CSharp_AkGetDefaultHighPriorityThreadProperties(global::System.IntPtr jarg1);
   [global::System.Runtime.InteropServices.DllImport("AkSoundEngine", EntryPoint="CSharp_ResolveDialogueEvent__SWIG_0")]

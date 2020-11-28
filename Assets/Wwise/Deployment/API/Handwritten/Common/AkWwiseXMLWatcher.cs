@@ -5,8 +5,6 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-using System.Threading;
-
 public class AkWwiseXMLWatcher
 {
 	private static readonly AkWwiseXMLWatcher instance = new AkWwiseXMLWatcher();
@@ -18,60 +16,47 @@ public class AkWwiseXMLWatcher
 
 	public event System.Action XMLUpdated;
 	public System.Func<bool> PopulateXML;
-	private string basePath;
 
 	private AkWwiseXMLWatcher()
 	{
-		if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode && !UnityEditor.EditorApplication.isPlaying)
-		{
-			return;
-		}
-
-		StartWatcher();
-	}
-
-	public void StartWatcher()
-	{
-		basePath = AkBasePathGetter.GetPlatformBasePath();
-		new Thread(CreateWatcher).Start();
-		UnityEditor.EditorApplication.update += OnEditorUpdate;
-	}
-
-	public void CreateWatcher()
-	{
+		XmlWatcher = new System.IO.FileSystemWatcher{ Filter = "*.xml", IncludeSubdirectories = true, };
 
 		try
 		{
-			if (XmlWatcher != null)
-			{
-				XmlWatcher.Dispose();
-			}
-
-			XmlWatcher = new System.IO.FileSystemWatcher(basePath) {Filter = "*.xml", IncludeSubdirectories = true, };
 			// Event handlers that are watching for specific event
 			XmlWatcher.Created += RaisePopulateFlag;
 			XmlWatcher.Changed += RaisePopulateFlag;
 
 			XmlWatcher.NotifyFilter = System.IO.NotifyFilters.LastWrite;
 			XmlWatcher.EnableRaisingEvents = true;
+			XmlWatcher.Path = AkBasePathGetter.GetPlatformBasePath();
+		}
+		catch
+		{
+			ExceptionOccurred = true;
+		}
+
+		UnityEditor.EditorApplication.update += OnEditorUpdate;
+	}
+
+	private void OnEditorUpdate()
+	{
+		var logWarnings = AkBasePathGetter.LogWarnings;
+		AkBasePathGetter.LogWarnings = false;
+		var path = AkBasePathGetter.GetPlatformBasePath();
+		AkBasePathGetter.LogWarnings = logWarnings;
+
+		try
+		{
+			if (ExceptionOccurred || path != XmlWatcher.Path)
+				XmlWatcher.Path = path;
+
 			ExceptionOccurred = false;
 		}
 		catch
 		{
 			ExceptionOccurred = true;
 		}
-	}
-
-
-	private void OnEditorUpdate()
-	{
-		var logWarnings = AkBasePathGetter.LogWarnings;
-		AkBasePathGetter.LogWarnings = false;
-		basePath = AkBasePathGetter.GetPlatformBasePath();
-		AkBasePathGetter.LogWarnings = logWarnings;
-
-		if (ExceptionOccurred || basePath != XmlWatcher?.Path)
-			new Thread(CreateWatcher).Start();
 
 		if (!fireEvent)
 			return;

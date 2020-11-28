@@ -18,19 +18,191 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
     ParentPath: Default Work Unit
-    guid: 4e081cf49bc250428181c3e5d7ca9e03
+    guid: f97da001fcda074ebb7af3387b4a4573
     GuidInternal: 
-    m_lastTime: -8585964970646795112
+    m_lastTime: -8585951482075913824
     List: []
+  - PhysicalPath: Virtual Acoustics\Factory Reflect Acoustic Textures.wwu
+    PathAndIcons:
+    - ElementName: Factory Reflect Acoustic Textures
+      ObjectType: 12
+    ParentPath: Factory Reflect Acoustic Textures
+    guid: 6b663d46a83ca54f8b4a5fef12b883f6
+    GuidInternal: 
+    m_lastTime: -8585951482075853989
+    List:
+    - name: Acoustic_Banner
+      guid: f2532d2fccda8e408b8898b1b52a26d6
+      id: 4168643977
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Acoustic_Banner
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Acoustic_Banner
+    - name: Anechoic
+      guid: 32c20a8be202de4ebeacfdd1a900e3ed
+      id: 1873957695
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Anechoic
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Anechoic
+    - name: Brick
+      guid: a9a586b004f2534ca838bdb18b18f6d6
+      id: 504532776
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Brick
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Brick
+    - name: Carpet
+      guid: 8975223456dc604296c4b9f4b669092b
+      id: 2412606308
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Carpet
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Carpet
+    - name: Concrete
+      guid: 001cf85c9628e04aaf7c3080bdaba682
+      id: 841620460
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Concrete
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Concrete
+    - name: Cork_Tiles
+      guid: 19c9d2305f92434189063dbb3c4ae5e2
+      id: 3195498748
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Cork_Tiles
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Cork_Tiles
+    - name: Curtains
+      guid: 339ee6f8975c6849b508a1535f2d66e8
+      id: 2928161104
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Curtains
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Curtains
+    - name: Drywall
+      guid: f4e3a4680b4c8746a8b8a84db93dbc8f
+      id: 3670307564
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Drywall
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Drywall
+    - name: Fabric
+      guid: 32d581836edbed4ea7a3bc7b0a0b8ba8
+      id: 1970351858
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Fabric
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Fabric
+    - name: Mountain
+      guid: 313793c51a00b44a98dd9b033a8c8eab
+      id: 513139656
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Mountain
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Mountain
+    - name: Textures
+      guid: a3121e7828e3df4a8bba5fb89c74031d
+      id: 1276632493
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      Path: Factory Reflect Acoustic Textures\Textures
+    - name: Tile
+      guid: c4da82a82a13b747ba9db9907ba29cc0
+      id: 2637588553
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Tile
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Tile
+    - name: Wood
+      guid: 96bcff1fe76f9e48ba6c7c14a71391ae
+      id: 2058049674
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Wood
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Wood
+    - name: Wood_Bright
+      guid: e5d1857ba2c1634e9a13cec54b641adc
+      id: 4262522749
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Wood_Bright
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Wood_Bright
+    - name: Wood_Deep
+      guid: 8e474652dac50c4ea0dec98d1479529a
+      id: 1755085759
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Wood_Deep
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Wood_Deep
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
       ObjectType: 12
     ParentPath: Default Work Unit
-    guid: b0e3e94c8455c347a8ebf331b7c955cc
+    guid: 8e8093fccabf9d4087bedf534c1f5d0b
     GuidInternal: 
-    m_lastTime: -8585964970646954677
+    m_lastTime: -8585951482112693084
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -41,55 +213,807 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
+    - name: Motion Factory Bus
+      guid: c6b9f92af16ee946b5f2e30c9e602c74
+      id: 985987111
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Motion Factory Bus
+        ObjectType: 2
+      Path: Default Work Unit\Motion Factory Bus
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
       ObjectType: 12
     ParentPath: Default Work Unit
-    guid: fce073c3f911dc4e9f09e02524205622
+    guid: fcb62217b48aa6428efccaed8bcfb331
     GuidInternal: 
-    m_lastTime: -8585964970645491144
-    List: []
+    m_lastTime: -8585951482076562091
+    List:
+    - name: Main
+      guid: 9c378c4c32c8894f89feff488766129e
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main
+        ObjectType: 7
+      Path: Default Work Unit\Main
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
       ObjectType: 12
     ParentPath: Default Work Unit
-    guid: fab2e5f966c19b4582358e4a4ba829f0
+    guid: e43587ed6b27024cacd930c19358dfcd
     GuidInternal: 
-    m_lastTime: -8585964970645780375
-    List: []
+    m_lastTime: -8585951482112922472
+    List:
+    - name: AMB Escenas
+      guid: 6919b9c17e83d244aa616037fdb04fcc
+      id: 1325085177
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AMB Escenas
+        ObjectType: 4
+      Path: Default Work Unit\AMB Escenas
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Fx_AbrePuerta
+      guid: 9eb8f295dad40643a63540b60ace5ed3
+      id: 1483270277
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_AbrePuerta
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_AbrePuerta
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_ApretaBoton
+      guid: 7106bbf7349fc248bc041edeab2f8829
+      id: 1255459097
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_ApretaBoton
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_ApretaBoton
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_Bostezo
+      guid: 52c79287b330254f85b381f70f848082
+      id: 802180522
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_Bostezo
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_Bostezo
+      maxAttenuation: 0
+      maxDuration: 3053424
+      minDuration: 3053424
+    - name: Fx_BotonDecision
+      guid: 2d0327037392c0439ebdfc5a0d1a79a8
+      id: 2949372900
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_BotonDecision
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_BotonDecision
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_CortesEspada
+      guid: b84b5e5ff825734599472ea523dc8908
+      id: 2039299266
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_CortesEspada
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_CortesEspada
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_CorteVerdura
+      guid: ef2fd4b6d0abe84e8e61215ea2f00540
+      id: 476300500
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_CorteVerdura
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_CorteVerdura
+      maxAttenuation: 0
+      maxDuration: 896881
+      minDuration: 474640
+    - name: Fx_Demonios
+      guid: e80eb0ac1b7e914ea3ce77f2a08c5648
+      id: 1114860582
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_Demonios
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_Demonios
+      maxAttenuation: 0
+      maxDuration: 3866122
+      minDuration: 3866122
+    - name: Fx_ErrarCorte
+      guid: ea7e8d1607516b408da8eb6c50122d51
+      id: 2625099695
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_ErrarCorte
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_ErrarCorte
+      maxAttenuation: 0
+      maxDuration: 1303598
+      minDuration: 821215
+    - name: Fx_EspadaDesenvaine
+      guid: 35bf1bf4ce385d4998b87527a584b8ad
+      id: 4022812378
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_EspadaDesenvaine
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_EspadaDesenvaine
+      maxAttenuation: 0
+      maxDuration: 2471615
+      minDuration: 2471615
+    - name: Fx_Espadas_Chocando
+      guid: 462723cc6ff67442897a635d92c17c81
+      id: 2751256073
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_Espadas_Chocando
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_Espadas_Chocando
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_Fogata
+      guid: 186dbf208187924c85e3a5d1d979e008
+      id: 3332629534
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_Fogata
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_Fogata
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_GolpesDePuerta
+      guid: 77cd2f26f2cc18428bb1d1da7cbb7a3f
+      id: 898536980
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_GolpesDePuerta
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_GolpesDePuerta
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_Grillos
+      guid: d18922ae91eae94db3bfcc1e5160023b
+      id: 1209790620
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_Grillos
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_Grillos
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_Gritos_Batalla
+      guid: a11c3dd6b8f0d144895b93625f9d6d0f
+      id: 934405918
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_Gritos_Batalla
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_Gritos_Batalla
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_HachaGolpeMadera
+      guid: 8cc282d7e8851541b9c4463d9a5d532c
+      id: 1958665138
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_HachaGolpeMadera
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_HachaGolpeMadera
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_Hojas
+      guid: 92df8f898031c641bdcff0d8bbcf8998
+      id: 522454013
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_Hojas
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_Hojas
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_Lluvia
+      guid: 6a2a35cb3a1d6e4789d7798b3c5fb86f
+      id: 2726817329
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_Lluvia
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_Lluvia
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_PisadasHojas
+      guid: a1cc517f07a4ce43a092fd57c88ecd32
+      id: 2404135128
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_PisadasHojas
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_PisadasHojas
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_Respiracion
+      guid: 2824d057ec47cd4d891c26246f6b3c27
+      id: 2361847821
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_Respiracion
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_Respiracion
+      maxAttenuation: 0
+      maxDuration: 18410296
+      minDuration: 18410296
+    - name: Fx_RevuelveObjetos
+      guid: b72e5f778e8d2b48bb22ca641408317e
+      id: 1149882460
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_RevuelveObjetos
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_RevuelveObjetos
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_RisaMujer
+      guid: 808a7037738cf84e84c9d6467ac1e3b7
+      id: 1200327514
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_RisaMujer
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_RisaMujer
+      maxAttenuation: 0
+      maxDuration: 1813333
+      minDuration: 1813333
+    - name: Fx_Sonido_Cubiertos
+      guid: ede43294dfe6094ebdff8dc27577f218
+      id: 1785455897
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_Sonido_Cubiertos
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_Sonido_Cubiertos
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fx_Susurros
+      guid: e020b318af87a04dae3e57aff7d94b8e
+      id: 2243875784
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_Susurros
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_Susurros
+      maxAttenuation: 0
+      maxDuration: 60506668
+      minDuration: 60506668
+    - name: Fx_YaEstaOscureciendo
+      guid: 2ec8a4f62e58e749a15d3701e5a77afe
+      id: 1982181994
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Fx_YaEstaOscureciendo
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Fx_YaEstaOscureciendo
+      maxAttenuation: 0
+      maxDuration: 5053962
+      minDuration: 5053962
+    - name: Inicia_Amb_Bosque
+      guid: 39e7e6c60c839e4ca022abac3a698887
+      id: 3389716709
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AMB Escenas
+        ObjectType: 4
+      - ElementName: Inicia_Amb_Bosque
+        ObjectType: 3
+      Path: Default Work Unit\AMB Escenas\Inicia_Amb_Bosque
+      maxAttenuation: 0
+      maxDuration: 43639624
+      minDuration: 43639624
+    - name: Inicia_Amb_Campo
+      guid: 24da7ee412a08f44995023e30f2e0239
+      id: 2373982872
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AMB Escenas
+        ObjectType: 4
+      - ElementName: Inicia_Amb_Campo
+        ObjectType: 3
+      Path: Default Work Unit\AMB Escenas\Inicia_Amb_Campo
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Inicia_Amb_Casa
+      guid: 67b9f31e08733a45a80be2a0d3d82317
+      id: 1195242306
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AMB Escenas
+        ObjectType: 4
+      - ElementName: Inicia_Amb_Casa
+        ObjectType: 3
+      Path: Default Work Unit\AMB Escenas\Inicia_Amb_Casa
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Inicia_Amb_CasaSeijun
+      guid: e748df06225a914ab5b2d37bf1217b24
+      id: 3314407590
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AMB Escenas
+        ObjectType: 4
+      - ElementName: Inicia_Amb_CasaSeijun
+        ObjectType: 3
+      Path: Default Work Unit\AMB Escenas\Inicia_Amb_CasaSeijun
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Inicia_Amb_GritosYBatalla
+      guid: 49874d87105198439f765e6117b306db
+      id: 3705673444
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AMB Escenas
+        ObjectType: 4
+      - ElementName: Inicia_Amb_GritosYBatalla
+        ObjectType: 3
+      Path: Default Work Unit\AMB Escenas\Inicia_Amb_GritosYBatalla
+      maxAttenuation: 0
+      maxDuration: 31880668
+      minDuration: 31880668
+    - name: Inicia_Amb_Noche
+      guid: e53e2f32ed10a047882f861e1498ddb6
+      id: 2950874771
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AMB Escenas
+        ObjectType: 4
+      - ElementName: Inicia_Amb_Noche
+        ObjectType: 3
+      Path: Default Work Unit\AMB Escenas\Inicia_Amb_Noche
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Inicia_Amb_Pueblo
+      guid: e7a1f3c6d527f34d9cb7d12f2a22b247
+      id: 2345829145
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AMB Escenas
+        ObjectType: 4
+      - ElementName: Inicia_Amb_Pueblo
+        ObjectType: 3
+      Path: Default Work Unit\AMB Escenas\Inicia_Amb_Pueblo
+      maxAttenuation: 0
+      maxDuration: 29811172
+      minDuration: 29811172
+    - name: Inicia_Amb_Rio
+      guid: 5f4ff8382bf5bf4c8270ef0859f349d2
+      id: 59791624
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AMB Escenas
+        ObjectType: 4
+      - ElementName: Inicia_Amb_Rio
+        ObjectType: 3
+      Path: Default Work Unit\AMB Escenas\Inicia_Amb_Rio
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Inicia_Amb_Santuario
+      guid: c6872f9bbe84c442a65a2d004de3ce0f
+      id: 157095356
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AMB Escenas
+        ObjectType: 4
+      - ElementName: Inicia_Amb_Santuario
+        ObjectType: 3
+      Path: Default Work Unit\AMB Escenas\Inicia_Amb_Santuario
+      maxAttenuation: 0
+      maxDuration: 39990624
+      minDuration: 39990624
+    - name: Inicia_Creditos
+      guid: d0b0ff0900e27743b136e53927e6ce92
+      id: 4126746240
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music Game
+        ObjectType: 4
+      - ElementName: Inicia_Creditos
+        ObjectType: 3
+      Path: Default Work Unit\Music Game\Inicia_Creditos
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Inicia_Juego
+      guid: fe37315e33c9d24c95add23e9a30dabf
+      id: 1190877053
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music Game
+        ObjectType: 4
+      - ElementName: Inicia_Juego
+        ObjectType: 3
+      Path: Default Work Unit\Music Game\Inicia_Juego
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Inicia_Menu
+      guid: ef8b81c5892aa14a9b6c54a3c9fcc87c
+      id: 928907744
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music Game
+        ObjectType: 4
+      - ElementName: Inicia_Menu
+        ObjectType: 3
+      Path: Default Work Unit\Music Game\Inicia_Menu
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music Game
+      guid: bfb7b25dc0557340a99d6f2496109d7c
+      id: 271015524
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music Game
+        ObjectType: 4
+      Path: Default Work Unit\Music Game
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SFX
+      guid: 3cd8c529a81e2141bc1d19f961a0d406
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      Path: Default Work Unit\SFX
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
       ObjectType: 12
     ParentPath: Default Work Unit
-    guid: 2bea118a794ecb479dddcbd7a3be4581
+    guid: 682852d24a41f3479f6ad0b865215fe6
     GuidInternal: 
-    m_lastTime: -8585964970645411365
+    m_lastTime: -8585951482112912495
     List: []
+  - PhysicalPath: Game Parameters\Factory Motion.wwu
+    PathAndIcons:
+    - ElementName: Factory Motion
+      ObjectType: 12
+    ParentPath: Factory Motion
+    guid: 225213d7dbd1d042adc0930743567776
+    GuidInternal: 
+    m_lastTime: -8585951482112892550
+    List:
+    - name: Playback_Rate
+      guid: e37e38283ac11643b9c3db5c521624af
+      id: 1524500807
+      PathAndIcons:
+      - ElementName: Factory Motion
+        ObjectType: 12
+      - ElementName: Playback_Rate
+        ObjectType: 13
+      Path: Factory Motion\Playback_Rate
+    - name: RPM
+      guid: 05aa129177f5fd449f4e4424158129e6
+      id: 796049864
+      PathAndIcons:
+      - ElementName: Factory Motion
+        ObjectType: 12
+      - ElementName: RPM
+        ObjectType: 13
+      Path: Factory Motion\RPM
+  - PhysicalPath: Game Parameters\Factory SoundSeed Air Game Syncs.wwu
+    PathAndIcons:
+    - ElementName: Factory SoundSeed Air Game Syncs
+      ObjectType: 12
+    ParentPath: Factory SoundSeed Air Game Syncs
+    guid: 5577163b42fb8b4598bf96f557afb3b9
+    GuidInternal: 
+    m_lastTime: -8585951482112842684
+    List:
+    - name: SS_Air_Fear
+      guid: 59062ef746431c4ea1b1dab46a05101e
+      id: 1351367891
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Fear
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Fear
+    - name: SS_Air_Freefall
+      guid: 37fe2d2f9e4f944d83d853cca39781ad
+      id: 3002758120
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Freefall
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Freefall
+    - name: SS_Air_Fury
+      guid: dc79aea23acaba4696529986c322a87b
+      id: 1029930033
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Fury
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Fury
+    - name: SS_Air_Month
+      guid: 45b4e209a3c47f44b3ca818a1d925ef7
+      id: 2648548617
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Month
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Month
+    - name: SS_Air_Presence
+      guid: 1a81b7e32f7b0f49b44f5fe51b468041
+      id: 3847924954
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Presence
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Presence
+    - name: SS_Air_RPM
+      guid: ab9048a3d5b92645a64d5290c43ef2dc
+      id: 822163944
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_RPM
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_RPM
+    - name: SS_Air_Size
+      guid: efeb291393a12e47a38c64668b494879
+      id: 3074696722
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Size
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Size
+    - name: SS_Air_Storm
+      guid: db8c3fe9d1063747acaf7cd44bbed783
+      id: 3715662592
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Storm
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Storm
+    - name: SS_Air_TimeOfDay
+      guid: 2ca76f537e8c8b4cae03ef34fdadc314
+      id: 3203397129
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_TimeOfDay
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_TimeOfDay
+    - name: SS_Air_Turbulence
+      guid: 197ba8edaa73a0409f192073606db710
+      id: 4160247818
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Turbulence
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Turbulence
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
       ObjectType: 12
     ParentPath: Default Work Unit
-    guid: 994af4266f3633408a4e3823e033fb73
+    guid: 8dc46ea392b20f4293726adf927c401b
     GuidInternal: 
-    m_lastTime: -8585964970645710562
-    List: []
+    m_lastTime: -8585951482076262871
+    List:
+    - name: Musicas
+      guid: e6269b72581b1e439807808e0d1de0f9
+      id: 3830703178
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Musicas
+        ObjectType: 9
+      Path: Default Work Unit\Musicas
+      values:
+      - name: Creditos
+        guid: 5acbdfd41d7c014fb2530b22260b3193
+        id: 956887760
+        PathAndIcons:
+        - ElementName: Creditos
+          ObjectType: 8
+      - name: Menu
+        guid: 5c638881642fbf4d8f053fe82d321152
+        id: 2607556080
+        PathAndIcons:
+        - ElementName: Menu
+          ObjectType: 8
+      - name: None
+        guid: fab314f06f535b4796d85c2b8df2c01f
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Personajes
+      guid: 5f202735f8ab8642b5ff37a084be3a13
+      id: 2451887255
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Personajes
+        ObjectType: 9
+      Path: Default Work Unit\Personajes
+      values:
+      - name: Hoshi
+        guid: d157318880b1f446833272593077377e
+        id: 3771209684
+        PathAndIcons:
+        - ElementName: Hoshi
+          ObjectType: 8
+      - name: None
+        guid: ed76477954a38c40adb406d9481b8ff2
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Protagonista
+        guid: 367d0248feeb2743a31c085621e5384b
+        id: 208248756
+        PathAndIcons:
+        - ElementName: Protagonista
+          ObjectType: 8
+      - name: Tadao
+        guid: 46123389175abe4fbb2cc5ebefe43024
+        id: 2200110088
+        PathAndIcons:
+        - ElementName: Tadao
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
       ObjectType: 12
     ParentPath: Default Work Unit
-    guid: 2b6a4fb1d2774042954b4b59d75c8da5
+    guid: cc506ec0fad5934c98822dc93f09a813
     GuidInternal: 
-    m_lastTime: -8585964970645933408
+    m_lastTime: -8585951482076183100
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -97,10 +1021,14 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
     ParentPath: Default Work Unit
-    guid: 833d2120fb63084790617baeb7345a1b
+    guid: 931c04cd217d434fb96c0d4347fd2157
     GuidInternal: 
-    m_lastTime: -8585964970645191951
+    m_lastTime: -8585951482075963701
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /The Peace I Found In You
+  - /The Peace I Found In You/Events
+  - /The Peace I Found In You/Events/Default Work Unit
+  - /The Peace I Found In You/Events/Default Work Unit/SFX
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

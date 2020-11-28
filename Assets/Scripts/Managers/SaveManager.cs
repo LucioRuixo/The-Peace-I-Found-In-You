@@ -1,18 +1,20 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviourSingleton<SaveManager>
 {
-    public int SaveSlotsAmount { private set; get; } = 4;
+    string playerName;
+    [SerializeField] string namePromptText = "";
 
     int loadedFileIndex = -1;
 
     [SerializeField] SaveData initialGameData = new SaveData();
-
-    [SerializeField] Object fileModificationGuide = null;
+    [SerializeField] UnityEngine.Object fileModificationGuide = null;
 
     public string SavesFolderPath { private set; get; }
+    public int SaveSlotsAmount { private set; get; } = 4;
 
     new void Awake()
     {
@@ -44,6 +46,19 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         else return null;
     }
 
+    void AskForPlayerName()
+    {
+        DialogManager.Get().DisplayPromptDialog(namePromptText, null, SetPlayerName, null, null);
+    }
+
+    void SetPlayerName(string _playerName)
+    {
+        playerName = _playerName;
+
+        CreateFile(loadedFileIndex);
+        SceneLoadManager.Get().LoadGameplay();
+    }
+
     void CreateFile(int fileIndex)
     {
         string jsonPath = CreateSaveFilePath(fileIndex, true);
@@ -52,6 +67,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
         FileStream file = File.Create(CreateSaveFilePath(fileIndex, false));
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
+        initialGameData.playerName = playerName;
         binaryFormatter.Serialize(file, initialGameData);
 
         file.Close();
@@ -63,7 +79,7 @@ public class SaveManager : MonoBehaviourSingleton<SaveManager>
 
         string filePath = GetSaveFilePath(fileIndex);
         if (saveSelectionScreenMode == UIManager_MainMenu.SaveSelectionScreenMode.NewGame || !File.Exists(filePath))
-            CreateFile(loadedFileIndex);
+            AskForPlayerName();
     }
 
     public void SaveFile(SaveData gameData, bool saveAsJson)

@@ -28,7 +28,7 @@ public class DialogueController : NodeController, ISaveComponent
     [SerializeField] GameObject dialogueBox = null;
     [SerializeField] TextMeshProUGUI nameText = null;
     [SerializeField] TextMeshProUGUI dialogueText = null;
-    [SerializeField] Log log = null;
+    [SerializeField] LogController log = null;
     Image dialogueBoxImage;
     NoodlesNodeMultipleDialogue node;
 

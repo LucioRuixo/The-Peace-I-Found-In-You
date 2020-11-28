@@ -24,7 +24,7 @@ public class UIManager_Gameplay : MonoBehaviour
         UnityAction saveAsJson = () => OnGameSave?.Invoke(true);
         UnityAction saveAsDat = () => OnGameSave?.Invoke(false);
 
-        dialogManager.GenerateDialog(saveAsJsonText, null, saveAsJson, null, saveAsDat);
+        dialogManager.DisplayConfirmDialog(saveAsJsonText, null, saveAsJson, null, saveAsDat);
     }
 
     public void SetLogActive(bool state)
@@ -36,12 +36,12 @@ public class UIManager_Gameplay : MonoBehaviour
 
     public void SaveGame()
     {
-        dialogManager.GenerateDialog(saveGameText, null, AskForSaveExtension, null, null);
+        dialogManager.DisplayConfirmDialog(saveGameText, null, AskForSaveExtension, null, null);
     }
 
     public void ExitGame()
     {
         UnityAction positiveAction = () => SceneLoadManager.Get().LoadMainMenu();
-        DialogManager.Get().GenerateDialog(exitGameText, null, positiveAction, null, null);
+        DialogManager.Get().DisplayConfirmDialog(exitGameText, null, positiveAction, null, null);
     }
 }

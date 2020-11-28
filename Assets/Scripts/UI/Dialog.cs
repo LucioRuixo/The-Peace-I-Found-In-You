@@ -5,9 +5,11 @@ using TMPro;
 
 public class Dialog : MonoBehaviour
 {
-    public TextMeshProUGUI text;
-    public GameObject buttonPrefab;
-    public Transform buttonContainer;
+    [SerializeField] TextMeshProUGUI message;
+    [SerializeField] GameObject buttonPrefab;
+    [SerializeField] Transform buttonContainer;
+
+    public string Message { set { message.text = value; } get { return message.text; } }
 
     public void AddButton(string text, UnityAction action)
     {

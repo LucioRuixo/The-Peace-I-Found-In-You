@@ -15,7 +15,7 @@ public class FoodGenerator : MonoBehaviour
 
     [SerializeField] List<GameObject> foodPrefabs = new List<GameObject>();
 
-    void Start()
+    public void StartGeneration()
     {
         StartCoroutine(Generate());
     }

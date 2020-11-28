@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}" SchemaVersion="97">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{F5F19EB3-C2CC-43DC-935B-3D7E5FEBF3E3}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Lady_Scream" ID="{D263B4FA-3870-4BE6-AF95-67637D34C5D9}" ShortID="836811500">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-80</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BRS_Scream_Female_Lisa_Terrified_Shrill_2" ID="{6A772182-EB13-44F3-83A4-8F80052C2B87}">
+							<Language>SFX</Language>
+							<AudioFile>BRS_Scream_Female_Lisa_Terrified_Shrill_2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="111217621"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="BRS_Scream_Female_Lisa_Terrified_Shrill_2" ID="{6A772182-EB13-44F3-83A4-8F80052C2B87}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Man_Scream" ID="{2B6D5AC5-41C9-4C71-8AC2-91FA219E9F22}" ShortID="701878133">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>100</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="HumanScream_S08HU_443" ID="{6AD583BB-FAEC-43D9-9812-382AE0FED82A}">
+							<Language>SFX</Language>
+							<AudioFile>HumanScream_S08HU.443.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="391269866"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="HumanScream_S08HU_443" ID="{6AD583BB-FAEC-43D9-9812-382AE0FED82A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Whispers_1" ID="{988769E9-42E5-43B2-A647-FC13124B7C99}" ShortID="880802065">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="DroneWhispers_BW_31967" ID="{E48FD2C4-30C0-42DA-A260-680E44BF359F}">
+							<Language>SFX</Language>
+							<AudioFile>DroneWhispers_BW.31967.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="37124517"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="DroneWhispers_BW_31967" ID="{E48FD2C4-30C0-42DA-A260-680E44BF359F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Whispers_2" ID="{E0D559BF-34B1-4DE5-AA7B-421B46E7E091}" ShortID="442861298">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-16</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ESM_Horror_Game_Vocal_Creature_Voice_Ethereal_Spirit_Ghost_Whisper_4_Whoosh_Transition_Motion_Creepy_Wind" ID="{71D39F31-CC8E-4F3F-9D9E-30B119525BDA}">
+							<Language>SFX</Language>
+							<AudioFile>ESM_Horror_Game_Vocal_Creature_Voice_Ethereal_Spirit_Ghost_Whisper_4_Whoosh_Transition_Motion_Creepy_Wind.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="154275362"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ESM_Horror_Game_Vocal_Creature_Voice_Ethereal_Spirit_Ghost_Whisper_4_Whoosh_Transition_Motion_Creepy_Wind" ID="{71D39F31-CC8E-4F3F-9D9E-30B119525BDA}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Bostezo" ID="{F025DEB0-202E-4F0A-91A5-C371BC753DDC}" ShortID="914313611">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BRS_Baby_6_Month_Old_Breaths_Yawn_2" ID="{69D3DDC4-BF2A-4A52-A9A5-7FDF7B567546}">
+							<Language>SFX</Language>
+							<AudioFile>BRS_Baby_6_Month_Old_Breaths_Yawn_2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="48244002"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="BRS_Baby_6_Month_Old_Breaths_Yawn_2" ID="{69D3DDC4-BF2A-4A52-A9A5-7FDF7B567546}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Cortes_Espada_Minijuego" ID="{40750EF2-59E7-4C95-9560-FDF923972F4D}" ShortID="309669863">
+					<PropertyList>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="CorteEspada_01" ID="{0E808A0B-D151-4571-9E6E-6B002BCCD4BE}" ShortID="951524489">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-100</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KnifeSliceFace_ZA02_358" ID="{9A95A97D-BEC2-4D85-AB80-33A29956929F}">
+									<Language>SFX</Language>
+									<AudioFile>KnifeSliceFace_ZA02.358.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="898354248"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KnifeSliceFace_ZA02_358" ID="{9A95A97D-BEC2-4D85-AB80-33A29956929F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="CorteEspada_03" ID="{465C8EB0-B9BB-468A-8964-CE326DE14324}" ShortID="674148339">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-130</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KnifeStab_BW_12401" ID="{FF014486-872D-4BC2-B242-FA3D21EF8854}">
+									<Language>SFX</Language>
+									<AudioFile>KnifeStab_BW.12401.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="76329683"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KnifeStab_BW_12401" ID="{FF014486-872D-4BC2-B242-FA3D21EF8854}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="CorteEspada_02" ID="{29435B67-C008-4081-A472-F639DD6CC388}" ShortID="737624530">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-50</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KnifeStabFleshWet_ZA02_361" ID="{F2CE1E24-9A5E-4D50-9AC8-DFC9A699BD4B}">
+									<Language>SFX</Language>
+									<AudioFile>KnifeStabFleshWet_ZA02.361.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="462110999"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KnifeStabFleshWet_ZA02_361" ID="{F2CE1E24-9A5E-4D50-9AC8-DFC9A699BD4B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<Playlist>
+						<ItemRef Name="CorteEspada_01" ID="{0E808A0B-D151-4571-9E6E-6B002BCCD4BE}"/>
+						<ItemRef Name="CorteEspada_02" ID="{29435B67-C008-4081-A472-F639DD6CC388}"/>
+						<ItemRef Name="CorteEspada_03" ID="{465C8EB0-B9BB-468A-8964-CE326DE14324}"/>
+					</Playlist>
+				</RandomSequenceContainer>
+				<Sound Name="Ya_Esta_Oscureciendo" ID="{AF1CEF9C-5771-433B-A6A9-2D9CF84DF606}" ShortID="872522202">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>37</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-130</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-16</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SPLC-5227_FX_Oneshot_Animal_Wolf_Howls_Solo_Expressive" ID="{DAD6844A-1011-49EA-9B1E-65105D7640F9}">
+							<Language>SFX</Language>
+							<AudioFile>SPLC-5227_FX_Oneshot_Animal_Wolf_Howls_Solo_Expressive.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="234994735"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SPLC-5227_FX_Oneshot_Animal_Wolf_Howls_Solo_Expressive" ID="{DAD6844A-1011-49EA-9B1E-65105D7640F9}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Errar_Corte_Minijuego" ID="{FCA7CA91-055B-481D-A50D-7F2783DD7AFB}" ShortID="412783382">
+					<PropertyList>
+						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Errar_Corte" ID="{A4E52B66-DC56-4D65-A0B8-ADDA9BF65C00}" ShortID="833671836">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>400</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KnifeStabFleshSolid_ZA02_35" ID="{B6CF005D-2FFA-40AC-B5DC-828CFD5C8B8B}">
+									<Language>SFX</Language>
+									<AudioFile>KnifeStabFleshSolid_ZA02.35.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="569219775"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KnifeStabFleshSolid_ZA02_35" ID="{B6CF005D-2FFA-40AC-B5DC-828CFD5C8B8B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Errar_Corte_01" ID="{EFC76A63-A69D-420B-885E-3235C2820021}" ShortID="54624870">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-100</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KnifeStabFleshSolid_ZA02_35" ID="{3BAD4738-A143-43E9-8E73-E06E5A8B0C98}">
+									<Language>SFX</Language>
+									<AudioFile>KnifeStabFleshSolid_ZA02.35.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="569219775"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KnifeStabFleshSolid_ZA02_35" ID="{3BAD4738-A143-43E9-8E73-E06E5A8B0C98}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Errar_Corte_02" ID="{8B876130-94BB-4961-991C-9D3F0DCC3BB4}" ShortID="75922244">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-400</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KnifeStabFleshSolid_ZA02_35" ID="{97911F59-A338-4897-BFF3-3A7685388E7C}">
+									<Language>SFX</Language>
+									<AudioFile>KnifeStabFleshSolid_ZA02.35.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="569219775"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KnifeStabFleshSolid_ZA02_35" ID="{97911F59-A338-4897-BFF3-3A7685388E7C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="Desenvaine_Espada" ID="{125C2232-3EA8-4C6B-883A-DC004D7298F6}" ShortID="1036270369">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>23</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>27</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-330</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SwordScrapeSingleHanded_B_6" ID="{69D9212E-D5B9-45DD-8AF8-0E9FC11482CB}">
+							<Language>SFX</Language>
+							<AudioFile>SwordScrapeSingleHanded_B_6.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="99871492"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SwordScrapeSingleHanded_B_6" ID="{69D9212E-D5B9-45DD-8AF8-0E9FC11482CB}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Demonios" ID="{A41A9A36-AE7E-4C18-AC38-EE223962CDDB}" ShortID="870933363">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BRS_SFX_Whoosh_Ghostly_Demon_By_5" ID="{BA56EF64-70F1-49D6-9C73-76E12FB1E12D}">
+							<Language>SFX</Language>
+							<AudioFile>BRS_SFX_Whoosh_Ghostly_Demon_By_5.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="96249414"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="BRS_SFX_Whoosh_Ghostly_Demon_By_5" ID="{BA56EF64-70F1-49D6-9C73-76E12FB1E12D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Demonios_Risas" ID="{C194C5F2-3C01-41DE-9D44-19864A603828}" ShortID="564320189">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>300</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ESM_Demon_Vocal_Low_Laugh_4_Monster_Game_Voice" ID="{ED161035-A36D-418A-A69C-0F616C4DFF45}">
+							<Language>SFX</Language>
+							<AudioFile>ESM_Demon_Vocal_Low_Laugh_4_Monster_Game_Voice.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="317315745"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ESM_Demon_Vocal_Low_Laugh_4_Monster_Game_Voice" ID="{ED161035-A36D-418A-A69C-0F616C4DFF45}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Respiracion_Scared" ID="{57222C75-9856-40AB-BCA5-34C6B736272A}" ShortID="519269709">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BreatheFemaleScared_ZA01_10" ID="{A0AB9917-569A-4C28-B454-C0E6985CD2CA}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="1.37714814814815"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.724814814814813"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="18.4102962962963"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>BreatheFemaleScared_ZA01.10.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="711391154"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="BreatheFemaleScared_ZA01_10" ID="{A0AB9917-569A-4C28-B454-C0E6985CD2CA}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="LaughFemale" ID="{297A8E6C-A293-40F6-826E-7D7172DCE115}" ShortID="1053139667">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="LaughFemale_SFXB_2074" ID="{81B947D4-5402-4B3D-9D84-012617AB827E}">
+							<Language>SFX</Language>
+							<AudioFile>LaughFemale_SFXB.2074.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="472041738"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="LaughFemale_SFXB_2074" ID="{81B947D4-5402-4B3D-9D84-012617AB827E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Amb_Bosque" ID="{E264D4C3-93A9-4008-B1AD-6D29E20DC866}" ShortID="177473227">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ESM_Forest_Woodland_Ambience_Ambience_Nature_Camp_Tribal_Organic_Insect" ID="{1226AACC-0EEF-42EE-9043-437266FA81BF}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.664562783446712"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="1.55064649470899"/>
+								<Property Name="LoopEnd" Type="Real64" Value="43.5288623157596"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="43.6396227796674"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>ESM_Forest_Woodland_Ambience_Ambience_Nature_Camp_Tribal_Organic_Insect.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1040786354"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ESM_Forest_Woodland_Ambience_Ambience_Nature_Camp_Tribal_Organic_Insect" ID="{1226AACC-0EEF-42EE-9043-437266FA81BF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Gritos_batalla_01" ID="{0C493B06-4A87-437A-A524-440CDC768602}" ShortID="187653253">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>26</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-200</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SwordBattle_BW_54351" ID="{A5BF909D-AF6B-435D-A480-96D34C43C096}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.64562037037037"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="20.1986944444444"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>SwordBattle_BW.54351.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="453597210"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SwordBattle_BW_54351" ID="{A5BF909D-AF6B-435D-A480-96D34C43C096}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Gritos_Batalla_02" ID="{27010C5E-E740-477A-A046-6F71189ECD83}" ShortID="667106988">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>18</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-1</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SwordBattle_BW_54354" ID="{1C172E06-9B09-4AA8-9761-7126FFDC4FA2}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="2.19866666666667"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="2.19866666666667"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="31.8806666666667"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>SwordBattle_BW.54354.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="291983641"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SwordBattle_BW_54354" ID="{1C172E06-9B09-4AA8-9761-7126FFDC4FA2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Amb_Santuario" ID="{A0ED68E6-C1D1-488E-BEDC-C91A6CC345AB}" ShortID="785206391">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ESM_Ancient_Game_Peaceful_Sanctuary_Nature_Surreal_Background_" ID="{E1441B21-9954-4B72-B90D-575C2924D0E4}">
+							<Language>SFX</Language>
+							<AudioFile>ESM_Ancient_Game_Peaceful_Sanctuary_Nature_Surreal_Background_.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="976074025"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ESM_Ancient_Game_Peaceful_Sanctuary_Nature_Surreal_Background_" ID="{E1441B21-9954-4B72-B90D-575C2924D0E4}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Amb_Pueblo" ID="{8013A616-53F9-47DF-862B-E1192CCA663C}" ShortID="547796058">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>22</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-130</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-15</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8C63E69B-5C3C-409F-9ECD-A169063FD481}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FC93808E-BFCA-409D-87BE-DF534C1F5D0B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="TRFDC_Raw_People_09_General_Talking" ID="{C548B831-8800-47F8-A6F8-656C80E0BC86}">
+							<Language>SFX</Language>
+							<AudioFile>TRFDC_Raw_People_09_General_Talking.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="810399844"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="TRFDC_Raw_People_09_General_Talking" ID="{C548B831-8800-47F8-A6F8-656C80E0BC86}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

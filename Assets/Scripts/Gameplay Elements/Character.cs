@@ -74,8 +74,6 @@ public class Character : MonoBehaviour
 
     public void ChangeBodyPart(BodyPart bodyPart, int index)
     {
-        if (Animated) Debug.Log(characterName + ": changing " + bodyPart.ToString() + "(" + index + ")");
-
         SpriteRenderer sr = null;
         Sprite[] sprites = null;
 
@@ -122,7 +120,5 @@ public class Character : MonoBehaviour
             }
         }
         else sr.sprite = sprites[index];
-
-        if (Animated) Debug.Log(characterName + ": changed " + bodyPart.ToString() + " (" + armature.animation.lastAnimationName + ")");
     }
 }

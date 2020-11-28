@@ -29,7 +29,9 @@ public class SaveSlotButton : MonoBehaviour
     void LoadGame(UIManager_MainMenu.SaveSelectionScreenMode saveSelectionScreenMode)
     {
         SaveManager.Get().SetLoadedFileIndex(slotIndex, saveSelectionScreenMode);
-        SceneLoadManager.Get().LoadGameplay();
+
+        if (saveSelectionScreenMode == UIManager_MainMenu.SaveSelectionScreenMode.LoadGame)
+            SceneLoadManager.Get().LoadGameplay();
     }
 
     public void Initialize(int _slotIndex, UIManager_MainMenu.SaveSelectionScreenMode _saveSelectionScreenMode)
@@ -41,13 +43,13 @@ public class SaveSlotButton : MonoBehaviour
     public void GenerateGameLoadDialog()
     {
         if (saveSelectionScreenMode == UIManager_MainMenu.SaveSelectionScreenMode.NewGame)
-            dialogManager.GenerateDialog(newGameText, null, () => LoadGame(saveSelectionScreenMode), null, null);
+            dialogManager.DisplayConfirmDialog(newGameText, null, () => LoadGame(saveSelectionScreenMode), null, null);
         else
         {
             if (SaveManager.Get().FileExists(slotIndex))
-                dialogManager.GenerateDialog(loadGameText, null, () => LoadGame(saveSelectionScreenMode), null, null);
+                dialogManager.DisplayConfirmDialog(loadGameText, null, () => LoadGame(saveSelectionScreenMode), null, null);
             else
-                dialogManager.GenerateDialog(emptySlotText, null);
+                dialogManager.DisplayMessageDialog(emptySlotText, null, null);
         }
     }
 }

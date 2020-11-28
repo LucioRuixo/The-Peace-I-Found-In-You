@@ -57,6 +57,8 @@ public class UIManager_MainMenu : MonoBehaviour
 
     public static event Action<SaveSelectionScreenMode> OnSaveSelectionScreenEnabled;
 
+    GameObject audioObject;
+
     void Awake()
     {
         fxManager = FXManager.Get();
@@ -70,6 +72,8 @@ public class UIManager_MainMenu : MonoBehaviour
         versionText.text = "v" + Application.version;
 
         StartCoroutine(ChangeBackground());
+
+        audioObject = GameObject.Find("WwiseGlobal");
     }
 
     void ExitGame()
@@ -158,12 +162,12 @@ public class UIManager_MainMenu : MonoBehaviour
 
     public void Quit()
     {
-        DialogManager.Get().GenerateDialog(exitGameText, null, ExitGame, null, null);
+        DialogManager.Get().DisplayConfirmDialog(exitGameText, null, ExitGame, null, null);
     }
 
     public void DisplaySavesFolderPath()
     {
-        DialogManager.Get().GenerateDialog(SaveManager.Get().SavesFolderPath, null);
+        DialogManager.Get().DisplayMessageDialog(SaveManager.Get().SavesFolderPath, null, null);
     }
     
     IEnumerator ChangeBackground()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 [Serializable]
 public class SaveData
@@ -43,6 +44,8 @@ public class SaveData
 
         public MusicController.SongTitle songTitle;
     }
+
+    [HideInInspector] public string playerName;
 
     public bool routeExecutionStarted;
     public bool lastDecisionGood;

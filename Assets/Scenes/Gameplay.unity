@@ -717,6 +717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 161944891}
+  - component: {fileID: 161944892}
   m_Layer: 5
   m_Name: Log
   m_TagString: Untagged
@@ -745,6 +746,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -25}
   m_SizeDelta: {x: 1600, y: 575}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &161944892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161944890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128a5ddefbaffc3409df32de27f95e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollbar: {fileID: 1392799653}
 --- !u!1 &196099304
 GameObject:
   m_ObjectHideFlags: 0
@@ -7246,13 +7260,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17f7e056971580448a565abebef07a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultPositiveText: "S\xED"
-  defaultNegativeText: No
-  defaultCloseText: Cerrar
   cover: {fileID: 1564859056}
-  dialogPrefab: {fileID: 3648222499761110402, guid: 818402243fcd2a045be1705bd4d5400c,
+  defaultDialogPrefab: {fileID: 3648222499761110402, guid: 818402243fcd2a045be1705bd4d5400c,
+    type: 3}
+  promptDialogPrefab: {fileID: 3648222499761110402, guid: ad0600017f6f73645bc8734fa43ec2cc,
     type: 3}
   dialogContainer: {fileID: 446318028}
+  defaultPositive: "S\xED"
+  defaultNegative: No
+  defaultClose: Cerrar
+  defaultContinue: Continuar
+  defaultCancel: Cancelar
 --- !u!4 &1332897839
 Transform:
   m_ObjectHideFlags: 0
@@ -7452,7 +7470,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
-  m_Pivot: {x: 1, y: 0}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1392799653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7494,9 +7512,9 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 892414733}
   m_HandleRect: {fileID: 892414732}
-  m_Direction: 3
-  m_Value: 1
-  m_Size: 1
+  m_Direction: 2
+  m_Value: 0.9999997
+  m_Size: 0.7264168
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14594,6 +14612,7 @@ MonoBehaviour:
   foodGenerator: {fileID: 1680951449}
   progressBar: {fileID: 1888648583}
   clock: {fileID: 264289050}
+  knife: {fileID: 793031579}
 --- !u!1 &1850273728
 GameObject:
   m_ObjectHideFlags: 0
@@ -20618,8 +20637,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 55.86}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_SizeDelta: {x: 0, y: 688.31}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2068542796
 MonoBehaviour:
@@ -20654,7 +20673,29 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: 'Text
+
+    Text
+
+    Text
+
+    Text
+
+    Text
+
+    Text
+
+    Text
+
+    Text
+
+    Text
+
+    Text
+
+    Text
+
+    Text'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4c316f4dcaa698149914d94688ed4ce2, type: 2}
   m_sharedMaterial: {fileID: 8499367679548609147, guid: 4c316f4dcaa698149914d94688ed4ce2,

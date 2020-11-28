@@ -1654,7 +1654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbc03f1d71d3844ebcf7b7b00102db5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  namePromptText: Ingresa el nombre de tu personaje
   initialGameData:
+    playerName: 
     routeExecutionStarted: 0
     lastDecisionGood: 0
     currentNodeGUID: 
@@ -4409,13 +4411,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17f7e056971580448a565abebef07a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultPositiveText: "S\xED"
-  defaultNegativeText: No
-  defaultCloseText: Cerrar
   cover: {fileID: 2052873727}
-  dialogPrefab: {fileID: 3648222499761110402, guid: 818402243fcd2a045be1705bd4d5400c,
+  defaultDialogPrefab: {fileID: 3648222499761110402, guid: 818402243fcd2a045be1705bd4d5400c,
+    type: 3}
+  promptDialogPrefab: {fileID: 3648222499761110402, guid: ad0600017f6f73645bc8734fa43ec2cc,
     type: 3}
   dialogContainer: {fileID: 603629441}
+  defaultPositive: "S\xED"
+  defaultNegative: No
+  defaultClose: Cerrar
+  defaultContinue: Continuar
+  defaultCancel: Cancelar
 --- !u!1 &1616570340
 GameObject:
   m_ObjectHideFlags: 0
@@ -9182,6 +9188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1692204958}
   - component: {fileID: 1692204957}
+  - component: {fileID: 1692204959}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -9230,6 +9237,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1692204959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692204956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968726508a5060e4c9e62090e8e93364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 793515ee04a29804aa1a929268d760af,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &1722060503
 GameObject:
   m_ObjectHideFlags: 0
