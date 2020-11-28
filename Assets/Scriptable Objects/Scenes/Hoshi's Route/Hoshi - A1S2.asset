@@ -305,8 +305,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 4006
           y: -708
-          width: 288
-          height: 99
+          width: 279
+          height: 96
         width: 600
         height: 500
         inputPorts:
@@ -409,8 +409,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 4014
           y: -946
-          width: 276
-          height: 182
+          width: 271
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -480,7 +480,7 @@ MonoBehaviour:
           sentence: Te veo muy agitada.
         - character: 1
           status: 0
-          sentence: "Eh... \xBFP? \xBFDe verdad eres t\xFA?"
+          sentence: "Eh... \xBF<P>? \xBFDe verdad eres t\xFA?"
         - character: 0
           status: 0
           sentence: "(Su expresi\xF3n... es de terror absoluto...)"
@@ -599,7 +599,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: Es nuestro castigo por lo que hicimos en el pasado, P.
+          sentence: Es nuestro castigo por lo que hicimos en el pasado, <P>.
         - character: 1
           status: 0
           sentence: "Todav\xEDa tiemblo con solo ver una espada."
@@ -651,7 +651,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: "Perd\xF3n por preocuparte P, no pas\xF3 nada..."
+          sentence: "Perd\xF3n por preocuparte <P>, no pas\xF3 nada..."
         - character: 0
           status: 0
           sentence: "(Supongo que no quiere hablar sobre esto, la guerra la afect\xF3
@@ -919,7 +919,7 @@ MonoBehaviour:
           sentence: "(No sab\xEDa que Hoshi hablaba con \xE9l)"
         - character: 1
           status: 0
-          sentence: "Este es P, un amigo m\xEDo desde hace mucho tiempo."
+          sentence: "Este es <P>, un amigo m\xEDo desde hace mucho tiempo."
     00000015:
       type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -994,7 +994,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 6
           status: 0
-          sentence: "Es un gusto, se\xF1or P."
+          sentence: "Es un gusto, se\xF1or <P>."
         - character: 6
           status: 0
           sentence: "\xA1Sus cicatrices son geniales, son como las de Hoshi!"
@@ -1432,7 +1432,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: Voy a volver al pueblo, P. Buena suerte cortando madera.
+          sentence: Voy a volver al pueblo, <P>. Buena suerte cortando madera.
         - character: 0
           status: 0
           sentence: Gracias, Hoshi. Les deseo suerte a ambos.
@@ -1513,7 +1513,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 6
           status: 0
-          sentence: "S-s\xED, P. No quiero ser una molestia para ella...."
+          sentence: "S-s\xED, <P>. No quiero ser una molestia para ella...."
         - character: 0
           status: 0
           sentence: Estoy seguro que no lo eres.
@@ -1597,7 +1597,7 @@ MonoBehaviour:
           sentence: "\xA1Elegirla es mi parte favorita!"
         - character: 6
           status: 0
-          sentence: "Adi\xF3s, P."
+          sentence: "Adi\xF3s, <P>."
         - character: 0
           status: 0
           sentence: "Cu\xEDdense en el camino."
@@ -1809,7 +1809,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: "Perd\xF3n, P, no era mi intenci\xF3n atacarte de esa manera..."
+          sentence: "Perd\xF3n, <P>, no era mi intenci\xF3n atacarte de esa manera..."
         - character: 0
           status: 0
           sentence: "No pasa nada, de hecho, hace mucho que no entrenamos juntos,
@@ -2163,7 +2163,7 @@ MonoBehaviour:
           sentence: "(No sab\xEDa que Hoshi hablaba con \xE9l)"
         - character: 1
           status: 0
-          sentence: "Este es P..., un conocido m\xEDo desde hace mucho tiempo."
+          sentence: "Este es <P>..., un conocido m\xEDo desde hace mucho tiempo."
     00000033:
       type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -2238,7 +2238,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 6
           status: 0
-          sentence: "Es un gusto, se\xF1or P."
+          sentence: "Es un gusto, se\xF1or <P>."
         - character: 6
           status: 0
           sentence: "\xA1Sus cicatrices son geniales, son como las de Hoshi!"

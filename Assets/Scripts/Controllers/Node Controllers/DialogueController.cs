@@ -131,6 +131,7 @@ public class DialogueController : NodeController, ISaveComponent
 
         //DisplayNextSentence();
         sentence = node.dialogueStrips[CurrentDialogueStripIndex].sentence;
+        sentence = sentence.Replace("<P>", playerName);
 
         bool whispering = CheckForWhisper();
         typingCoroutine = StartCoroutine(TypeSentence(whispering));

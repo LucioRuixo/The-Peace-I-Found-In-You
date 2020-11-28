@@ -150,14 +150,14 @@ MonoBehaviour:
             hace falta que me lo digan."
         - character: 1
           status: 0
-          sentence: Me ahorraste decirlo, P, de verdad necesitas limpiar...
+          sentence: Me ahorraste decirlo, <P>, de verdad necesitas limpiar...
         - character: 6
           status: 0
           sentence: "Es m\xE1s limpia que mi antigua casa, as\xED que no hay problema
             para m\xED."
         - character: 1
           status: 0
-          sentence: "Bueno, \xBFqu\xE9 es lo que vamos a comer, P?"
+          sentence: "Bueno, \xBFqu\xE9 es lo que vamos a comer, <P>?"
         - character: 1
           status: 0
           sentence: Tengo varios ingredientes, si no te molesta puedo ayudarte a
@@ -369,7 +369,7 @@ MonoBehaviour:
           sentence: "\xA1No puedo esperar!"
         - character: 1
           status: 0
-          sentence: "\xBFEmpezamos, P?"
+          sentence: "\xBFEmpezamos, <P>?"
     00000008:
       type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -811,7 +811,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: "No pens\xE9 que pudieras cocinar tan bien, P, me sorprendes."
+          sentence: "No pens\xE9 que pudieras cocinar tan bien, <P>, me sorprendes."
         - character: 1
           status: 0
           sentence: "Como nunca cocinaste en todo el tiempo que nos conocemos pens\xE9
@@ -935,7 +935,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: No fue nada, P...
+          sentence: No fue nada, <P>...
         - character: 0
           status: 0
           sentence: "(\xBFQ-qu\xE9 fue esa expresi\xF3n en su rostro?, la \xFAltima

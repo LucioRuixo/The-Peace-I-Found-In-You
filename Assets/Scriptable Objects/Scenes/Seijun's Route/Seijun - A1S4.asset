@@ -537,7 +537,7 @@ MonoBehaviour:
             te des una idea."
         - character: 0
           status: 0
-          sentence: "Mi nombre es P y vivo en el pueblo al lado del r\xEDo."
+          sentence: "Mi nombre es <P> y vivo en el pueblo al lado del r\xEDo."
     0000000B:
       type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -1351,7 +1351,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 7
           status: 0
-          sentence: "Por cierto, Seiju, \xBFc\xF3mo conociste a P?"
+          sentence: "Por cierto, Seiju, \xBFc\xF3mo conociste a <P>?"
         - character: 2
           status: 0
           sentence: "\xC9l se desmay\xF3 en el bosque, as\xED que lo arrastr\xE9
@@ -1488,7 +1488,7 @@ MonoBehaviour:
           sentence: "\xBFUna maldici\xF3n?, \xBFest\xE1s bromeando, verdad?"
         - character: 7
           status: 0
-          sentence: Lo dice de verdad, P.
+          sentence: Lo dice de verdad, <P>.
         - character: 0
           status: 0
           sentence: "\xBFEh?"

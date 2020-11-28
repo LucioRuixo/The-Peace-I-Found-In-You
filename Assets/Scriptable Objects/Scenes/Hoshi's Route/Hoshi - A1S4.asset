@@ -275,7 +275,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 6
           status: 0
-          sentence: "\xBFComo est\xE1s, P?"
+          sentence: "\xBFComo est\xE1s, <P>?"
         - character: 0
           status: 0
           sentence: "Estoy bien, Tadao. \xBFNo est\xE1s con Hoshi?"
@@ -830,7 +830,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: "Hola de nuevo, P, \xBFTadao te est\xE1 distrayendo?"
+          sentence: "Hola de nuevo, <P>, \xBFTadao te est\xE1 distrayendo?"
         - character: 1
           status: 0
           sentence: "S\xE9 que puede ser molesto a veces, pero no lo hace a prop\xF3sito."
@@ -908,7 +908,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 6
           status: 0
-          sentence: "\xA1No es cierto, yo no soy molesto!, \xBFverdad, P?"
+          sentence: "\xA1No es cierto, yo no soy molesto!, \xBFverdad, <P>?"
         - character: 0
           status: 0
           sentence: "No est\xE1 molest\xE1ndome, Hoshi. De hecho, lo invit\xE9 a
@@ -1081,7 +1081,7 @@ MonoBehaviour:
           sentence: "\xA1Hoshi, quiero que vengas!"
         - character: 6
           status: 0
-          sentence: "Para el se\xF1or P no es una molestia."
+          sentence: "Para el se\xF1or <P> no es una molestia."
         - character: 6
           status: 0
           sentence: "\xBFVerdad?"
@@ -1131,7 +1131,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: "Entonces, \xBFpuedo ir con ustedes, P? No quiero ser una molestia"
+          sentence: "Entonces, \xBFpuedo ir con ustedes, <P>? No quiero ser una molestia"
     0000001A:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:

@@ -176,7 +176,7 @@ MonoBehaviour:
           sentence: "\xBFD\xF3nde est\xE1s? \xBFQui\xE9n eres?"
         - character: 3
           status: 1
-          sentence: Je je je, soy alguien muy familiarizado contigo, P.
+          sentence: Je je je, soy alguien muy familiarizado contigo, <P>.
         - character: 3
           status: 1
           sentence: Nos encontramos muchas veces en combate.
@@ -188,7 +188,7 @@ MonoBehaviour:
           sentence: Tu voz es muy familiar...
         - character: 3
           status: 1
-          sentence: Tch tch tch, no es solamente familiar, P.
+          sentence: Tch tch tch, no es solamente familiar, <P>.
         - character: 3
           status: 1
           sentence: "Intenta concentrarte un poco m\xE1s."
@@ -214,7 +214,7 @@ MonoBehaviour:
           sentence: "Entonces, \xBFs\xF3lo est\xE1s aqu\xED para burlarte de m\xED?"
         - character: 3
           status: 1
-          sentence: No me malinterpretes, P, toda basura merece una segunda oportunidad
+          sentence: No me malinterpretes, <P>, toda basura merece una segunda oportunidad
             en la vida.
         - character: 3
           status: 1
@@ -355,7 +355,7 @@ MonoBehaviour:
           sentence: Quiero demostrar que soy digno de una oportunidad.
         - character: 3
           status: 1
-          sentence: Je je je je, buena respuesta, P.
+          sentence: Je je je je, buena respuesta, <P>.
         - character: 3
           status: 1
           sentence: "Voy a esperar el tiempo en el que vuelvas a m\xED."
@@ -446,7 +446,7 @@ MonoBehaviour:
           sentence: "No s\xE9 si soy digno de una oportunidad."
         - character: 3
           status: 1
-          sentence: "Je je je je, ese tipo de pensamiento te hace d\xE9bil, P."
+          sentence: "Je je je je, ese tipo de pensamiento te hace d\xE9bil, <P>."
         - character: 3
           status: 1
           sentence: "Te voy a consumir poco a poco si sigues pensando as\xED."
@@ -495,8 +495,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: -635
           y: 16
-          width: 212
-          height: 97
+          width: 213
+          height: 96
         width: 600
         height: 500
         inputPorts:

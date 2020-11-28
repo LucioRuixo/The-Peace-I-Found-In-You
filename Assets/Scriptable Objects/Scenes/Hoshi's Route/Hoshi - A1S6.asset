@@ -397,7 +397,7 @@ MonoBehaviour:
             rato?"
         - character: 6
           status: 0
-          sentence: "\xBFDe verdad P?, \xBFHoshi puede jugar tambi\xE9n?"
+          sentence: "\xBFDe verdad <P>?, \xBFHoshi puede jugar tambi\xE9n?"
         - character: 0
           status: 0
           sentence: "Por supuesto, Tadao, ambos queremos jugar contigo as\xED que
@@ -480,7 +480,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: Gracias, P...
+          sentence: Gracias, <P>...
     0000000B:
       type: {class: CustomAnimationNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -642,7 +642,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 1
           status: 0
-          sentence: "Perd\xF3n por molestarte esta noche, P, no cre\xED que terminar\xEDamos
+          sentence: "Perd\xF3n por molestarte esta noche, <P>, no cre\xED que terminar\xEDamos
             tan tarde."
         - character: 0
           status: 0

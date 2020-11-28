@@ -168,7 +168,7 @@ MonoBehaviour:
             a pesar de todo..."
         - character: 1
           status: 0
-          sentence: P..., Gracias...
+          sentence: <P>..., Gracias...
     00000004:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -239,21 +239,21 @@ MonoBehaviour:
             esas experiencias que te fortalecieron.
         - character: 1
           status: 0
-          sentence: Gracias, P.
+          sentence: Gracias, <P>.
         - character: 1
           status: 0
           sentence: "[Aunque dar\xEDa lo que fuera para volver atr\xE1s el tiempo
             y evitar el conflicto...]"
         - character: 1
           status: 0
-          sentence: "No quiero molestarte m\xE1s, P, as\xED que me voy a llevar a
+          sentence: "No quiero molestarte m\xE1s, <P>, as\xED que me voy a llevar a
             Tadao a mi casa."
         - character: 0
           status: 0
           sentence: "\xBFQuieres que te acompa\xF1e, Hoshi?"
         - character: 1
           status: 0
-          sentence: "No hace falta, P, puedo cuidarme sola. Adem\xE1s, las calles
+          sentence: "No hace falta, <P>, puedo cuidarme sola. Adem\xE1s, las calles
             del pueblo siempre est\xE1n iluminadas."
         - character: 0
           status: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
             lado..."
         - character: 1
           status: 0
-          sentence: De verdad, P, gracias...
+          sentence: De verdad, <P>, gracias...
         - character: 0
           status: 0
           sentence: "(La guerra nos provoc\xF3 mucho dolor y nos dej\xF3 cicatrices
@@ -454,7 +454,7 @@ MonoBehaviour:
             como sol\xEDa hacerlo)"
         - character: 1
           status: 0
-          sentence: P, espero que ambos podamos volver a ser felices...
+          sentence: <P>, espero que ambos podamos volver a ser felices...
         - character: 1
           status: 0
           sentence: "T\xFA tambi\xE9n lo mereces, nunca me dejaste sola despu\xE9s
@@ -464,7 +464,7 @@ MonoBehaviour:
           sentence: "Me ense\xF1aste a sobrevivir y por eso sigo viva."
         - character: 1
           status: 0
-          sentence: Gracias por todo, P...
+          sentence: Gracias por todo, <P>...
         - character: 1
           status: 0
           sentence: '[Y no dejarme sola nunca...]'

@@ -358,7 +358,7 @@ MonoBehaviour:
           sentence: (Mi espada... la necesito)
         - character: 0
           status: 0
-          sentence: "(Respira bien, P, calma tu coraz\xF3n. Todo va a salir bien,
+          sentence: "(Respira bien, <P>, calma tu coraz\xF3n. Todo va a salir bien,
             todo va a salir bien)"
         - character: 0
           status: 0

@@ -515,7 +515,7 @@ MonoBehaviour:
           sentence: "\xA1Ella conoce toda la historia de la isla!"
         - character: 7
           status: 0
-          sentence: "No te preocupes, P, yo tambi\xE9n me sorprend\xED la primera
+          sentence: "No te preocupes, <P>, yo tambi\xE9n me sorprend\xED la primera
             vez que la vi."
     0000000B:
       type: {class: CustomCharacterActionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
@@ -805,7 +805,7 @@ MonoBehaviour:
           sentence: "\xBF...?"
         - character: 7
           status: 0
-          sentence: No te estoy mintiendo, P, ja ja ja.
+          sentence: No te estoy mintiendo, <P>, ja ja ja.
         - character: 0
           status: 0
           sentence: "S\xF3lo me sorprende que puedas atraer a un oso a base de llantos."
@@ -1550,7 +1550,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 7
           status: 0
-          sentence: Ya que voy al pueblo, P...
+          sentence: Ya que voy al pueblo, <P>...
         - character: 7
           status: 0
           sentence: "\xBFQuieres que vayamos juntos?"
@@ -1713,7 +1713,7 @@ MonoBehaviour:
           sentence: "Pero, \xBFno es mejor que descanse en mi hogar?"
         - character: 2
           status: 0
-          sentence: Es normal que no lo recuerdes, P, pero no te desmayaste.
+          sentence: Es normal que no lo recuerdes, <P>, pero no te desmayaste.
         - character: 2
           status: 0
           sentence: "Yo permit\xED que descanses."
@@ -1821,7 +1821,7 @@ MonoBehaviour:
         dialogueStrips:
         - character: 7
           status: 0
-          sentence: "[Una l\xE1stima que no puedas acompa\xF1arme, P...]"
+          sentence: "[Una l\xE1stima que no puedas acompa\xF1arme, <P>...]"
         - character: 7
           status: 0
           sentence: "\xA1Nos vemos ma\xF1ana!"
@@ -2188,7 +2188,7 @@ MonoBehaviour:
           sentence: ...
         - character: 7
           status: 0
-          sentence: "No ten\xEDas que negarte, P."
+          sentence: "No ten\xEDas que negarte, <P>."
         - character: 2
           status: 0
           sentence: "Ten\xEDas que hacerlo dif\xEDcil, \xBFverdad...?"
@@ -2306,7 +2306,7 @@ MonoBehaviour:
         - character: 7
           status: 0
           sentence: "Creo que ya entendi\xF3. Lo de la maldici\xF3n es una mentira,
-            P."
+            <P>."
         - character: 2
           status: 0
           sentence: Hmph, debilucho...
@@ -2388,7 +2388,7 @@ MonoBehaviour:
             a nadie.
         - character: 7
           status: 0
-          sentence: Por tu propia seguridad, P.
+          sentence: Por tu propia seguridad, <P>.
         - character: 0
           status: 0
           sentence: "\xBFMi propia seguridad?"
