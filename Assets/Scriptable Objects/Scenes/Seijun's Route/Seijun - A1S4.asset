@@ -360,7 +360,7 @@ MonoBehaviour:
             detr\xE1s de t\xED."
         - character: 2
           status: 0
-          sentence: "Seguro est\xE1s cansado toda-"
+          sentence: "Seguro todav\xEDa est\xE1s cansa-"
         - character: 2
           status: 0
           sentence: "\xA1Bienvenida de nuevo!"

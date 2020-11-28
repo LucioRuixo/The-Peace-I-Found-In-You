@@ -18,6 +18,7 @@ public class DialogueController : NodeController, ISaveComponent
     [SerializeField] char[] pauseCharacters = null;
 
     [SerializeField] string unknownCharacterName = "";
+    string playerName;
     string characterName;
     string sentence;
 
@@ -118,7 +119,10 @@ public class DialogueController : NodeController, ISaveComponent
             dialogueBoxImage.sprite = character.dialogueBoxSprite;
 
             if (node.dialogueStrips[CurrentDialogueStripIndex].status == CharacterManager.Status.Known)
-                characterName = character.nameText;
+            {
+                if (name == CharacterManager.CharacterName.Protagonist) characterName = playerName;
+                else characterName = character.nameText;
+            }
             else
                 characterName = unknownCharacterName;
 
@@ -178,6 +182,7 @@ public class DialogueController : NodeController, ISaveComponent
 
     public void SetLoadedData(SaveData loadedData)
     {
+        playerName = loadedData.playerName;
         CurrentDialogueStripIndex = loadedData.currentDialogueStripIndex;
         log.SetLogText(loadedData.logData.logText);
         log.SetLastCharacterToSpeak(loadedData.logData.lastCharacterToSpeak);
