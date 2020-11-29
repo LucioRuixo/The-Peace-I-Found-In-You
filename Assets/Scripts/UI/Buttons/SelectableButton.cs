@@ -33,6 +33,8 @@ public class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerDow
     public void OnPointerDown(PointerEventData eventData)
     {
         selectionIcon.gameObject.SetActive(false);
+
+        SoundManager.Get().PlaySFX(SoundManager.SFXs.Fx_ApretaBoton);
     }
 
     public void OnPointerExit(PointerEventData eventData)

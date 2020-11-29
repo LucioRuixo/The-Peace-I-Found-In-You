@@ -21,6 +21,7 @@ MonoBehaviour:
   - id: 5
   - id: 6
   - id: 7
+  - id: 8
   references:
     version: 1
     00000000:
@@ -66,9 +67,9 @@ MonoBehaviour:
         - GUID: 2659c781-ece3-4a5c-b2c4-fa54d3118d12
           parentNodeGUID: 3b7e775f-1db1-45f5-b24a-d32b9e11ab5d
           targetNodeGUID:
-          - 1a796639-7f65-4bea-8a78-62cf2ef90524
+          - 5e6f5804-a810-4c06-b189-ff0a2bd5dbb0
           targetPortGUID:
-          - 04af72a1-4aee-43ed-a849-bc0eb4dee4eb
+          - 660b87fe-4850-485f-bf57-016076d3816c
           text: Input
           isEditable: 0
         outputPorts:
@@ -83,9 +84,6 @@ MonoBehaviour:
         classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         dialogueStrips:
-        - character: 1
-          status: 1
-          sentence: "*Los ruidos se hacen m\xE1s fuertes*"
         - character: 0
           status: 0
           sentence: (El sonido de una espada chocando contra el terreno...)
@@ -301,11 +299,45 @@ MonoBehaviour:
         - GUID: 04af72a1-4aee-43ed-a849-bc0eb4dee4eb
           parentNodeGUID: 1a796639-7f65-4bea-8a78-62cf2ef90524
           targetNodeGUID:
-          - 3b7e775f-1db1-45f5-b24a-d32b9e11ab5d
+          - 5e6f5804-a810-4c06-b189-ff0a2bd5dbb0
           targetPortGUID:
-          - 2659c781-ece3-4a5c-b2c4-fa54d3118d12
+          - 84c42b91-2a84-4753-abce-0fb369a9a715
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         songTitle: 5
+    00000008:
+      type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Sound Effect
+        GUID: 5e6f5804-a810-4c06-b189-ff0a2bd5dbb0
+        rect:
+          serializedVersion: 2
+          x: -149
+          y: 400
+          width: 286
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 84c42b91-2a84-4753-abce-0fb369a9a715
+          parentNodeGUID: 5e6f5804-a810-4c06-b189-ff0a2bd5dbb0
+          targetNodeGUID:
+          - 1a796639-7f65-4bea-8a78-62cf2ef90524
+          targetPortGUID:
+          - 04af72a1-4aee-43ed-a849-bc0eb4dee4eb
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 660b87fe-4850-485f-bf57-016076d3816c
+          parentNodeGUID: 5e6f5804-a810-4c06-b189-ff0a2bd5dbb0
+          targetNodeGUID:
+          - 3b7e775f-1db1-45f5-b24a-d32b9e11ab5d
+          targetPortGUID:
+          - 2659c781-ece3-4a5c-b2c4-fa54d3118d12
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        sfx: 4

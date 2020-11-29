@@ -68,6 +68,7 @@ MonoBehaviour:
   - id: 52
   - id: 53
   - id: 54
+  - id: 55
   references:
     version: 1
     00000000:
@@ -79,7 +80,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 1230
           y: 240
-          width: 76
+          width: 78
           height: 71
         width: 100
         height: 100
@@ -105,7 +106,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 15145
           y: 328
-          width: 69
+          width: 70
           height: 71
         width: 100
         height: 100
@@ -169,8 +170,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 1892
           y: 238
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -186,9 +187,9 @@ MonoBehaviour:
         - GUID: 0b6c4a47-070a-4378-9832-3da65c84404f
           parentNodeGUID: 22e42eb5-3cc6-4834-be0e-1b58d05bd76b
           targetNodeGUID:
-          - aa70e085-97f1-4fd6-87ef-da795e3453ce
+          - dc28ccf5-52b1-4cb7-96f1-ec4edd42143b
           targetPortGUID:
-          - 44936318-a855-4494-abc4-349eef526a7c
+          - 6a2a32a1-81c4-4a01-8952-caf3c8e426aa
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomCharacterActionNodeVisual, Assembly-CSharp,
@@ -215,9 +216,9 @@ MonoBehaviour:
         - GUID: 44936318-a855-4494-abc4-349eef526a7c
           parentNodeGUID: aa70e085-97f1-4fd6-87ef-da795e3453ce
           targetNodeGUID:
-          - 22e42eb5-3cc6-4834-be0e-1b58d05bd76b
+          - dc28ccf5-52b1-4cb7-96f1-ec4edd42143b
           targetPortGUID:
-          - 0b6c4a47-070a-4378-9832-3da65c84404f
+          - 8abd7d54-70d7-4a67-8f1d-257729d64510
           text: Input
           isEditable: 0
         outputPorts:
@@ -253,8 +254,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 2543
           y: 245
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -360,8 +361,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 3191
           y: 248
-          width: 265
-          height: 96
+          width: 262
+          height: 97
         width: 600
         height: 500
         inputPorts:
@@ -436,8 +437,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 3852
           y: 250
-          width: 280
-          height: 96
+          width: 275
+          height: 97
         width: 600
         height: 500
         inputPorts:
@@ -526,8 +527,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 3192
           y: 354
-          width: 260
-          height: 175
+          width: 259
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -617,8 +618,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 4898
           y: 247
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -698,8 +699,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 5555
           y: 250
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -830,8 +831,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 6218
           y: 255
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -906,8 +907,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 6887
           y: 262
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1003,8 +1004,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 7546
           y: 267
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1041,8 +1042,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 7547
           y: 458
-          width: 255
-          height: 175
+          width: 254
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1128,8 +1129,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 8194
           y: 271
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1203,8 +1204,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 8846
           y: 273
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1241,8 +1242,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 8847
           y: 463
-          width: 255
-          height: 175
+          width: 254
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1319,8 +1320,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 9502
           y: 277
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1410,8 +1411,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 10162
           y: 282
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1485,8 +1486,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 10830
           y: 290
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1566,8 +1567,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 11501
           y: 295
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1642,8 +1643,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 12169
           y: 300
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1756,8 +1757,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 12837
           y: 306
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1837,8 +1838,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 13512
           y: 315
-          width: 244
-          height: 172
+          width: 240
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1918,8 +1919,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 14183
           y: 321
-          width: 244
-          height: 175
+          width: 240
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -2000,8 +2001,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 14845
           y: 326
-          width: 265
-          height: 96
+          width: 262
+          height: 97
         width: 600
         height: 500
         inputPorts:
@@ -2034,7 +2035,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 1340
           y: 237
-          width: 164
+          width: 169
           height: 101
         width: 1500
         height: 500
@@ -2074,8 +2075,8 @@ MonoBehaviour:
         GUID: 86f33639-62f2-47b2-941a-fb6bd1f859ec
         rect:
           serializedVersion: 2
-          x: 1535
-          y: 831
+          x: 1531
+          y: 841
           width: 328
           height: 577
         width: 1500
@@ -2118,10 +2119,10 @@ MonoBehaviour:
         GUID: de588d26-061c-408c-9a1e-9111bc36cab1
         rect:
           serializedVersion: 2
-          x: 1892
-          y: 836
-          width: 260
-          height: 175
+          x: 1888
+          y: 846
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -2156,8 +2157,8 @@ MonoBehaviour:
         GUID: 8a5f38ee-676b-475c-9c1e-cb08b891aefa
         rect:
           serializedVersion: 2
-          x: 2183
-          y: 837
+          x: 2179
+          y: 847
           width: 328
           height: 577
         width: 1500
@@ -2237,8 +2238,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 2542
           y: 841
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -2319,8 +2320,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 3198
           y: 846
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -2451,8 +2452,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 3198
           y: 543
-          width: 260
-          height: 175
+          width: 256
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -2480,3 +2481,37 @@ MonoBehaviour:
         bodyIndex: 0
         armIndex: 0
         headIndex: 1
+    00000037:
+      type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Sound Effect
+        GUID: dc28ccf5-52b1-4cb7-96f1-ec4edd42143b
+        rect:
+          serializedVersion: 2
+          x: 1888
+          y: 430
+          width: 256
+          height: 97
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 6a2a32a1-81c4-4a01-8952-caf3c8e426aa
+          parentNodeGUID: dc28ccf5-52b1-4cb7-96f1-ec4edd42143b
+          targetNodeGUID:
+          - 22e42eb5-3cc6-4834-be0e-1b58d05bd76b
+          targetPortGUID:
+          - 0b6c4a47-070a-4378-9832-3da65c84404f
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 8abd7d54-70d7-4a67-8f1d-257729d64510
+          parentNodeGUID: dc28ccf5-52b1-4cb7-96f1-ec4edd42143b
+          targetNodeGUID:
+          - aa70e085-97f1-4fd6-87ef-da795e3453ce
+          targetPortGUID:
+          - 44936318-a855-4494-abc4-349eef526a7c
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        sfx: 20

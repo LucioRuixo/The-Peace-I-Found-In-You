@@ -1029,6 +1029,8 @@ MonoBehaviour:
   - /The Peace I Found In You
   - /The Peace I Found In You/Events
   - /The Peace I Found In You/Events/Default Work Unit
+  - /The Peace I Found In You/Events/Default Work Unit/AMB Escenas
+  - /The Peace I Found In You/Events/Default Work Unit/Music Game
   - /The Peace I Found In You/Events/Default Work Unit/SFX
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

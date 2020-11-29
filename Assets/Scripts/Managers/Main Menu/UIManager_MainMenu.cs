@@ -55,9 +55,9 @@ public class UIManager_MainMenu : MonoBehaviour
     [SerializeField] GameObject creditsScreenFirstSelected = null;
     [SerializeField] GameObject extrasScreenFirstSelected = null;
 
+    public static event Action OnMainScreen;
+    public static event Action OnCreditsScreen;
     public static event Action<SaveSelectionScreenMode> OnSaveSelectionScreenEnabled;
-
-    GameObject audioObject;
 
     void Awake()
     {
@@ -73,7 +73,7 @@ public class UIManager_MainMenu : MonoBehaviour
 
         StartCoroutine(ChangeBackground());
 
-        audioObject = GameObject.Find("WwiseGlobal");
+        OnMainScreen?.Invoke();
     }
 
     void ExitGame()
@@ -137,6 +137,8 @@ public class UIManager_MainMenu : MonoBehaviour
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(creditsScreenFirstSelected);
+
+        OnCreditsScreen?.Invoke();
     }
 
     public void GoToExtrasScreen()
@@ -158,6 +160,8 @@ public class UIManager_MainMenu : MonoBehaviour
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(mainMenuFirstSelected);
+
+        OnMainScreen?.Invoke();
     }
 
     public void Quit()

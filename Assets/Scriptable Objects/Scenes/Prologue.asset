@@ -40,6 +40,16 @@ MonoBehaviour:
   - id: 24
   - id: 25
   - id: 26
+  - id: 27
+  - id: 28
+  - id: 29
+  - id: 30
+  - id: 31
+  - id: 32
+  - id: 33
+  - id: 34
+  - id: 35
+  - id: 36
   references:
     version: 1
     00000000:
@@ -49,8 +59,8 @@ MonoBehaviour:
         GUID: 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
         rect:
           serializedVersion: 2
-          x: -749
-          y: 12
+          x: -2723
+          y: 19
           width: 76
           height: 71
         width: 100
@@ -75,8 +85,8 @@ MonoBehaviour:
         GUID: 13c39c25-8326-46af-b32b-fdf2416253fc
         rect:
           serializedVersion: 2
-          x: 249
-          y: 5
+          x: -1098
+          y: 12
           width: 328
           height: 577
         width: 1000
@@ -121,8 +131,8 @@ MonoBehaviour:
         GUID: 60e6bd60-d35d-47c3-8484-8ef8a7534b4d
         rect:
           serializedVersion: 2
-          x: 582
-          y: 658
+          x: -765
+          y: 665
           width: 314
           height: 134
         width: 600
@@ -157,8 +167,8 @@ MonoBehaviour:
         GUID: 8ec41846-884a-4387-aa6d-15d21181bd4b
         rect:
           serializedVersion: 2
-          x: 883
-          y: 3
+          x: -464
+          y: 10
           width: 328
           height: 577
         width: 1000
@@ -167,26 +177,23 @@ MonoBehaviour:
         - GUID: de34864f-05fd-415d-bbf7-4a8c5fa869bd
           parentNodeGUID: 8ec41846-884a-4387-aa6d-15d21181bd4b
           targetNodeGUID:
-          - 75a2b35f-2f4c-4815-b5fd-b7b794241747
+          - 508e9d14-4df7-48d1-90c5-d151da43fde7
           targetPortGUID:
-          - 2e41a8f1-ea31-4dc0-afd8-491a098fea54
+          - 33a38082-bab6-48b7-a149-ff8685bea848
           text: Input
           isEditable: 0
         outputPorts:
         - GUID: c98c7b74-2903-46d8-8f68-827a80b75142
           parentNodeGUID: 8ec41846-884a-4387-aa6d-15d21181bd4b
           targetNodeGUID:
-          - 772039f8-52d4-4af6-b1d7-b165c7b9fbe9
+          - 75b86b61-7914-4ca9-a870-5251419a7a45
           targetPortGUID:
-          - c86b03f0-8311-43e5-9723-828c56d05858
+          - 5a31122c-6183-44bb-91cc-f1928b2703df
           text: Out
           isEditable: 0
         classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         dialogueStrips:
-        - character: 0
-          status: 0
-          sentence: '*Agitado*'
         - character: 0
           status: 0
           sentence: "S\xF3lo fue una pesadilla..."
@@ -196,13 +203,6 @@ MonoBehaviour:
         - character: 0
           status: 0
           sentence: "Ayer me olvid\xE9 de ver cu\xE1nta madera me queda."
-        - character: 0
-          status: 0
-          sentence: "Mmm... me qued\xE9 sin madera. Deber\xEDa ir al bosque otra
-            vez."
-        - character: 0
-          status: 0
-          sentence: Aunque me da demasiada pereza ir. *Bostezo*
     00000004:
       type: {class: CustomBackgroundChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -210,8 +210,8 @@ MonoBehaviour:
         GUID: b81f2752-be65-450f-aef8-7b9557ee0b24
         rect:
           serializedVersion: 2
-          x: 1227
-          y: 220
+          x: 1217
+          y: 222
           width: 231
           height: 134
         width: 600
@@ -246,8 +246,8 @@ MonoBehaviour:
         GUID: db724b6e-51d9-4d75-8e15-30043d2116a7
         rect:
           serializedVersion: 2
-          x: 1479
-          y: 1
+          x: 1490
+          y: 10
           width: 328
           height: 577
         width: 1500
@@ -306,8 +306,8 @@ MonoBehaviour:
         GUID: 2ef52e3c-0921-499c-b807-3443330c36a5
         rect:
           serializedVersion: 2
-          x: 1829
-          y: 113
+          x: 1840
+          y: 122
           width: 248
           height: 134
         width: 600
@@ -342,8 +342,8 @@ MonoBehaviour:
         GUID: e4467bae-bf9d-4e2d-9c7c-75da9438ee78
         rect:
           serializedVersion: 2
-          x: 2102
-          y: -1
+          x: 2113
+          y: 8
           width: 328
           height: 577
         width: 1500
@@ -361,9 +361,9 @@ MonoBehaviour:
         - GUID: 68046d23-0e8e-4965-9eb5-f32f4a45e48c
           parentNodeGUID: e4467bae-bf9d-4e2d-9c7c-75da9438ee78
           targetNodeGUID:
-          - 1743ab93-007f-490b-a43f-6c7459cb7f60
+          - ae691dff-fd7f-4e37-8149-b2b2be2d7581
           targetPortGUID:
-          - 59f4a3ca-8d59-4800-9f6c-cbfc6430aacb
+          - 7abd54e3-effb-40f7-a935-9781ddc6a6bc
           text: Out
           isEditable: 0
         classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
@@ -384,12 +384,6 @@ MonoBehaviour:
         - character: 0
           status: 0
           sentence: (No quiero estar en un lugar oscuro)
-        - character: 1
-          status: 1
-          sentence: "*Sonidos met\xE1licos*"
-        - character: 0
-          status: 0
-          sentence: (Ese sonido lo conozco...)
     00000008:
       type: {class: CustomDecisionNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -397,8 +391,8 @@ MonoBehaviour:
         GUID: 1743ab93-007f-490b-a43f-6c7459cb7f60
         rect:
           serializedVersion: 2
-          x: 2444
-          y: -1
+          x: 3137
+          y: 14
           width: 276
           height: 101
         width: 600
@@ -407,9 +401,9 @@ MonoBehaviour:
         - GUID: 59f4a3ca-8d59-4800-9f6c-cbfc6430aacb
           parentNodeGUID: 1743ab93-007f-490b-a43f-6c7459cb7f60
           targetNodeGUID:
-          - e4467bae-bf9d-4e2d-9c7c-75da9438ee78
+          - 28b915cc-7fc6-4ed8-bf5c-e5827f2f4523
           targetPortGUID:
-          - 68046d23-0e8e-4965-9eb5-f32f4a45e48c
+          - 8c109bcd-31d7-4700-99e1-d8d225117127
           text: Input
           isEditable: 0
         outputPorts:
@@ -438,8 +432,8 @@ MonoBehaviour:
         GUID: 7259f9ed-615b-4e53-aaf3-f577f4e240be
         rect:
           serializedVersion: 2
-          x: -362
-          y: 8
+          x: -2336
+          y: 15
           width: 246
           height: 96
         width: 600
@@ -457,9 +451,9 @@ MonoBehaviour:
         - GUID: 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
           parentNodeGUID: 7259f9ed-615b-4e53-aaf3-f577f4e240be
           targetNodeGUID:
-          - 69b5d113-2361-43d3-9df6-68b7e4c90c91
+          - 7266db7f-7779-422e-9f39-0b4589277cb7
           targetPortGUID:
-          - 163362ad-5a15-42aa-8ca2-d19305014149
+          - 0930345e-aeb9-40a7-ba32-eda3e60aa15c
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
@@ -472,8 +466,8 @@ MonoBehaviour:
         GUID: 75a2b35f-2f4c-4815-b5fd-b7b794241747
         rect:
           serializedVersion: 2
-          x: 582
-          y: 803
+          x: -765
+          y: 810
           width: 280
           height: 96
         width: 600
@@ -491,9 +485,9 @@ MonoBehaviour:
         - GUID: 2e41a8f1-ea31-4dc0-afd8-491a098fea54
           parentNodeGUID: 75a2b35f-2f4c-4815-b5fd-b7b794241747
           targetNodeGUID:
-          - 8ec41846-884a-4387-aa6d-15d21181bd4b
+          - 508e9d14-4df7-48d1-90c5-d151da43fde7
           targetPortGUID:
-          - de34864f-05fd-415d-bbf7-4a8c5fa869bd
+          - ab081385-14fe-41b1-80b5-504df73b5c7f
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
@@ -506,8 +500,8 @@ MonoBehaviour:
         GUID: b66eb2c8-0965-4b50-b7ba-4f76612b3cc4
         rect:
           serializedVersion: 2
-          x: 600
-          y: 6
+          x: -747
+          y: 13
           width: 265
           height: 96
         width: 600
@@ -540,8 +534,8 @@ MonoBehaviour:
         GUID: 2a501501-bb85-46ce-a022-3323db50a30a
         rect:
           serializedVersion: 2
-          x: -655
-          y: 11
+          x: -2629
+          y: 18
           width: 271
           height: 175
         width: 600
@@ -578,8 +572,8 @@ MonoBehaviour:
         GUID: 69b5d113-2361-43d3-9df6-68b7e4c90c91
         rect:
           serializedVersion: 2
-          x: -96
-          y: 7
+          x: -1443
+          y: 14
           width: 328
           height: 577
         width: 1500
@@ -588,9 +582,11 @@ MonoBehaviour:
         - GUID: 163362ad-5a15-42aa-8ca2-d19305014149
           parentNodeGUID: 69b5d113-2361-43d3-9df6-68b7e4c90c91
           targetNodeGUID:
-          - 7259f9ed-615b-4e53-aaf3-f577f4e240be
+          - 11cfa34f-bf5e-4f80-a05b-1eebef457fe3
+          - 11cfa34f-bf5e-4f80-a05b-1eebef457fe3
           targetPortGUID:
-          - 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
+          - 52c1d74a-f18b-4c8f-a843-8a7d46c773bf
+          - cb0691eb-5207-4cb0-9f20-6b0b233acb59
           text: Input
           isEditable: 0
         outputPorts:
@@ -618,8 +614,8 @@ MonoBehaviour:
         GUID: f1626eea-7316-4db5-8232-1513a724d5d0
         rect:
           serializedVersion: 2
-          x: 594
-          y: 108
+          x: -753
+          y: 115
           width: 285
           height: 175
         width: 600
@@ -656,8 +652,8 @@ MonoBehaviour:
         GUID: 772039f8-52d4-4af6-b1d7-b165c7b9fbe9
         rect:
           serializedVersion: 2
-          x: 1213
-          y: 4
+          x: 1203
+          y: 6
           width: 264
           height: 96
         width: 600
@@ -666,9 +662,9 @@ MonoBehaviour:
         - GUID: c86b03f0-8311-43e5-9723-828c56d05858
           parentNodeGUID: 772039f8-52d4-4af6-b1d7-b165c7b9fbe9
           targetNodeGUID:
-          - 8ec41846-884a-4387-aa6d-15d21181bd4b
+          - c1961f99-26a1-4836-904e-68f5cb73f91f
           targetPortGUID:
-          - c98c7b74-2903-46d8-8f68-827a80b75142
+          - 7e8e3dec-ebdd-41e3-a6f4-f9a1ad25e0de
           text: Input
           isEditable: 0
         outputPorts:
@@ -690,8 +686,8 @@ MonoBehaviour:
         GUID: 3ecfe32b-ae2d-4606-a9b7-d6ed587a8d43
         rect:
           serializedVersion: 2
-          x: 1203
-          y: 363
+          x: 1193
+          y: 365
           width: 279
           height: 96
         width: 600
@@ -724,8 +720,8 @@ MonoBehaviour:
         GUID: 934d264b-08fd-4c4a-93f2-cc9463347777
         rect:
           serializedVersion: 2
-          x: 1821
-          y: 4
+          x: 1832
+          y: 13
           width: 264
           height: 96
         width: 600
@@ -758,8 +754,8 @@ MonoBehaviour:
         GUID: 18081f4a-8ffe-4607-b41f-954475042ea0
         rect:
           serializedVersion: 2
-          x: 1815
-          y: 259
+          x: 1826
+          y: 268
           width: 279
           height: 96
         width: 600
@@ -792,8 +788,8 @@ MonoBehaviour:
         GUID: fdd2e14c-7912-49db-885e-ec92e75fcf4a
         rect:
           serializedVersion: 2
-          x: -657
-          y: 200
+          x: -2631
+          y: 207
           width: 271
           height: 175
         width: 600
@@ -830,8 +826,8 @@ MonoBehaviour:
         GUID: 380a0eb2-0909-4980-9d6b-9e9b38919cec
         rect:
           serializedVersion: 2
-          x: -657
-          y: 390
+          x: -2631
+          y: 397
           width: 271
           height: 175
         width: 600
@@ -868,8 +864,8 @@ MonoBehaviour:
         GUID: 41b1a698-0d24-43cd-aaa7-d4a895b473c4
         rect:
           serializedVersion: 2
-          x: 591
-          y: 289
+          x: -756
+          y: 296
           width: 285
           height: 175
         width: 600
@@ -906,8 +902,8 @@ MonoBehaviour:
         GUID: c65c2097-ed39-441d-ad34-37a5b2bd2804
         rect:
           serializedVersion: 2
-          x: 592
-          y: 473
+          x: -755
+          y: 480
           width: 285
           height: 175
         width: 600
@@ -944,8 +940,8 @@ MonoBehaviour:
         GUID: 040d6784-44ba-42ce-9538-e533140d8617
         rect:
           serializedVersion: 2
-          x: 2764
-          y: -41
+          x: 3457
+          y: -26
           width: 215
           height: 96
         width: 600
@@ -978,8 +974,8 @@ MonoBehaviour:
         GUID: 4eae17a4-b330-4de2-9625-343d957609fc
         rect:
           serializedVersion: 2
-          x: 2764
-          y: 70
+          x: 3457
+          y: 85
           width: 220
           height: 96
         width: 600
@@ -1012,8 +1008,8 @@ MonoBehaviour:
         GUID: a3d4208c-7e32-41f2-8792-881b50d3a7ae
         rect:
           serializedVersion: 2
-          x: 3022
-          y: 18
+          x: 3715
+          y: 33
           width: 46
           height: 71
         width: 100
@@ -1040,8 +1036,8 @@ MonoBehaviour:
         GUID: 01b73842-8448-4e8d-8667-12a8b1a62776
         rect:
           serializedVersion: 2
-          x: 1238
-          y: 111
+          x: 1228
+          y: 113
           width: 214
           height: 96
         width: 600
@@ -1067,3 +1063,361 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         songTitle: 10
+    0000001B:
+      type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Sound Effect
+        GUID: 508e9d14-4df7-48d1-90c5-d151da43fde7
+        rect:
+          serializedVersion: 2
+          x: -751
+          y: 919
+          width: 270
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: ab081385-14fe-41b1-80b5-504df73b5c7f
+          parentNodeGUID: 508e9d14-4df7-48d1-90c5-d151da43fde7
+          targetNodeGUID:
+          - 75a2b35f-2f4c-4815-b5fd-b7b794241747
+          targetPortGUID:
+          - 2e41a8f1-ea31-4dc0-afd8-491a098fea54
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 33a38082-bab6-48b7-a149-ff8685bea848
+          parentNodeGUID: 508e9d14-4df7-48d1-90c5-d151da43fde7
+          targetNodeGUID:
+          - 8ec41846-884a-4387-aa6d-15d21181bd4b
+          targetPortGUID:
+          - de34864f-05fd-415d-bbf7-4a8c5fa869bd
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        sfx: 18
+    0000001C:
+      type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        title: Multiple Dialogue
+        GUID: 9c38de02-94a7-4026-b8b5-e485525a8c05
+        rect:
+          serializedVersion: 2
+          x: 221
+          y: 10
+          width: 328
+          height: 577
+        width: 1500
+        height: 500
+        inputPorts:
+        - GUID: e9d30ffd-b0f6-44cc-b547-6451daa57cf7
+          parentNodeGUID: 9c38de02-94a7-4026-b8b5-e485525a8c05
+          targetNodeGUID:
+          - 75b86b61-7914-4ca9-a870-5251419a7a45
+          targetPortGUID:
+          - 45257f4f-cadf-414f-8056-703b0236efb0
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 178a083b-db34-46d9-8104-291560ba0f32
+          parentNodeGUID: 9c38de02-94a7-4026-b8b5-e485525a8c05
+          targetNodeGUID:
+          - ae469d12-bb63-47fe-92b8-2180a72d771e
+          targetPortGUID:
+          - e4b2e9f2-6ff0-4cff-b9f4-49e837af225d
+          text: Out
+          isEditable: 0
+        classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        dialogueStrips:
+        - character: 0
+          status: 0
+          sentence: "Mmm... me qued\xE9 sin madera. Deber\xEDa ir al bosque otra
+            vez."
+    0000001D:
+      type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        title: Multiple Dialogue
+        GUID: c1961f99-26a1-4836-904e-68f5cb73f91f
+        rect:
+          serializedVersion: 2
+          x: 851
+          y: 5
+          width: 328
+          height: 577
+        width: 1500
+        height: 500
+        inputPorts:
+        - GUID: 1123cac2-d4c0-4d68-9b86-b8632dc143e2
+          parentNodeGUID: c1961f99-26a1-4836-904e-68f5cb73f91f
+          targetNodeGUID:
+          - ae469d12-bb63-47fe-92b8-2180a72d771e
+          targetPortGUID:
+          - 586deec3-c28f-4fcc-a9a2-a38033c941fe
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 7e8e3dec-ebdd-41e3-a6f4-f9a1ad25e0de
+          parentNodeGUID: c1961f99-26a1-4836-904e-68f5cb73f91f
+          targetNodeGUID:
+          - 772039f8-52d4-4af6-b1d7-b165c7b9fbe9
+          targetPortGUID:
+          - c86b03f0-8311-43e5-9723-828c56d05858
+          text: Out
+          isEditable: 0
+        classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        dialogueStrips:
+        - character: 0
+          status: 0
+          sentence: Aunque me da demasiada pereza ir.
+    0000001E:
+      type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Sound Effect
+        GUID: 75b86b61-7914-4ca9-a870-5251419a7a45
+        rect:
+          serializedVersion: 2
+          x: -108
+          y: 12
+          width: 305
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 5a31122c-6183-44bb-91cc-f1928b2703df
+          parentNodeGUID: 75b86b61-7914-4ca9-a870-5251419a7a45
+          targetNodeGUID:
+          - 8ec41846-884a-4387-aa6d-15d21181bd4b
+          targetPortGUID:
+          - c98c7b74-2903-46d8-8f68-827a80b75142
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 45257f4f-cadf-414f-8056-703b0236efb0
+          parentNodeGUID: 75b86b61-7914-4ca9-a870-5251419a7a45
+          targetNodeGUID:
+          - 9c38de02-94a7-4026-b8b5-e485525a8c05
+          targetPortGUID:
+          - e9d30ffd-b0f6-44cc-b547-6451daa57cf7
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        sfx: 19
+    0000001F:
+      type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Sound Effect
+        GUID: ae469d12-bb63-47fe-92b8-2180a72d771e
+        rect:
+          serializedVersion: 2
+          x: 577
+          y: 9
+          width: 249
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: e4b2e9f2-6ff0-4cff-b9f4-49e837af225d
+          parentNodeGUID: ae469d12-bb63-47fe-92b8-2180a72d771e
+          targetNodeGUID:
+          - 9c38de02-94a7-4026-b8b5-e485525a8c05
+          targetPortGUID:
+          - 178a083b-db34-46d9-8104-291560ba0f32
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 586deec3-c28f-4fcc-a9a2-a38033c941fe
+          parentNodeGUID: ae469d12-bb63-47fe-92b8-2180a72d771e
+          targetNodeGUID:
+          - c1961f99-26a1-4836-904e-68f5cb73f91f
+          targetPortGUID:
+          - 1123cac2-d4c0-4d68-9b86-b8632dc143e2
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        sfx: 2
+    00000020:
+      type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Sound Effect
+        GUID: 9cf904ed-599f-4fe2-aca3-e5542be02bcd
+        rect:
+          serializedVersion: 2
+          x: -2342
+          y: 233
+          width: 260
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 5b13e145-175a-4ae5-8516-64425f11469a
+          parentNodeGUID: 9cf904ed-599f-4fe2-aca3-e5542be02bcd
+          targetNodeGUID:
+          - 7266db7f-7779-422e-9f39-0b4589277cb7
+          targetPortGUID:
+          - 216fb81f-7e50-4c2b-a2f1-caf92c359b99
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: f73b0f6b-caf0-49b3-a4af-be8a182d4d2e
+          parentNodeGUID: 9cf904ed-599f-4fe2-aca3-e5542be02bcd
+          targetNodeGUID:
+          - 11cfa34f-bf5e-4f80-a05b-1eebef457fe3
+          targetPortGUID:
+          - 8ec965bf-333d-40a6-9497-4f58ffe8c915
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        sfx: 6
+    00000021:
+      type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        title: Multiple Dialogue
+        GUID: 28b915cc-7fc6-4ed8-bf5c-e5827f2f4523
+        rect:
+          serializedVersion: 2
+          x: 2779
+          y: 12
+          width: 328
+          height: 577
+        width: 1500
+        height: 500
+        inputPorts:
+        - GUID: e2c855c9-8ddb-4a3d-8faa-1a4026a2a723
+          parentNodeGUID: 28b915cc-7fc6-4ed8-bf5c-e5827f2f4523
+          targetNodeGUID:
+          - ae691dff-fd7f-4e37-8149-b2b2be2d7581
+          targetPortGUID:
+          - 7513e278-ff33-418f-a8c9-369c11bdd221
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 8c109bcd-31d7-4700-99e1-d8d225117127
+          parentNodeGUID: 28b915cc-7fc6-4ed8-bf5c-e5827f2f4523
+          targetNodeGUID:
+          - 1743ab93-007f-490b-a43f-6c7459cb7f60
+          targetPortGUID:
+          - 59f4a3ca-8d59-4800-9f6c-cbfc6430aacb
+          text: Out
+          isEditable: 0
+        classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        dialogueStrips:
+        - character: 0
+          status: 0
+          sentence: (Ese sonido lo conozco...)
+    00000022:
+      type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Sound Effect
+        GUID: ae691dff-fd7f-4e37-8149-b2b2be2d7581
+        rect:
+          serializedVersion: 2
+          x: 2466
+          y: 9
+          width: 286
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 7abd54e3-effb-40f7-a935-9781ddc6a6bc
+          parentNodeGUID: ae691dff-fd7f-4e37-8149-b2b2be2d7581
+          targetNodeGUID:
+          - e4467bae-bf9d-4e2d-9c7c-75da9438ee78
+          targetPortGUID:
+          - 68046d23-0e8e-4965-9eb5-f32f4a45e48c
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 7513e278-ff33-418f-a8c9-369c11bdd221
+          parentNodeGUID: ae691dff-fd7f-4e37-8149-b2b2be2d7581
+          targetNodeGUID:
+          - 28b915cc-7fc6-4ed8-bf5c-e5827f2f4523
+          targetPortGUID:
+          - e2c855c9-8ddb-4a3d-8faa-1a4026a2a723
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        sfx: 4
+    00000023:
+      type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Sound Effect
+        GUID: 7266db7f-7779-422e-9f39-0b4589277cb7
+        rect:
+          serializedVersion: 2
+          x: -2356
+          y: 124
+          width: 284
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 0930345e-aeb9-40a7-ba32-eda3e60aa15c
+          parentNodeGUID: 7266db7f-7779-422e-9f39-0b4589277cb7
+          targetNodeGUID:
+          - 7259f9ed-615b-4e53-aaf3-f577f4e240be
+          targetPortGUID:
+          - 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 216fb81f-7e50-4c2b-a2f1-caf92c359b99
+          parentNodeGUID: 7266db7f-7779-422e-9f39-0b4589277cb7
+          targetNodeGUID:
+          - 9cf904ed-599f-4fe2-aca3-e5542be02bcd
+          targetPortGUID:
+          - 5b13e145-175a-4ae5-8516-64425f11469a
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        sfx: 13
+    00000024:
+      type: {class: CustomMinigameNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Minigame
+        GUID: 11cfa34f-bf5e-4f80-a05b-1eebef457fe3
+        rect:
+          serializedVersion: 2
+          x: -1888
+          y: 27
+          width: 230
+          height: 120
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 8ec965bf-333d-40a6-9497-4f58ffe8c915
+          parentNodeGUID: 11cfa34f-bf5e-4f80-a05b-1eebef457fe3
+          targetNodeGUID:
+          - 9cf904ed-599f-4fe2-aca3-e5542be02bcd
+          targetPortGUID:
+          - f73b0f6b-caf0-49b3-a4af-be8a182d4d2e
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 52c1d74a-f18b-4c8f-a843-8a7d46c773bf
+          parentNodeGUID: 11cfa34f-bf5e-4f80-a05b-1eebef457fe3
+          targetNodeGUID:
+          - 69b5d113-2361-43d3-9df6-68b7e4c90c91
+          targetPortGUID:
+          - 163362ad-5a15-42aa-8ca2-d19305014149
+          text: Win
+          isEditable: 0
+        - GUID: cb0691eb-5207-4cb0-9f20-6b0b233acb59
+          parentNodeGUID: 11cfa34f-bf5e-4f80-a05b-1eebef457fe3
+          targetNodeGUID:
+          - 69b5d113-2361-43d3-9df6-68b7e4c90c91
+          targetPortGUID:
+          - 163362ad-5a15-42aa-8ca2-d19305014149
+          text: Lose
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomMinigameNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        minigame: 1
