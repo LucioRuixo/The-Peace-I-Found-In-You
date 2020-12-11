@@ -34,12 +34,12 @@ public class DecisionController : NodeController
 
     void Begin(CustomDecisionNode node)
     {
-        option1Button.PortIndex = 0;
-        option1Text.text = node.outputPorts[0].text;
+        option1Button.DecisionIndex = 0;
+        option1Text.text = node.Option1Text;
         option1Button.gameObject.SetActive(true);
 
-        option2Button.PortIndex = 1;
-        option2Text.text = node.outputPorts[1].text;
+        option2Button.DecisionIndex = 1;
+        option2Text.text = node.Option2Text;
         option2Button.gameObject.SetActive(true);
 
         decisionBox.SetActive(true);
@@ -60,7 +60,7 @@ public class DecisionController : NodeController
         //}
     }
 
-    void End(int portIndex)
+    void End(int decisionIndex)
     {
         option1Button.gameObject.SetActive(false);
         option2Button.gameObject.SetActive(false);
@@ -72,7 +72,7 @@ public class DecisionController : NodeController
         //buttons.Clear();
         decisionBox.SetActive(false);
 
-        CallNodeExecutionCompletion(portIndex); // Adaptar en NodeManager para que funcione al conectar el puerto con varios nodos en vez de uno solo
+        CallNodeExecutionCompletion(decisionIndex); // Adaptar en NodeManager para que funcione al conectar el puerto con varios nodos en vez de uno solo
     }
 
     public override void Execute(NoodlesNode genericNode)

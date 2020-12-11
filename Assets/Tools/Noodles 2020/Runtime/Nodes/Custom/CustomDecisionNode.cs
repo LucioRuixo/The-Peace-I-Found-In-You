@@ -8,6 +8,9 @@ namespace nullbloq.Noodles
 {
     public class CustomDecisionNode : NoodlesNode
     {
+        public string Option1Text { get { return outputPorts[0].text; } }
+        public string Option2Text { get { return outputPorts[1].text; } }
+
         protected override void PreInit()
         {
             base.PreInit();

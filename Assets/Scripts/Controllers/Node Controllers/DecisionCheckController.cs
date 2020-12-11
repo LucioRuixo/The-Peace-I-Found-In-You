@@ -22,9 +22,9 @@ public class DecisionCheckController : NodeController, ISaveComponent
         DecisionButton.OnDecisionButtonPressed -= SetLastDecision;
     }
 
-    void SetLastDecision(int portIndex)
+    void SetLastDecision(int decisionIndex)
     {
-        LastDecisionGood = portIndex == 0 ? true : false;
+        LastDecisionGood = decisionIndex == 0 ? true : false;
     }
 
     void CheckLastDecision(CustomDecisionCheckNode node)
