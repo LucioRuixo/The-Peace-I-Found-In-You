@@ -4,7 +4,7 @@ public class Lettuce : Food
 {
     int currentSpriteIndex = -1;
 
-    [SerializeField] Sprite[] additionalSprites;
+    [SerializeField] Sprite[] additionalSprites = null;
 
     protected override void Awake()
     {

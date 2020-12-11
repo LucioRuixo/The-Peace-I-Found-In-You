@@ -68,7 +68,7 @@ public class BackgroundController : NodeController, ISaveComponent
 
     [Header("Background FX: ")]
     [SerializeField] Leaves leaves = null;
-    [SerializeField] Fireflies lightBugs = null;
+    [SerializeField] FireflyManager lightBugs = null;
 
     public SaveData.BackgroundData CurrentBackgroundData { get { return currentBackgroundData; } }
 
@@ -123,16 +123,16 @@ public class BackgroundController : NodeController, ISaveComponent
                     leaves.Play();
                     break;
                 case BackgroundFX.YellowLightBugs:
-                    lightBugs.Play(Fireflies.FireflyColor.Yellow, false);
+                    lightBugs.Play(FireflyManager.FireflyColor.Yellow, false);
                     break;
                 case BackgroundFX.BlueLightBugs:
-                    lightBugs.Play(Fireflies.FireflyColor.Blue, false);
+                    lightBugs.Play(FireflyManager.FireflyColor.Blue, false);
                     break;
                 case BackgroundFX.RandomYellowLightBugs:
-                    lightBugs.Play(Fireflies.FireflyColor.Yellow, true);
+                    lightBugs.Play(FireflyManager.FireflyColor.Yellow, true);
                     break;
                 case BackgroundFX.RandomBlueLightBugs:
-                    lightBugs.Play(Fireflies.FireflyColor.Blue, true);
+                    lightBugs.Play(FireflyManager.FireflyColor.Blue, true);
                     break;
                 default:
                     break;

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Log : MonoBehaviour
 {
-    [SerializeField] Scrollbar scrollbar;
+    [SerializeField] Scrollbar scrollbar = null;
 
     void OnEnable()
     {

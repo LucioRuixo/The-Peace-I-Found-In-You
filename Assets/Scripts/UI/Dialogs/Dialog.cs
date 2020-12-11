@@ -5,9 +5,9 @@ using TMPro;
 
 public class Dialog : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI message;
-    [SerializeField] GameObject buttonPrefab;
-    [SerializeField] Transform buttonContainer;
+    [SerializeField] TextMeshProUGUI message = null;
+    [SerializeField] GameObject buttonPrefab = null;
+    [SerializeField] Transform buttonContainer = null;
 
     public string Message { set { message.text = value; } get { return message.text; } }
 

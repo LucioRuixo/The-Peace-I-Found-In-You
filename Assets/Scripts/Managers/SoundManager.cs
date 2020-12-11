@@ -50,7 +50,7 @@ public class SoundManager : MonoBehaviourSingleton<SoundManager>
         Inicia_Menu
     }
 
-    [SerializeField] GameObject audioObject;
+    [SerializeField] GameObject audioObject = null;
 
     public GameObject AudioObject { get { return audioObject; } }
 

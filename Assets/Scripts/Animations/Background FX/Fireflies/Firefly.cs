@@ -12,13 +12,13 @@ public class Firefly : MonoBehaviour
 
     RectTransform rect;
     Image image;
-    FXManager fXManager;
+    FXManager fxManager;
 
     void Awake()
     {
         rect = GetComponent<RectTransform>();
         image = GetComponent<Image>();
-        fXManager = FXManager.Get();
+        fxManager = FXManager.Get();
     }
 
     void OnEnable()
@@ -33,14 +33,14 @@ public class Firefly : MonoBehaviour
     void StartIncreasingAlpha()
     {
         if (gameObject.activeInHierarchy)
-            fXManager.StartAlphaLerp0To1(image, fadeDuration, StartDecreasingAlpha);
+            fxManager.StartAlphaLerp0To1(image, fadeDuration, StartDecreasingAlpha);
         else glowing = false;
     }
 
     void StartDecreasingAlpha()
     {
         if (gameObject.activeInHierarchy)
-            fXManager.StartAlphaLerp1To0(image, fadeDuration, StartIncreasingAlpha);
+            fxManager.StartAlphaLerp1To0(image, fadeDuration, StartIncreasingAlpha);
         else glowing = false;
     }
 

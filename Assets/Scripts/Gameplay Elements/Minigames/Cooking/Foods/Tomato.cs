@@ -4,9 +4,9 @@ public class Tomato : Food
 {
     [SerializeField] float cutHalfImpulse = 1f;
 
-    [SerializeField] Sprite leftHalfSprite;
-    [SerializeField] Sprite rightHalfSprite;
-    [SerializeField] GameObject foodBitPrefab;
+    [SerializeField] Sprite leftHalfSprite = null;
+    [SerializeField] Sprite rightHalfSprite = null;
+    [SerializeField] GameObject foodBitPrefab = null;
 
     protected override void Awake()
     {

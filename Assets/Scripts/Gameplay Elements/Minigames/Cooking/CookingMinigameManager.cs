@@ -6,7 +6,7 @@ public class CookingMinigameManager : MonoBehaviour
 {
     bool playing = false;
 
-    [SerializeField] int cuttingTarget;
+    [SerializeField] int cuttingTarget = 1;
 
     [SerializeField] float timer = 60f;
     float currentlyCut = 0f;

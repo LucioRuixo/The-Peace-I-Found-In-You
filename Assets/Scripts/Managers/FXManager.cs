@@ -34,15 +34,19 @@ public class FXManager : MonoBehaviourSingleton<FXManager>
 
         while (!ValueReached(from, to, currentAlpha))
         {
-            float step = 1f / (duration / Time.deltaTime);
-            if (from > to) step *= -1f;
-            currentAlpha += step;
+            if (image)
+            {
+                float step = 1f / (duration / Time.deltaTime);
+                if (from > to) step *= -1f;
+                currentAlpha += step;
 
-            Color newColor = image.color;
-            newColor.a = currentAlpha;
-            image.color = newColor;
+                Color newColor = image.color;
+                newColor.a = currentAlpha;
+                image.color = newColor;
 
-            yield return null;
+                yield return null;
+            }
+            else yield break;
         }
 
         onEnd?.Invoke();
@@ -71,15 +75,19 @@ public class FXManager : MonoBehaviourSingleton<FXManager>
 
         while (!ValueReached(from, to, currentAlpha))
         {
-            float step = 1f / (duration / Time.deltaTime);
-            if (from > to) step *= -1f;
-            currentAlpha += step;
+            if (SR)
+            {
+                float step = 1f / (duration / Time.deltaTime);
+                if (from > to) step *= -1f;
+                currentAlpha += step;
 
-            Color newColor = SR.color;
-            newColor.a = currentAlpha;
-            SR.color = newColor;
+                Color newColor = SR.color;
+                newColor.a = currentAlpha;
+                SR.color = newColor;
 
-            yield return null;
+                yield return null;
+            }
+            else yield break;
         }
 
         onEnd?.Invoke();

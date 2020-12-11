@@ -18,10 +18,10 @@ public class Character : MonoBehaviour
     public int headIndex;
     public CharacterManager.CharacterName characterName;
 
-    [SerializeField] SpriteRenderer body;
-    [SerializeField] SpriteRenderer arm;
-    [SerializeField] SpriteRenderer head;
-    [SerializeField] DragonBones.UnityArmatureComponent armature;
+    [SerializeField] SpriteRenderer body = null;
+    [SerializeField] SpriteRenderer arm = null;
+    [SerializeField] SpriteRenderer head = null;
+    [SerializeField] DragonBones.UnityArmatureComponent armature = null;
     CharacterSO characterData;
 
     public bool Animated { private set; get; }

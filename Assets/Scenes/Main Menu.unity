@@ -173,7 +173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedIconSpacing: 20
-  selectionIcon: {fileID: 1025368036}
 --- !u!114 &4708621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +435,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedIconSpacing: 20
-  selectionIcon: {fileID: 395102332}
 --- !u!114 &43602843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,7 +734,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedIconSpacing: 20
-  selectionIcon: {fileID: 395102332}
 --- !u!114 &119319734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,7 +778,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 424880484}
-        m_MethodName: Return
+        m_MethodName: ReturnToCurrentScreenParent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1479,7 +1476,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedIconSpacing: 20
-  selectionIcon: {fileID: 395102332}
 --- !u!114 &418185117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,7 +1520,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 424880484}
-        m_MethodName: Return
+        m_MethodName: ReturnToCurrentScreenParent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1597,11 +1593,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exitGameText: "\xBFSalir del juego?"
+  menuCanvas: {fileID: 1732387535}
+  selectionIcon: {fileID: 395102332}
+  versionText: {fileID: 1947136258}
+  initialScreen: {fileID: 1878608458}
   saveSlotButtonPrefab: {fileID: 4147636179237842633, guid: 472789d92a314a645be2bb26c832cf4b,
     type: 3}
   saveSlotButtonContainer: {fileID: 330493398}
-  selectionIcon: {fileID: 395102332}
-  versionText: {fileID: 1947136258}
   backgroundChangeTime: 15
   fadeDuration: 5
   alphaAccuracyRange: 0.1
@@ -1615,15 +1613,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0c88995e55758a147ac15919ab5b559c, type: 3}
   - {fileID: 21300000, guid: c65ddeb24771ff643b1502ced0a97415, type: 3}
   - {fileID: 21300000, guid: 7c29cfb19d4a730479845cdd1330dc9b, type: 3}
-  mainMenu: {fileID: 505415360}
-  mainScreen: {fileID: 1878608456}
-  saveSelectionScreen: {fileID: 2144713544}
-  creditsScreen: {fileID: 1429505332}
-  extrasScreen: {fileID: 1522323596}
-  mainMenuFirstSelected: {fileID: 1570744121}
-  saveSelectionScreenFirstSelected: {fileID: 418185114}
-  creditsScreenFirstSelected: {fileID: 119319731}
-  extrasScreenFirstSelected: {fileID: 4708618}
 --- !u!1 &446848168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2124,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 424880484}
-        m_MethodName: Quit
+        m_MethodName: DisplayExitGameDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2158,7 +2147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedIconSpacing: 20
-  selectionIcon: {fileID: 395102332}
 --- !u!1 &564898738
 GameObject:
   m_ObjectHideFlags: 0
@@ -3686,6 +3674,7 @@ GameObject:
   - component: {fileID: 1339922288}
   - component: {fileID: 1339922289}
   - component: {fileID: 1339922291}
+  - component: {fileID: 1339922290}
   m_Layer: 5
   m_Name: Credits Button
   m_TagString: Untagged
@@ -3767,6 +3756,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1339922290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339922287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd015b3bb1798b42931a4ae3a24d4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screen: {fileID: 1429505336}
 --- !u!114 &1339922291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3780,7 +3782,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedIconSpacing: 20
-  selectionIcon: {fileID: 395102332}
 --- !u!1 &1364724309
 GameObject:
   m_ObjectHideFlags: 0
@@ -4164,6 +4165,7 @@ GameObject:
   - component: {fileID: 1429505333}
   - component: {fileID: 1429505335}
   - component: {fileID: 1429505334}
+  - component: {fileID: 1429505336}
   m_Layer: 5
   m_Name: Credits Screen
   m_TagString: Untagged
@@ -4229,6 +4231,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429505332}
   m_CullTransparentMesh: 0
+--- !u!114 &1429505336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429505332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb316d96a9c16a741975f080b32d02ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSelectedButton: {fileID: 119319733}
+  parentScreen: {fileID: 1878608458}
+  additionalElements: []
 --- !u!1 &1522323596
 GameObject:
   m_ObjectHideFlags: 0
@@ -4316,6 +4333,7 @@ GameObject:
   - component: {fileID: 1570744122}
   - component: {fileID: 1570744123}
   - component: {fileID: 1570744125}
+  - component: {fileID: 1570744124}
   m_Layer: 5
   m_Name: New Game Button
   m_TagString: Untagged
@@ -4397,6 +4415,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1570744124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570744121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd015b3bb1798b42931a4ae3a24d4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screen: {fileID: 2144713546}
 --- !u!114 &1570744125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4410,7 +4441,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedIconSpacing: 20
-  selectionIcon: {fileID: 395102332}
 --- !u!1 &1607759348
 GameObject:
   m_ObjectHideFlags: 0
@@ -9530,6 +9560,7 @@ GameObject:
   - component: {fileID: 1827171634}
   - component: {fileID: 1827171636}
   - component: {fileID: 1827171635}
+  - component: {fileID: 1827171637}
   m_Layer: 5
   m_Name: Load Game Button
   m_TagString: Untagged
@@ -9570,7 +9601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedIconSpacing: 20
-  selectionIcon: {fileID: 395102332}
 --- !u!114 &1827171636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9625,6 +9655,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1827171637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827171633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd015b3bb1798b42931a4ae3a24d4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screen: {fileID: 2144713546}
 --- !u!1 &1878608456
 GameObject:
   m_ObjectHideFlags: 0
@@ -9634,6 +9677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1878608457}
+  - component: {fileID: 1878608458}
   m_Layer: 5
   m_Name: Main Screen
   m_TagString: Untagged
@@ -9663,6 +9707,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1878608458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878608456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb316d96a9c16a741975f080b32d02ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSelectedButton: {fileID: 1570744125}
+  parentScreen: {fileID: 0}
+  additionalElements:
+  - {fileID: 1069848420}
 --- !u!1 &1893485975
 GameObject:
   m_ObjectHideFlags: 0
@@ -10992,6 +11052,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2144713545}
+  - component: {fileID: 2144713546}
   m_Layer: 5
   m_Name: Save Selection Screen
   m_TagString: Untagged
@@ -11020,3 +11081,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &2144713546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144713544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb316d96a9c16a741975f080b32d02ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSelectedButton: {fileID: 418185116}
+  parentScreen: {fileID: 1878608458}
+  additionalElements:
+  - {fileID: 1069848420}

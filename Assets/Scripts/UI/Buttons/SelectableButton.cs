@@ -6,9 +6,10 @@ public class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerDow
 {
     [SerializeField] float selectedIconSpacing = 20f;
 
-    [SerializeField] RectTransform selectionIcon = null;
     Button button;
     Transform text;
+
+    public RectTransform SelectionIcon { get; set; }
 
     void Awake()
     {
@@ -16,13 +17,13 @@ public class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerDow
         text = transform.GetChild(0);
     }
 
-    void DisplayIcon()
+    public void DisplayIcon()
     {
-        selectionIcon.gameObject.SetActive(true);
-        selectionIcon.SetParent(text);
+        SelectionIcon.gameObject.SetActive(true);
+        SelectionIcon.SetParent(text);
 
         Vector2 position = new Vector2(selectedIconSpacing, 0f);
-        selectionIcon.anchoredPosition = position;
+        SelectionIcon.anchoredPosition = position;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -32,14 +33,14 @@ public class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerDow
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        selectionIcon.gameObject.SetActive(false);
+        SelectionIcon.gameObject.SetActive(false);
 
         SoundManager.Get().PlaySFX(SoundManager.SFXs.Fx_ApretaBoton);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        selectionIcon.gameObject.SetActive(false);
+        SelectionIcon.gameObject.SetActive(false);
     }
 
     public void OnSelect(BaseEventData eventData)
@@ -51,6 +52,6 @@ public class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerDow
 
     public void SetSelectionIcon(RectTransform _selectionIcon)
     {
-        selectionIcon = _selectionIcon;
+        SelectionIcon = _selectionIcon;
     }
 }

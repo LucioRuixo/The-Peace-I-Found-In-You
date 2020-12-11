@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Fireflies : MonoBehaviour
+public class FireflyManager : MonoBehaviour
 {
     public enum FireflyColor
     {

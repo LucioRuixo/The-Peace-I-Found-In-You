@@ -7,7 +7,7 @@ public class Carrot : Food
     [SerializeField] float  minSliceImpulse = 1f;
     [SerializeField] float  maxSliceImpulse = 2f;
 
-    [SerializeField] GameObject foodBitPrefab;
+    [SerializeField] GameObject foodBitPrefab = null;
     [SerializeField] Sprite[] sliceSprites = null;
 
     protected override void Awake()
