@@ -69,7 +69,6 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
         screenManager = ScreenManager.Get();
 
         initialX = screenManager.MinScreenLimits.x - offScreenCharacterWidth / 2f;
-
     }
 
     void Begin(CustomCharacterActionNode node)
@@ -180,60 +179,6 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
         }
 
         if (node.action == Action.PopIntoScene) End();
-    }
-
-    void EnterCharacter(Character character, GameObject characterObject, Action action)
-    {
-        //Character newCharacter = new Character(character.bodyIndex, character.armIndex, character.headIndex, character.characterName);
-        Character newCharacter = characterObject.GetComponent<Character>();
-        charactersInScene.Add(new KeyValuePair<Character, GameObject>(newCharacter, characterObject));
-
-        float spacing = (screenManager.ScreenBounds.x * 2f) / (charactersInScene.Count + 1);
-        for (int i = 0; i < charactersInScene.Count; i++)
-        {
-            float targetX = screenManager.ScreenBounds.x - spacing * (i + 1);
-
-            switch (action)
-            {
-                case Action.EnterScene:
-                    StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, action));
-                    activeCorroutines++;
-
-                    break;
-
-                case Action.PopIntoScene:
-                    Vector2 position = charactersInScene[i].Value.transform.position;
-                    position.x = targetX;
-                    charactersInScene[i].Value.transform.position = position;
-
-                    break;
-
-                case Action.FadeIntoScene:
-                    if (i < charactersInScene.Count - 1)
-                    {
-                        StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, action));
-                        activeCorroutines++;
-                    }
-                    else
-                    {
-                        position = charactersInScene[i].Value.transform.position;
-                        position.x = targetX;
-                        charactersInScene[i].Value.transform.position = position;
-
-                        SpriteRenderer sr = charactersInScene[i].Value.GetComponent<SpriteRenderer>();
-                        fxManager.StartAlphaLerp0To1(sr, fadeDuration, FinishCorroutine);
-                        activeCorroutines++;
-                    }
-
-                    break;
-
-                default:
-                    Debug.LogError("Cannot enter scene using selected action");
-                    break;
-            }
-        }
-
-        if (action == Action.PopIntoScene) End();
     }
     
     void ExitCharacter(CustomCharacterActionNode node)

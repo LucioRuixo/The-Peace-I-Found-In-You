@@ -4,6 +4,24 @@
 		<WorkUnit Name="Default Work Unit" ID="{E24F30E7-CB63-4B5C-BC14-EC111271FE85}" PersistMode="Standalone">
 			<ChildrenList>
 				<SoundcasterSession Name="Prueba Eventos" ID="{0E624AE5-D412-4267-BFAB-F9F9D9992D3C}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Inicia_Juego" ID="{5E3137FE-C933-4CD2-95AD-D23E9A30DABF}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Inicia_Menu" ID="{C5818BEF-2A89-4AA1-9B6C-54A3C9FCC87C}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Inicia_Creditos" ID="{09FFB0D0-E200-4377-B136-E53927E6CE92}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Music" ID="{74BB5373-4D89-4A6B-82DE-D682B56178D5}" WorkUnitID="{D980683E-F868-4614-81D1-F8A8B7D88181}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="SS_Air_Turbulence" ID="{EDA87B19-73AA-40A0-9F19-2073606DB710}"/>
@@ -16,6 +34,10 @@
 						<RTPCValue>
 							<GameParameterRef Name="SS_Air_Month" ID="{09E2B445-C4A3-447F-B3CA-818A1D925EF7}"/>
 							<Value>6</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Minijuego_Time" ID="{B9C103AB-F214-447F-BAA0-9DC84775445F}"/>
+							<Value>60</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RPM" ID="{9112AA05-F577-44FD-9F4E-4424158129E6}"/>
@@ -55,8 +77,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Tadao" ID="{89331246-5A17-4FBE-BB2C-C5EBEFE43024}"/>
-						<CurrentStateRef Name="Creditos" ID="{D4DFCB5A-7C1D-4F01-B253-0B22260B3193}"/>
+						<CurrentStateRef Name="Menu" ID="{8188635C-2F64-4DBF-8F05-3FE82D321152}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>

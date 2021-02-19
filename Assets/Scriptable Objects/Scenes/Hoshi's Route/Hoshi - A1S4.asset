@@ -57,6 +57,8 @@ MonoBehaviour:
   - id: 41
   - id: 42
   - id: 43
+  - id: 44
+  - id: 45
   references:
     version: 1
     00000000:
@@ -181,9 +183,9 @@ MonoBehaviour:
         - GUID: 416dcc37-4f6b-414b-81bc-a9517e0f482a
           parentNodeGUID: 7b5420a1-702a-4860-a1fa-8a582267449b
           targetNodeGUID:
-          - dc659633-10da-4961-9e00-a3bfc8e6e872
+          - c8e34ef4-5752-4902-8f71-52ebc143723e
           targetPortGUID:
-          - 788b4f7b-9aa0-4afc-baaf-f86580f0cf8b
+          - d4dd9a27-4d48-4982-9aa1-cdd0887af11a
           text: Out
           isEditable: 0
         classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
@@ -208,8 +210,8 @@ MonoBehaviour:
         GUID: dc659633-10da-4961-9e00-a3bfc8e6e872
         rect:
           serializedVersion: 2
-          x: 14867
-          y: -1070
+          x: 14868
+          y: -942
           width: 253
           height: 175
         width: 600
@@ -218,9 +220,9 @@ MonoBehaviour:
         - GUID: 788b4f7b-9aa0-4afc-baaf-f86580f0cf8b
           parentNodeGUID: dc659633-10da-4961-9e00-a3bfc8e6e872
           targetNodeGUID:
-          - 7b5420a1-702a-4860-a1fa-8a582267449b
+          - c8e34ef4-5752-4902-8f71-52ebc143723e
           targetPortGUID:
-          - 416dcc37-4f6b-414b-81bc-a9517e0f482a
+          - 9b30c4ec-9d8f-4240-b86a-b8e4cd31787d
           text: Input
           isEditable: 0
         outputPorts:
@@ -663,9 +665,9 @@ MonoBehaviour:
         - GUID: 858a17b1-e7a2-4643-951b-62cdb2c9778b
           parentNodeGUID: ca94879a-2e57-4155-98d3-69da66fc7e1e
           targetNodeGUID:
-          - e2fc8d94-7361-41df-be9b-38a53d84cbc4
+          - 5806e487-4421-40f7-9a83-2999e90736c6
           targetPortGUID:
-          - 77e90d3f-52e9-4e69-a35b-60e60331d85c
+          - 52d280eb-a160-4f04-acab-af44b3543669
           text: Out
           isEditable: 0
         classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
@@ -700,9 +702,9 @@ MonoBehaviour:
         - GUID: 498e95c3-615f-4760-90bb-c7d89a53b1f4
           parentNodeGUID: ef48501b-1076-41f3-968e-fa92c2b7943f
           targetNodeGUID:
-          - e2fc8d94-7361-41df-be9b-38a53d84cbc4
+          - 5806e487-4421-40f7-9a83-2999e90736c6
           targetPortGUID:
-          - 77e90d3f-52e9-4e69-a35b-60e60331d85c
+          - 52d280eb-a160-4f04-acab-af44b3543669
           text: Good
           isEditable: 0
         - GUID: ef68e175-d505-46bd-acf6-03ceaeca7fba
@@ -723,21 +725,19 @@ MonoBehaviour:
         GUID: e2fc8d94-7361-41df-be9b-38a53d84cbc4
         rect:
           serializedVersion: 2
-          x: 18615
-          y: -1054
+          x: 18625
+          y: -940
           width: 253
-          height: 175
+          height: 178
         width: 600
         height: 500
         inputPorts:
         - GUID: 77e90d3f-52e9-4e69-a35b-60e60331d85c
           parentNodeGUID: e2fc8d94-7361-41df-be9b-38a53d84cbc4
           targetNodeGUID:
-          - ef48501b-1076-41f3-968e-fa92c2b7943f
-          - ca94879a-2e57-4155-98d3-69da66fc7e1e
+          - 5806e487-4421-40f7-9a83-2999e90736c6
           targetPortGUID:
-          - 498e95c3-615f-4760-90bb-c7d89a53b1f4
-          - 858a17b1-e7a2-4643-951b-62cdb2c9778b
+          - 0a0e1cb4-22e9-4214-adaa-8269b82c975b
           text: Input
           isEditable: 0
         outputPorts:
@@ -763,10 +763,10 @@ MonoBehaviour:
         GUID: 2c7f06a4-d4b8-46f2-8874-6dc637e7f761
         rect:
           serializedVersion: 2
-          x: 18617
-          y: -867
+          x: 18627
+          y: -753
           width: 253
-          height: 175
+          height: 178
         width: 600
         height: 500
         inputPorts:
@@ -1533,7 +1533,7 @@ MonoBehaviour:
           x: 23099
           y: -848
           width: 244
-          height: 175
+          height: 174
         width: 600
         height: 500
         inputPorts:
@@ -1802,7 +1802,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 14244
           y: -1069
-          width: 219
+          width: 248
           height: 96
         width: 600
         height: 500
@@ -1826,4 +1826,74 @@ MonoBehaviour:
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        songTitle: 9
+        songTitle: 3
+    0000002C:
+      type: {class: CustomMusicChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Music Change
+        GUID: c8e34ef4-5752-4902-8f71-52ebc143723e
+        rect:
+          serializedVersion: 2
+          x: 14885
+          y: -1068
+          width: 219
+          height: 96
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: d4dd9a27-4d48-4982-9aa1-cdd0887af11a
+          parentNodeGUID: c8e34ef4-5752-4902-8f71-52ebc143723e
+          targetNodeGUID:
+          - 7b5420a1-702a-4860-a1fa-8a582267449b
+          targetPortGUID:
+          - 416dcc37-4f6b-414b-81bc-a9517e0f482a
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 9b30c4ec-9d8f-4240-b86a-b8e4cd31787d
+          parentNodeGUID: c8e34ef4-5752-4902-8f71-52ebc143723e
+          targetNodeGUID:
+          - dc659633-10da-4961-9e00-a3bfc8e6e872
+          targetPortGUID:
+          - 788b4f7b-9aa0-4afc-baaf-f86580f0cf8b
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        songTitle: 5
+    0000002D:
+      type: {class: CustomMusicChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
+      data:
+        title: Music Change
+        GUID: 5806e487-4421-40f7-9a83-2999e90736c6
+        rect:
+          serializedVersion: 2
+          x: 18647
+          y: -1052
+          width: 215
+          height: 97
+        width: 600
+        height: 500
+        inputPorts:
+        - GUID: 52d280eb-a160-4f04-acab-af44b3543669
+          parentNodeGUID: 5806e487-4421-40f7-9a83-2999e90736c6
+          targetNodeGUID:
+          - ef48501b-1076-41f3-968e-fa92c2b7943f
+          - ca94879a-2e57-4155-98d3-69da66fc7e1e
+          targetPortGUID:
+          - 498e95c3-615f-4760-90bb-c7d89a53b1f4
+          - 858a17b1-e7a2-4643-951b-62cdb2c9778b
+          text: Input
+          isEditable: 0
+        outputPorts:
+        - GUID: 0a0e1cb4-22e9-4214-adaa-8269b82c975b
+          parentNodeGUID: 5806e487-4421-40f7-9a83-2999e90736c6
+          targetNodeGUID:
+          - e2fc8d94-7361-41df-be9b-38a53d84cbc4
+          targetPortGUID:
+          - 77e90d3f-52e9-4e69-a35b-60e60331d85c
+          text: Output
+          isEditable: 0
+        classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        songTitle: 4

@@ -4,12 +4,19 @@ using UnityEngine.UI;
 
 public class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler, IPointerExitHandler, ISelectHandler
 {
-    [SerializeField] float selectedIconSpacing = 20f;
+    [SerializeField] bool adjustIconToTextLength = false;
+
+    [SerializeField] float selectionIconSpacing = 20f;
 
     Button button;
     Transform text;
 
-    public RectTransform SelectionIcon { get; set; }
+    public RectTransform SelectionIcon { set; get; }
+    public bool AdjustIconToTextLength
+    {
+        set { adjustIconToTextLength = value; }
+        get { return adjustIconToTextLength; }
+    }
 
     void Awake()
     {
@@ -20,9 +27,11 @@ public class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerDow
     public void DisplayIcon()
     {
         SelectionIcon.gameObject.SetActive(true);
-        SelectionIcon.SetParent(text);
 
-        Vector2 position = new Vector2(selectedIconSpacing, 0f);
+        Transform selectionIconParent = adjustIconToTextLength ? text : transform;
+        SelectionIcon.SetParent(selectionIconParent);
+
+        Vector2 position = new Vector2(selectionIconSpacing, 0f);
         SelectionIcon.anchoredPosition = position;
     }
 
@@ -35,7 +44,7 @@ public class SelectableButton : MonoBehaviour, IPointerEnterHandler, IPointerDow
     {
         SelectionIcon.gameObject.SetActive(false);
 
-        SoundManager.Get().PlaySFX(SoundManager.SFXs.Fx_ApretaBoton);
+        SoundManager.Get().PlaySFX(SoundManager.SFXs.Button);
     }
 
     public void OnPointerExit(PointerEventData eventData)

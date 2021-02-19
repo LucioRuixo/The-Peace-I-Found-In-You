@@ -42,7 +42,7 @@ public class SaveData
     {
         public bool musicPlaying;
 
-        public MusicController.SongTitle songTitle;
+        public SoundManager.Songs songTitle;
     }
 
     [HideInInspector] public string playerName;

@@ -9,7 +9,7 @@
 						<ObjectRef Name="Fx_HachaGolpeMadera" ID="{D782C28C-85E8-4115-B9C4-463D9A5D532C}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fx_Hojas" ID="{898FDF92-3180-41C6-BDCF-F0D8BBCF8998}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fx_GolpesDePuerta" ID="{262FCD77-CCF2-4218-8BB1-D1DA7CBB7A3F}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Fx_Espadas_Chocando" ID="{CC232746-F66F-4274-897A-635D92C17C81}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Fx_EspadasChocando" ID="{CC232746-F66F-4274-897A-635D92C17C81}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Inicia_Amb_Santuario" ID="{9B2F87C6-84BE-42C4-A65A-2D004DE3CE0F}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fx_AbrePuerta" ID="{95F2B89E-D4DA-4306-A635-40B60ACE5ED3}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Inicia_Creditos" ID="{09FFB0D0-E200-4377-B136-E53927E6CE92}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
@@ -17,7 +17,7 @@
 						<ObjectRef Name="Fx_BotonDecision" ID="{0327032D-9273-43C0-9EBD-FC5A0D1A79A8}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fx_PisadasHojas" ID="{7F51CCA1-A407-43CE-A092-FD57C88ECD32}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Inicia_Amb_Campo" ID="{E47EDA24-A012-448F-9950-23E30F2E0239}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Fx_Gritos_Batalla" ID="{D63D1CA1-F0B8-44D1-895B-93625F9D6D0F}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Fx_GritosBatalla" ID="{D63D1CA1-F0B8-44D1-895B-93625F9D6D0F}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Inicia_Amb_Casa" ID="{1EF3B967-7308-453A-A80B-E2A0D3D82317}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fx_CortesEspada" ID="{5F5E4BB8-25F8-4573-9947-2EA523DC8908}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fx_Lluvia" ID="{CB352A6A-1D3A-476E-89D7-798B3C5FB86F}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
@@ -36,7 +36,7 @@
 						<ObjectRef Name="Fx_Respiracion" ID="{57D02428-47EC-4DCD-891C-26246F6B3C27}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fx_Grillos" ID="{AE2289D1-EA91-4DE9-B3BF-CC1E5160023B}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Inicia_Amb_Pueblo" ID="{C6F3A1E7-27D5-4DF3-9CB7-D12F2A22B247}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Fx_Sonido_Cubiertos" ID="{9432E4ED-E6DF-4E09-BDFF-8DC27577F218}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Fx_SonidoCubiertos" ID="{9432E4ED-E6DF-4E09-BDFF-8DC27577F218}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fx_Demonios" ID="{ACB00EE8-7E1B-4E91-A3CE-77F2A08C5648}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fx_CorteVerdura" ID="{B6D42FEF-ABD0-4EE8-8E61-215EA2F00540}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fx_RisaMujer" ID="{37708A80-8C73-4EF8-84C9-D6467AC1E3B7}" WorkUnitID="{ED8735E4-276B-4C02-ACD9-30C19358DFCD}" Origin="Manual" Filter="7"/>

@@ -3,7 +3,7 @@
 [CreateAssetMenu(fileName = "New Song", menuName = "Song")]
 public class SongSO : ScriptableObject
 {
-    public MusicController.SongTitle title;
+    public SoundManager.Songs title;
 
     public AudioClip clip;
 }

@@ -1,15 +1,14 @@
 State Group	ID	Name			Wwise Object Path	Notes
-	2451887255	Personajes			\Default Work Unit\Personajes	
 	3830703178	Musicas			\Default Work Unit\Musicas	
 
 State	ID	Name	State Group			Notes
-	208248756	Protagonista	Personajes			
-	748895195	None	Personajes			
-	2200110088	Tadao	Personajes			
-	3771209684	Hoshi	Personajes			
+	208248756	Protagonista	Musicas			
 	748895195	None	Musicas			
 	956887760	Creditos	Musicas			
+	1684016862	Minijuego	Musicas			
+	2200110088	Tadao	Musicas			
 	2607556080	Menu	Musicas			
+	3771209684	Hoshi	Musicas			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Reflect Acoustic Textures\Textures\Brick	

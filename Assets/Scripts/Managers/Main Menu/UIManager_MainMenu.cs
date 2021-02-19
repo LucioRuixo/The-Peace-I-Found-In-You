@@ -45,21 +45,6 @@ public class UIManager_MainMenu : MonoBehaviour
 
     [SerializeField] Sprite[] backgrounds = null;
 
-    //[Header("Screens: ")]
-    //[SerializeField] GameObject mainMenu = null;
-    //[SerializeField] GameObject mainScreen = null;
-    //[SerializeField] GameObject saveSelectionScreen = null;
-    //[SerializeField] GameObject creditsScreen = null;
-    //[SerializeField] GameObject extrasScreen = null;
-    //
-    //[Header("Screens First Selected: ")]
-    //[SerializeField] GameObject mainMenuFirstSelected = null;
-    //[SerializeField] GameObject saveSelectionScreenFirstSelected = null;
-    //[SerializeField] GameObject creditsScreenFirstSelected = null;
-    //[SerializeField] GameObject extrasScreenFirstSelected = null;
-
-    public static event Action OnMainScreen;
-    public static event Action OnCreditsScreen;
     public static event Action<SaveSelectionScreenMode> OnSaveSelectionScreenEnabled;
 
     void Awake()
@@ -80,8 +65,6 @@ public class UIManager_MainMenu : MonoBehaviour
         currentScreen = initialScreen;
 
         StartCoroutine(ChangeBackground());
-
-        OnMainScreen?.Invoke();
     }
 
     void OnDestroy()
@@ -112,6 +95,7 @@ public class UIManager_MainMenu : MonoBehaviour
 
             newSaveSlotButton.GetComponent<SaveSlotButton>().Initialize(i, saveSelectionScreenMode);
             newSaveSlotButton.GetComponent<SelectableButton>().SetSelectionIcon(selectionIcon);
+            newSaveSlotButton.GetComponent<SelectableButton>().AdjustIconToTextLength = true;
 
             saveSlotButtons.Add(newSaveSlotButton);
         }
@@ -154,49 +138,10 @@ public class UIManager_MainMenu : MonoBehaviour
 
     public void GoToSaveSelectionScreen(int mode)
     {
-        //mainScreen.SetActive(false);
         GenerateSaveSlotButtons((SaveSelectionScreenMode)mode);
-        //saveSelectionScreen.SetActive(true);
-    
-        //EventSystem.current.SetSelectedGameObject(null);
-        //EventSystem.current.SetSelectedGameObject(saveSelectionScreenFirstSelected);
     
         OnSaveSelectionScreenEnabled?.Invoke((SaveSelectionScreenMode)mode);
     }
-    
-    //public void GoToCreditsScreen()
-    //{
-    //    mainMenu.SetActive(false);
-    //    creditsScreen.SetActive(true);
-    //
-    //    EventSystem.current.SetSelectedGameObject(null);
-    //    EventSystem.current.SetSelectedGameObject(creditsScreenFirstSelected);
-    //
-    //    OnCreditsScreen?.Invoke();
-    //}
-    //
-    //public void GoToExtrasScreen()
-    //{
-    //    mainMenu.SetActive(false);
-    //    extrasScreen.SetActive(true);
-    //
-    //    EventSystem.current.SetSelectedGameObject(null);
-    //    EventSystem.current.SetSelectedGameObject(extrasScreenFirstSelected);
-    //}
-    //
-    //public void Return()
-    //{
-    //    saveSelectionScreen.SetActive(false);
-    //    creditsScreen.SetActive(false);
-    //    extrasScreen.SetActive(false);
-    //    mainMenu.SetActive(true);
-    //    mainScreen.SetActive(true);
-    //
-    //    EventSystem.current.SetSelectedGameObject(null);
-    //    EventSystem.current.SetSelectedGameObject(mainMenuFirstSelected);
-    //
-    //    OnMainScreen?.Invoke();
-    //}
 
     public void DisplayExitGameDialog()
     {

@@ -172,7 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c981e3d6ae5ad5b48802ffbfb72d3c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedIconSpacing: 20
+  adjustIconToTextLength: 1
+  selectionIconSpacing: 20
 --- !u!114 &4708621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,7 +435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c981e3d6ae5ad5b48802ffbfb72d3c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedIconSpacing: 20
+  adjustIconToTextLength: 1
+  selectionIconSpacing: 20
 --- !u!114 &43602843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,7 +683,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d766da27ac388c49b7fcee1b5ae7406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicInitializationEvent: Inicia_Juego
+  musicStateGroupName: Musicas
   audioObject: {fileID: 1692204956}
+  environments:
+  - eventName: Inicia_Amb_Bosque
+    environment: 0
+  - eventName: Inicia_Amb_Campo
+    environment: 1
+  - eventName: Inicia_Amb_Casa
+    environment: 2
+  - eventName: Inicia_Amb_CasaSeijun
+    environment: 3
+  - eventName: Inicia_Amb_GritosYBatalla
+    environment: 4
+  - eventName: Inicia_Amb_Noche
+    environment: 5
+  - eventName: Inicia_Amb_Pueblo
+    environment: 6
+  - eventName: Inicia_Amb_Rio
+    environment: 7
+  - eventName: Inicia_Amb_Santuario
+    environment: 8
+  sfxs:
+  - eventName: Fx_AbrePuerta
+    sfx: 0
+  - eventName: Fx_ApretaBoton
+    sfx: 1
+  - eventName: Fx_Bostezo
+    sfx: 2
+  - eventName: Fx_BotonDecision
+    sfx: 3
+  - eventName: Fx_CortesEspada
+    sfx: 4
+  - eventName: Fx_CorteVerdura
+    sfx: 5
+  - eventName: Fx_Demonios
+    sfx: 6
+  - eventName: Fx_ErrarCorte
+    sfx: 7
+  - eventName: Fx_EspadaDesenvaine
+    sfx: 8
+  - eventName: Fx_Espadas_Chocando
+    sfx: 9
+  - eventName: Fx_Fogata
+    sfx: 10
+  - eventName: Fx_GolpesDePuerta
+    sfx: 11
+  - eventName: Fx_Grillos
+    sfx: 12
+  - eventName: Fx_Gritos_Batall
+    sfx: 13
+  - eventName: Fx_HachaGolpeMadera
+    sfx: 14
+  - eventName: Fx_Hojas
+    sfx: 15
+  - eventName: Fx_Lluvia
+    sfx: 16
+  - eventName: Fx_PisadasHojas
+    sfx: 17
+  - eventName: Fx_Respiracion
+    sfx: 18
+  - eventName: Fx_RevuelveObjetos
+    sfx: 19
+  - eventName: Fx_RisaMujer
+    sfx: 20
+  - eventName: Fx_Sonido_Cubiertos
+    sfx: 21
+  - eventName: Fx_Susurros
+    sfx: 22
+  - eventName: Fx_YaEstaOscureciendo
+    sfx: 23
+  songs:
+  - stateName: None
+    song: 0
+  - stateName: Menu
+    song: 1
+  - stateName: Creditos
+    song: 2
+  - stateName: Protagonista
+    song: 3
+  - stateName: Hoshi
+    song: 4
+  - stateName: Tadao
+    song: 5
+  - stateName: Minijuego
+    song: 6
 --- !u!1 &119319731
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +820,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c981e3d6ae5ad5b48802ffbfb72d3c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedIconSpacing: 20
+  adjustIconToTextLength: 1
+  selectionIconSpacing: 20
 --- !u!114 &119319734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1475,7 +1563,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c981e3d6ae5ad5b48802ffbfb72d3c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedIconSpacing: 20
+  adjustIconToTextLength: 1
+  selectionIconSpacing: 20
 --- !u!114 &418185117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2146,7 +2235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c981e3d6ae5ad5b48802ffbfb72d3c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedIconSpacing: 20
+  adjustIconToTextLength: 1
+  selectionIconSpacing: 20
 --- !u!1 &564898738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,6 +2566,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2052873728}
+  - {fileID: 1584869049}
   m_Father: {fileID: 1607759349}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3781,7 +3872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c981e3d6ae5ad5b48802ffbfb72d3c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedIconSpacing: 20
+  adjustIconToTextLength: 1
+  selectionIconSpacing: 20
 --- !u!1 &1364724309
 GameObject:
   m_ObjectHideFlags: 0
@@ -4245,6 +4337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstSelectedButton: {fileID: 119319733}
   parentScreen: {fileID: 1878608458}
+  song: 2
   additionalElements: []
 --- !u!1 &1522323596
 GameObject:
@@ -4440,7 +4533,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c981e3d6ae5ad5b48802ffbfb72d3c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedIconSpacing: 20
+  adjustIconToTextLength: 1
+  selectionIconSpacing: 20
+--- !u!1 &1584869048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1584869049}
+  - component: {fileID: 1584869051}
+  - component: {fileID: 1584869050}
+  m_Layer: 5
+  m_Name: Selection Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1584869049
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584869048}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 603629441}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -1413.2198, y: 180.9809}
+  m_SizeDelta: {x: 64, y: 64}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &1584869050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584869048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8a8a96d11932018458c0535ff58a92e5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1584869051
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584869048}
+  m_CullTransparentMesh: 0
 --- !u!1 &1607759348
 GameObject:
   m_ObjectHideFlags: 0
@@ -4491,6 +4659,7 @@ MonoBehaviour:
   promptDialogPrefab: {fileID: 3648222499761110402, guid: ad0600017f6f73645bc8734fa43ec2cc,
     type: 3}
   dialogContainer: {fileID: 603629441}
+  selectionIcon: {fileID: 1584869049}
   defaultPositive: "S\xED"
   defaultNegative: No
   defaultClose: Cerrar
@@ -9600,7 +9769,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c981e3d6ae5ad5b48802ffbfb72d3c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedIconSpacing: 20
+  adjustIconToTextLength: 1
+  selectionIconSpacing: 20
 --- !u!114 &1827171636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9721,6 +9891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstSelectedButton: {fileID: 1570744125}
   parentScreen: {fileID: 0}
+  song: 1
   additionalElements:
   - {fileID: 1069848420}
 --- !u!1 &1893485975
@@ -11095,5 +11266,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstSelectedButton: {fileID: 418185116}
   parentScreen: {fileID: 1878608458}
+  song: 0
   additionalElements:
   - {fileID: 1069848420}

@@ -6,9 +6,9 @@ public class DialogManager : MonoBehaviourSingleton<DialogManager>
 {
     public class Button
     {
-        public string Text { get; }
-        public ButtonType Type { get; }
-        public UnityAction OnPressed { get; }
+        public string Text { private set; get; }
+        public ButtonType Type { private set; get; }
+        public UnityAction OnPressed { private set; get; }
 
         public Button(string _text, ButtonType _type, UnityAction _onPressed)
         {
@@ -31,6 +31,7 @@ public class DialogManager : MonoBehaviourSingleton<DialogManager>
     [SerializeField] GameObject defaultDialogPrefab = null;
     [SerializeField] GameObject promptDialogPrefab = null;
     [SerializeField] Transform dialogContainer = null;
+    [SerializeField] RectTransform selectionIcon = null;
 
     [Header("Default Button Texts")]
     [SerializeField] string defaultPositive = "";
@@ -50,10 +51,7 @@ public class DialogManager : MonoBehaviourSingleton<DialogManager>
 
         newDialog.Message = message;
 
-        foreach (Button button in buttons)
-        {
-            AddButtonToDialog(button, newDialog);
-        }
+        foreach (Button button in buttons) AddButtonToDialog(button, newDialog);
 
         return newDialog;
     }
@@ -90,13 +88,14 @@ public class DialogManager : MonoBehaviourSingleton<DialogManager>
         UnityAction action = () => CloseDialog(dialog.gameObject, currentSelected);
         if (button.OnPressed != null) action += button.OnPressed;
 
-        dialog.AddButton(text, action);
+        dialog.AddButton(text, action, selectionIcon);
     }
 
     void CloseDialog(GameObject menuObject, GameObject firstSelected)
     {
         cover.SetActive(false);
         EventSystem.current.SetSelectedGameObject(firstSelected);
+        selectionIcon.SetParent(dialogContainer.transform);
 
         Destroy(menuObject);
     }

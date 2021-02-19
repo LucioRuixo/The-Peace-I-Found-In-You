@@ -282,7 +282,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: -137
           y: 283
-          width: 251
+          width: 249
           height: 96
         width: 600
         height: 500
@@ -306,7 +306,7 @@ MonoBehaviour:
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        songTitle: 5
+        songTitle: 3
     00000008:
       type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
@@ -314,9 +314,9 @@ MonoBehaviour:
         GUID: 5e6f5804-a810-4c06-b189-ff0a2bd5dbb0
         rect:
           serializedVersion: 2
-          x: -149
+          x: -139
           y: 400
-          width: 286
+          width: 243
           height: 96
         width: 600
         height: 500

@@ -3752,8 +3752,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c981e3d6ae5ad5b48802ffbfb72d3c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedIconSpacing: 364
-  selectionIcon: {fileID: 2077590405}
+  adjustIconToTextLength: 0
+  selectionIconSpacing: 365
 --- !u!114 &672870972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7324,6 +7324,7 @@ MonoBehaviour:
   promptDialogPrefab: {fileID: 3648222499761110402, guid: ad0600017f6f73645bc8734fa43ec2cc,
     type: 3}
   dialogContainer: {fileID: 446318028}
+  selectionIcon: {fileID: 0}
   defaultPositive: "S\xED"
   defaultNegative: No
   defaultClose: Cerrar
@@ -7439,8 +7440,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeDuration: 3
-  channel1: {fileID: 1667829956}
-  channel2: {fileID: 666221496}
   songs:
   - {fileID: 11400000, guid: bdd5ec17db958c547ab16403ffea2907, type: 2}
   - {fileID: 11400000, guid: 4d22b19eb7280bd419d4c5981dba44c3, type: 2}
@@ -14049,8 +14048,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c981e3d6ae5ad5b48802ffbfb72d3c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedIconSpacing: 364
-  selectionIcon: {fileID: 2077590405}
+  adjustIconToTextLength: 0
+  selectionIconSpacing: 365
 --- !u!114 &1722784506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14479,7 +14478,11 @@ MonoBehaviour:
   exitGameText: "\xBFSalir de la partida?"
   saveGameText: "\xBFGuardar la partida?"
   saveAsJsonText: "\xBFGuardar con extensi\xF3n JSON para que el archivo sea modificable?"
+  selectionIcon: {fileID: 2077590405}
   log: {fileID: 161944890}
+  selectableButtons:
+  - {fileID: 672870971}
+  - {fileID: 1722784505}
 --- !u!4 &1787929897
 Transform:
   m_ObjectHideFlags: 0

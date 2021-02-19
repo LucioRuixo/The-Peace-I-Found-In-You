@@ -33,7 +33,6 @@ MonoBehaviour:
   - id: 17
   - id: 18
   - id: 19
-  - id: 20
   references:
     version: 1
     00000000:
@@ -43,8 +42,8 @@ MonoBehaviour:
         GUID: 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
         rect:
           serializedVersion: 2
-          x: 1058
-          y: 146
+          x: 1317
+          y: 147
           width: 76
           height: 71
         width: 100
@@ -54,9 +53,9 @@ MonoBehaviour:
         - GUID: 9774d646-fcde-41f7-8916-bc4b295c8e80
           parentNodeGUID: 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
           targetNodeGUID:
-          - 903ab6da-b11f-43bd-88ec-9f8bfc5a2dba
+          - 994a0a30-ae62-4254-bed3-d272c73e2c5a
           targetPortGUID:
-          - 4f805639-288c-4e14-a08e-624c510bf7c8
+          - ad3c8f4a-0f61-4053-b168-efa93d07a2f8
           text: Start
           isEditable: 0
         classNameString: nullbloq.Noodles.NoodlesNodeBorderVisual, Assembly-CSharp,
@@ -79,9 +78,9 @@ MonoBehaviour:
         - GUID: ad3c8f4a-0f61-4053-b168-efa93d07a2f8
           parentNodeGUID: 994a0a30-ae62-4254-bed3-d272c73e2c5a
           targetNodeGUID:
-          - 903ab6da-b11f-43bd-88ec-9f8bfc5a2dba
+          - 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
           targetPortGUID:
-          - 088718c3-eae6-4d23-9793-ca8b0db2d46c
+          - 9774d646-fcde-41f7-8916-bc4b295c8e80
           text: Input
           isEditable: 0
         outputPorts:
@@ -677,40 +676,6 @@ MonoBehaviour:
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         isStartNode: 0
     0000000F:
-      type: {class: CustomMusicChangeNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
-      data:
-        title: Music Change
-        GUID: 903ab6da-b11f-43bd-88ec-9f8bfc5a2dba
-        rect:
-          serializedVersion: 2
-          x: 1161
-          y: 143
-          width: 234
-          height: 96
-        width: 600
-        height: 500
-        inputPorts:
-        - GUID: 4f805639-288c-4e14-a08e-624c510bf7c8
-          parentNodeGUID: 903ab6da-b11f-43bd-88ec-9f8bfc5a2dba
-          targetNodeGUID:
-          - 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
-          targetPortGUID:
-          - 9774d646-fcde-41f7-8916-bc4b295c8e80
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: 088718c3-eae6-4d23-9793-ca8b0db2d46c
-          parentNodeGUID: 903ab6da-b11f-43bd-88ec-9f8bfc5a2dba
-          targetNodeGUID:
-          - 994a0a30-ae62-4254-bed3-d272c73e2c5a
-          targetPortGUID:
-          - ad3c8f4a-0f61-4053-b168-efa93d07a2f8
-          text: Output
-          isEditable: 0
-        classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        songTitle: 7
-    00000010:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -747,7 +712,7 @@ MonoBehaviour:
         - character: 0
           status: 0
           sentence: "(Mi respiraci\xF3n...)"
-    00000011:
+    00000010:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:
         title: Multiple Dialogue
@@ -793,7 +758,7 @@ MonoBehaviour:
         - character: 0
           status: 0
           sentence: (Tengo que seguir... caminando...)
-    00000012:
+    00000011:
       type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Sound Effect
@@ -802,7 +767,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 1783
           y: 144
-          width: 270
+          width: 239
           height: 96
         width: 600
         height: 500
@@ -827,7 +792,7 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         sfx: 18
-    00000013:
+    00000012:
       type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Sound Effect
@@ -836,7 +801,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 2451
           y: 143
-          width: 284
+          width: 271
           height: 96
         width: 600
         height: 500
@@ -861,7 +826,7 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         sfx: 13
-    00000014:
+    00000013:
       type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Sound Effect
@@ -870,8 +835,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 4698
           y: 158
-          width: 259
-          height: 97
+          width: 230
+          height: 96
         width: 600
         height: 500
         inputPorts:

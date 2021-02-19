@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
         SetGameData();
     }
 
+    void Start()
+    {
+        SoundManager.Get().PlaySong(SoundManager.Songs.Protagonist);
+    }
+
     void OnEnable()
     {
         UIManager_Gameplay.OnGameSave += SaveGameData;

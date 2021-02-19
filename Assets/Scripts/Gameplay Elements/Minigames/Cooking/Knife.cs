@@ -35,8 +35,8 @@ public class Knife : MonoBehaviour
     {
         if (Input.GetButtonDown("Left Click"))
         {
-            if (colliding) soundManager.PlaySFX(SoundManager.SFXs.Fx_CorteVerdura);
-            else soundManager.PlaySFX(SoundManager.SFXs.Fx_ErrarCorte);
+            if (colliding) soundManager.PlaySFX(SoundManager.SFXs.FoodCut);
+            else soundManager.PlaySFX(SoundManager.SFXs.HitMissed);
         }
     }
 }

@@ -6,7 +6,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	802180522	Fx_Bostezo			\Default Work Unit\SFX\Fx_Bostezo	
 	898536980	Fx_GolpesDePuerta			\Default Work Unit\SFX\Fx_GolpesDePuerta	
 	928907744	Inicia_Menu			\Default Work Unit\Music Game\Inicia_Menu	
-	934405918	Fx_Gritos_Batalla			\Default Work Unit\SFX\Fx_Gritos_Batalla	
+	941945728	Fx_SonidoCubiertos			\Default Work Unit\SFX\Fx_SonidoCubiertos	
 	1114860582	Fx_Demonios			\Default Work Unit\SFX\Fx_Demonios	
 	1149882460	Fx_RevuelveObjetos			\Default Work Unit\SFX\Fx_RevuelveObjetos	
 	1190877053	Inicia_Juego			\Default Work Unit\Music Game\Inicia_Juego	
@@ -15,10 +15,11 @@ Event	ID	Name			Wwise Object Path	Notes
 	1209790620	Fx_Grillos			\Default Work Unit\SFX\Fx_Grillos	
 	1255459097	Fx_ApretaBoton			\Default Work Unit\SFX\Fx_ApretaBoton	
 	1483270277	Fx_AbrePuerta			\Default Work Unit\SFX\Fx_AbrePuerta	
-	1785455897	Fx_Sonido_Cubiertos			\Default Work Unit\SFX\Fx_Sonido_Cubiertos	
+	1502029216	Fx_EspadasChocando			\Default Work Unit\SFX\Fx_EspadasChocando	
 	1958665138	Fx_HachaGolpeMadera			\Default Work Unit\SFX\Fx_HachaGolpeMadera	
 	1982181994	Fx_YaEstaOscureciendo			\Default Work Unit\SFX\Fx_YaEstaOscureciendo	
 	2039299266	Fx_CortesEspada			\Default Work Unit\SFX\Fx_CortesEspada	
+	2213132947	Fx_GritosBatalla			\Default Work Unit\SFX\Fx_GritosBatalla	
 	2243875784	Fx_Susurros			\Default Work Unit\SFX\Fx_Susurros	
 	2345829145	Inicia_Amb_Pueblo			\Default Work Unit\AMB Escenas\Inicia_Amb_Pueblo	
 	2361847821	Fx_Respiracion			\Default Work Unit\SFX\Fx_Respiracion	
@@ -26,7 +27,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	2404135128	Fx_PisadasHojas			\Default Work Unit\SFX\Fx_PisadasHojas	
 	2625099695	Fx_ErrarCorte			\Default Work Unit\SFX\Fx_ErrarCorte	
 	2726817329	Fx_Lluvia			\Default Work Unit\SFX\Fx_Lluvia	
-	2751256073	Fx_Espadas_Chocando			\Default Work Unit\SFX\Fx_Espadas_Chocando	
 	2949372900	Fx_BotonDecision			\Default Work Unit\SFX\Fx_BotonDecision	
 	2950874771	Inicia_Amb_Noche			\Default Work Unit\AMB Escenas\Inicia_Amb_Noche	
 	3314407590	Inicia_Amb_CasaSeijun			\Default Work Unit\AMB Escenas\Inicia_Amb_CasaSeijun	
@@ -37,38 +37,82 @@ Event	ID	Name			Wwise Object Path	Notes
 	4126746240	Inicia_Creditos			\Default Work Unit\Music Game\Inicia_Creditos	
 
 State Group	ID	Name			Wwise Object Path	Notes
-	2451887255	Personajes			\Default Work Unit\Personajes	
 	3830703178	Musicas			\Default Work Unit\Musicas	
 
 State	ID	Name	State Group			Notes
-	208248756	Protagonista	Personajes			
-	748895195	None	Personajes			
-	2200110088	Tadao	Personajes			
-	3771209684	Hoshi	Personajes			
+	208248756	Protagonista	Musicas			
 	748895195	None	Musicas			
 	956887760	Creditos	Musicas			
+	1684016862	Minijuego	Musicas			
+	2200110088	Tadao	Musicas			
 	2607556080	Menu	Musicas			
+	3771209684	Hoshi	Musicas			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	37124517	Whispers_1	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\DroneWhispers_BW.31967_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Whispers_1		11617344
-	48244002	Bostezo	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Baby_6_Month_Old_Breaths_Yawn_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bostezo		269376
-	76329683	CorteEspada_03	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\KnifeStab_BW.12401_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cortes_Espada_Minijuego\CorteEspada_03		159808
-	96249414	Demonios	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_SFX_Whoosh_Ghostly_Demon_By_5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Demonios		341056
-	99871492	Desenvaine_Espada	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\SwordScrapeSingleHanded_B_6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Desenvaine_Espada		392256
-	154275362	Whispers_2	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\ESM_Horror_Game_Vocal_Creature_Voice_Ethereal_Spirit_Ghost_Whisper_4_Whoosh_Transition_Motion_Creepy_Wind_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Whispers_2		3878624
-	234994735	Ya_Esta_Oscureciendo	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\SPLC-5227_FX_Oneshot_Animal_Wolf_Howls_Solo_Expressive_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ya_Esta_Oscureciendo		900228
-	291983641	Gritos_Batalla_02	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\SwordBattle_BW.54354_B6E8E53E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gritos_Batalla_02		6121152
-	317315745	Demonios_Risas	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\ESM_Demon_Vocal_Low_Laugh_4_Monster_Game_Voice_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Demonios_Risas		844188
-	453597210	Gritos_batalla_01	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\SwordBattle_BW.54351_E7F9B4AB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gritos_batalla_01		3878212
-	462110999	CorteEspada_02	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\KnifeStabFleshWet_ZA02.361_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cortes_Espada_Minijuego\CorteEspada_02		154688
-	472041738	LaughFemale	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\LaughFemale_SFXB.2074_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LaughFemale		348224
-	569219775	Errar_Corte	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\KnifeStabFleshSolid_ZA02.35_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Errar_Corte_Minijuego\Errar_Corte		198720
-	711391154	Respiracion_Scared	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BreatheFemaleScared_ZA01.10_5194AB84.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respiracion_Scared		3534840
-	756130547	Menu_Track	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Menu_Track_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Menu_Creditos\Musica Menu\Menu_Track\Menu_Track		5080384
-	765824009	Creditos_Track_V1	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Creditos_Track_V1_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Menu_Creditos\Musica Creditos\Creditos_Track_V1\Creditos_Track_V1		5080384
-	810399844	Amb_Pueblo	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\TRFDC_Raw_People_09_General_Talking_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb_Pueblo		4878336
-	898354248	CorteEspada_01	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\KnifeSliceFace_ZA02.358_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cortes_Espada_Minijuego\CorteEspada_01		86080
-	976074025	Amb_Santuario	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\ESM_Ancient_Game_Peaceful_Sanctuary_Nature_Surreal_Background__10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb_Santuario		7678344
-	1040786354	Amb_Bosque	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\ESM_Forest_Woodland_Ambience_Ambience_Nature_Camp_Tribal_Organic_Insect_44EBA623.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb_Bosque		7698092
-	1065530339	Hoshi	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Hoshi_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music personajes\Hoshi\Hoshi\Hoshi		15006728
+	9029587	Piano_Acorde	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Piano_Acorde_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Musica Menu\Menu Stems\Piano_Acorde		402540
+	31140283	BRS_Crickets_Night_Chirp_Single_02	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Crickets_Night_Chirp_Single_2_49A0E383.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Noche\Grillo 1\BRS_Crickets_Night_Chirp_Single_02		70273
+	32036145	RiverForest_SFXB_01	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\RiverForest_SFXB.142_06134C8C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Rio\RiverForest_SFXB_01		380030
+	37124517	Whispers_1	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\DroneWhispers_BW.31967_9EDFC787.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Susurros\Whispers_1		832643
+	48244002	Fx_Bostezo	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Baby_6_Month_Old_Breaths_Yawn_2_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Bostezo		24549
+	50506955	Piano_Acordes_1	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Piano_Acordes_1_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Principal\Piano_Acordes_1\Piano_Acordes_1		277490
+	76329683	CorteEspada_03	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\KnifeStab_BW.12401_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_CorteVerdura\CorteEspada_03		10360
+	90514135	BRS_Impact_Wood_Thud_Snap3	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Impact_Wood_Thud_Snap3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_HachaGolpeMadera\BRS_Impact_Wood_Thud_Snap3		19747
+	96249414	Demonios	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_SFX_Whoosh_Ghostly_Demon_By_5_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Demonios\Demonios		29527
+	99871492	Fx_EspadaDesenvaine	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\SwordScrapeSingleHanded_B_6_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_EspadaDesenvaine		25697
+	103866042	Instrumento_Japones	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Instrumento_Japones_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Musica Creditos\Creditos Stems\Instrumento_Japones		440270
+	118162646	RiverForest_SFXB_142	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\RiverForest_SFXB.142_170C4D2A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Rio\RiverForest_SFXB_142		338791
+	154275362	Whispers_2	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\ESM_Horror_Game_Vocal_Creature_Voice_Ethereal_Spirit_Ghost_Whisper_4_Whoosh_Transition_Motion_Creepy_Wind_9EDFC787.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Susurros\Whispers_2		331002
+	182979263	Kabuki_Drums_Opcion_1	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Kabuki_Drums_Opcion_1_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Musica Creditos\Creditos Stems\Kabuki_Drums_Opcion_1		459089
+	198893843	RiverForest_SFXB_02	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\RiverForest_SFXB.142_9DE794E7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Rio\RiverForest_SFXB_02		250529
+	206659455	BRS_Birds_Farm_Chirpy_Morning_01	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Birds_Farm_Chirpy_Morning_9270717A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Campo\BRS_Birds_Farm_Chirpy_Morning_01		180422
+	227057050	AxeImpactWall_BW_54320	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\AxeImpactWall_BW.54320_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_HachaGolpeMadera\AxeImpactWall_BW_54320		11236
+	233298208	Fx_Grillos	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Atmos_Forest_Evening_Crickets-Birds_Distant_Frogs_262DF173.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Grillos		305771
+	234994735	Fx_YaEstaOscureciendo	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\SPLC-5227_FX_Oneshot_Animal_Wolf_Howls_Solo_Expressive_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_YaEstaOscureciendo		71782
+	249526007	BRS_Crickets_Night_Chirp_Single_01	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Crickets_Night_Chirp_Single_2_F3ED2CFF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Noche\Grillo 1\BRS_Crickets_Night_Chirp_Single_01		66172
+	251620668	RiverForest_SFXB_03	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\RiverForest_SFXB.142_AA67BCAF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Rio\RiverForest_SFXB_03		316766
+	260584744	Fx_BotonDecision	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\ESM_Ambient_Game_Menu_Soft_Wood_Confirm_1_Notification_Button_Settings_UI_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_BotonDecision		25874
+	268521077	Fx_SonidoCubiertos	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\efrt_foley_loop_dishes_120_843861DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_SonidoCubiertos		96147
+	291983641	Gritos_Batalla_02	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\SwordBattle_BW.54354_928B530E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_GritosYBatalla\Gritos_Batalla_02		0
+	317315745	Demonios_Risas	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\ESM_Demon_Vocal_Low_Laugh_4_Monster_Game_Voice_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Demonios\Demonios_Risas		51513
+	340077586	Piano_Acordes_2	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Piano_Acordes_2_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Principal\Piano_Acordes_1\Piano_Acordes_2		277079
+	400309876	Fx_Hojas_04	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Feet_Walk_Dry_Leaves_Short_CD09786C.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Hojas\Fx_Hojas_04		10440
+	420554685	Fx_AbrePuerta	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\DoorKnobTurn_S011FO.236_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_AbrePuerta		11497
+	443616830	BRS_Impact_Wood_Thud_Snap5	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Impact_Wood_Thud_Snap5_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_HachaGolpeMadera\BRS_Impact_Wood_Thud_Snap5		18108
+	453597210	Gritos_batalla_01	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\SwordBattle_BW.54351_5FCF585B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_GritosYBatalla\Gritos_batalla_01		331509
+	461687745	Kabuki_Drums_Opcion_2	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Kabuki_Drums_Opcion_2_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Musica Creditos\Creditos Stems\Kabuki_Drums_Opcion_2		401226
+	462110999	CorteEspada_02	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\KnifeStabFleshWet_ZA02.361_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_CorteVerdura\CorteEspada_02		13405
+	472041738	Fx_RisaMujer	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\LaughFemale_SFXB.2074_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_RisaMujer		23265
+	482341871	BRS_Birds_Farm_Chirpy_Morning	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Birds_Farm_Chirpy_Morning_E9BF6C79.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Campo\BRS_Birds_Farm_Chirpy_Morning		138040
+	517751162	Fx_Hojas00	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Feet_Walk_Dry_Leaves_Short_36FC956D.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Hojas\Fx_Hojas00		9119
+	523235510	Fx_ApretaBoton	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\ESM_Japanese_Button_5_Game_Mobile_User_Interface_Tap_FX_Sound_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_ApretaBoton		2395
+	539439733	Fx_Hojas_03	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Feet_Walk_Dry_Leaves_Short_0940DB81.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Hojas\Fx_Hojas_03		10708
+	553855290	BRS_Impact_Wood_Skid_Hard_5	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Impact_Wood_Skid_Hard_5_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_HachaGolpeMadera\BRS_Impact_Wood_Skid_Hard_5		23446
+	569219775	Errar_Corte	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\KnifeStabFleshSolid_ZA02.35_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_ErrarCorte\Errar_Corte		12342
+	571515283	BRS_Crickets_Night_Open_Field_Med_Far_02	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Crickets_Night_Open_Field_Med_Far_4189D233.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Noche\Grillo 2\BRS_Crickets_Night_Open_Field_Med_Far_02		366400
+	591562857	BRS_Impact_Wood_Skid_Hard_3	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Impact_Wood_Skid_Hard_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_HachaGolpeMadera\BRS_Impact_Wood_Skid_Hard_3		20290
+	597790880	BRS_Crickets_Night_Open_Field_Med_Far	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Crickets_Night_Open_Field_Med_Far_D5835CC5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Noche\Grillo 2\BRS_Crickets_Night_Open_Field_Med_Far		310178
+	616106930	Tadao	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Tadao_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Tadao\Tadao\Tadao		1757097
+	672482355	Fx_Lluvia00	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\ForestRain_S08AM.37_7089C311.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Lluvia\Fx_Lluvia00		219469
+	676122961	Piano_Acordes	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Piano_Acordes_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Musica Creditos\Creditos Stems\Piano_Acordes		272576
+	689871649	Fx_Hojas_02	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Feet_Walk_Dry_Leaves_Short_AB0C3A4F.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Hojas\Fx_Hojas_02		7493
+	711391154	Fx_Respiracion	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BreatheFemaleScared_ZA01.10_B0A26E34.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Respiracion		183574
+	756130547	Menu_Track	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Menu_Track_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Musica Menu\Menu_Track\Menu_Track		401353
+	765824009	Creditos_Track_V1	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Creditos_Track_V1_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Musica Creditos\Creditos_Track_V1\Creditos_Track_V1		479501
+	778194421	BRS_Crickets_Night_Open_Field_Med_Far_01	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Crickets_Night_Open_Field_Med_Far_3AD03256.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Noche\Grillo 2\BRS_Crickets_Night_Open_Field_Med_Far_01		430164
+	810399844	Amb_Pueblo	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\TRFDC_Raw_People_09_General_Talking_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Pueblo		478712
+	863532314	BRS_Birds_Farm_Chirpy_Morning_03	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Birds_Farm_Chirpy_Morning_16CCE1ED.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Campo\BRS_Birds_Farm_Chirpy_Morning_03		189770
+	866913914	Fx_RevuelveObjetos	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\JunkDrawerSearch_BW.61314_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_RevuelveObjetos		59791
+	884848170	Fx_Hojas_01	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Feet_Walk_Dry_Leaves_Short_B9AEAFEF.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Hojas\Fx_Hojas_01		7447
+	898354248	CorteEspada_01	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\KnifeSliceFace_ZA02.358_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_CorteVerdura\CorteEspada_01		6597
+	925533531	Piano_Melo_Menu	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Piano_Melo_Menu_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Musica Menu\Menu Stems\Piano_Melo_Menu		399771
+	930063890	Fx_Fogata	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Fire_Campfire_Busy_Crackles_Snaps_2_B0B7C4D5.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_Fogata		331022
+	975557427	Fx_GritosBatalla	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\HellFireScreams_BW.12355_30A3A7CC.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_GritosBatalla		157640
+	1015407946	Fx_CortesEspada	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\KnifeRemoveFromFlesh_ZA02.3_DC9DA224.wem		\Actor-Mixer Hierarchy\Default Work Unit\FX Mixer\Fx_CortesEspada		4215
+	1025947871	Piano_Melo	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Piano_Melo_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Musica Creditos\Creditos Stems\Piano_Melo		389588
+	1031864544	BRS_Birds_Farm_Chirpy_Morning_02	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Birds_Farm_Chirpy_Morning_01B4AF26.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Campo\BRS_Birds_Farm_Chirpy_Morning_02		172025
+	1032375534	BRS_Crickets_Night_Chirp_Single_2	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\BRS_Crickets_Night_Chirp_Single_2_C118BDB8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Noche\Grillo 1\BRS_Crickets_Night_Chirp_Single_2		69562
+	1040786354	Amb_Bosque	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\ESM_Forest_Woodland_Ambience_Ambience_Nature_Camp_Tribal_Organic_Insect_517595F0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Bosque		355126
+	1045615779	MINIJUEGO TPIFIU	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\MINIJUEGO TPIFIU_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MINIJUEGO\MINIJUEGO TPIFIU\MINIJUEGO TPIFIU		1052698
+	1064018445	Amb_Santuario00	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\ESM_Ancient_Game_Peaceful_Sanctuary_Nature_Surreal_Background__4BC14D63.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambientes\Amb_Santuario\Amb_Santuario00		107133
+	1065530339	Hoshi	Y:\Google Drive (tpifiu@gmail.com)\TPIFIU\The Peace I Found In You\.cache\Windows\SFX\Hoshi_9EDFC787.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Hoshi\Hoshi\Hoshi		1205890
 

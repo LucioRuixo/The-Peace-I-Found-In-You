@@ -85,7 +85,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 106
           y: 211
-          width: 250
+          width: 215
           height: 96
         width: 600
         height: 500
@@ -246,8 +246,8 @@ MonoBehaviour:
             y evitar el conflicto...]"
         - character: 1
           status: 0
-          sentence: "No quiero molestarte m\xE1s, <P>, as\xED que me voy a llevar a
-            Tadao a mi casa."
+          sentence: "No quiero molestarte m\xE1s, <P>, as\xED que me voy a llevar
+            a Tadao a mi casa."
         - character: 0
           status: 0
           sentence: "\xBFQuieres que te acompa\xF1e, Hoshi?"

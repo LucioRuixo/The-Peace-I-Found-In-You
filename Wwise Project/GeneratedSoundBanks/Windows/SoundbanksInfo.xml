@@ -11,41 +11,69 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2155132552">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1883709635">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="2345201816">
+		<SoundBank Id="3161908922" Language="SFX" Hash="968409858">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1483270277" Name="Fx_AbrePuerta" ObjectPath="\Events\Default Work Unit\SFX\Fx_AbrePuerta" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1255459097" Name="Fx_ApretaBoton" ObjectPath="\Events\Default Work Unit\SFX\Fx_ApretaBoton" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1483270277" Name="Fx_AbrePuerta" ObjectPath="\Events\Default Work Unit\SFX\Fx_AbrePuerta" DurationType="OneShot" DurationMin="0.661333" DurationMax="0.661333">
+					<IncludedMemoryFiles>
+						<File Id="420554685" Language="SFX">
+							<ShortName>DoorKnobTurn_S011FO.236.wav</ShortName>
+							<Path>SFX\DoorKnobTurn_S011FO.236_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1255459097" Name="Fx_ApretaBoton" ObjectPath="\Events\Default Work Unit\SFX\Fx_ApretaBoton" DurationType="OneShot" DurationMin="0.055850" DurationMax="0.055850">
+					<IncludedMemoryFiles>
+						<File Id="523235510" Language="SFX">
+							<ShortName>ESM_Japanese_Button_5_Game_Mobile_User_Interface_Tap_FX_Sound.wav</ShortName>
+							<Path>SFX\ESM_Japanese_Button_5_Game_Mobile_User_Interface_Tap_FX_Sound_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="802180522" Name="Fx_Bostezo" ObjectPath="\Events\Default Work Unit\SFX\Fx_Bostezo" DurationType="OneShot" DurationMin="3.053424" DurationMax="3.053424">
 					<IncludedMemoryFiles>
 						<File Id="48244002" Language="SFX">
 							<ShortName>BRS_Baby_6_Month_Old_Breaths_Yawn_2.wav</ShortName>
-							<Path>SFX\BRS_Baby_6_Month_Old_Breaths_Yawn_2_10C4C929.wem</Path>
+							<Path>SFX\BRS_Baby_6_Month_Old_Breaths_Yawn_2_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2949372900" Name="Fx_BotonDecision" ObjectPath="\Events\Default Work Unit\SFX\Fx_BotonDecision" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2039299266" Name="Fx_CortesEspada" ObjectPath="\Events\Default Work Unit\SFX\Fx_CortesEspada" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="476300500" Name="Fx_CorteVerdura" ObjectPath="\Events\Default Work Unit\SFX\Fx_CorteVerdura" DurationType="OneShot" DurationMin="0.474640" DurationMax="0.896881">
+				<Event Id="2949372900" Name="Fx_BotonDecision" ObjectPath="\Events\Default Work Unit\SFX\Fx_BotonDecision" DurationType="OneShot" DurationMin="1.846375" DurationMax="1.846375">
+					<IncludedMemoryFiles>
+						<File Id="260584744" Language="SFX">
+							<ShortName>ESM_Ambient_Game_Menu_Soft_Wood_Confirm_1_Notification_Button_Settings_UI.wav</ShortName>
+							<Path>SFX\ESM_Ambient_Game_Menu_Soft_Wood_Confirm_1_Notification_Button_Settings_UI_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2039299266" Name="Fx_CortesEspada" ObjectPath="\Events\Default Work Unit\SFX\Fx_CortesEspada" DurationType="OneShot" DurationMin="0.201715" DurationMax="0.437157">
+					<IncludedMemoryFiles>
+						<File Id="1015407946" Language="SFX">
+							<ShortName>KnifeRemoveFromFlesh_ZA02.3.wav</ShortName>
+							<Path>SFX\KnifeRemoveFromFlesh_ZA02.3_DC9DA224.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="476300500" Name="Fx_CorteVerdura" ObjectPath="\Events\Default Work Unit\SFX\Fx_CorteVerdura" DurationType="OneShot" DurationMin="0.320095" DurationMax="1.149088">
 					<IncludedMemoryFiles>
 						<File Id="76329683" Language="SFX">
 							<ShortName>KnifeStab_BW.12401.wav</ShortName>
-							<Path>SFX\KnifeStab_BW.12401_10C4C929.wem</Path>
+							<Path>SFX\KnifeStab_BW.12401_3F75BDB9.wem</Path>
 						</File>
 						<File Id="462110999" Language="SFX">
 							<ShortName>KnifeStabFleshWet_ZA02.361.wav</ShortName>
-							<Path>SFX\KnifeStabFleshWet_ZA02.361_10C4C929.wem</Path>
+							<Path>SFX\KnifeStabFleshWet_ZA02.361_3F75BDB9.wem</Path>
 						</File>
 						<File Id="898354248" Language="SFX">
 							<ShortName>KnifeSliceFace_ZA02.358.wav</ShortName>
-							<Path>SFX\KnifeSliceFace_ZA02.358_10C4C929.wem</Path>
+							<Path>SFX\KnifeSliceFace_ZA02.358_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -53,19 +81,19 @@
 					<IncludedMemoryFiles>
 						<File Id="96249414" Language="SFX">
 							<ShortName>BRS_SFX_Whoosh_Ghostly_Demon_By_5.wav</ShortName>
-							<Path>SFX\BRS_SFX_Whoosh_Ghostly_Demon_By_5_10C4C929.wem</Path>
+							<Path>SFX\BRS_SFX_Whoosh_Ghostly_Demon_By_5_3F75BDB9.wem</Path>
 						</File>
 						<File Id="317315745" Language="SFX">
 							<ShortName>ESM_Demon_Vocal_Low_Laugh_4_Monster_Game_Voice.wav</ShortName>
-							<Path>SFX\ESM_Demon_Vocal_Low_Laugh_4_Monster_Game_Voice_10C4C929.wem</Path>
+							<Path>SFX\ESM_Demon_Vocal_Low_Laugh_4_Monster_Game_Voice_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2625099695" Name="Fx_ErrarCorte" ObjectPath="\Events\Default Work Unit\SFX\Fx_ErrarCorte" DurationType="OneShot" DurationMin="0.821215" DurationMax="1.303598">
+				<Event Id="2625099695" Name="Fx_ErrarCorte" ObjectPath="\Events\Default Work Unit\SFX\Fx_ErrarCorte" DurationType="OneShot" DurationMin="0.689362" DurationMax="1.552937">
 					<IncludedMemoryFiles>
 						<File Id="569219775" Language="SFX">
 							<ShortName>KnifeStabFleshSolid_ZA02.35.wav</ShortName>
-							<Path>SFX\KnifeStabFleshSolid_ZA02.35_10C4C929.wem</Path>
+							<Path>SFX\KnifeStabFleshSolid_ZA02.35_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -73,46 +101,141 @@
 					<IncludedMemoryFiles>
 						<File Id="99871492" Language="SFX">
 							<ShortName>SwordScrapeSingleHanded_B_6.wav</ShortName>
-							<Path>SFX\SwordScrapeSingleHanded_B_6_10C4C929.wem</Path>
+							<Path>SFX\SwordScrapeSingleHanded_B_6_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2751256073" Name="Fx_Espadas_Chocando" ObjectPath="\Events\Default Work Unit\SFX\Fx_Espadas_Chocando" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3332629534" Name="Fx_Fogata" ObjectPath="\Events\Default Work Unit\SFX\Fx_Fogata" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="898536980" Name="Fx_GolpesDePuerta" ObjectPath="\Events\Default Work Unit\SFX\Fx_GolpesDePuerta" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1209790620" Name="Fx_Grillos" ObjectPath="\Events\Default Work Unit\SFX\Fx_Grillos" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="934405918" Name="Fx_Gritos_Batalla" ObjectPath="\Events\Default Work Unit\SFX\Fx_Gritos_Batalla" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1958665138" Name="Fx_HachaGolpeMadera" ObjectPath="\Events\Default Work Unit\SFX\Fx_HachaGolpeMadera" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="522454013" Name="Fx_Hojas" ObjectPath="\Events\Default Work Unit\SFX\Fx_Hojas" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2726817329" Name="Fx_Lluvia" ObjectPath="\Events\Default Work Unit\SFX\Fx_Lluvia" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2404135128" Name="Fx_PisadasHojas" ObjectPath="\Events\Default Work Unit\SFX\Fx_PisadasHojas" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1502029216" Name="Fx_EspadasChocando" ObjectPath="\Events\Default Work Unit\SFX\Fx_EspadasChocando" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3332629534" Name="Fx_Fogata" ObjectPath="\Events\Default Work Unit\SFX\Fx_Fogata" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="930063890" Language="SFX">
+							<ShortName>BRS_Fire_Campfire_Busy_Crackles_Snaps_2.wav</ShortName>
+							<Path>SFX\BRS_Fire_Campfire_Busy_Crackles_Snaps_2_B0B7C4D5.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="898536980" Name="Fx_GolpesDePuerta" ObjectPath="\Events\Default Work Unit\SFX\Fx_GolpesDePuerta" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1209790620" Name="Fx_Grillos" ObjectPath="\Events\Default Work Unit\SFX\Fx_Grillos" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="233298208" Language="SFX">
+							<ShortName>BRS_Atmos_Forest_Evening_Crickets-Birds_Distant_Frogs.wav</ShortName>
+							<Path>SFX\BRS_Atmos_Forest_Evening_Crickets-Birds_Distant_Frogs_262DF173.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2213132947" Name="Fx_GritosBatalla" ObjectPath="\Events\Default Work Unit\SFX\Fx_GritosBatalla" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="975557427" Language="SFX">
+							<ShortName>HellFireScreams_BW.12355.wav</ShortName>
+							<Path>SFX\HellFireScreams_BW.12355_30A3A7CC.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1958665138" Name="Fx_HachaGolpeMadera" ObjectPath="\Events\Default Work Unit\SFX\Fx_HachaGolpeMadera" DurationType="OneShot" DurationMin="0.522737" DurationMax="1.918842">
+					<IncludedMemoryFiles>
+						<File Id="90514135" Language="SFX">
+							<ShortName>BRS_Impact_Wood_Thud_Snap3.wav</ShortName>
+							<Path>SFX\BRS_Impact_Wood_Thud_Snap3_3F75BDB9.wem</Path>
+						</File>
+						<File Id="227057050" Language="SFX">
+							<ShortName>AxeImpactWall_BW.54320.wav</ShortName>
+							<Path>SFX\AxeImpactWall_BW.54320_3F75BDB9.wem</Path>
+						</File>
+						<File Id="443616830" Language="SFX">
+							<ShortName>BRS_Impact_Wood_Thud_Snap5.wav</ShortName>
+							<Path>SFX\BRS_Impact_Wood_Thud_Snap5_3F75BDB9.wem</Path>
+						</File>
+						<File Id="553855290" Language="SFX">
+							<ShortName>BRS_Impact_Wood_Skid_Hard_5.wav</ShortName>
+							<Path>SFX\BRS_Impact_Wood_Skid_Hard_5_3F75BDB9.wem</Path>
+						</File>
+						<File Id="591562857" Language="SFX">
+							<ShortName>BRS_Impact_Wood_Skid_Hard_3.wav</ShortName>
+							<Path>SFX\BRS_Impact_Wood_Skid_Hard_3_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="522454013" Name="Fx_Hojas" ObjectPath="\Events\Default Work Unit\SFX\Fx_Hojas" DurationType="OneShot" DurationMin="0.740659" DurationMax="1.036616">
+					<IncludedMemoryFiles>
+						<File Id="517751162" Language="SFX">
+							<ShortName>BRS_Feet_Walk_Dry_Leaves_Short.wav</ShortName>
+							<Path>SFX\BRS_Feet_Walk_Dry_Leaves_Short_36FC956D.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2726817329" Name="Fx_Lluvia" ObjectPath="\Events\Default Work Unit\SFX\Fx_Lluvia" DurationType="OneShot" DurationMin="11.797882" DurationMax="15.567400">
+					<IncludedMemoryFiles>
+						<File Id="672482355" Language="SFX">
+							<ShortName>ForestRain_S08AM.37.wav</ShortName>
+							<Path>SFX\ForestRain_S08AM.37_7089C311.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2404135128" Name="Fx_PisadasHojas" ObjectPath="\Events\Default Work Unit\SFX\Fx_PisadasHojas" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="400309876" Language="SFX">
+							<ShortName>BRS_Feet_Walk_Dry_Leaves_Short.wav</ShortName>
+							<Path>SFX\BRS_Feet_Walk_Dry_Leaves_Short_CD09786C.wem</Path>
+						</File>
+						<File Id="517751162" Language="SFX">
+							<ShortName>BRS_Feet_Walk_Dry_Leaves_Short.wav</ShortName>
+							<Path>SFX\BRS_Feet_Walk_Dry_Leaves_Short_36FC956D.wem</Path>
+						</File>
+						<File Id="539439733" Language="SFX">
+							<ShortName>BRS_Feet_Walk_Dry_Leaves_Short.wav</ShortName>
+							<Path>SFX\BRS_Feet_Walk_Dry_Leaves_Short_0940DB81.wem</Path>
+						</File>
+						<File Id="689871649" Language="SFX">
+							<ShortName>BRS_Feet_Walk_Dry_Leaves_Short.wav</ShortName>
+							<Path>SFX\BRS_Feet_Walk_Dry_Leaves_Short_AB0C3A4F.wem</Path>
+						</File>
+						<File Id="884848170" Language="SFX">
+							<ShortName>BRS_Feet_Walk_Dry_Leaves_Short.wav</ShortName>
+							<Path>SFX\BRS_Feet_Walk_Dry_Leaves_Short_B9AEAFEF.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2361847821" Name="Fx_Respiracion" ObjectPath="\Events\Default Work Unit\SFX\Fx_Respiracion" DurationType="OneShot" DurationMin="18.410295" DurationMax="18.410295">
 					<IncludedMemoryFiles>
 						<File Id="711391154" Language="SFX">
 							<ShortName>BreatheFemaleScared_ZA01.10.wav</ShortName>
-							<Path>SFX\BreatheFemaleScared_ZA01.10_5194AB84.wem</Path>
+							<Path>SFX\BreatheFemaleScared_ZA01.10_B0A26E34.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1149882460" Name="Fx_RevuelveObjetos" ObjectPath="\Events\Default Work Unit\SFX\Fx_RevuelveObjetos" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1149882460" Name="Fx_RevuelveObjetos" ObjectPath="\Events\Default Work Unit\SFX\Fx_RevuelveObjetos" DurationType="OneShot" DurationMin="4.096000" DurationMax="4.096000">
+					<IncludedMemoryFiles>
+						<File Id="866913914" Language="SFX">
+							<ShortName>JunkDrawerSearch_BW.61314.wav</ShortName>
+							<Path>SFX\JunkDrawerSearch_BW.61314_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1200327514" Name="Fx_RisaMujer" ObjectPath="\Events\Default Work Unit\SFX\Fx_RisaMujer" DurationType="OneShot" DurationMin="1.813333" DurationMax="1.813333">
 					<IncludedMemoryFiles>
 						<File Id="472041738" Language="SFX">
 							<ShortName>LaughFemale_SFXB.2074.wav</ShortName>
-							<Path>SFX\LaughFemale_SFXB.2074_10C4C929.wem</Path>
+							<Path>SFX\LaughFemale_SFXB.2074_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1785455897" Name="Fx_Sonido_Cubiertos" ObjectPath="\Events\Default Work Unit\SFX\Fx_Sonido_Cubiertos" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2243875784" Name="Fx_Susurros" ObjectPath="\Events\Default Work Unit\SFX\Fx_Susurros" DurationType="OneShot" DurationMin="60.506668" DurationMax="60.506668">
+				<Event Id="941945728" Name="Fx_SonidoCubiertos" ObjectPath="\Events\Default Work Unit\SFX\Fx_SonidoCubiertos" DurationType="OneShot" DurationMin="8.000000" DurationMax="8.000000">
+					<IncludedMemoryFiles>
+						<File Id="268521077" Language="SFX">
+							<ShortName>efrt_foley_loop_dishes_120.wav</ShortName>
+							<Path>SFX\efrt_foley_loop_dishes_120_843861DD.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2243875784" Name="Fx_Susurros" ObjectPath="\Events\Default Work Unit\SFX\Fx_Susurros" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="37124517" Language="SFX">
 							<ShortName>DroneWhispers_BW.31967.wav</ShortName>
-							<Path>SFX\DroneWhispers_BW.31967_10C4C929.wem</Path>
+							<Path>SFX\DroneWhispers_BW.31967_9EDFC787.wem</Path>
 						</File>
 						<File Id="154275362" Language="SFX">
 							<ShortName>ESM_Horror_Game_Vocal_Creature_Voice_Ethereal_Spirit_Ghost_Whisper_4_Whoosh_Transition_Motion_Creepy_Wind.wav</ShortName>
-							<Path>SFX\ESM_Horror_Game_Vocal_Creature_Voice_Ethereal_Spirit_Ghost_Whisper_4_Whoosh_Transition_Motion_Creepy_Wind_10C4C929.wem</Path>
+							<Path>SFX\ESM_Horror_Game_Vocal_Creature_Voice_Ethereal_Spirit_Ghost_Whisper_4_Whoosh_Transition_Motion_Creepy_Wind_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -120,127 +243,237 @@
 					<IncludedMemoryFiles>
 						<File Id="234994735" Language="SFX">
 							<ShortName>SPLC-5227_FX_Oneshot_Animal_Wolf_Howls_Solo_Expressive.wav</ShortName>
-							<Path>SFX\SPLC-5227_FX_Oneshot_Animal_Wolf_Howls_Solo_Expressive_10C4C929.wem</Path>
+							<Path>SFX\SPLC-5227_FX_Oneshot_Animal_Wolf_Howls_Solo_Expressive_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3389716709" Name="Inicia_Amb_Bosque" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Bosque" DurationType="OneShot" DurationMin="43.639622" DurationMax="43.639622">
+				<Event Id="3389716709" Name="Inicia_Amb_Bosque" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Bosque" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="1040786354" Language="SFX">
 							<ShortName>ESM_Forest_Woodland_Ambience_Ambience_Nature_Camp_Tribal_Organic_Insect.wav</ShortName>
-							<Path>SFX\ESM_Forest_Woodland_Ambience_Ambience_Nature_Camp_Tribal_Organic_Insect_44EBA623.wem</Path>
+							<Path>SFX\ESM_Forest_Woodland_Ambience_Ambience_Nature_Camp_Tribal_Organic_Insect_517595F0.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2373982872" Name="Inicia_Amb_Campo" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Campo" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1195242306" Name="Inicia_Amb_Casa" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Casa" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3314407590" Name="Inicia_Amb_CasaSeijun" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_CasaSeijun" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2373982872" Name="Inicia_Amb_Campo" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Campo" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="206659455" Language="SFX">
+							<ShortName>BRS_Birds_Farm_Chirpy_Morning.wav</ShortName>
+							<Path>SFX\BRS_Birds_Farm_Chirpy_Morning_9270717A.wem</Path>
+						</File>
+						<File Id="482341871" Language="SFX">
+							<ShortName>BRS_Birds_Farm_Chirpy_Morning.wav</ShortName>
+							<Path>SFX\BRS_Birds_Farm_Chirpy_Morning_E9BF6C79.wem</Path>
+						</File>
+						<File Id="863532314" Language="SFX">
+							<ShortName>BRS_Birds_Farm_Chirpy_Morning.wav</ShortName>
+							<Path>SFX\BRS_Birds_Farm_Chirpy_Morning_16CCE1ED.wem</Path>
+						</File>
+						<File Id="1031864544" Language="SFX">
+							<ShortName>BRS_Birds_Farm_Chirpy_Morning.wav</ShortName>
+							<Path>SFX\BRS_Birds_Farm_Chirpy_Morning_01B4AF26.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1195242306" Name="Inicia_Amb_Casa" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Casa" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3314407590" Name="Inicia_Amb_CasaSeijun" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_CasaSeijun" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3705673444" Name="Inicia_Amb_GritosYBatalla" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_GritosYBatalla" DurationType="OneShot" DurationMin="31.880667" DurationMax="31.880667">
 					<IncludedMemoryFiles>
 						<File Id="291983641" Language="SFX">
 							<ShortName>SwordBattle_BW.54354.wav</ShortName>
-							<Path>SFX\SwordBattle_BW.54354_B6E8E53E.wem</Path>
+							<Path>SFX\SwordBattle_BW.54354_928B530E.wem</Path>
 						</File>
 						<File Id="453597210" Language="SFX">
 							<ShortName>SwordBattle_BW.54351.wav</ShortName>
-							<Path>SFX\SwordBattle_BW.54351_E7F9B4AB.wem</Path>
+							<Path>SFX\SwordBattle_BW.54351_5FCF585B.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2950874771" Name="Inicia_Amb_Noche" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Noche" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2950874771" Name="Inicia_Amb_Noche" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Noche" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="31140283" Language="SFX">
+							<ShortName>BRS_Crickets_Night_Chirp_Single_2.wav</ShortName>
+							<Path>SFX\BRS_Crickets_Night_Chirp_Single_2_49A0E383.wem</Path>
+						</File>
+						<File Id="249526007" Language="SFX">
+							<ShortName>BRS_Crickets_Night_Chirp_Single_2.wav</ShortName>
+							<Path>SFX\BRS_Crickets_Night_Chirp_Single_2_F3ED2CFF.wem</Path>
+						</File>
+						<File Id="571515283" Language="SFX">
+							<ShortName>BRS_Crickets_Night_Open_Field_Med_Far.wav</ShortName>
+							<Path>SFX\BRS_Crickets_Night_Open_Field_Med_Far_4189D233.wem</Path>
+						</File>
+						<File Id="597790880" Language="SFX">
+							<ShortName>BRS_Crickets_Night_Open_Field_Med_Far.wav</ShortName>
+							<Path>SFX\BRS_Crickets_Night_Open_Field_Med_Far_D5835CC5.wem</Path>
+						</File>
+						<File Id="778194421" Language="SFX">
+							<ShortName>BRS_Crickets_Night_Open_Field_Med_Far.wav</ShortName>
+							<Path>SFX\BRS_Crickets_Night_Open_Field_Med_Far_3AD03256.wem</Path>
+						</File>
+						<File Id="1032375534" Language="SFX">
+							<ShortName>BRS_Crickets_Night_Chirp_Single_2.wav</ShortName>
+							<Path>SFX\BRS_Crickets_Night_Chirp_Single_2_C118BDB8.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2345829145" Name="Inicia_Amb_Pueblo" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Pueblo" DurationType="OneShot" DurationMin="29.811171" DurationMax="29.811171">
 					<IncludedMemoryFiles>
 						<File Id="810399844" Language="SFX">
 							<ShortName>TRFDC_Raw_People_09_General_Talking.wav</ShortName>
-							<Path>SFX\TRFDC_Raw_People_09_General_Talking_10C4C929.wem</Path>
+							<Path>SFX\TRFDC_Raw_People_09_General_Talking_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="59791624" Name="Inicia_Amb_Rio" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Rio" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="157095356" Name="Inicia_Amb_Santuario" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Santuario" DurationType="OneShot" DurationMin="39.990623" DurationMax="39.990623">
+				<Event Id="59791624" Name="Inicia_Amb_Rio" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Rio" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="976074025" Language="SFX">
+						<File Id="32036145" Language="SFX">
+							<ShortName>RiverForest_SFXB.142.wav</ShortName>
+							<Path>SFX\RiverForest_SFXB.142_06134C8C.wem</Path>
+						</File>
+						<File Id="118162646" Language="SFX">
+							<ShortName>RiverForest_SFXB.142.wav</ShortName>
+							<Path>SFX\RiverForest_SFXB.142_170C4D2A.wem</Path>
+						</File>
+						<File Id="198893843" Language="SFX">
+							<ShortName>RiverForest_SFXB.142.wav</ShortName>
+							<Path>SFX\RiverForest_SFXB.142_9DE794E7.wem</Path>
+						</File>
+						<File Id="251620668" Language="SFX">
+							<ShortName>RiverForest_SFXB.142.wav</ShortName>
+							<Path>SFX\RiverForest_SFXB.142_AA67BCAF.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="157095356" Name="Inicia_Amb_Santuario" ObjectPath="\Events\Default Work Unit\AMB Escenas\Inicia_Amb_Santuario" DurationType="OneShot" DurationMin="8.362066" DurationMax="12.770055">
+					<IncludedMemoryFiles>
+						<File Id="1064018445" Language="SFX">
 							<ShortName>ESM_Ancient_Game_Peaceful_Sanctuary_Nature_Surreal_Background_.wav</ShortName>
-							<Path>SFX\ESM_Ancient_Game_Peaceful_Sanctuary_Nature_Surreal_Background__10C4C929.wem</Path>
+							<Path>SFX\ESM_Ancient_Game_Peaceful_Sanctuary_Nature_Surreal_Background__4BC14D63.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4126746240" Name="Inicia_Creditos" ObjectPath="\Events\Default Work Unit\Music Game\Inicia_Creditos" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="765824009" Language="SFX">
-							<ShortName>Creditos_Track_V1.wav</ShortName>
-							<Path>SFX\Creditos_Track_V1_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="4126746240" Name="Inicia_Creditos" ObjectPath="\Events\Default Work Unit\Music Game\Inicia_Creditos" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
 					<ActionSetState>
 						<ActionSetStateEntry Id="956887760" Name="Creditos" ObjectPath="\States\Default Work Unit\Musicas\Creditos"/>
 					</ActionSetState>
 				</Event>
 				<Event Id="1190877053" Name="Inicia_Juego" ObjectPath="\Events\Default Work Unit\Music Game\Inicia_Juego" DurationType="Infinite">
 					<IncludedMemoryFiles>
+						<File Id="9029587" Language="SFX">
+							<ShortName>Piano_Acorde.wav</ShortName>
+							<Path>SFX\Piano_Acorde_9EDFC787.wem</Path>
+						</File>
+						<File Id="50506955" Language="SFX">
+							<ShortName>Piano_Acordes_1.wav</ShortName>
+							<Path>SFX\Piano_Acordes_1_9EDFC787.wem</Path>
+						</File>
+						<File Id="103866042" Language="SFX">
+							<ShortName>Instrumento_Japones.wav</ShortName>
+							<Path>SFX\Instrumento_Japones_9EDFC787.wem</Path>
+						</File>
+						<File Id="182979263" Language="SFX">
+							<ShortName>Kabuki_Drums_Opcion_1.wav</ShortName>
+							<Path>SFX\Kabuki_Drums_Opcion_1_9EDFC787.wem</Path>
+						</File>
+						<File Id="340077586" Language="SFX">
+							<ShortName>Piano_Acordes_2.wav</ShortName>
+							<Path>SFX\Piano_Acordes_2_9EDFC787.wem</Path>
+						</File>
+						<File Id="461687745" Language="SFX">
+							<ShortName>Kabuki_Drums_Opcion_2.wav</ShortName>
+							<Path>SFX\Kabuki_Drums_Opcion_2_9EDFC787.wem</Path>
+						</File>
 						<File Id="616106930" Language="SFX">
 							<ShortName>Tadao.wav</ShortName>
-							<Path>SFX\Tadao_D79FB2B7.wem</Path>
+							<Path>SFX\Tadao_9EDFC787.wem</Path>
+						</File>
+						<File Id="676122961" Language="SFX">
+							<ShortName>Piano_Acordes.wav</ShortName>
+							<Path>SFX\Piano_Acordes_9EDFC787.wem</Path>
 						</File>
 						<File Id="756130547" Language="SFX">
 							<ShortName>Menu_Track.wav</ShortName>
-							<Path>SFX\Menu_Track_D79FB2B7.wem</Path>
+							<Path>SFX\Menu_Track_9EDFC787.wem</Path>
 						</File>
 						<File Id="765824009" Language="SFX">
 							<ShortName>Creditos_Track_V1.wav</ShortName>
-							<Path>SFX\Creditos_Track_V1_D79FB2B7.wem</Path>
+							<Path>SFX\Creditos_Track_V1_9EDFC787.wem</Path>
+						</File>
+						<File Id="925533531" Language="SFX">
+							<ShortName>Piano_Melo_Menu.wav</ShortName>
+							<Path>SFX\Piano_Melo_Menu_9EDFC787.wem</Path>
+						</File>
+						<File Id="1025947871" Language="SFX">
+							<ShortName>Piano_Melo.wav</ShortName>
+							<Path>SFX\Piano_Melo_9EDFC787.wem</Path>
+						</File>
+						<File Id="1045615779" Language="SFX">
+							<ShortName>MINIJUEGO TPIFIU.wav</ShortName>
+							<Path>SFX\MINIJUEGO TPIFIU_9EDFC787.wem</Path>
 						</File>
 						<File Id="1065530339" Language="SFX">
 							<ShortName>Hoshi.wav</ShortName>
-							<Path>SFX\Hoshi_D79FB2B7.wem</Path>
+							<Path>SFX\Hoshi_9EDFC787.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
 						<SwitchContainer SwitchValue="{D4DFCB5A-7C1D-4F01-B253-0B22260B3193}">
 							<Media>
 								<File Id="765824009"/>
+								<File Id="103866042"/>
+								<File Id="182979263"/>
+								<File Id="461687745"/>
+								<File Id="676122961"/>
+								<File Id="1025947871"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{8188635C-2F64-4DBF-8F05-3FE82D321152}">
 							<Media>
 								<File Id="756130547"/>
+								<File Id="9029587"/>
+								<File Id="925533531"/>
 							</Media>
 						</SwitchContainer>
-						<SwitchContainer SwitchValue="{883157D1-B180-46F4-8332-72593077377E}">
+						<SwitchContainer SwitchValue="{DBD9A967-93E3-49EB-A2EA-E92039F51397}">
 							<Media>
 								<File Id="1065530339"/>
+								<File Id="676122961"/>
 							</Media>
 						</SwitchContainer>
-						<SwitchContainer SwitchValue="{89331246-5A17-4FBE-BB2C-C5EBEFE43024}">
+						<SwitchContainer SwitchValue="{A2822EB0-5330-43CE-9042-22404A9EF62C}">
+							<Media>
+								<File Id="50506955"/>
+								<File Id="340077586"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{F33C4D5F-F715-4F6C-9F21-5B60B9602216}">
 							<Media>
 								<File Id="616106930"/>
 							</Media>
 						</SwitchContainer>
+						<SwitchContainer SwitchValue="{E6F9B147-F7A4-49DC-BA0B-8738395A28E2}">
+							<Media>
+								<File Id="1045615779"/>
+							</Media>
+						</SwitchContainer>
 					</SwitchContainers>
+					<ActionSetState>
+						<ActionSetStateEntry Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Musicas\None"/>
+					</ActionSetState>
 				</Event>
-				<Event Id="928907744" Name="Inicia_Menu" ObjectPath="\Events\Default Work Unit\Music Game\Inicia_Menu" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="756130547" Language="SFX">
-							<ShortName>Menu_Track.wav</ShortName>
-							<Path>SFX\Menu_Track_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="928907744" Name="Inicia_Menu" ObjectPath="\Events\Default Work Unit\Music Game\Inicia_Menu" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
 					<ActionSetState>
 						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Musicas\Menu"/>
 					</ActionSetState>
 				</Event>
 			</IncludedEvents>
 			<StateGroups>
-				<StateGroup Id="956887760" Name="Creditos" ObjectPath="\States\Default Work Unit\Musicas\Creditos">
+				<StateGroup Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Musicas\None">
 					<States/>
 				</StateGroup>
-				<StateGroup Id="2451887255" Name="Personajes" ObjectPath="\States\Default Work Unit\Personajes">
-					<States>
-						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Personajes\None"/>
-						<State Id="2200110088" Name="Tadao" ObjectPath="\States\Default Work Unit\Personajes\Tadao"/>
-						<State Id="3771209684" Name="Hoshi" ObjectPath="\States\Default Work Unit\Personajes\Hoshi"/>
-						<State Id="208248756" Name="Protagonista" ObjectPath="\States\Default Work Unit\Personajes\Protagonista"/>
-					</States>
+				<StateGroup Id="956887760" Name="Creditos" ObjectPath="\States\Default Work Unit\Musicas\Creditos">
+					<States/>
 				</StateGroup>
 				<StateGroup Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Musicas\Menu">
 					<States/>
@@ -250,6 +483,10 @@
 						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Musicas\None"/>
 						<State Id="2607556080" Name="Menu" ObjectPath="\States\Default Work Unit\Musicas\Menu"/>
 						<State Id="956887760" Name="Creditos" ObjectPath="\States\Default Work Unit\Musicas\Creditos"/>
+						<State Id="3771209684" Name="Hoshi" ObjectPath="\States\Default Work Unit\Musicas\Hoshi"/>
+						<State Id="208248756" Name="Protagonista" ObjectPath="\States\Default Work Unit\Musicas\Protagonista"/>
+						<State Id="2200110088" Name="Tadao" ObjectPath="\States\Default Work Unit\Musicas\Tadao"/>
+						<State Id="1684016862" Name="Minijuego" ObjectPath="\States\Default Work Unit\Musicas\Minijuego"/>
 					</States>
 				</StateGroup>
 			</StateGroups>

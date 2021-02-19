@@ -3,19 +3,15 @@
 	<States>
 		<WorkUnit Name="Default Work Unit" ID="{A36EC48D-B292-420F-9372-6ADF927C401B}" PersistMode="Standalone">
 			<ChildrenList>
-				<StateGroup Name="Personajes" ID="{3527205F-ABF8-4286-B5FF-37A084BE3A13}">
-					<ChildrenList>
-						<State Name="None" ID="{794776ED-A354-408C-ADB4-06D9481B8FF2}"/>
-						<State Name="Tadao" ID="{89331246-5A17-4FBE-BB2C-C5EBEFE43024}"/>
-						<State Name="Hoshi" ID="{883157D1-B180-46F4-8332-72593077377E}"/>
-						<State Name="Protagonista" ID="{48027D36-EBFE-4327-A31C-085621E5384B}"/>
-					</ChildrenList>
-				</StateGroup>
 				<StateGroup Name="Musicas" ID="{729B26E6-1B58-431E-9807-808E0D1DE0F9}">
 					<ChildrenList>
 						<State Name="None" ID="{F014B3FA-536F-475B-96D8-5C2B8DF2C01F}"/>
 						<State Name="Menu" ID="{8188635C-2F64-4DBF-8F05-3FE82D321152}"/>
 						<State Name="Creditos" ID="{D4DFCB5A-7C1D-4F01-B253-0B22260B3193}"/>
+						<State Name="Hoshi" ID="{DBD9A967-93E3-49EB-A2EA-E92039F51397}"/>
+						<State Name="Protagonista" ID="{A2822EB0-5330-43CE-9042-22404A9EF62C}"/>
+						<State Name="Tadao" ID="{F33C4D5F-F715-4F6C-9F21-5B60B9602216}"/>
+						<State Name="Minijuego" ID="{E6F9B147-F7A4-49DC-BA0B-8738395A28E2}"/>
 					</ChildrenList>
 				</StateGroup>
 			</ChildrenList>

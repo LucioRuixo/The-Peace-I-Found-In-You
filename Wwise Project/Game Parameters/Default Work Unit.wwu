@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{D2522868-414A-47F3-9F6A-D0B865215FE6}" SchemaVersion="97">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{D2522868-414A-47F3-9F6A-D0B865215FE6}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{D2522868-414A-47F3-9F6A-D0B865215FE6}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Minijuego_Time" ID="{B9C103AB-F214-447F-BAA0-9DC84775445F}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="60"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>

@@ -398,7 +398,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: -801
           y: 100
-          width: 234
+          width: 216
           height: 96
         width: 600
         height: 500
@@ -422,7 +422,7 @@ MonoBehaviour:
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        songTitle: 7
+        songTitle: 4
     0000000A:
       type: {class: CustomDecisionCheckNode, ns: , asm: Assembly-CSharp}
       data:
@@ -508,7 +508,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: -792
           y: 693
-          width: 234
+          width: 216
           height: 96
         width: 600
         height: 500
@@ -532,7 +532,7 @@ MonoBehaviour:
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomMusicChangeNodeVisual, Assembly-CSharp,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        songTitle: 7
+        songTitle: 4
     0000000D:
       type: {class: NoodlesNodeMultipleDialogue, ns: , asm: Assembly-CSharp}
       data:

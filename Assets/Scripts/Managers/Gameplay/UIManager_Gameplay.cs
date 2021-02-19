@@ -8,8 +8,11 @@ public class UIManager_Gameplay : MonoBehaviour
     [SerializeField] string saveGameText = null;
     [SerializeField] string saveAsJsonText = null;
 
+    [SerializeField] RectTransform selectionIcon = null;
     [SerializeField] GameObject log = null;
     DialogManager dialogManager;
+
+    [SerializeField] SelectableButton[] selectableButtons;
 
     public static event Action<bool> OnGameSave;
     public static event Action<bool> OnLogStateChange;
@@ -17,6 +20,11 @@ public class UIManager_Gameplay : MonoBehaviour
     void Awake()
     {
         dialogManager = DialogManager.Get();
+    }
+
+    void Start()
+    {
+        foreach (SelectableButton button in selectableButtons) button.SelectionIcon = selectionIcon;
     }
 
     void AskForSaveExtension()

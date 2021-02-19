@@ -230,7 +230,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: fcb62217b48aa6428efccaed8bcfb331
     GuidInternal: 
-    m_lastTime: -8585951482076562091
+    m_lastTime: -8585947686514775808
     List:
     - name: Main
       guid: 9c378c4c32c8894f89feff488766129e
@@ -249,7 +249,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: e43587ed6b27024cacd930c19358dfcd
     GuidInternal: 
-    m_lastTime: -8585951482112922472
+    m_lastTime: -8585938774434775808
     List:
     - name: AMB Escenas
       guid: 6919b9c17e83d244aa616037fdb04fcc
@@ -275,8 +275,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_AbrePuerta
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 661333
+      minDuration: 661333
     - name: Fx_ApretaBoton
       guid: 7106bbf7349fc248bc041edeab2f8829
       id: 1255459097
@@ -289,8 +289,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_ApretaBoton
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 55850
+      minDuration: 55850
     - name: Fx_Bostezo
       guid: 52c79287b330254f85b381f70f848082
       id: 802180522
@@ -317,8 +317,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_BotonDecision
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1846375
+      minDuration: 1846375
     - name: Fx_CortesEspada
       guid: b84b5e5ff825734599472ea523dc8908
       id: 2039299266
@@ -331,8 +331,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_CortesEspada
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 437157
+      minDuration: 201715
     - name: Fx_CorteVerdura
       guid: ef2fd4b6d0abe84e8e61215ea2f00540
       id: 476300500
@@ -345,8 +345,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_CorteVerdura
       maxAttenuation: 0
-      maxDuration: 896881
-      minDuration: 474640
+      maxDuration: 1149088
+      minDuration: 320095
     - name: Fx_Demonios
       guid: e80eb0ac1b7e914ea3ce77f2a08c5648
       id: 1114860582
@@ -373,8 +373,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_ErrarCorte
       maxAttenuation: 0
-      maxDuration: 1303598
-      minDuration: 821215
+      maxDuration: 1552937
+      minDuration: 689362
     - name: Fx_EspadaDesenvaine
       guid: 35bf1bf4ce385d4998b87527a584b8ad
       id: 4022812378
@@ -389,17 +389,17 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 2471615
       minDuration: 2471615
-    - name: Fx_Espadas_Chocando
+    - name: Fx_EspadasChocando
       guid: 462723cc6ff67442897a635d92c17c81
-      id: 2751256073
+      id: 1502029216
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: SFX
         ObjectType: 4
-      - ElementName: Fx_Espadas_Chocando
+      - ElementName: Fx_EspadasChocando
         ObjectType: 3
-      Path: Default Work Unit\SFX\Fx_Espadas_Chocando
+      Path: Default Work Unit\SFX\Fx_EspadasChocando
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -415,8 +415,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_Fogata
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Fx_GolpesDePuerta
       guid: 77cd2f26f2cc18428bb1d1da7cbb7a3f
       id: 898536980
@@ -443,22 +443,22 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_Grillos
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Fx_Gritos_Batalla
+      maxDuration: -1
+      minDuration: -1
+    - name: Fx_GritosBatalla
       guid: a11c3dd6b8f0d144895b93625f9d6d0f
-      id: 934405918
+      id: 2213132947
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: SFX
         ObjectType: 4
-      - ElementName: Fx_Gritos_Batalla
+      - ElementName: Fx_GritosBatalla
         ObjectType: 3
-      Path: Default Work Unit\SFX\Fx_Gritos_Batalla
+      Path: Default Work Unit\SFX\Fx_GritosBatalla
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Fx_HachaGolpeMadera
       guid: 8cc282d7e8851541b9c4463d9a5d532c
       id: 1958665138
@@ -471,8 +471,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_HachaGolpeMadera
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1918842
+      minDuration: 522737
     - name: Fx_Hojas
       guid: 92df8f898031c641bdcff0d8bbcf8998
       id: 522454013
@@ -485,8 +485,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_Hojas
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1036616
+      minDuration: 740659
     - name: Fx_Lluvia
       guid: 6a2a35cb3a1d6e4789d7798b3c5fb86f
       id: 2726817329
@@ -499,8 +499,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_Lluvia
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 15567400
+      minDuration: 11797882
     - name: Fx_PisadasHojas
       guid: a1cc517f07a4ce43a092fd57c88ecd32
       id: 2404135128
@@ -513,8 +513,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_PisadasHojas
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Fx_Respiracion
       guid: 2824d057ec47cd4d891c26246f6b3c27
       id: 2361847821
@@ -541,8 +541,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_RevuelveObjetos
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 4096000
+      minDuration: 4096000
     - name: Fx_RisaMujer
       guid: 808a7037738cf84e84c9d6467ac1e3b7
       id: 1200327514
@@ -557,20 +557,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1813333
       minDuration: 1813333
-    - name: Fx_Sonido_Cubiertos
+    - name: Fx_SonidoCubiertos
       guid: ede43294dfe6094ebdff8dc27577f218
-      id: 1785455897
+      id: 941945728
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: SFX
         ObjectType: 4
-      - ElementName: Fx_Sonido_Cubiertos
+      - ElementName: Fx_SonidoCubiertos
         ObjectType: 3
-      Path: Default Work Unit\SFX\Fx_Sonido_Cubiertos
+      Path: Default Work Unit\SFX\Fx_SonidoCubiertos
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 8000000
+      minDuration: 8000000
     - name: Fx_Susurros
       guid: e020b318af87a04dae3e57aff7d94b8e
       id: 2243875784
@@ -583,8 +583,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\SFX\Fx_Susurros
       maxAttenuation: 0
-      maxDuration: 60506668
-      minDuration: 60506668
+      maxDuration: -1
+      minDuration: -1
     - name: Fx_YaEstaOscureciendo
       guid: 2ec8a4f62e58e749a15d3701e5a77afe
       id: 1982181994
@@ -611,8 +611,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\AMB Escenas\Inicia_Amb_Bosque
       maxAttenuation: 0
-      maxDuration: 43639624
-      minDuration: 43639624
+      maxDuration: -1
+      minDuration: -1
     - name: Inicia_Amb_Campo
       guid: 24da7ee412a08f44995023e30f2e0239
       id: 2373982872
@@ -625,8 +625,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\AMB Escenas\Inicia_Amb_Campo
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Inicia_Amb_Casa
       guid: 67b9f31e08733a45a80be2a0d3d82317
       id: 1195242306
@@ -681,8 +681,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\AMB Escenas\Inicia_Amb_Noche
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Inicia_Amb_Pueblo
       guid: e7a1f3c6d527f34d9cb7d12f2a22b247
       id: 2345829145
@@ -709,8 +709,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\AMB Escenas\Inicia_Amb_Rio
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Inicia_Amb_Santuario
       guid: c6872f9bbe84c442a65a2d004de3ce0f
       id: 157095356
@@ -723,8 +723,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\AMB Escenas\Inicia_Amb_Santuario
       maxAttenuation: 0
-      maxDuration: 39990624
-      minDuration: 39990624
+      maxDuration: 12770055
+      minDuration: 8362066
     - name: Inicia_Creditos
       guid: d0b0ff0900e27743b136e53927e6ce92
       id: 4126746240
@@ -737,8 +737,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Music Game\Inicia_Creditos
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Inicia_Juego
       guid: fe37315e33c9d24c95add23e9a30dabf
       id: 1190877053
@@ -765,8 +765,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Music Game\Inicia_Menu
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Music Game
       guid: bfb7b25dc0557340a99d6f2496109d7c
       id: 271015524
@@ -799,8 +799,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 682852d24a41f3479f6ad0b865215fe6
     GuidInternal: 
-    m_lastTime: -8585951482112912495
-    List: []
+    m_lastTime: -8585940490954775808
+    List:
+    - name: Minijuego_Time
+      guid: ab03c1b914f27f44baa09dc84775445f
+      id: 3157983290
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Minijuego_Time
+        ObjectType: 13
+      Path: Default Work Unit\Minijuego_Time
   - PhysicalPath: Game Parameters\Factory Motion.wwu
     PathAndIcons:
     - ElementName: Factory Motion
@@ -935,7 +944,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 8dc46ea392b20f4293726adf927c401b
     GuidInternal: 
-    m_lastTime: -8585951482076262871
+    m_lastTime: -8585938155594775808
     List:
     - name: Musicas
       guid: e6269b72581b1e439807808e0d1de0f9
@@ -953,11 +962,23 @@ MonoBehaviour:
         PathAndIcons:
         - ElementName: Creditos
           ObjectType: 8
+      - name: Hoshi
+        guid: 67a9d9dbe393eb49a2eae92039f51397
+        id: 3771209684
+        PathAndIcons:
+        - ElementName: Hoshi
+          ObjectType: 8
       - name: Menu
         guid: 5c638881642fbf4d8f053fe82d321152
         id: 2607556080
         PathAndIcons:
         - ElementName: Menu
+          ObjectType: 8
+      - name: Minijuego
+        guid: 47b1f9e6a4f7dc49ba0b8738395a28e2
+        id: 1684016862
+        PathAndIcons:
+        - ElementName: Minijuego
           ObjectType: 8
       - name: None
         guid: fab314f06f535b4796d85c2b8df2c01f
@@ -965,39 +986,14 @@ MonoBehaviour:
         PathAndIcons:
         - ElementName: None
           ObjectType: 8
-      ValueGuids: []
-      ValueIcons: []
-      valuesInternal: []
-    - name: Personajes
-      guid: 5f202735f8ab8642b5ff37a084be3a13
-      id: 2451887255
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Personajes
-        ObjectType: 9
-      Path: Default Work Unit\Personajes
-      values:
-      - name: Hoshi
-        guid: d157318880b1f446833272593077377e
-        id: 3771209684
-        PathAndIcons:
-        - ElementName: Hoshi
-          ObjectType: 8
-      - name: None
-        guid: ed76477954a38c40adb406d9481b8ff2
-        id: 748895195
-        PathAndIcons:
-        - ElementName: None
-          ObjectType: 8
       - name: Protagonista
-        guid: 367d0248feeb2743a31c085621e5384b
+        guid: b02e82a23053ce43904222404a9ef62c
         id: 208248756
         PathAndIcons:
         - ElementName: Protagonista
           ObjectType: 8
       - name: Tadao
-        guid: 46123389175abe4fbb2cc5ebefe43024
+        guid: 5f4d3cf315f76c4f9f215b60b9602216
         id: 2200110088
         PathAndIcons:
         - ElementName: Tadao
@@ -1027,10 +1023,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /The Peace I Found In You
-  - /The Peace I Found In You/Events
-  - /The Peace I Found In You/Events/Default Work Unit
-  - /The Peace I Found In You/Events/Default Work Unit/AMB Escenas
-  - /The Peace I Found In You/Events/Default Work Unit/Music Game
-  - /The Peace I Found In You/Events/Default Work Unit/SFX
+  - /The Peace I Found In You/States
+  - /The Peace I Found In You/States/Default Work Unit
+  - /The Peace I Found In You/States/Default Work Unit/Musicas
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
