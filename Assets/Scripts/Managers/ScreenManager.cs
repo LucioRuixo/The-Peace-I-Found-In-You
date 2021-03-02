@@ -17,7 +17,7 @@ public class ScreenManager : MonoBehaviourSingleton<ScreenManager>
 
     void SetScreenLimits()
     {
-        MinScreenLimits = new Vector2(ScreenBounds.x * -1f, ScreenBounds.y);
-        MaxScreenLimits = new Vector2(ScreenBounds.x, ScreenBounds.y - -1f);
+        MinScreenLimits = new Vector2(ScreenBounds.x * -1f, ScreenBounds.y * -1f);
+        MaxScreenLimits = new Vector2(ScreenBounds.x, ScreenBounds.y);
     }
 }

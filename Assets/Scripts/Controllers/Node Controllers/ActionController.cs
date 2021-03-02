@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using nullbloq.Noodles;
 
-public class ActionController : NodeController, ISaveComponent //TODO: simplificar esta clase (por ahí separar en CharacterSpriteController y CharacterEnterExitController y hacer nodos para cada una)
+public class ActionController : NodeController, ISaveComponent
 {
-    public enum Action
+    public enum CharacterAction
     {
         EnterScene,
         ExitScene,
@@ -75,31 +75,31 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
     {
         switch (node.action)
         {
-            case Action.EnterScene:
+            case CharacterAction.EnterScene:
                 EnterCharacter(node);
                 break;
-            case Action.ExitScene:
+            case CharacterAction.ExitScene:
                 ExitCharacter(node);
                 break;
-            case Action.PopIntoScene:
+            case CharacterAction.PopIntoScene:
                 EnterCharacter(node);
                 break;
-            case Action.PopOutOfScene:
+            case CharacterAction.PopOutOfScene:
                 ExitCharacter(node);
                 break;
-            case Action.ChangeBody:
+            case CharacterAction.ChangeBody:
                 ChangeBodyPart(Character.BodyPart.Body, node);
                 break;
-            case Action.ChangeArm:
+            case CharacterAction.ChangeArm:
                 ChangeBodyPart(Character.BodyPart.Arm, node);
                 break;
-            case Action.ChangeHead:
+            case CharacterAction.ChangeHead:
                 ChangeBodyPart(Character.BodyPart.Head, node);
                 break;
-            case Action.FadeIntoScene:
+            case CharacterAction.FadeIntoScene:
                 EnterCharacter(node);
                 break;
-            case Action.FadeOutOfScene:
+            case CharacterAction.FadeOutOfScene:
                 ExitCharacter(node);
                 break;
             default:
@@ -140,20 +140,20 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
 
             switch (node.action)
             {
-                case Action.EnterScene:
+                case CharacterAction.EnterScene:
                     StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, node.action));
                     activeCorroutines++;
 
                     break;
 
-                case Action.PopIntoScene:
+                case CharacterAction.PopIntoScene:
                     Vector2 position = charactersInScene[i].Value.transform.position;
                     position.x = targetX;
                     charactersInScene[i].Value.transform.position = position;
 
                     break;
 
-                case Action.FadeIntoScene:
+                case CharacterAction.FadeIntoScene:
                     if (i < charactersInScene.Count - 1)
                     {
                         StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, node.action));
@@ -165,9 +165,25 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
                         position.x = targetX;
                         charactersInScene[i].Value.transform.position = position;
 
-                        SpriteRenderer sr = charactersInScene[i].Value.GetComponent<SpriteRenderer>();
-                        fxManager.StartAlphaLerp0To1(sr, fadeDuration, FinishCorroutine);
-                        activeCorroutines++;
+                        if (charactersInScene[i].Key.Animated)
+                        {
+                            for (int childIndex = 0; childIndex < charactersInScene[i].Value.transform.childCount; childIndex++)
+                            {
+                                MeshRenderer renderer = null;
+                                if (charactersInScene[i].Value.transform.GetChild(childIndex).TryGetComponent(out renderer))
+                                {
+                                    Material material = renderer.material;
+                                    fxManager.StartAlphaLerp0To1(material, fadeDuration, FinishCorroutine);
+                                    activeCorroutines++;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            SpriteRenderer sr = charactersInScene[i].Value.GetComponent<SpriteRenderer>();
+                            fxManager.StartAlphaLerp0To1(sr, fadeDuration, FinishCorroutine);
+                            activeCorroutines++;
+                        }
                     }
 
                     break;
@@ -178,7 +194,7 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
             }
         }
 
-        if (node.action == Action.PopIntoScene) End();
+        if (node.action == CharacterAction.PopIntoScene) End();
     }
     
     void ExitCharacter(CustomCharacterActionNode node)
@@ -192,19 +208,35 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
 
                 switch (node.action)
                 {
-                    case Action.ExitScene:
+                    case CharacterAction.ExitScene:
                         StartCoroutine(MoveCharacter(character.Value.transform, targetX, true, node.action));
                         activeCorroutines++;
                         break;
 
-                    case Action.PopOutOfScene:
+                    case CharacterAction.PopOutOfScene:
                         Destroy(character.Value);
                         break;
 
-                    case Action.FadeOutOfScene:
-                        SpriteRenderer sr = character.Value.GetComponent<SpriteRenderer>();
-                        fxManager.StartAlphaLerp1To0(sr, fadeDuration, FinishCorroutine);
-                        activeCorroutines++;
+                    case CharacterAction.FadeOutOfScene:
+                        if (character.Key.Animated)
+                        {
+                            for (int childIndex = 0; childIndex < character.Value.transform.childCount; childIndex++)
+                            {
+                                MeshRenderer renderer = null;
+                                if (character.Value.transform.GetChild(childIndex).TryGetComponent(out renderer))
+                                {
+                                    Material material = renderer.material;
+                                    fxManager.StartAlphaLerp1To0(material, fadeDuration, FinishCorroutine);
+                                    activeCorroutines++;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            SpriteRenderer sr = character.Value.GetComponent<SpriteRenderer>();
+                            fxManager.StartAlphaLerp1To0(sr, fadeDuration, FinishCorroutine);
+                            activeCorroutines++;
+                        }
 
                         fadingOutOfScene = true;
                         break;
@@ -229,14 +261,14 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
 
             switch (node.action)
             {
-                case Action.ExitScene:
-                case Action.FadeOutOfScene:
+                case CharacterAction.ExitScene:
+                case CharacterAction.FadeOutOfScene:
                     StartCoroutine(MoveCharacter(charactersInScene[i].Value.transform, targetX, false, node.action));
                     activeCorroutines++;
 
                     break;
 
-                case Action.PopOutOfScene:
+                case CharacterAction.PopOutOfScene:
                     Vector2 position = charactersInScene[i].Value.transform.position;
                     position.x = targetX;
                     charactersInScene[i].Value.transform.position = position;
@@ -249,7 +281,7 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
             }
         }
 
-        if (node.action == Action.PopOutOfScene) End();
+        if (node.action == CharacterAction.PopOutOfScene) End();
     }
 #endregion
 
@@ -329,7 +361,7 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
         }
     }
 
-    IEnumerator MoveCharacter(Transform character, float targetX, bool destroyOnFinish, Action action)
+    IEnumerator MoveCharacter(Transform character, float targetX, bool destroyOnFinish, CharacterAction action)
     {
         float a = character.position.x;
         float b = targetX;
@@ -337,7 +369,7 @@ public class ActionController : NodeController, ISaveComponent //TODO: simplific
         float movementLength = Mathf.Abs(a - b);
         float fractionMoved = 0f;
 
-        if (action == Action.FadeOutOfScene)
+        if (action == CharacterAction.FadeOutOfScene)
             yield return new WaitWhile(() => fadingOutOfScene == true);
 
         while (character.position.x < b - movementAccuracyRange / 2f || character.position.x > b + movementAccuracyRange / 2f)

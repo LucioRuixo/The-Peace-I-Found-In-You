@@ -732,7 +732,7 @@ MonoBehaviour:
     sfx: 11
   - eventName: Fx_Grillos
     sfx: 12
-  - eventName: Fx_Gritos_Batall
+  - eventName: Fx_GritosBatalla
     sfx: 13
   - eventName: Fx_HachaGolpeMadera
     sfx: 14
@@ -2019,7 +2019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &553080728
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11020,7 +11020,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -19.290009, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2128773401
 MonoBehaviour:

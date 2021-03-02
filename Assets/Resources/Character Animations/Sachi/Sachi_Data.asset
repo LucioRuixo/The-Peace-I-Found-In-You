@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: Sachi_Data
+  m_EditorClassIdentifier: 
+  dataName: Sachi
+  dragonBonesJSON: {fileID: 4900000, guid: 66ec690d56e712e4797c64941684c4de, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: b634cb850b6c9b047a449c77c125fc56, type: 3}
+    texture: {fileID: 2800000, guid: a82cea7655b03fd479e5fe19c479955c, type: 3}
+    material: {fileID: 2100000, guid: ba59a750a90a9ba49b84983389eb939c, type: 2}
+    uiMaterial: {fileID: 0}

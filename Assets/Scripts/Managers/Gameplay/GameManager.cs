@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
             songTitle = musicController.CurrentSong
         };
     }
-
+    
     void SaveGameData(bool saveAsJson)
     {
         UpdateGameData();

@@ -48,8 +48,6 @@ MonoBehaviour:
   - id: 32
   - id: 33
   - id: 34
-  - id: 35
-  - id: 36
   references:
     version: 1
     00000000:
@@ -59,8 +57,8 @@ MonoBehaviour:
         GUID: 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
         rect:
           serializedVersion: 2
-          x: -2322
-          y: 27
+          x: -2147
+          y: 20
           width: 76
           height: 71
         width: 100
@@ -451,9 +449,9 @@ MonoBehaviour:
         - GUID: 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
           parentNodeGUID: 7259f9ed-615b-4e53-aaf3-f577f4e240be
           targetNodeGUID:
-          - 7266db7f-7779-422e-9f39-0b4589277cb7
+          - 9cf904ed-599f-4fe2-aca3-e5542be02bcd
           targetPortGUID:
-          - 0930345e-aeb9-40a7-ba32-eda3e60aa15c
+          - 5b13e145-175a-4ae5-8516-64425f11469a
           text: Output
           isEditable: 0
         classNameString: nullbloq.Noodles.CustomAnimationNodeVisual, Assembly-CSharp,
@@ -534,8 +532,8 @@ MonoBehaviour:
         GUID: 2a501501-bb85-46ce-a022-3323db50a30a
         rect:
           serializedVersion: 2
-          x: -2120
-          y: 17
+          x: -2033
+          y: 19
           width: 271
           height: 175
         width: 600
@@ -786,8 +784,8 @@ MonoBehaviour:
         GUID: fdd2e14c-7912-49db-885e-ec92e75fcf4a
         rect:
           serializedVersion: 2
-          x: -2122
-          y: 206
+          x: -2035
+          y: 208
           width: 271
           height: 175
         width: 600
@@ -824,10 +822,10 @@ MonoBehaviour:
         GUID: 380a0eb2-0909-4980-9d6b-9e9b38919cec
         rect:
           serializedVersion: 2
-          x: -2122
-          y: 396
+          x: -2035
+          y: 398
           width: 271
-          height: 176
+          height: 175
         width: 600
         height: 500
         inputPorts:
@@ -1036,8 +1034,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 1228
           y: 113
-          width: 214
-          height: 96
+          width: 184
+          height: 94
         width: 600
         height: 500
         inputPorts:
@@ -1070,7 +1068,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: -751
           y: 919
-          width: 270
+          width: 239
           height: 96
         width: 600
         height: 500
@@ -1179,7 +1177,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: -108
           y: 12
-          width: 305
+          width: 273
           height: 96
         width: 600
         height: 500
@@ -1213,7 +1211,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 577
           y: 9
-          width: 249
+          width: 214
           height: 96
         width: 600
         height: 500
@@ -1245,9 +1243,9 @@ MonoBehaviour:
         GUID: 9cf904ed-599f-4fe2-aca3-e5542be02bcd
         rect:
           serializedVersion: 2
-          x: -1724
-          y: 236
-          width: 260
+          x: -1709
+          y: 132
+          width: 230
           height: 96
         width: 600
         height: 500
@@ -1255,9 +1253,9 @@ MonoBehaviour:
         - GUID: 5b13e145-175a-4ae5-8516-64425f11469a
           parentNodeGUID: 9cf904ed-599f-4fe2-aca3-e5542be02bcd
           targetNodeGUID:
-          - 7266db7f-7779-422e-9f39-0b4589277cb7
+          - 7259f9ed-615b-4e53-aaf3-f577f4e240be
           targetPortGUID:
-          - 216fb81f-7e50-4c2b-a2f1-caf92c359b99
+          - 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
           text: Input
           isEditable: 0
         outputPorts:
@@ -1318,7 +1316,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 2466
           y: 9
-          width: 286
+          width: 243
           height: 96
         width: 600
         height: 500
@@ -1343,73 +1341,3 @@ MonoBehaviour:
         classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         sfx: 4
-    00000023:
-      type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
-      data:
-        title: Sound Effect
-        GUID: 7266db7f-7779-422e-9f39-0b4589277cb7
-        rect:
-          serializedVersion: 2
-          x: -1738
-          y: 127
-          width: 284
-          height: 96
-        width: 600
-        height: 500
-        inputPorts:
-        - GUID: 0930345e-aeb9-40a7-ba32-eda3e60aa15c
-          parentNodeGUID: 7266db7f-7779-422e-9f39-0b4589277cb7
-          targetNodeGUID:
-          - 7259f9ed-615b-4e53-aaf3-f577f4e240be
-          targetPortGUID:
-          - 8cac927d-a8e3-4bcb-8cd4-dd72d5ba4b16
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: 216fb81f-7e50-4c2b-a2f1-caf92c359b99
-          parentNodeGUID: 7266db7f-7779-422e-9f39-0b4589277cb7
-          targetNodeGUID:
-          - 9cf904ed-599f-4fe2-aca3-e5542be02bcd
-          targetPortGUID:
-          - 5b13e145-175a-4ae5-8516-64425f11469a
-          text: Output
-          isEditable: 0
-        classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        sfx: 13
-    00000024:
-      type: {class: CustomMinigameNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
-      data:
-        title: Minigame
-        GUID: 894360a1-b146-497f-98b2-7c0247f97315
-        rect:
-          serializedVersion: 2
-          x: -2105
-          y: -138
-          width: 220
-          height: 120
-        width: 600
-        height: 500
-        inputPorts:
-        - GUID: 022b3e93-3adc-41c2-b5f6-9d2a10a55f4c
-          parentNodeGUID: 894360a1-b146-497f-98b2-7c0247f97315
-          targetNodeGUID: []
-          targetPortGUID: []
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: ed5cc065-c285-4021-bd6d-e6550fd024fd
-          parentNodeGUID: 894360a1-b146-497f-98b2-7c0247f97315
-          targetNodeGUID: []
-          targetPortGUID: []
-          text: Win
-          isEditable: 0
-        - GUID: f9d17ea2-e0c4-426f-bf9d-dbab0e46b1ea
-          parentNodeGUID: 894360a1-b146-497f-98b2-7c0247f97315
-          targetNodeGUID: []
-          targetPortGUID: []
-          text: Lose
-          isEditable: 0
-        classNameString: nullbloq.Noodles.CustomMinigameNodeVisual, Assembly-CSharp,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        minigame: 0

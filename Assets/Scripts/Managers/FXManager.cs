@@ -12,7 +12,48 @@ public class FXManager : MonoBehaviourSingleton<FXManager>
     }
 
     #region Alpha Lerp
-    #region Image Lerp
+    #region Material
+    public void StartAlphaLerp(Material material, float from, float to, float duration, Action onEnd = null)
+    {
+        StartCoroutine(LerpMaterialAlpha(material, from, to, duration, onEnd));
+    }
+
+    public void StartAlphaLerp0To1(Material material, float duration, Action onEnd = null)
+    {
+        StartCoroutine(LerpMaterialAlpha(material, 0f, 1f, duration, onEnd));
+    }
+
+    public void StartAlphaLerp1To0(Material material, float duration, Action onEnd = null)
+    {
+        StartCoroutine(LerpMaterialAlpha(material, 1f, 0f, duration, onEnd));
+    }
+
+    IEnumerator LerpMaterialAlpha(Material material, float from, float to, float duration, Action onEnd)
+    {
+        float currentAlpha = from;
+
+        while (!ValueReached(from, to, currentAlpha))
+        {
+            if (material)
+            {
+                float step = 1f / (duration / Time.deltaTime);
+                if (from > to) step *= -1f;
+                currentAlpha += step;
+
+                Color newColor = material.color;
+                newColor.a = currentAlpha;
+                material.color = newColor;
+
+                yield return null;
+            }
+            else yield break;
+        }
+
+        onEnd?.Invoke();
+    }
+    #endregion
+
+    #region Image
     public void StartAlphaLerp(Image image, float from, float to, float duration, Action onEnd = null)
     {
         StartCoroutine(LerpImageAlpha(image, from, to, duration, onEnd));
@@ -53,7 +94,7 @@ public class FXManager : MonoBehaviourSingleton<FXManager>
     }
     #endregion
 
-    #region SR Lerp
+    #region Sprite Renderer
     public void StartAlphaLerp(SpriteRenderer sr, float from, float to, float duration, Action onEnd = null)
     {
         StartCoroutine(LerpSRAlpha(sr, from, to, duration, onEnd));

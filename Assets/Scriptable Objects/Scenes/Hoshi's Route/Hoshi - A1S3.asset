@@ -398,7 +398,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: -801
           y: 100
-          width: 216
+          width: 215
           height: 96
         width: 600
         height: 500
@@ -508,7 +508,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: -792
           y: 693
-          width: 216
+          width: 215
           height: 96
         width: 600
         height: 500

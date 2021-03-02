@@ -32,7 +32,6 @@ MonoBehaviour:
   - id: 16
   - id: 17
   - id: 18
-  - id: 19
   references:
     version: 1
     00000000:
@@ -42,8 +41,8 @@ MonoBehaviour:
         GUID: 0d95a4ba-e850-4ba3-bdb1-14dbc3e45ede
         rect:
           serializedVersion: 2
-          x: 1317
-          y: 147
+          x: 1600
+          y: 150
           width: 76
           height: 71
         width: 100
@@ -68,8 +67,8 @@ MonoBehaviour:
         GUID: 994a0a30-ae62-4254-bed3-d272c73e2c5a
         rect:
           serializedVersion: 2
-          x: 1428
-          y: 146
+          x: 1711
+          y: 149
           width: 328
           height: 577
         width: 1500
@@ -682,8 +681,8 @@ MonoBehaviour:
         GUID: 6ff58f30-aa1c-4c84-8f2a-c8a01913f4e2
         rect:
           serializedVersion: 2
-          x: 2087
-          y: 141
+          x: 2370
+          y: 144
           width: 328
           height: 577
         width: 1500
@@ -701,9 +700,9 @@ MonoBehaviour:
         - GUID: 5c36f020-7fad-4e0e-8e0c-9b5be21600a5
           parentNodeGUID: 6ff58f30-aa1c-4c84-8f2a-c8a01913f4e2
           targetNodeGUID:
-          - d56862df-5709-455e-a171-235f4957332f
+          - e2b913c6-2c63-4c90-a8c5-4008a1c585b6
           targetPortGUID:
-          - a649462b-8259-43e3-9b0d-de465ca34a8f
+          - ba3eb66d-1f9f-4c05-97ad-926adf40eafa
           text: Out
           isEditable: 0
         classNameString: NoodlesNodeMultipleDialogueVisual, Assembly-CSharp, Version=0.0.0.0,
@@ -729,9 +728,9 @@ MonoBehaviour:
         - GUID: ba3eb66d-1f9f-4c05-97ad-926adf40eafa
           parentNodeGUID: e2b913c6-2c63-4c90-a8c5-4008a1c585b6
           targetNodeGUID:
-          - d56862df-5709-455e-a171-235f4957332f
+          - 6ff58f30-aa1c-4c84-8f2a-c8a01913f4e2
           targetPortGUID:
-          - 0bc113a0-cda7-4261-b645-93cf733fae80
+          - 5c36f020-7fad-4e0e-8e0c-9b5be21600a5
           text: Input
           isEditable: 0
         outputPorts:
@@ -765,8 +764,8 @@ MonoBehaviour:
         GUID: 6503a65e-1252-41e8-89ca-61801f36e494
         rect:
           serializedVersion: 2
-          x: 1783
-          y: 144
+          x: 2075
+          y: 147
           width: 239
           height: 96
         width: 600
@@ -793,40 +792,6 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         sfx: 18
     00000012:
-      type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
-      data:
-        title: Sound Effect
-        GUID: d56862df-5709-455e-a171-235f4957332f
-        rect:
-          serializedVersion: 2
-          x: 2451
-          y: 143
-          width: 271
-          height: 96
-        width: 600
-        height: 500
-        inputPorts:
-        - GUID: a649462b-8259-43e3-9b0d-de465ca34a8f
-          parentNodeGUID: d56862df-5709-455e-a171-235f4957332f
-          targetNodeGUID:
-          - 6ff58f30-aa1c-4c84-8f2a-c8a01913f4e2
-          targetPortGUID:
-          - 5c36f020-7fad-4e0e-8e0c-9b5be21600a5
-          text: Input
-          isEditable: 0
-        outputPorts:
-        - GUID: 0bc113a0-cda7-4261-b645-93cf733fae80
-          parentNodeGUID: d56862df-5709-455e-a171-235f4957332f
-          targetNodeGUID:
-          - e2b913c6-2c63-4c90-a8c5-4008a1c585b6
-          targetPortGUID:
-          - ba3eb66d-1f9f-4c05-97ad-926adf40eafa
-          text: Output
-          isEditable: 0
-        classNameString: nullbloq.Noodles.CustomSFXNodeVisual, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        sfx: 13
-    00000013:
       type: {class: CustomSFXNode, ns: nullbloq.Noodles, asm: Assembly-CSharp}
       data:
         title: Sound Effect

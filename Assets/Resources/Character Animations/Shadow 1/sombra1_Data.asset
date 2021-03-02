@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: sombra1_Data
+  m_EditorClassIdentifier: 
+  dataName: sombra1
+  dragonBonesJSON: {fileID: 4900000, guid: 2fa86d6d8ccb45c4fba454030ad8e4ed, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 71ccdac9c7b75f64cbe19d6c59a1cf2a, type: 3}
+    texture: {fileID: 2800000, guid: 0033c21a74680fb4ab0ae6d099cc3105, type: 3}
+    material: {fileID: 2100000, guid: 2177a24e4c4847740bb3884b7fc19b75, type: 2}
+    uiMaterial: {fileID: 0}

@@ -31,7 +31,7 @@ public class UIManager_Gameplay : MonoBehaviour
     {
         UnityAction saveAsJson = () => OnGameSave?.Invoke(true);
         UnityAction saveAsDat = () => OnGameSave?.Invoke(false);
-
+    
         dialogManager.DisplayConfirmDialog(saveAsJsonText, null, saveAsJson, null, saveAsDat);
     }
 
@@ -44,7 +44,9 @@ public class UIManager_Gameplay : MonoBehaviour
 
     public void SaveGame()
     {
-        dialogManager.DisplayConfirmDialog(saveGameText, null, AskForSaveExtension, null, null);
+        //dialogManager.DisplayConfirmDialog(saveGameText, null, AskForSaveExtension, null, null);
+        UnityAction saveAsDat = () => OnGameSave?.Invoke(false);
+        dialogManager.DisplayConfirmDialog(saveGameText, null, saveAsDat, null, null);
     }
 
     public void ExitGame()

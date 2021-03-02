@@ -8,7 +8,7 @@ namespace nullbloq.Noodles
 {
 	public class CustomCharacterActionNode : NoodlesNode
 	{
-		public ActionController.Action action;
+		public ActionController.CharacterAction action;
 		public CharacterManager.CharacterName character;
 		public int bodyIndex;
 		public int armIndex;
@@ -46,7 +46,7 @@ namespace nullbloq.Noodles
 			title = actionNode.title;
 
 			var combo = new EnumField("Action", actionNode.action);
-			combo.RegisterValueChangedCallback(evt => { actionNode.action = (ActionController.Action)evt.newValue; });
+			combo.RegisterValueChangedCallback(evt => { actionNode.action = (ActionController.CharacterAction)evt.newValue; });
 			mainContainer.Add(combo);
 
 			combo = new EnumField("Character", actionNode.character);

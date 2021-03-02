@@ -19,4 +19,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c8425ddedae6e134eb9b42726d5b3a71, type: 3}
   headSprites: []
   armSprites: []
-  armatureObject: {fileID: 0}
+  armatureObject: {fileID: 8037363990868914324, guid: 7c898dba960b33341b524fd63dce340d,
+    type: 3}
